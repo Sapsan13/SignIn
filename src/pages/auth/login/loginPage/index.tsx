@@ -1,9 +1,9 @@
 "use client";
 import Link from "next/link";
 import styled from "styled-components";
-import Button from "../../../components/button";
-import Inputfield from "../../../components/inputField";
-import PasswordInput from "@/pages/components/passwordInput";
+import Button from "@/components/button";
+import Inputfield from "@/components/inputField";
+import PasswordInput from "@/components/passwordInput";
 import { useState } from "react";
 import { getCsrfToken } from "next-auth/react";
 import { InferGetServerSidePropsType, GetServerSidePropsContext } from "next";

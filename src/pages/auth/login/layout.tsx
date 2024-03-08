@@ -1,8 +1,9 @@
 "use client";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import LoginPicBlock from "@/pages/components/loginPicBlock";
+import LoginPicBlock from "@/components/loginPicBlock";
 import styled from "styled-components";
+import LeftNavbar from "@/overviewComponents/LeftNavbar";
 
 const inter = Inter({ subsets: ["latin"] });
 

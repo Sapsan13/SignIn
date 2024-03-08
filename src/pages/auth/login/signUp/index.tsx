@@ -1,14 +1,13 @@
 "use client";
 import Link from "next/link";
 import styled from "styled-components";
-import Button from "../../../components/button";
+import Button from "../../../../components/button";
 // import Inputfield from "../../../components/inputField";
-import PasswordInput from "@/pages/components/passwordInput";
+import PasswordInput from "@/components/passwordInput";
 import { useState } from "react";
-import Inputfield from "@/pages/components/inputField";
+import Inputfield from "@/components/inputField";
 import { getCsrfToken } from "next-auth/react";
 import { InferGetServerSidePropsType, GetServerSidePropsContext } from "next";
-import { getServerSideProps } from "next/dist/build/templates/pages";
 import RootLayout from "../layout";
 
 const SkeletonRightSidebar = styled.div`
@@ -145,6 +144,11 @@ export default function CreateAccount({
             <SkeletonDivCol>
               <SkeletonForm method="post">
                 <SkeletonDivRow>
+                  <input
+                    name="csrfToken"
+                    type="hidden"
+                    defaultValue={csrfToken}
+                  />
                   <Inputfield
                     required
                     placeholder="First name"
@@ -198,4 +202,12 @@ export default function CreateAccount({
       </SkeletonRightSidebar>
     </RootLayout>
   );
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const csrfToken = await getCsrfToken(context);
+
+  return {
+    props: { csrfToken: csrfToken || null },
+  };
 }

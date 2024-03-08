@@ -1,10 +1,10 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import Createaccount from "./auth/login/signUp";
-import Login from "./auth/login";
-
-// import LoginPicBlock from "./components/loginPicBlock";
+import Crea from "./auth/login";
+import CreateAccount from "./auth/login/signUp";
+import NavItem from "../overviewComponents/leftNavbarItems/NavbarStackItem";
 
 export default function Home() {
-  return <Login />;
+  return <p>Homepage</p>;
 }

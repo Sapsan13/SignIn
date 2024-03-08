@@ -8,7 +8,7 @@ import CreateAccount from "./signUp";
 import { getCsrfToken } from "next-auth/react";
 import { GetServerSidePropsContext } from "next";
 
-const Login = ({ csrfToken }) => {
+const Login = ({ csrfToken }: any) => {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   // You'll update this function later...
