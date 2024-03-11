@@ -1,4 +1,4 @@
-export default function Ternmofuse() {
+export default function Termsofuse() {
   return (
     <div>
       <h1>TERMSOFUSE</h1>

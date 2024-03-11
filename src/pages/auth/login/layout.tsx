@@ -12,8 +12,19 @@ const SkeletonFlexRow = styled.div`
   flex-direction: row;
   min-width: 1024px;
   min-height: 720px;
+  width: 100%;
   align-items: center;
-  justify-content: center;
+`;
+
+const SkeletonLoginPicBlock = styled.div`
+  display: flex;
+  flex: 2;
+  width: 100%;
+`;
+
+const SkeletonCildWrapper = styled.div`
+  display: flex;
+  flex: 1;
 `;
 
 export default function RootLayout({
@@ -23,10 +34,10 @@ export default function RootLayout({
 }>) {
   return (
     <SkeletonFlexRow>
-      <div>
+      <SkeletonLoginPicBlock>
         <LoginPicBlock />
-      </div>
-      {children}
+      </SkeletonLoginPicBlock>
+      <SkeletonCildWrapper>{children}</SkeletonCildWrapper>
     </SkeletonFlexRow>
   );
 }

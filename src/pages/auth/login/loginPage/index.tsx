@@ -14,6 +14,7 @@ const SkeletonRightSidebar = styled.div`
   background-color: #fff;
   flex-direction: column;
   min-width: 480px;
+  width: 100%;
   height: 100%;
 `;
 
@@ -118,8 +119,8 @@ export default function SignIn({
     email: "",
     password: "",
   });
-  const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
+  // const [emailError, setEmailError] = useState("");
+  // const [passwordError, setPasswordError] = useState("");
 
   const formSubmitHandler = () => {
     () => console.log("SUBMITTED");
@@ -171,8 +172,8 @@ export default function SignIn({
             <Button type="submit">Log In</Button>
 
             <SkeletonBottomText>
-              By signing up, I agree to <a>Terms of Use </a> and{" "}
-              <a>Privacy Policy</a>.
+              By signing up, I agree to <a href="termsOfUse">Terms of Use </a>{" "}
+              and <a href="privacyPolicy">Privacy Policy</a>.
             </SkeletonBottomText>
           </SkeletonForm>
         </SkeletonRightBlock>

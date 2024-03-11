@@ -36,12 +36,11 @@ const Diagram = () => {
 const SkeletonPicWrapper = styled.div`
   min-height: 960;
   min-width: 1024;
+  background-color: #fbfcfb;
+  width: 100%;
   height: 100vh;
   display: flex;
-  flex: 2;
   align-items: center;
-  justify-content: center;
-  background-color: #fbfcfb00;
 `;
 
 const SkeletonLogoPic = styled.div`
@@ -49,12 +48,18 @@ const SkeletonLogoPic = styled.div`
   padding: 40px;
   max-height: 120px;
   position: absolute;
+  width: 100%;
+  height: auto;
   top: 0;
   left: 0;
 `;
 const SkeletonDiagramPic = styled.div`
+  display: flex;
+  justify-content: center;
   min-width: 720px;
   min-height: 540px;
+  width: 100%;
+  height: auto;
 `;
 
 const SkeletonContent = styled.div`
@@ -62,6 +67,8 @@ const SkeletonContent = styled.div`
   flex-direction: column;
   margin: 0 auto;
   top: 154px;
+  width: 100%;
+  height: auto;
   left: 120px;
   gap: 80px;
 `;
@@ -81,11 +88,7 @@ const SkeletonPicText = styled.div`
 const SkeletonFlexCol = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-const SkeletonFlexRow = styled.div`
-  display: flex;
-  flex-direction: row;
+  width: 100%;
 `;
 
 const LoginPicBlock = ({}: PicProps) => {
@@ -97,7 +100,7 @@ const LoginPicBlock = ({}: PicProps) => {
       <SkeletonFlexCol>
         <SkeletonContent>
           <SkeletonPicText>
-            Manage the job <br></br> more effectively with Minimal
+            Manage the job <br /> more effectively with Minimal
           </SkeletonPicText>
           <SkeletonDiagramPic>
             <Diagram />

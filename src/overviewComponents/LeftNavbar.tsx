@@ -1,10 +1,8 @@
 import styled from "styled-components";
 import NavbarStackItem from "./leftNavbarItems/NavbarStackItem";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { useState } from "react";
-import EmailPlus from "./leftNavbarItems/EmailPlus";
+import UserCard from "./leftNavbarItems/UserCard";
 
 const SkeletonNavbar = styled.div`
   display: flex;
@@ -25,15 +23,16 @@ const Logo = () => {
 };
 const LeftNavbar = () => {
   return (
-    <SkeletonNavbar>
-      <Logo />
-      {/* <div>{pathname}</div> */}
-      {/* <Link href="/overview"></Link> */}
-
-      <NavbarStackItem />
-
-      {/* <Link href="/mail"></Link> */}
-    </SkeletonNavbar>
+    <>
+      <SkeletonNavbar>
+        <Logo />
+        {/* <div>{pathname}</div> */}
+        <Link href="/overview"></Link>
+        <NavbarStackItem />
+        <Link href="/mail"></Link>
+      </SkeletonNavbar>
+      <UserCard />
+    </>
   );
 };
 

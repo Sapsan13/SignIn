@@ -15,6 +15,7 @@ const SkeletonRightSidebar = styled.div`
   flex-direction: column;
   width: 480px;
   height: 100%;
+  width: 100%;
 `;
 
 const SkeletonRightBlock = styled.div`
@@ -194,8 +195,8 @@ export default function CreateAccount({
               <Button type="submit">Create Account</Button>
             </SkeletonDivCol>
             <SkeletonBottomText>
-              By signing up, I agree to <a>Terms of Use </a> and{" "}
-              <a>Privacy Policy</a>.
+              By signing up, I agree to <a href="termsOfUse">Terms of Use </a>{" "}
+              and <a href="privacyPolicy">Privacy Policy</a>.
             </SkeletonBottomText>
           </SkeletonDivForm>
         </SkeletonRightBlock>
