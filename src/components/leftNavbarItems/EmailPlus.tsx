@@ -7,8 +7,10 @@ const SkeletonPinkBulb = styled.div`
   height: 24px;
   border-radius: 6px;
   gap: 6px;
+  margin-right: 8px;
   margin-left: auto;
   align-items: center;
+  justify-content: center;
 `;
 
 const SkeletonNumberPlus = styled.div`

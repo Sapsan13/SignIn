@@ -1,6 +1,6 @@
 import LeftNavbar from "@/overview/LeftNavbar";
 
-const Overview = () => {
+const Analitycs = () => {
   return <LeftNavbar />;
 };
-export default Overview;
+export default Analitycs;

@@ -31,8 +31,8 @@ const Status = () => {
   return (
     <Image
       src="/illustrations/userCard/Status.png"
-      width={10}
-      height={10}
+      width={11}
+      height={11}
       alt="Status circle"
     />
   );
@@ -49,11 +49,6 @@ const BusyLabel = () => {
   );
 };
 
-// Content="Image";
-// Variant="Circular*";
-// Size="48";
-// Status ?=true;
-
 const SkeletonUserCard = styled.div`
   display: flex;
   flex-direction: column;
@@ -68,8 +63,8 @@ const SkeletonUserCard = styled.div`
 
 const SkeletonStatusCircle = styled.image`
   position: absolute;
-  bottom: 2px;
-  right: 2px;
+  bottom: 1px;
+  right: 1px;
 `;
 
 const SkeletonBtn = styled.button`
@@ -137,7 +132,7 @@ const UserCard = () => {
         <SkeletonName>HUDSON ALVAREZ</SkeletonName>
         <SkeletoMail>Mail@mail.mail</SkeletoMail>
       </SkeletoNameMail>
-      <SkeletonBtn>Upgrade to BRO</SkeletonBtn>
+      <SkeletonBtn onClick={() => alert("BRO!!!")}>Upgrade to BRO</SkeletonBtn>
     </SkeletonUserCard>
   );
 };

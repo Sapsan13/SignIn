@@ -1,6 +1,4 @@
 "use client";
-import Image from "next/image";
-import { ComponentProps, ReactComponentElement } from "react";
 import styled from "styled-components";
 import { Category } from "./StackArray";
 import { items } from "./StackArray";

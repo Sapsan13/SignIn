@@ -1,8 +1,9 @@
-import { ComponentProps } from "react";
 import NavbarStackItem, { LeftNavbarItem } from "./NavbarStackItem";
-import styled from "styled-components";
 import Image from "next/image";
 import EmailPlus from "./EmailPlus";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import styled from "styled-components";
 
 export type NavbarItem = {
   id: number;
@@ -12,13 +13,45 @@ export type NavbarItem = {
 
 const NavIcon = ({ icon }: any) => {
   return (
-    <Image src={icon} width={24} height={24} alt="Picture of the author" />
+    <div>
+      <Image src={icon} width={24} height={24} alt="Picture of the author" />
+    </div>
+  );
+};
+
+const SkeletonArrowRight = styled.div`
+  width: 24px;
+  height: 16px;
+  padding-right: 8px;
+`;
+
+const ErrowRight = () => {
+  return (
+    <SkeletonArrowRight>
+      <Image
+        src={"/illustrations/leftBar/ArrowRight.png"}
+        width={16}
+        height={16}
+        alt="Picture of the author"
+      />
+    </SkeletonArrowRight>
   );
 };
 
 export type NavbarArray = NavbarItem[];
 
-const SkeletonNavItem = styled.div`
+const SkeletonTitle = styled.div`
+  font-family: Public Sans;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 18px;
+  padding-left: 8px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #919eab;
+`;
+
+const SkeletonNavItem = styled.div<{ $item: string; $pathname: string }>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -29,8 +62,10 @@ const SkeletonNavItem = styled.div`
   border-radius: 8px;
   padding-left: 8px;
   width: 100%;
-  color: "#919EAB";
-  border: 1px solid #919eab;
+  color: ${(props) =>
+    props.$item === props.$pathname.substring(1) ? "#00a76f" : "#919EAB"};
+  background-color: ${(props) =>
+    props.$item === props.$pathname.substring(1) ? "#ebf8f4" : "white"};
   box-sizing: border-box;
   &:hover {
     color: #212b36;
@@ -44,15 +79,29 @@ const SkeletonMailPlus = styled.div`
   margin-left: auto;
 `;
 
-// TEXT DECORATION NONE
-const Link = ({ className, children }) => (
-  <a className={className}>{children}</a>
-);
+const SkeletonGrey = styled.div<{ $item: string; $pathname: string }>`
+  filter: ${(props) =>
+    props.$item === props.$pathname.substring(1)
+      ? "grayscale(0)"
+      : "grayscale(1)"};
+`;
 
+const StyledCategoryName = styled.div`
+  font-family: Public Sans;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: left;
+`;
+
+// TEXT DECORATION NONE
 const StyledLink = styled(Link)`
   text-decoration: none;
+  background-color: #ebf8f4;
 `;
 ///////////////////////////////////////////
+
 export const items: NavbarArray = [
   {
     id: 1,
@@ -62,13 +111,13 @@ export const items: NavbarArray = [
         id: 1,
         alias: "overview",
         title: "Overview",
-        icon: "/illustrations/leftBar/DashboardGrey.png",
+        icon: "/illustrations/leftBar/DashboardGreen.png",
       },
       {
         id: 2,
         alias: "analitycs",
         title: "Analitycs",
-        icon: "/illustrations/leftBar/ChartGrey.png",
+        icon: "/illustrations/leftBar/ChartGreen.png",
       },
       {
         id: 3,
@@ -81,12 +130,13 @@ export const items: NavbarArray = [
         alias: "banking",
         title: "Banking",
         icon: "/illustrations/leftBar/PillarsBankGrey.png",
+        endIcon: ErrowRight,
       },
       {
         id: 5,
         alias: "booking",
         title: "Booking",
-        icon: "/illustrations/leftBar/PlaneBookingGrey.png",
+        icon: "/illustrations/leftBar/PlaneBookingGreen.png",
       },
     ],
   },
@@ -107,11 +157,14 @@ export const items: NavbarArray = [
 
 export const MenuItem = ({ item }: { item: LeftNavbarItem }) => {
   const Icon = item.endIcon;
-  console.log("item => ", item);
+  const pathname = usePathname();
+
   return (
-    <StyledLink>
-      <SkeletonNavItem>
-        <NavIcon icon={item.icon} />
+    <StyledLink href={item.alias}>
+      <SkeletonNavItem $item={item.alias} $pathname={pathname}>
+        <SkeletonGrey $item={item.alias} $pathname={pathname}>
+          <NavIcon icon={item.icon} />
+        </SkeletonGrey>
         {item.title}
         <SkeletonMailPlus>{item.endIcon ? <Icon /> : null}</SkeletonMailPlus>
       </SkeletonNavItem>
@@ -121,14 +174,13 @@ export const MenuItem = ({ item }: { item: LeftNavbarItem }) => {
 
 export const Category = ({ item }: any) => {
   return (
-    console.log(item.child),
-    (
+    <StyledCategoryName>
       <div key={item.id}>
-        {item.title}
+        <SkeletonTitle>{item.title.toUpperCase()}</SkeletonTitle>
         {item.children.map((children: any) => (
           <MenuItem item={children} key={children.id} />
         ))}
       </div>
-    )
+    </StyledCategoryName>
   );
 };
