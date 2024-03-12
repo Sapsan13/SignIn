@@ -2,6 +2,12 @@ import styled from "styled-components";
 import NavbarStackItem from "../components/leftNavbarItems/NavbarStackItem";
 import Image from "next/image";
 import UserCard from "../components/leftNavbarItems/UserCard";
+import TopBar from "@/components/topBar/TopBar";
+
+const SkeletonNavbarTopblockWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
 const SkeletonLeftNavbarWrapper = styled.div`
   width: 280px;
@@ -34,15 +40,18 @@ const Logo = () => {
 };
 const Overview = () => {
   return (
-    <SkeletonLeftNavbarWrapper>
-      <SkeletonLogoWrapper>
-        <Logo />
-      </SkeletonLogoWrapper>
-      <SkeletonNavbar>
-        <NavbarStackItem />
-      </SkeletonNavbar>
-      <UserCard />
-    </SkeletonLeftNavbarWrapper>
+    <SkeletonNavbarTopblockWrapper>
+      <SkeletonLeftNavbarWrapper>
+        <SkeletonLogoWrapper>
+          <Logo />
+        </SkeletonLogoWrapper>
+        <SkeletonNavbar>
+          <NavbarStackItem />
+        </SkeletonNavbar>
+        <UserCard />
+      </SkeletonLeftNavbarWrapper>
+      <TopBar />
+    </SkeletonNavbarTopblockWrapper>
   );
 };
 
