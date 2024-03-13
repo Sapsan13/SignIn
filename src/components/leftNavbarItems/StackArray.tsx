@@ -115,16 +115,17 @@ export const items: NavbarArray = [
       },
       {
         id: 2,
-        alias: "analitycs",
-        title: "Analitycs",
-        icon: "/illustrations/leftBar/ChartGreen.png",
-      },
-      {
-        id: 3,
         alias: "e_comers",
         title: "E-comers",
         icon: "/illustrations/leftBar/BagIconGrey.png",
       },
+      {
+        id: 3,
+        alias: "analitycs",
+        title: "Analitycs",
+        icon: "/illustrations/leftBar/ChartGreen.png",
+      },
+
       {
         id: 4,
         alias: "banking",

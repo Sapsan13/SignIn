@@ -83,7 +83,9 @@ const TopBar = () => {
 
   return (
     <SkeletonTopBarWrapper>
-      <SkeletonTitleWrapper>{pathname}</SkeletonTitleWrapper>
+      <SkeletonTitleWrapper>
+        {pathname === "Overview" ? " " : pathname}
+      </SkeletonTitleWrapper>
       <SkeletonBellAccountWrap>
         <SkeletonBellWrapper>
           <Bell />
