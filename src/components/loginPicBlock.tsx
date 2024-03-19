@@ -3,12 +3,12 @@ import styled from "styled-components";
 import Image from "next/image";
 
 interface PicProps {
-  // variant?: string;
-  // color?: string;
-  // size?: "s" | "m" | "l";
-  // startIcon?: React.ReactElement;
-  // endIcon?: React.ReactElement;
-  // children?: React.ReactNode;
+  variant?: string;
+  color?: string;
+  size?: "s" | "m" | "l";
+  startIcon?: React.ReactElement;
+  endIcon?: React.ReactElement;
+  children?: React.ReactNode;
 }
 
 const Logo = () => {

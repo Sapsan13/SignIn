@@ -36,6 +36,14 @@ const SkeletonLogoWrapper = styled.div`
   padding: 24px 16px 8px 16px;
 `;
 
+const SkeletonMainContent = styled.div`
+  width: 1, 080px;
+  height: 468px;
+  padding: 16px 0px 16px 0px;
+  gap: 24px;
+  opacity: 0px;
+`;
+
 const Logo = () => {
   return (
     <Image
@@ -48,21 +56,24 @@ const Logo = () => {
 };
 const Main = ({ items }) => {
   return (
-    <SkeletonNavbarTopblockWrapper>
-      <SkeletonLeftNavbarWrapper>
-        <SkeletonLogoWrapper>
-          <Logo />
-        </SkeletonLogoWrapper>
-        <SkeletonNavbar>
-          <NavbarStackItem />
-        </SkeletonNavbar>
-        <UserCard />
-      </SkeletonLeftNavbarWrapper>
-      <SkeletonMainWrapper>
-        <TopBar />
-        <MidItemCard items={items} />
-      </SkeletonMainWrapper>
-    </SkeletonNavbarTopblockWrapper>
+    <>
+      <SkeletonNavbarTopblockWrapper>
+        <SkeletonLeftNavbarWrapper>
+          <SkeletonLogoWrapper>
+            <Logo />
+          </SkeletonLogoWrapper>
+          <SkeletonNavbar>
+            <NavbarStackItem />
+          </SkeletonNavbar>
+          <UserCard />
+        </SkeletonLeftNavbarWrapper>
+        <SkeletonMainWrapper>
+          <TopBar />
+          <MidItemCard items={items} />
+        </SkeletonMainWrapper>
+      </SkeletonNavbarTopblockWrapper>
+      {/* <SkeletonMainContent>{children}</SkeletonMainContent> */}
+    </>
   );
 };
 

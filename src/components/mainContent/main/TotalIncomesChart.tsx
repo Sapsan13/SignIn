@@ -1,4 +1,9 @@
 import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts";
+import styled from "styled-components";
+
+const SkeletonFlex = styled.div`
+  display: flex;
+`;
 
 const data = [
   {
@@ -23,8 +28,7 @@ const data = [
 
 const TotalIncomesChart = () => {
   return (
-    <div>
-      TotalIncomes
+    <SkeletonFlex>
       <LineChart width={295} height={87} data={data}>
         <Line
           type="monotone"
@@ -34,7 +38,7 @@ const TotalIncomesChart = () => {
           strokeWidth="3"
         />
       </LineChart>
-    </div>
+    </SkeletonFlex>
   );
 };
 export default TotalIncomesChart;
