@@ -1,6 +1,6 @@
-import Main from "@/overview/LeftNavbar";
+import LeftNavbar from "@/overview/LeftNavbar";
 import { analitycsMidbarElements } from "@/components/mainContent/midbar/midbarElements";
 const Analitycs = () => {
-  return <Main items={analitycsMidbarElements} />;
+  return <LeftNavbar items={analitycsMidbarElements} />;
 };
 export default Analitycs;

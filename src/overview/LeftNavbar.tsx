@@ -54,7 +54,7 @@ const Logo = () => {
     />
   );
 };
-const Main = ({ items }) => {
+const LeftNavbar = ({ items }) => {
   return (
     <>
       <SkeletonNavbarTopblockWrapper>
@@ -77,4 +77,4 @@ const Main = ({ items }) => {
   );
 };
 
-export default Main;
+export default LeftNavbar;

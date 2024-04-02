@@ -1,11 +1,11 @@
 import Booked from "@/components/mainContent/main/Booked";
 import { overviewMidbarElements } from "@/components/mainContent/midbar/midbarElements";
-import Main from "@/overview/LeftNavbar";
+import LeftNavbar from "@/overview/LeftNavbar";
 
 const Overview = () => {
   return (
     <>
-      <Main items={overviewMidbarElements} />
+      <LeftNavbar items={overviewMidbarElements} />
     </>
   );
 };
