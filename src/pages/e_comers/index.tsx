@@ -4,27 +4,28 @@ import CustomerReviews from "@/components/mainContent/main/booking/CustomerRevie
 import RadialChart from "@/components/mainContent/main/overview/RadialChart";
 import styled from "styled-components";
 import BarchartStatistics from "../../../src/components/mainContent/main/booking/BarchartStatistics";
+import ChartsHeader from "@/components/mainContent/main/booking/ChartHeader";
 
-const SkeletonTotalBooked = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-`;
-const Skeleton = styled.div`
+// const SkeletonTotalBooked = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   gap: 10px;
+// `;
+
+const SkeletonCol = styled.div`
   display: flex;
   width: 712px;
-  height: 336px;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
 `;
-
-const Skeleton1 = styled.div``;
 
 const E_Comerse = () => {
   return (
-    <>
-      <Skeleton>
-        <BarchartStatistics />
-      </Skeleton>
-    </>
+    <SkeletonCol>
+      <ChartsHeader />
+      <BarchartStatistics />
+    </SkeletonCol>
   );
 };
 export default E_Comerse;

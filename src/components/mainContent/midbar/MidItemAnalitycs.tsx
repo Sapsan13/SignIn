@@ -61,7 +61,7 @@ type MidItemCardProps = ComponentProps<"div"> & {
   number: string;
 };
 
-const MidItemCard = (items) => {
+const MidItemCard = ({ items }) => {
   return (
     <SkeletonMidWrapper>
       {items.map((item) => (

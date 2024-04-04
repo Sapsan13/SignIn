@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import NavbarStackItem from "../components/leftNavbarItems/NavbarStackItem";
 import Image from "next/image";
-import UserCard from "../components/leftNavbarItems/UserCard";
+import UserCard from "../../components/leftNavbarItems/UserCard";
+import NavbarStackItem from "./NavbarStackItem";
 
 const SkeletonLeftNavbarWrapper = styled.div`
   width: 280px;
