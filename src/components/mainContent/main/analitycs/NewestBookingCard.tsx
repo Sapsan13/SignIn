@@ -8,15 +8,109 @@ const AvatarImg = ({ icon }: any) => {
   );
 };
 
+const SkeletonLandscapeImg = styled.div`
+  display: flex;
+  width: 236px;
+  height: 236px;
+  margin: 8px;
+  border-radius: 12px;
+  overflow: hidden;
+`;
+
+const LandscapeImg = ({ icon }: any) => {
+  return (
+    <SkeletonLandscapeImg>
+      <Image src={icon} width={236} height={236} alt="Picture of the author" />
+    </SkeletonLandscapeImg>
+  );
+};
+
+const SkeletonSevenTwo = styled.div`
+  display: flex;
+  position: absolute;
+  bottom: 12px;
+  right: 8px;
+  padding: 2px 6px 2px 6px;
+  gap: 6px;
+  border-radius: 6px 0px 0px 0px;
+`;
+
+const SevenTwoHotImg = () => {
+  return (
+    <SkeletonSevenTwo>
+      <Image
+        src="/illustrations/NewestBookingCards/72Hot.png"
+        width={50}
+        height={24}
+        alt="Picture of the author"
+      />
+    </SkeletonSevenTwo>
+  );
+};
+
+const SevenTwoImg = () => {
+  return (
+    <SkeletonSevenTwo>
+      <Image
+        src="/illustrations/NewestBookingCards/72.png"
+        width={36}
+        height={24}
+        alt="Picture of the author"
+      />
+    </SkeletonSevenTwo>
+  );
+};
+
+const CalendarImg = () => {
+  return (
+    <Image
+      src="/illustrations/NewestBookingCards/Calendar.png"
+      width={16}
+      height={16}
+      alt="Picture of the author"
+    />
+  );
+};
+
+const PersonGuestImg = () => {
+  return (
+    <Image
+      src="/illustrations/NewestBookingCards/PersonGuest.png"
+      width={16}
+      height={16}
+      alt="Picture of the author"
+    />
+  );
+};
+
+const SkeletonRelative = styled.div`
+  display: flex;
+  position: relative;
+`;
+
 const SkeletonBookingCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  min-width: 252px;
   width: 252px;
   height: 358px;
   border-radius: 16px;
+  background-color: #f4f6f8;
+  justify-content: flex-start;
+  align-items: center;
 `;
 
-const SkeletonAvatar = styled.div`
+const SkeletonFlexColWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px 8px 0;
+  gap: 16px;
+`;
+
+const SkeletonCardAvatar = styled.div`
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
   border-radius: 50%;
   overflow: hidden;
 `;
@@ -45,11 +139,25 @@ const SkeletonDate = styled.div`
 `;
 
 const SkeletonBookingDuration = styled.div`
+  font-family: Public Sans;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #919eab;
+  text-align: left;
   display: flex;
+  gap: 4px;
 `;
 
 const SkeletonGuestsPersons = styled.div`
+  font-family: Public Sans;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #919eab;
+  text-align: left;
   display: flex;
+  gap: 4px;
 `;
 
 const SkeletonBookingCosts = styled.div`
@@ -74,7 +182,6 @@ const SkeletonFlexRowAvatarNameDate = styled.div`
 
 const SkeletonFlexRowDurationPersons = styled.div`
   display: flex;
-  flex-direction: row;
   gap: 16px;
 `;
 
@@ -86,6 +193,7 @@ const SkeletonFlexRow = styled.div`
 const SkeletonFlexCol = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 16px;
 `;
 
 interface BookingCard {
@@ -101,29 +209,40 @@ interface BookingCard {
 }
 
 const NewestBookingCard = ({}: BookingCard) => {
-  return items.map((item: any) => (
-    <SkeletonBookingCardWrapper key={item.key}>
-      <SkeletonFlexCol>
-        <SkeletonFlexRowAvatarNameDate>
-          <SkeletonAvatar>
-            <AvatarImg icon={item.avatar}></AvatarImg>
-          </SkeletonAvatar>
-          <SkeletonFlexColFirstLast>
-            <SkeletonFlexRow>
-              <SkeletonFirstLastName>{item.firstName}</SkeletonFirstLastName>
-              <SkeletonFirstLastName>{item.lastName}</SkeletonFirstLastName>
-            </SkeletonFlexRow>
-            <SkeletonDateTime>{item.date}</SkeletonDateTime>
-          </SkeletonFlexColFirstLast>
-        </SkeletonFlexRowAvatarNameDate>
-        <SkeletonFlexRowDurationPersons>
-          <SkeletonBookingDuration>
-            {item.bookingDuration}
-          </SkeletonBookingDuration>
-          <SkeletonGuestsPersons>{item.guestsPersons}</SkeletonGuestsPersons>
-        </SkeletonFlexRowDurationPersons>
-      </SkeletonFlexCol>
-    </SkeletonBookingCardWrapper>
-  ));
+  return items.map((item: any) => {
+    var JSXTag = item.isHot ? SevenTwoHotImg : SevenTwoImg;
+    return (
+      <SkeletonBookingCardWrapper key={item.key}>
+        <SkeletonFlexColWrap>
+          <SkeletonFlexRowAvatarNameDate>
+            <SkeletonCardAvatar>
+              <AvatarImg icon={item.avatar}></AvatarImg>
+            </SkeletonCardAvatar>
+            <SkeletonFlexColFirstLast>
+              <SkeletonFlexRow>
+                <SkeletonFirstLastName>{item.firstName}</SkeletonFirstLastName>
+                <SkeletonFirstLastName>{item.lastName}</SkeletonFirstLastName>
+              </SkeletonFlexRow>
+              <SkeletonDateTime>{item.date}</SkeletonDateTime>
+            </SkeletonFlexColFirstLast>
+          </SkeletonFlexRowAvatarNameDate>
+          <SkeletonFlexRowDurationPersons>
+            <SkeletonBookingDuration>
+              <CalendarImg />
+              {item.bookingDuration}
+            </SkeletonBookingDuration>
+            <SkeletonGuestsPersons>
+              <PersonGuestImg />
+              {item.guestsPersons}
+            </SkeletonGuestsPersons>
+          </SkeletonFlexRowDurationPersons>
+        </SkeletonFlexColWrap>
+        <SkeletonRelative>
+          <LandscapeImg icon={item.photo} />
+          {<JSXTag />}
+        </SkeletonRelative>
+      </SkeletonBookingCardWrapper>
+    );
+  });
 };
 export default NewestBookingCard;

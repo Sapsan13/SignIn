@@ -4,6 +4,7 @@ import styled from "styled-components";
 const ChartsHeader = () => {
   const SkeletonRotate90 = styled.div`
     display: flex;
+    cursor: pointer;
     background-color: rgba(99, 115, 129, 0.01);
     height: 16px;
     width: 16px;
@@ -98,12 +99,20 @@ const ChartsHeader = () => {
     background-color: #009764;
   `;
 
+  const SkeletonCircleText = styled.div`
+    font-family: Public Sans;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 22px;
+    text-align: left;
+  `;
+
   const SkeletonRowGap = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: right;
-    gap: 5px;
+    gap: 8px;
   `;
 
   const SkeletonColumn = styled.div`
@@ -127,10 +136,10 @@ const ChartsHeader = () => {
         (+43% Check In | +12% Check Out) than last year
       </SkeletonCheckIn>
       <SkeletonRowGap>
-        <div>canceled</div>
-        <SkeletonCanceledDots />
-        <div>sold</div>
         <SkeletonSoldDots />
+        <SkeletonCircleText>Sold</SkeletonCircleText>
+        <SkeletonCanceledDots />
+        <SkeletonCircleText>Canceled</SkeletonCircleText>
       </SkeletonRowGap>
     </SkeletonStatisticsHeaderWrap>
   );

@@ -1,4 +1,7 @@
 // import Booked from "@/components/mainContent/main/Booked";
+import Booked from "@/components/mainContent/main/overview/Booked";
+import TotalIncomes from "@/components/mainContent/main/overview/TotalIncomes";
+import ToursAvailable from "@/components/mainContent/main/overview/ToursAvailable";
 import { overviewMidbarElements } from "@/components/mainContent/midbar/midbarElements";
 import TopMidElement from "@/components/topBar/TopMidElement";
 import LeftNavbar from "@/overview/LeftNavbar";
@@ -9,10 +12,22 @@ const Overview = () => {
     display: flex;
     flex-direction: row;
   `;
+  const SkeletonColumnItems = styled.div`
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  `;
   return (
     <SkeletonRowItems>
       <LeftNavbar />
-      <TopMidElement items={overviewMidbarElements} />
+      <SkeletonColumnItems>
+        <TopMidElement items={overviewMidbarElements} />
+        <SkeletonRowItems>
+          <TotalIncomes />
+          <Booked />
+          <ToursAvailable />
+        </SkeletonRowItems>
+      </SkeletonColumnItems>
     </SkeletonRowItems>
   );
 };

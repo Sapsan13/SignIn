@@ -6,6 +6,7 @@ const TopMidElement = ({ items }) => {
   const SkeletonMainWrapper = styled.div`
     display: flex;
     flex-direction: column;
+    gap: 24px;
   `;
 
   return (

@@ -2,9 +2,14 @@ import { ComponentProps } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 
+const SkeletonWrapper = styled.div`
+  max-width: 1080px;
+`;
+
 const SkeletonMidWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  max-width: 100%;
   gap: 24px;
   justify-content: center;
 `;
@@ -12,14 +17,13 @@ const SkeletonMidWrapper = styled.div`
 const SkeletonCardItemWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  width: 334px;
+  flex: 1;
   height: 152px;
   padding: 16px 16px 16px 24px;
   border-radius: 16px;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 12px 24px -4px #919eab1f;
-  box-shadow: 0px 0px 2px 0px #919eab33;
+  box-shadow: 0px 12px 24px -4px #919eab1f, 0px 0px 2px 0px #919eab33;
 `;
 
 const SkeletonMidNumberTitleWrapper = styled.div`
@@ -63,19 +67,21 @@ type MidItemCardProps = ComponentProps<"div"> & {
 
 const MidItemCard = ({ items }) => {
   return (
-    <SkeletonMidWrapper>
-      {items.map((item) => (
-        <SkeletonCardItemWrapper key={item.id}>
-          <SkeletonMidNumberTitleWrapper>
-            <SkeletonMidNumber>{item.number}</SkeletonMidNumber>
-            <SkeletonMidTitle> {item.title}</SkeletonMidTitle>
-          </SkeletonMidNumberTitleWrapper>
-          <SkeletonMidImage>
-            <Image src={item.image} width={120} height={120} alt="Picture " />
-          </SkeletonMidImage>
-        </SkeletonCardItemWrapper>
-      ))}
-    </SkeletonMidWrapper>
+    <SkeletonWrapper>
+      <SkeletonMidWrapper>
+        {items.map((item) => (
+          <SkeletonCardItemWrapper key={item.id}>
+            <SkeletonMidNumberTitleWrapper>
+              <SkeletonMidNumber>{item.number}</SkeletonMidNumber>
+              <SkeletonMidTitle> {item.title}</SkeletonMidTitle>
+            </SkeletonMidNumberTitleWrapper>
+            <SkeletonMidImage>
+              <Image src={item.image} width={120} height={120} alt="Picture " />
+            </SkeletonMidImage>
+          </SkeletonCardItemWrapper>
+        ))}
+      </SkeletonMidWrapper>
+    </SkeletonWrapper>
   );
 };
 

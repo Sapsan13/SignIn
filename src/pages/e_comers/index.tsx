@@ -3,8 +3,6 @@ import NewestBookingComponent from "@/components/mainContent/main/analitycs/Newe
 import CustomerReviews from "@/components/mainContent/main/booking/CustomerReviews";
 import RadialChart from "@/components/mainContent/main/overview/RadialChart";
 import styled from "styled-components";
-import BarchartStatistics from "../../../src/components/mainContent/main/booking/BarchartStatistics";
-import ChartsHeader from "@/components/mainContent/main/booking/ChartHeader";
 
 // const SkeletonTotalBooked = styled.div`
 //   display: flex;
@@ -23,8 +21,7 @@ const SkeletonCol = styled.div`
 const E_Comerse = () => {
   return (
     <SkeletonCol>
-      <ChartsHeader />
-      <BarchartStatistics />
+      <NewestBookingComponent />
     </SkeletonCol>
   );
 };

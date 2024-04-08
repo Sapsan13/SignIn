@@ -5,13 +5,15 @@ import NewestBookingCard from "./NewestBookingCard";
 const NewestBookingComponent = () => {
   const SkeletonBookingbarWrapper = styled.div`
     display: flex;
+    width: 1, 008px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 24px;
   `;
 
   const SkeletonNewestBookingBar = styled.div`
-    width: 1, 008px;
+    width: 100%;
     height: 54px;
     gap: 4px;
   `;
@@ -21,6 +23,7 @@ const NewestBookingComponent = () => {
     font-weight: 400;
     line-height: 22px;
     text-align: left;
+    color: rgba(99, 115, 129, 1);
   `;
   const SkeletonNewestBookingText = styled.div`
     display: flex;
@@ -78,7 +81,7 @@ const NewestBookingComponent = () => {
   const SkeletonBookingCardsWrapper = styled.div`
     display: flex;
     flex-direction: row;
-    gap: 8px;
+    gap: 24px;
   `;
   return (
     <div>

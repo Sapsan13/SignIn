@@ -7,8 +7,7 @@ const SkeletonLeftNavbarWrapper = styled.div`
   width: 280px;
   height: 100%;
   padding: 0px 16px 40px 16px;
-  box-shadow: 0px 12px 24px -4px #919eab1f;
-  box-shadow: 0px 0px 2px 0px #919eab33;
+  box-shadow: 0px 12px 24px -4px #919eab1f, 0px 0px 2px 0px #919eab33;
 `;
 
 const SkeletonNavbarTopblockWrapper = styled.div`

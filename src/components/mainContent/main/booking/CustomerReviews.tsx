@@ -59,8 +59,7 @@ const SkeletonCustomerReviewsWrapper = styled.div`
   max-width: 344px;
   height: 460px;
   border-radius: 16px;
-  box-shadow: 0px 12px 24px -4px #919eab1f;
-  box-shadow: 0px 0px 2px 0px #919eab33;
+  box-shadow: 0px 12px 24px -4px #919eab1f, 0px 0px 2px 0px #919eab33;
 `;
 
 const SkeletonCustomerReviews = styled.div`
