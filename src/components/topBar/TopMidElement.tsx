@@ -4,7 +4,7 @@ import MidItemCard from "../mainContent/midbar/MidItemAnalitycs";
 
 const TopMidElement = ({ items }) => {
   const SkeletonMainWrapper = styled.div`
-    display: flex;
+    display: grid;
     flex-direction: column;
     gap: 24px;
   `;
@@ -12,7 +12,6 @@ const TopMidElement = ({ items }) => {
   return (
     <SkeletonMainWrapper>
       <TopBar />
-      {/* {items ? <MidItemCard items={items} /> : null} */}
       {items && <MidItemCard items={items} />}
     </SkeletonMainWrapper>
   );
