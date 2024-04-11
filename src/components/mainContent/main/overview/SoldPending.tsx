@@ -5,8 +5,10 @@ const SoldPending = (props: any) => {
   const SkeletonToursWrapper = styled.div`
     display: flex;
     flex-direction: column;
+    min-height: 160px;
     align-items: center;
     justify-content: center;
+    width: 50%;
   `;
 
   const SkeletonRadialText = styled.div`
@@ -27,16 +29,15 @@ const SoldPending = (props: any) => {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 356px;
-    height: 160px;
-    padding: 40px 0px 0px 0px;
+    width: 50%;
+    height: 100%;
     gap: 40px;
     opacity: 0px;
   `;
 
   const SkeletonPendingPayment = styled.div`
     width: 136px;
-    height: 62px;
+    height: 33%;
     gap: 4px;
     opacity: 0px;
   `;
@@ -59,10 +60,9 @@ const SoldPending = (props: any) => {
 
   const SkeletonSoldPending = styled.div`
     display: flex;
-    width: 712px;
+    width: 50%;
     flex-direction: column;
     gap: 16px;
-    padding: 24px;
     border: 20px solid;
   `;
 

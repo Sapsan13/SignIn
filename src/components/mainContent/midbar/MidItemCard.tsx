@@ -62,7 +62,7 @@ type MidItemCardProps = ComponentProps<"div"> & {
 
 const MidItemCard = ({ items }) => {
   return (
-    <SkeletonMidWrapper>
+    <>
       {items.map((item) => (
         <SkeletonCardItemWrapper key={item.id}>
           <SkeletonMidNumberTitleWrapper>
@@ -74,7 +74,7 @@ const MidItemCard = ({ items }) => {
           </SkeletonMidImage>
         </SkeletonCardItemWrapper>
       ))}
-    </SkeletonMidWrapper>
+    </>
   );
 };
 

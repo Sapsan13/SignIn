@@ -18,8 +18,8 @@ const SkeletonTotalIncomesWrapper = styled.div`
   flex-direction: column;
   background-color: #d5f4e7;
   box-sizing: border-box;
-  width: 344px;
-  height: 268px;
+  width: 100%;
+  height: 100%;
   padding: 24px;
   gap: 24px;
   border-radius: 16px;

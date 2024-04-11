@@ -3,13 +3,13 @@ import styled from "styled-components";
 const SkeletonBookedBarsWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 344px;
-  height: 268px;
+  width: 100%;
+  height: 100%;
   border-radius: 16px;
   box-shadow: 0px 12px 24px -4px #919eab1f, 0px 0px 2px 0px #919eab33;
 `;
 const SkeletonBookedBarTitle = styled.div`
-  width: 344px;
+  width: 100%;
   height: 52px;
   padding: 24px 16px 0 24px;
   gap: 16px;
@@ -24,8 +24,8 @@ const SkeletonBookedBarTitle = styled.div`
 const SkeletonBookedBarBlock = styled.div`
   display: flex;
   flex-direction: column;
-  width: 344px;
-  height: 216px;
+  width: 100%;
+  height: 100%x;
   padding: 24px;
   gap: 24px;
 `;
@@ -33,14 +33,14 @@ const SkeletonBookedBarBlock = styled.div`
 const SkeletonBookedBarItem = styled.div`
   display: flex;
   flex-direction: column;
-  width: 296px;
+  width: 100%;
   height: 40px;
   gap: 8px;
   border-radius: 50%;
 `;
 
 const SkeletonFlexRow = styled.div`
-  width: 296px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -68,7 +68,7 @@ const SkeletonBookedFirstItem = styled.progress`
   border: 1px solid transparent;
   height: 8px;
   border-radius: 8px;
-  width: 296px;
+  width: 100%;
   overflow: hidden;
   &::-webkit-progress-value {
     background: #eea000;
@@ -82,7 +82,7 @@ const SkeletonBookedSecondItem = styled.progress`
   border: 1px solid transparent;
   height: 8px;
   border-radius: 8px;
-  width: 296px;
+  width: 100%;
   overflow: hidden;
   &::-webkit-progress-value {
     background: #ff5630;
@@ -97,7 +97,7 @@ const SkeletonBookedThirdItem = styled.progress`
   border: 1px solid transparent;
   height: 8px;
   border-radius: 8px;
-  width: 296px;
+  width: 100%;
   overflow: hidden;
   &::-webkit-progress-value {
     background: #22c55e;

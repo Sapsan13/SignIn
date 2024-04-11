@@ -2,6 +2,7 @@ import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts";
 import styled from "styled-components";
 
 const SkeletonFlex = styled.div`
+  width: 100%;
   display: flex;
 `;
 

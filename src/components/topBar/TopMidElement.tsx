@@ -9,12 +9,7 @@ const TopMidElement = ({ items }) => {
     gap: 24px;
   `;
 
-  return (
-    <SkeletonMainWrapper>
-      <TopBar />
-      {items && <MidItemCard items={items} />}
-    </SkeletonMainWrapper>
-  );
+  return <>{items && <MidItemCard items={items} />}</>;
 };
 
 export default TopMidElement;

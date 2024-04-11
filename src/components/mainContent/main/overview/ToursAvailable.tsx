@@ -2,12 +2,6 @@ import RadialChart from "@/components/mainContent/main/overview/RadialChart";
 import RadialBarChart from "@/components/mainContent/main/overview/RadialChart";
 import styled from "styled-components";
 
-// const SkeletonTotalBooked = styled.div`
-//   display: flex;
-//   flex-direction: row;
-//   gap: 10px;
-// `;
-
 const SkeletonGreenSquare = styled.div`
   width: 20px;
   height: 20px;
@@ -24,6 +18,7 @@ const SkeletonGraySquare = styled.div`
 
 const SkeletonToursWrapper = styled.div`
   display: flex;
+  height: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -31,7 +26,7 @@ const SkeletonToursWrapper = styled.div`
 `;
 
 const SkeletonToursText = styled.div`
-  width: 344px;
+  width: 100%;
   height: 52px;
   padding: 24px 16px 0px 24px;
   gap: 16px;
@@ -48,8 +43,8 @@ const SkeletonToursAvailable = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  width: 334px;
-  height: 452px;
+  width: 100%;
+  height: 100%;
   border-radius: 16px;
   box-shadow: 0px 12px 24px -4px #919eab1f, 0px 0px 2px 0px #919eab33;
 `;
@@ -88,7 +83,7 @@ const SkeletonNumber = styled.div`
 const SkeletonToursBottom = styled.div`
   display: flex;
   flex-direction: column;
-  width: 344px;
+  width: 100%;
   height: 100px;
   padding: 0px 40px 40px 40px;
   gap: 16px;
@@ -125,14 +120,6 @@ const SkeletonBottomTours = styled.div`
   line-height: 22px;
   text-align: left;
   color: rgba(33, 43, 54, 1);
-`;
-
-const SkeletonCol = styled.div`
-  display: flex;
-  width: 712px;
-  flex-direction: column;
-  gap: 16px;
-  padding: 24px;
 `;
 
 const ToursAvailable = () => {
