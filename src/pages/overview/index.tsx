@@ -3,9 +3,9 @@ import Booked from "@/components/mainContent/main/overview/Booked";
 import SoldPending from "@/components/mainContent/main/overview/SoldPending";
 import TotalIncomes from "@/components/mainContent/main/overview/TotalIncomes";
 import ToursAvailable from "@/components/mainContent/main/overview/ToursAvailable";
+import MidItemCard from "@/components/mainContent/midbar/MidItemAnalitycs";
 import { overviewMidbarElements } from "@/components/mainContent/midbar/midbarElements";
 import TopBar from "@/components/topBar/TopBar";
-import TopMidElement from "@/components/topBar/TopMidElement";
 import LeftNavbar from "@/overview/LeftNavbar";
 import styled from "styled-components";
 
@@ -75,7 +75,7 @@ const Overview = () => {
       <SkeletonColumnItems>
         <TopBar />
         <SkeletonWrapper>
-          <TopMidElement items={overviewMidbarElements} />
+          <MidItemCard items={overviewMidbarElements} />
           <SkeletonTotalIncomes>
             <TotalIncomes />
           </SkeletonTotalIncomes>

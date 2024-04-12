@@ -92,7 +92,7 @@ const SkeletonBookingCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 252px;
-  width: 252px;
+  width: 100%;
   height: 358px;
   border-radius: 16px;
   background-color: #f4f6f8;

@@ -5,7 +5,7 @@ import NewestBookingCard from "./NewestBookingCard";
 const NewestBookingComponent = () => {
   const SkeletonBookingbarWrapper = styled.div`
     display: flex;
-    width: 1, 008px;
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -79,6 +79,7 @@ const NewestBookingComponent = () => {
   `;
 
   const SkeletonBookingCardsWrapper = styled.div`
+    width: 100%;
     display: flex;
     flex-direction: row;
     gap: 24px;

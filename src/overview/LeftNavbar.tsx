@@ -4,15 +4,18 @@ import Image from "next/image";
 import UserCard from "../components/leftNavbarItems/UserCard";
 
 const SkeletonLeftNavbarWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 280px;
   height: 100%;
+  justify-content: space-between;
   padding: 0px 16px 40px 16px;
   box-shadow: 0px 12px 24px -4px #919eab1f, 0px 0px 2px 0px #919eab33;
 `;
 
 const SkeletonNavbarTopblockWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  height: 100vh;
 `;
 
 const SkeletonNavbar = styled.div`
@@ -51,13 +54,17 @@ const LeftNavbar = () => {
     <>
       <SkeletonNavbarTopblockWrapper>
         <SkeletonLeftNavbarWrapper>
-          <SkeletonLogoWrapper>
-            <Logo />
-          </SkeletonLogoWrapper>
-          <SkeletonNavbar>
-            <NavbarStackItem />
-          </SkeletonNavbar>
-          <UserCard />
+          <div>
+            <SkeletonLogoWrapper>
+              <Logo />
+            </SkeletonLogoWrapper>
+            <SkeletonNavbar>
+              <NavbarStackItem />
+            </SkeletonNavbar>
+          </div>
+          <div>
+            <UserCard />
+          </div>
         </SkeletonLeftNavbarWrapper>
       </SkeletonNavbarTopblockWrapper>
     </>

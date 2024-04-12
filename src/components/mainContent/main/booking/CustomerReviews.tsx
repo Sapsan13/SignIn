@@ -56,8 +56,8 @@ const SkeletonCustomerReviewsWrapper = styled.div`
   display: flex;
   justify-content: center;
   padding: 24px;
-  max-width: 344px;
-  height: 460px;
+  width: 100%;
+  height: 100%;
   border-radius: 16px;
   box-shadow: 0px 12px 24px -4px #919eab1f, 0px 0px 2px 0px #919eab33;
 `;
@@ -122,7 +122,7 @@ const SkeletonReviews12 = styled.div`
 const SkeletonJayvion = styled.div`
   display: flex;
   flex-direction: column;
-  height: 298px;
+  height: 100%;
   gap: 16px;
   width: 100%;
 `;
@@ -204,6 +204,7 @@ const SkeletonBtn = styled.button`
 const SkeletonRejectAccept = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
   align-items: left;
   width: 100%;
   height: 84px;

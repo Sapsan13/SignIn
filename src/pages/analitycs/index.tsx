@@ -1,32 +1,46 @@
 import LeftNavbar from "@/overview/LeftNavbar";
-import TopMidElement from "@/components/topBar/TopMidElement";
 import { analitycsMidbarElements } from "@/components/mainContent/midbar/midbarElements";
 import styled from "styled-components";
 import NewestBookingComponent from "@/components/mainContent/main/analitycs/NewestBookingComponent";
-import ToursAvailable from "@/components/mainContent/main/overview/ToursAvailable";
+import TopBar from "@/components/topBar/TopBar";
+import MidItemCard from "@/components/mainContent/midbar/MidItemAnalitycs";
 const Analitycs = () => {
   const SkeletonRowItems = styled.div`
+    width: 100%;
     display: flex;
     flex-direction: row;
     gap: 24px;
   `;
+
   const SkeletonColumnItems = styled.div`
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-    left: 280px;
-    padding: 20px 40px 0px 40px;
+    display: grid;
+    width: 100%;
+    padding-left: 40px;
+    grid-template-columns: repeat(12, 1fr);
+    /* grid-template-rows: repeat(12, 1fr); */
+    column-gap: 24px;
+    row-gap: 24px;
+  `;
+
+  const SkeletonMidCards = styled.div`
+    width: 100%;
+    grid-column: span 12;
     gap: 24px;
   `;
+
   return (
     <>
       <SkeletonRowItems>
         <LeftNavbar />
         <SkeletonColumnItems>
-          <TopMidElement items={analitycsMidbarElements} />
-          <SkeletonRowItems>
+          <SkeletonMidCards>
+            <TopBar />
+          </SkeletonMidCards>
+          <MidItemCard items={analitycsMidbarElements} />
+
+          <SkeletonMidCards>
             <NewestBookingComponent />
-          </SkeletonRowItems>
+          </SkeletonMidCards>
         </SkeletonColumnItems>
       </SkeletonRowItems>
     </>
