@@ -1,21 +1,20 @@
 "use client";
 import Button from "@/components/button";
 import Image from "next/image";
-import { ComponentProps, ReactComponentElement } from "react";
+import { ComponentProps, ReactComponentElement, useState } from "react";
 import styled, { CSSProperties } from "styled-components";
 
 // busyColor: CSSProperties["color"];
-
 type UserCardProps = ComponentProps<"div"> & {
-  busyLabel: boolean;
+  Click: () => void;
+  textVLabel: TextVLabel;
   statusCircle: boolean;
   firstName: string;
   lastName: string;
   email: string;
   icon?: React.ReactElement;
-  children?: React.ReactNode;
+  upgradeLabel: string;
 };
-
 const Avatar = () => {
   return (
     <Image
@@ -38,16 +37,30 @@ const Status = () => {
   );
 };
 
-const BusyLabel = () => {
-  return (
-    <Image
-      src="/illustrations/userCard/Label.png"
-      width={34}
-      height={20}
-      alt="Busy label sign"
-    />
-  );
+export type TextVLabel = "Free" | "BRO" | "Enterprise";
+const colorMapping: Record<TextVLabel, string> = {
+  BRO: "#ff5630",
+  Enterprise: "#ffab00",
+  Free: "#22c55e",
 };
+const SkeletonCurrentVLabel = styled.div<{ title: TextVLabel }>`
+  width: max-content;
+  height: 20px;
+  padding: 0px 4px 0px 4px;
+  gap: 6px;
+  border-radius: 6px 6px 6px 2px;
+  opacity: 0px;
+  font-family: Public Sans;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  background-color: ${(props) => colorMapping[props.title]};
+  position: absolute;
+  top: -5px;
+  right: -25px;
+`;
 
 const SkeletonUserCard = styled.div`
   display: flex;
@@ -98,15 +111,6 @@ const SkeletoNameMail = styled.div`
   padding: 12px 0 16px 0;
 `;
 
-const SkeletonBusylabel = styled.image`
-  width: 34px;
-  height: 20px;
-  border-radius: 6px, 6px, 6px, 2px;
-  position: absolute;
-  top: -5px;
-  right: -25px;
-`;
-
 const SkeletoMail = styled.div`
   font-family: Public Sans;
   font-size: 14px;
@@ -116,23 +120,34 @@ const SkeletoMail = styled.div`
   text-align: center;
 `;
 
-const UserCard = () => {
+const UserCard = ({
+  Click,
+  textVLabel,
+  firstName,
+  lastName,
+  email,
+  upgradeLabel,
+}: UserCardProps) => {
   return (
     <SkeletonUserCard>
       <SkeletonAvatar>
         <Avatar />
-        <SkeletonBusylabel>
-          <BusyLabel />
-        </SkeletonBusylabel>
+        <SkeletonCurrentVLabel title={textVLabel}>
+          {textVLabel}
+        </SkeletonCurrentVLabel>
         <SkeletonStatusCircle>
           <Status />
         </SkeletonStatusCircle>
       </SkeletonAvatar>
       <SkeletoNameMail>
-        <SkeletonName>HUDSON ALVAREZ</SkeletonName>
-        <SkeletoMail>Mail@mail.mail</SkeletoMail>
+        <SkeletonName>
+          {firstName} {lastName}
+        </SkeletonName>
+        <SkeletoMail>{email}</SkeletoMail>
       </SkeletoNameMail>
-      <SkeletonBtn onClick={() => alert("BRO!!!")}>Upgrade to BRO</SkeletonBtn>
+      {textVLabel === "Free" ? (
+        <SkeletonBtn onClick={Click}>{upgradeLabel}</SkeletonBtn>
+      ) : null}
     </SkeletonUserCard>
   );
 };

@@ -9,66 +9,67 @@ import TopBar from "@/components/topBar/TopBar";
 import LeftNavbar from "@/overview/LeftNavbar";
 import styled from "styled-components";
 
+const SkeletonWrapper = styled.div`
+  display: grid;
+  padding-left: 40px;
+  grid-template-columns: repeat(12, 1fr);
+  /* grid-template-rows: repeat(12, 1fr); */
+  column-gap: 24px;
+  row-gap: 24px;
+`;
+
+const SkeletonMidEl = styled.div`
+  grid-column: 9 / span 4;
+  grid-row: span 2;
+  height: 100%;
+`;
+
+const SkeletonTotalIncomes = styled.div`
+  grid-column: span 4;
+  /* grid-row: 2; */
+  height: 100%;
+`;
+
+const SkeletonBooked = styled.div`
+  grid-column: span 4;
+  /* grid-row: 2; */
+  height: 100%;
+`;
+
+const SkeletonSoldPending = styled.div`
+  grid-column: span 8;
+  /* grid-row: 3; */
+  height: 100%;
+`;
+
+const SkeletonIncome = styled.div`
+  grid-column: span 4;
+  /* grid-row: 2; */
+`;
+
+const SkeletonPending = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: flex-start;
+  height: 100%;
+  border-radius: 16px;
+  box-shadow: 0px 12px 24px -4px #919eab1f, 0px 0px 2px 0px #919eab33;
+`;
+
+const SkeletonRowItems = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  padding-bottom: 24px;
+`;
+
+const SkeletonColumnItems = styled.div`
+  width: 100%;
+  display: grid;
+`;
+
 const Overview = () => {
-  const SkeletonWrapper = styled.div`
-    display: grid;
-    padding-left: 40px;
-    grid-template-columns: repeat(12, 1fr);
-    /* grid-template-rows: repeat(12, 1fr); */
-    column-gap: 24px;
-    row-gap: 24px;
-  `;
-
-  const SkeletonMidEl = styled.div`
-    grid-column: 9 / span 4;
-    grid-row: span 2;
-    height: 100%;
-  `;
-
-  const SkeletonTotalIncomes = styled.div`
-    grid-column: span 4;
-    /* grid-row: 2; */
-    height: 100%;
-  `;
-
-  const SkeletonBooked = styled.div`
-    grid-column: span 4;
-    /* grid-row: 2; */
-    height: 100%;
-  `;
-
-  const SkeletonSoldPending = styled.div`
-    grid-column: span 8;
-    /* grid-row: 3; */
-    height: 100%;
-  `;
-
-  const SkeletonIncome = styled.div`
-    grid-column: span 4;
-    /* grid-row: 2; */
-  `;
-
-  const SkeletonPending = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    align-items: flex-start;
-    height: 100%;
-    border-radius: 16px;
-    box-shadow: 0px 12px 24px -4px #919eab1f, 0px 0px 2px 0px #919eab33;
-  `;
-
-  const SkeletonRowItems = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-    padding-bottom: 24px;
-  `;
-
-  const SkeletonColumnItems = styled.div`
-    width: 100%;
-    display: grid;
-  `;
   return (
     <SkeletonRowItems>
       <LeftNavbar />
