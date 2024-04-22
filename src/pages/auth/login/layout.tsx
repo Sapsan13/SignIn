@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import LoginPicBlock from "@/components/loginPicBlock";
 import styled from "styled-components";
-import LeftNavbar from "@/overview/LeftNavbar";
+import LeftNavbar from "@/components/leftNavbarItems/LeftNavbar";
 
 const inter = Inter({ subsets: ["latin"] });
 

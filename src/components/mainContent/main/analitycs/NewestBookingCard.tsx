@@ -91,7 +91,7 @@ const SkeletonRelative = styled.div`
 const SkeletonBookingCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  min-width: 252px;
+  max-width: 252px;
   width: 100%;
   height: 358px;
   border-radius: 16px;

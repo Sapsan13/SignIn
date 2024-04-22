@@ -1,4 +1,3 @@
-import NavbarStackItem, { LeftNavbarItem } from "./NavbarStackItem";
 import Image from "next/image";
 import EmailPlus from "./EmailPlus";
 import Link from "next/link";

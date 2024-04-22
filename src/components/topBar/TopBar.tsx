@@ -39,7 +39,6 @@ const SkeletonTopBarWrapper = styled.div`
   width: 100%;
   height: 80px;
   left: 280px;
-  /* padding: 0px 40px 0px 40px; */
   justify-content: space-between;
   align-items: center;
 `;

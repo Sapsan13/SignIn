@@ -1,4 +1,4 @@
-import LeftNavbar from "@/overview/LeftNavbar";
+import LeftNavbar from "@/components/leftNavbarItems/LeftNavbar";
 import { analitycsMidbarElements } from "@/components/mainContent/midbar/midbarElements";
 import styled from "styled-components";
 import NewestBookingComponent from "@/components/mainContent/main/analitycs/NewestBookingComponent";
@@ -10,6 +10,7 @@ const SkeletonRowItems = styled.div`
   display: flex;
   flex-direction: row;
   gap: 24px;
+  padding: 0 20px 0 20px;
 `;
 
 const SkeletonColumnItems = styled.div`
@@ -17,7 +18,6 @@ const SkeletonColumnItems = styled.div`
   width: 100%;
   padding-left: 40px;
   grid-template-columns: repeat(12, 1fr);
-  /* grid-template-rows: repeat(12, 1fr); */
   column-gap: 24px;
   row-gap: 24px;
 `;

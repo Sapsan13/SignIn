@@ -55,6 +55,7 @@ const StarGrey = () => {
 const SkeletonCustomerReviewsWrapper = styled.div`
   display: flex;
   justify-content: center;
+  max-height: 765px;
   padding: 24px;
   width: 100%;
   height: 100%;

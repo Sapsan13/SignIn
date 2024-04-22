@@ -1,5 +1,4 @@
-import LeftNavbar from "@/overview/LeftNavbar";
-// import NewestBookingComponent from "@/components/mainContent/main/analitycs/NewestBookingComponent";
+import LeftNavbar from "@/components/leftNavbarItems/LeftNavbar";
 import ChartsHeader from "@/components/mainContent/main/booking/ChartHeader";
 import BarchartStatistics from "@/components/mainContent/main/booking/BarchartStatistics";
 import styled from "styled-components";
@@ -10,8 +9,8 @@ const SkeletonRowItems = styled.div`
   display: flex;
   width: 100%;
   flex-direction: row;
-  padding: 0 40px 0 40px;
   gap: 24px;
+  padding: 0 20px 0 20px;
 `;
 
 const SkeletonColumn = styled.div`
@@ -19,14 +18,13 @@ const SkeletonColumn = styled.div`
   flex: 1;
   height: 75%;
   flex-direction: column;
-  padding: 0 40px 0 40px;
+  padding: 0 20px 0 40px;
   gap: 24px;
 `;
 
 const SkeletonRowItemsTwelve = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  /* grid-template-rows: repeat(12, 1fr); */
   column-gap: 24px;
   row-gap: 24px;
 `;
@@ -40,6 +38,7 @@ const SkeletonMidCards = styled.div`
 const SkeletonRowItemsEight = styled.div`
   width: 100%;
   grid-column: span 8;
+  max-height: 765px;
   gap: 24px;
   border-radius: 16px;
   box-shadow: 0px 12px 24px -4px #919eab1f, 0px 0px 2px 0px #919eab33;
@@ -48,7 +47,6 @@ const SkeletonRowItemsEight = styled.div`
 const SkeletonMidCardsFour = styled.div`
   width: 100%;
   grid-column: span 4;
-  gap: 24px;
 `;
 
 const Booking = () => {

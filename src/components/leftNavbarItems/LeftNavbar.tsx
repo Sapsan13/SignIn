@@ -1,18 +1,22 @@
 import styled from "styled-components";
-import Image from "next/image";
-import UserCard from "../../components/leftNavbarItems/UserCard";
 import NavbarStackItem from "./NavbarStackItem";
+import Image from "next/image";
+import UserCard, { TextVLabel } from "./UserCard";
+import { useState } from "react";
 
 const SkeletonLeftNavbarWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 280px;
   height: 100%;
+  justify-content: space-between;
   padding: 0px 16px 40px 16px;
   box-shadow: 0px 12px 24px -4px #919eab1f, 0px 0px 2px 0px #919eab33;
 `;
 
 const SkeletonNavbarTopblockWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  height: 100vh;
 `;
 
 const SkeletonNavbar = styled.div`
@@ -47,17 +51,34 @@ const Logo = () => {
   );
 };
 const LeftNavbar = () => {
+  const [textVLabel, setTextVLabel] = useState<TextVLabel>("Free");
+  const onClickHandler = () => {
+    // onClick={() => setCount(count + 1)
+    setTextVLabel("BRO");
+  };
   return (
     <>
       <SkeletonNavbarTopblockWrapper>
         <SkeletonLeftNavbarWrapper>
-          <SkeletonLogoWrapper>
-            <Logo />
-          </SkeletonLogoWrapper>
-          <SkeletonNavbar>
-            <NavbarStackItem />
-          </SkeletonNavbar>
-          <UserCard />
+          <div>
+            <SkeletonLogoWrapper>
+              <Logo />
+            </SkeletonLogoWrapper>
+            <SkeletonNavbar>
+              <NavbarStackItem />
+            </SkeletonNavbar>
+          </div>
+          <div>
+            <UserCard
+              statusCircle={true}
+              textVLabel={textVLabel}
+              Click={onClickHandler}
+              firstName={"Hudson"}
+              lastName={"Alvarez"}
+              email={"hudson.alvarez@gmail.com"}
+              upgradeLabel={"Upgrade to BRO"}
+            />
+          </div>
         </SkeletonLeftNavbarWrapper>
       </SkeletonNavbarTopblockWrapper>
     </>
