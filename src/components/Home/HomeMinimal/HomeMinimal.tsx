@@ -5,15 +5,16 @@ import UxUi from "@/components/Home/HomeMinimal/UxUi";
 import styled from "styled-components";
 
 const SkeletonWrapper = styled.div`
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 1, 980px;
-  width: 100%;
-  max-height: 1024px;
-  gap: 80px;
-  padding: 120px 144px 120px 144px;
+  scroll-snap-align: center;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 40px;
+  }
 `;
 
 const SkeletonItemsWrapper = styled.div`
@@ -21,10 +22,11 @@ const SkeletonItemsWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  max-width: 1, 152px;
-  width: 100%;
-  height: 438px;
   gap: 80px;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 24px;
+  }
 `;
 
 const HomeMinimal = () => {

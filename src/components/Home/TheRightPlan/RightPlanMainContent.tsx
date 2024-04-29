@@ -2,7 +2,8 @@ import Image from "next/image";
 import styled from "styled-components";
 import { Item } from "./RightPlanDataArray";
 import { RightPlanData } from "./RightPlanDataArray";
-
+import { useState } from "react";
+import StandartExtendedSwitch from "./StandartExtendedSwitch";
 const Galachka = () => {
   return (
     <Image
@@ -114,29 +115,34 @@ const IconMapping: Record<IconsItem, JSX.Element> = {
 };
 
 const SkeletonPlanWrapper = styled.div`
-  width: 1920px;
-  max-width: 1152px;
   display: flex;
   flex-direction: row;
-  border: 1px dashed rgba(145, 158, 171, 0.2);
-  border-left: none;
+  width: 100%;
+  padding: 0 120px 0 120px;
 `;
 
-const SkeletonPlanMainWrapper = styled.div`
-  max-width: 384px;
+const SkeletonPlanMainWrapper = styled.div<{
+  stateIndex: number;
+  index: number;
+}>`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: left;
-  padding: 80px 40px 40px 40px;
+  padding: 80px 80px 40px 40px;
   gap: 40px;
+  border: 1px dashed rgba(145, 158, 171, 0.2);
+  border-left: none;
   border-left: 1px dashed rgba(145, 158, 171, 0.2);
+  @media (max-width: 600px) {
+    display: ${(props) => (props.stateIndex === props.index ? "flex" : "none")};
+  }
 `;
 
 const SkeletonLicenseSubs = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 304px;
+  /* max-width: 304px; */
   width: 100%;
   gap: 40px;
 `;
@@ -157,7 +163,7 @@ const SkeletonSubs = styled.div<{ title: SubItem }>`
   display: flex;
   flex-direction: row;
   position: relative;
-  max-width: 304px;
+  /* max-width: 304px; */
   width: 100%;
   font-family: Public Sans;
   font-size: 24px;
@@ -182,7 +188,7 @@ const SkeletonIconsBlock = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 304px;
+  /* max-width: 304px; */
   width: 100%;
   gap: 20px;
 `;
@@ -192,7 +198,7 @@ const SkeletonItem = styled.div`
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  max-width: 304px;
+  /* max-width: 304px; */
   font-family: Public Sans;
   font-size: 14px;
   font-weight: 400;
@@ -233,6 +239,7 @@ const SkeletonTextVX = styled.div`
 
 const SkeletonItemsBlock = styled.div`
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: 20px;
 `;
@@ -249,7 +256,6 @@ const SkeletonLearnMore = styled.div`
   justify-content: flex-end;
   cursor: pointer;
   position: absolute;
-  right: 0;
   font-family: Public Sans;
   font-size: 13px;
   font-weight: 700;
@@ -261,16 +267,25 @@ const SkeletonLearnMore = styled.div`
   color: rgba(33, 43, 54, 1);
 `;
 
-interface RightPlanMainProps {
+export interface RightPlanMainProps {
   items: RightPlanData[];
-  icons: IconsItem;
+  // icons: IconsItem;
+  stateIndex: number;
 }
 
-const RightPlanMain = ({ items }: RightPlanMainProps) => {
+const RightPlanMain = ({ items, stateIndex }: RightPlanMainProps) => {
+  // const [inNdex, setIndex] = useState(0);
+  {
+    console.log(stateIndex);
+  }
   return (
     <SkeletonPlanWrapper>
-      {items.map((item) => (
-        <SkeletonPlanMainWrapper key={item.id}>
+      {items.map((item, index) => (
+        <SkeletonPlanMainWrapper
+          key={item.id}
+          stateIndex={stateIndex}
+          index={index}
+        >
           <SkeletonLicenseSubs>
             <SkeletonLicense>{item.license}</SkeletonLicense>
             <SkeletonSubs title={item.subscriptionType}>
@@ -284,11 +299,11 @@ const RightPlanMain = ({ items }: RightPlanMainProps) => {
             {item.elements.map((subItem) => {
               if (subItem.type === "label") {
                 return (
-                  <SkeletonTextRow key={item.id}>
+                  <SkeletonTextRow key={subItem.id}>
                     <SkeletonTextVX>
                       {subItem.done ? <Galachka /> : <XPECTUK />}
                     </SkeletonTextVX>
-                    <SkeletonItemText key={item.id} isDone={subItem.done}>
+                    <SkeletonItemText key={subItem.id} isDone={subItem.done}>
                       {subItem.label}
                     </SkeletonItemText>
                   </SkeletonTextRow>
@@ -296,7 +311,9 @@ const RightPlanMain = ({ items }: RightPlanMainProps) => {
               }
               if (subItem.type === "divider") {
                 return (
-                  <SkeletonItem key={item.id}>{subItem.content}</SkeletonItem>
+                  <SkeletonItem key={subItem.id}>
+                    {subItem.content}
+                  </SkeletonItem>
                 );
               }
             })}

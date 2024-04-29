@@ -18,31 +18,36 @@ const SkeletonAvailableForIcons = styled.div`
   height: 24px;
   gap: 16px;
   opacity: 0.4px;
+  color: rgba(99, 115, 129, 1);
 `;
 
 const AvailableIcons = () => {
   return (
     <SkeletonAvailableForIcons>
       <Image
-        src="/illustrations/StartAProject/FigmaIcon.png"
+        style={{ opacity: 0.4 }}
+        src="/illustrations/StartAProject/FigmaGrey.png"
         width={24}
         height={24}
         alt="FigmaIcon"
       />
       <Image
-        src="/illustrations/StartAProject/JSIcon.png"
+        style={{ opacity: 0.4 }}
+        src="/illustrations/StartAProject/JSGrey.png"
         width={24}
         height={24}
         alt="JSIcon"
       />
       <Image
-        src="/illustrations/StartAProject/TSIcon.png"
+        style={{ opacity: 0.4 }}
+        src="/illustrations/StartAProject/TSGrey.png"
         width={24}
         height={24}
         alt="TSIcon"
       />
       <Image
-        src="/illustrations/StartAProject/NextJSIcon.png"
+        style={{ opacity: 0.4 }}
+        src="/illustrations/StartAProject/NextGrey.png"
         width={24}
         height={24}
         alt="NextJSIcon"

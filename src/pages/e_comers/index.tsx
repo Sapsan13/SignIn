@@ -1,8 +1,4 @@
-import { RightPlanDataArray } from "@/components/Home/TheRightPlan/RightPlanDataArray";
-import RightPlanFooter from "@/components/Home/TheRightPlan/RightPlanFooter";
-import RightPlanHeader from "@/components/Home/TheRightPlan/RightPlanHeader";
-import RightPlanMain from "@/components/Home/TheRightPlan/RightPlanMain";
-import TheRightPlan from "@/components/Home/TheRightPlan/TheRightPlan";
+import HomeScroll from "@/components/Home/HomeScroll";
 import styled from "styled-components";
 
 const SkeletonItemsWrapper = styled.div`
@@ -15,12 +11,6 @@ const SkeletonItemsWrapper = styled.div`
 `;
 
 const E_Comerse = () => {
-  return (
-    <SkeletonItemsWrapper>
-      <RightPlanHeader />
-      <RightPlanMain items={RightPlanDataArray} />
-      <RightPlanFooter />
-    </SkeletonItemsWrapper>
-  );
+  return <HomeScroll />;
 };
 export default E_Comerse;

@@ -13,7 +13,7 @@ export type NavbarItem = {
 const NavIcon = ({ icon }: any) => {
   return (
     <div>
-      <Image src={icon} width={24} height={24} alt="Picture of the author" />
+      <Image src={icon} width={24} height={24} alt="Picture of an icon" />
     </div>
   );
 };
@@ -31,7 +31,7 @@ const ErrowRight = () => {
         src={"/illustrations/leftBar/ArrowRight.png"}
         width={16}
         height={16}
-        alt="Picture of the author"
+        alt="Picture arrowright"
       />
     </SkeletonArrowRight>
   );

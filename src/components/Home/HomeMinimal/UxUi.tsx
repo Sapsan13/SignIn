@@ -19,11 +19,15 @@ const SkeletonWrapper = styled.div`
   align-items: center;
   width: 100%;
   max-width: 366px;
-  height: 438px;
   padding: 80px 40px 80px 40px;
   border-radius: 16px;
   gap: 64px;
   box-shadow: -40px 40px 80px 0px #919eab1f;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    box-shadow: 0px 12px 24px -4px rgba(145, 158, 171, 0.12),
+      0px 0px 2px 0px rgba(145, 158, 171, 0.2);
+  }
 `;
 
 const SkeletonUxui = styled.div`

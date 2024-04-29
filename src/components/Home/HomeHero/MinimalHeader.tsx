@@ -3,12 +3,7 @@ import styled from "styled-components";
 
 const Logo = () => {
   return (
-    <Image
-      src="/illustrations/Logo.png"
-      width={40}
-      height={40}
-      alt="Picture of the author"
-    />
+    <Image src="/illustrations/Logo.png" width={40} height={40} alt="Logo" />
   );
 };
 
@@ -16,11 +11,14 @@ const SkeletonMinimalHeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  max-width: 1920px;
   height: 88px;
   padding: 0px 144px 0px 144px;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    padding: 0;
+  }
 `;
 
 const SkeletonTextWrapper = styled.div`
@@ -46,7 +44,8 @@ const SkeletonLogin = styled.button`
   font-weight: 700;
   line-height: 24px;
   text-align: center;
-  color: #212b36;
+  background: none;
+  border: 1px solid rgba(145, 158, 171, 0.24);
   cursor: pointer;
   border-radius: 8px;
 `;

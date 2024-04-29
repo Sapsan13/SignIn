@@ -1,4 +1,10 @@
+import StandartExtendedSwitch from "@/components/Home/TheRightPlan/StandartExtendedSwitch";
+
 const Banking = () => {
-  return <div>Banking</div>;
+  return (
+    <div>
+      <StandartExtendedSwitch />
+    </div>
+  );
 };
 export default Banking;

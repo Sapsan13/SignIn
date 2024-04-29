@@ -16,7 +16,7 @@ const Arrow = () => {
         src={"/illustrations/leftBar/ArrowRight.png"}
         width={16}
         height={16}
-        alt="Picture of the author"
+        alt="Picture arrowright"
       />
     </SkeletonRotate90>
   );

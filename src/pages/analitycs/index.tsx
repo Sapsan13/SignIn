@@ -16,6 +16,7 @@ const SkeletonRowItems = styled.div`
 const SkeletonColumnItems = styled.div`
   display: grid;
   width: 100%;
+  max-width: 1120px;
   padding-left: 40px;
   grid-template-columns: repeat(12, 1fr);
   column-gap: 24px;

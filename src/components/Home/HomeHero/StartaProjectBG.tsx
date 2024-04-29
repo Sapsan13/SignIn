@@ -4,17 +4,17 @@ const LayoutBG = () => {
   return (
     <Image
       src="/illustrations/StartAProject/LayoutBG.png"
-      width={1920}
+      width={1440}
       height={1024}
-      alt="Picture of the author"
+      alt="Background"
     />
   );
 };
 const SkeletonStartProjWrapper = styled.div`
   display: flex;
   width: 100%;
-  max-width: 1920px;
-  height: 1024px;
+  height: 100%;
+  background-size: cover;
 `;
 
 const StartAProjectBG = () => {

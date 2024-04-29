@@ -42,12 +42,7 @@ const SkeletonMainContent = styled.div`
 
 const Logo = () => {
   return (
-    <Image
-      src="/illustrations/Logo.png"
-      width={40}
-      height={40}
-      alt="Picture of the author"
-    />
+    <Image src="/illustrations/Logo.png" width={40} height={40} alt="Logo" />
   );
 };
 const LeftNavbar = () => {

@@ -3,7 +3,6 @@ import styled from "styled-components";
 const SkeletonHeaderWrpper = styled.div`
   display: flex;
   flex-direction: row;
-  max-width: 1920px;
   width: 100%;
   text-align: center;
   justify-content: center;
@@ -33,6 +32,14 @@ const SkeletonWhatMin = styled.div`
   line-height: 64px;
   align-items: center;
   gap: 24px;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    font-family: Public Sans;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 42px;
+    text-align: center;
+  }
 `;
 
 const Header = () => {

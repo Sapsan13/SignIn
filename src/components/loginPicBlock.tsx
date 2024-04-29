@@ -14,10 +14,10 @@ interface PicProps {
 const Logo = () => {
   return (
     <Image
-      src="/illustrations/Logo.png"
+      src="/illustrations/Login/Logo.png"
       width={40}
       height={40}
-      alt="Picture of the author"
+      alt="Logo"
     />
   );
 };
@@ -25,10 +25,10 @@ const Logo = () => {
 const Diagram = () => {
   return (
     <Image
-      src="/illustrations/Diagram.png"
+      src="/illustrations/Login/Diagram.png"
       width={720}
       height={540}
-      alt="Picture of the author"
+      alt="Diagram"
     />
   );
 };

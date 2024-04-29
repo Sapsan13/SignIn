@@ -2,22 +2,37 @@ import Image from "next/image";
 import styled from "styled-components";
 import RightPlanHeader from "./RightPlanHeader";
 import RightPlanFooter from "./RightPlanFooter";
-import RightPlanMain from "./RightPlanMain";
+import RightPlanMain, { RightPlanMainProps } from "./RightPlanMainContent";
+import { RightPlanData, RightPlanDataArray } from "./RightPlanDataArray";
+import StandartExtendedSwitch from "./StandartExtendedSwitch";
+import { useState } from "react";
+
+export interface TheRightPlanProps {
+  items: RightPlanData[];
+}
 
 const SkeletonRightPlanWrapper = styled.div`
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 1, 800px;
   gap: 80px;
+  /* min-height: 100vh; */
+  scroll-snap-align: center;
+  background: rgba(145, 158, 171, 0.04);
 `;
 
-const TheRightPlan = () => {
+const TheRightPlan = ({ items }: TheRightPlanProps) => {
+  const [stateIndex, setStateIndex] = useState(0);
   return (
     <SkeletonRightPlanWrapper>
       <RightPlanHeader />
-      <RightPlanMain items={RightPlanDataArray} />
+      <StandartExtendedSwitch
+        setStateIndex={setStateIndex}
+        stateIndex={stateIndex}
+      />
+      <RightPlanMain items={RightPlanDataArray} stateIndex={stateIndex} />
       <RightPlanFooter />
     </SkeletonRightPlanWrapper>
   );

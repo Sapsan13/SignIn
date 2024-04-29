@@ -5,9 +5,8 @@ const SkeletonPlanHeaderWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 1920px;
-  width: 100%;
   gap: 40px;
+  padding: 80px 0 80px 0;
 `;
 
 const SkeletonStillPlease = styled.div`

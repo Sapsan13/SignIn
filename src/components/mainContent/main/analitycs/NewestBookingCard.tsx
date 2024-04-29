@@ -42,7 +42,7 @@ const SevenTwoHotImg = () => {
         src="/illustrations/NewestBookingCards/72Hot.png"
         width={50}
         height={24}
-        alt="Picture of the author"
+        alt="Picture 72Hot"
       />
     </SkeletonSevenTwo>
   );
@@ -55,7 +55,7 @@ const SevenTwoImg = () => {
         src="/illustrations/NewestBookingCards/72.png"
         width={36}
         height={24}
-        alt="Picture of the author"
+        alt="Picture 72"
       />
     </SkeletonSevenTwo>
   );
@@ -67,7 +67,7 @@ const CalendarImg = () => {
       src="/illustrations/NewestBookingCards/Calendar.png"
       width={16}
       height={16}
-      alt="Picture of the author"
+      alt="Picture of a calendar"
     />
   );
 };
@@ -78,7 +78,7 @@ const PersonGuestImg = () => {
       src="/illustrations/NewestBookingCards/PersonGuest.png"
       width={16}
       height={16}
-      alt="Picture of the author"
+      alt="Picture person"
     />
   );
 };

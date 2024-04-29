@@ -3,6 +3,7 @@ import styled from "styled-components";
 import NewestBookingCard from "./NewestBookingCard";
 const SkeletonBookingbarWrapper = styled.div`
   display: flex;
+  max-width: 1080px;
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
@@ -61,7 +62,7 @@ const Arrow = () => {
         src={"/illustrations/leftBar/ArrowRight.png"}
         width={20}
         height={20}
-        alt="Picture of the author"
+        alt="Picture arrow right"
       />
     </SkeletonArrowRight>
   );
@@ -78,6 +79,7 @@ const SkeletonNavArrows = styled.div`
 
 const SkeletonBookingCardsWrapper = styled.div`
   width: 100%;
+  max-width: 1080px;
   display: flex;
   flex-direction: row;
   gap: 24px;

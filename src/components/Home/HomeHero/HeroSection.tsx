@@ -1,20 +1,26 @@
 import styled from "styled-components";
 import StartANewProjectLeft from "./StartANewProjectLeft";
-import MinimalHeader from "./minimalHeader";
-import StartAProjectBG from "./startaProjectBG";
+import MinimalHeader from "./MinimalHeader";
+import StartAProjectBG from "./StartaProjectBG";
 const SkeletonWrapper = styled.div`
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  max-width: 1920px;
-  height: 100vh;
-  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* height: 100vh;
+  overflow: hidden; */
+  scroll-snap-align: center;
 `;
 const SkeletonBGWrapper = styled.div`
   display: flex;
-  max-width: 1920px;
-  width: 100%;
-  height: 100%;
   position: relative;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const SkeletonTopblock = styled.div`
