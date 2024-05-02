@@ -1,3 +1,4 @@
+import HeroStartANew from "@/components/Home/HomeHero/HeroHeader";
 import HomeScroll from "@/components/Home/HomeScroll";
 import styled from "styled-components";
 
@@ -11,6 +12,6 @@ const SkeletonItemsWrapper = styled.div`
 `;
 
 const E_Comerse = () => {
-  return <HomeScroll />;
+  return <HeroStartANew />;
 };
 export default E_Comerse;

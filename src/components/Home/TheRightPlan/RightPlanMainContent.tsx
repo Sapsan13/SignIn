@@ -117,6 +117,7 @@ const IconMapping: Record<IconsItem, JSX.Element> = {
 const SkeletonPlanWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
   width: 100%;
   padding: 0 120px 0 120px;
 `;
@@ -126,6 +127,7 @@ const SkeletonPlanMainWrapper = styled.div<{
   index: number;
 }>`
   width: 100%;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   align-items: left;

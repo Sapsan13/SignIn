@@ -3,7 +3,30 @@ import styled from "styled-components";
 
 const Logo = () => {
   return (
-    <Image src="/illustrations/Logo.png" width={40} height={40} alt="Logo" />
+    <Image
+      src="/illustrations/Login/Logo.png"
+      width={40}
+      height={40}
+      alt="Logo"
+    />
+  );
+};
+const SkeletonDisplayNone = styled.div`
+  display: none;
+  @media (max-width: 600px) {
+    display: flex;
+  }
+`;
+const TripleBars = () => {
+  return (
+    <SkeletonDisplayNone>
+      <Image
+        src="/illustrations/StartAProject/TripleBars.png"
+        width={40}
+        height={40}
+        alt="Three horizontal bars"
+      />
+    </SkeletonDisplayNone>
   );
 };
 
@@ -16,8 +39,11 @@ const SkeletonMinimalHeaderWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   @media (max-width: 600px) {
-    flex-direction: column;
-    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px 0 16px;
   }
 `;
 
@@ -48,6 +74,9 @@ const SkeletonLogin = styled.button`
   border: 1px solid rgba(145, 158, 171, 0.24);
   cursor: pointer;
   border-radius: 8px;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 const SkeletonPurchaseNow = styled.button`
@@ -68,14 +97,20 @@ const SkeletonPurchaseNow = styled.button`
   color: #fff;
   cursor: pointer;
   border-radius: 8px;
+  @media (max-width: 600px) {
+    display: flex;
+  }
 `;
 
 const SkeletonRo = styled.div`
   display: flex;
   flex-direction: row;
   gap: 8px;
+  @media (max-width: 600px) {
+    display: flex;
+    gap: 8px;
+  }
 `;
-
 const SkeletonRow = styled.div`
   display: flex;
   flex-direction: row;
@@ -83,24 +118,35 @@ const SkeletonRow = styled.div`
   align-items: center;
 `;
 
-const MinimalHeader = () => {
+const SkeletonRowHomeDocs = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+  @media (max-width: 600px) {
+    display: none;
+  }
+`;
+
+const HeroStartANew = () => {
   return (
     <SkeletonMinimalHeaderWrapper>
       <SkeletonRow>
         <Logo />
       </SkeletonRow>
       <SkeletonRow>
-        <SkeletonRow>
+        <SkeletonRowHomeDocs>
           <SkeletonTextWrapper>Home</SkeletonTextWrapper>
           <SkeletonTextWrapper>Components</SkeletonTextWrapper>
           <SkeletonTextWrapper>Docs</SkeletonTextWrapper>
-        </SkeletonRow>
+        </SkeletonRowHomeDocs>
         <SkeletonRo>
           <SkeletonLogin>LogIn</SkeletonLogin>
-          <SkeletonPurchaseNow>Purchase Now</SkeletonPurchaseNow>
+          <SkeletonPurchaseNow> Purchase Now</SkeletonPurchaseNow>
+          <TripleBars />{" "}
         </SkeletonRo>
       </SkeletonRow>
     </SkeletonMinimalHeaderWrapper>
   );
 };
-export default MinimalHeader;
+export default HeroStartANew;

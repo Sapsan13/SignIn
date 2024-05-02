@@ -82,15 +82,18 @@ const SkeletonBlockWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 480px;
+  /* max-width: 480px; */
   width: 100%;
-  height: 580px;
+  /* height: 580px; */
   right: 1px;
+  @media (max-width: 600px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 const SkeletonStartA = styled.div`
   display: flex;
-  max-width: 480px;
   width: 100%;
   height: 128px;
   font-family: Public Sans;
@@ -99,6 +102,15 @@ const SkeletonStartA = styled.div`
   line-height: 64px;
   text-align: center;
   justify-content: center;
+  white-space: nowrap;
+  color: #1e2d38;
+  @media (max-width: 600px) {
+    font-family: Public Sans;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 64px;
+    text-align: center;
+  }
 `;
 
 const SkeletonMinimalWord = styled.div`
@@ -113,15 +125,31 @@ const SkeletonMinimalWord = styled.div`
   background: linear-gradient(129.92deg, #ffab00 0.21%, #00ab55 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  @media (max-width: 600px) {
+    display: flex;
+    font-family: Barlow;
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 64px;
+    letter-spacing: 8px;
+    text-align: center;
+  }
 `;
 const SkeletonStartAMinimal = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 480px;
   width: 100%;
   flex: 1;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
+  @media (max-width: 600px) {
+    font-family: Public Sans;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 42px;
+    text-align: center;
+  }
 `;
 
 const SkeletonStartMUI = styled.div`
@@ -177,10 +205,17 @@ const SkeletonButtonsWrapper = styled.div`
   justify-content: space-between;
   max-width: 342px;
   width: 100%;
-  height: 88px;
   padding: 0px 0px 40px 0px;
   gap: 16px;
   opacity: 0px;
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
 `;
 const SkeletonLightning = styled.button`
   display: flex;
@@ -189,7 +224,7 @@ const SkeletonLightning = styled.button`
   align-items: center;
   justify-content: center;
   width: 47%;
-  height: 48px;
+  min-height: 48px;
   padding: 11px 16px 11px 16px;
   gap: 8px;
   border-radius: 8px;
@@ -207,7 +242,7 @@ const SkeletonSquareOut = styled.button`
   border: 1px, solid, black;
   overflow: hidden;
   width: 53%;
-  height: 48px;
+  min-height: 48px;
   padding: 11px 16px 11px 16px;
   border-radius: 8px;
   cursor: pointer;

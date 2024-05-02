@@ -29,7 +29,7 @@ const SkeletonItemsWrapper = styled.div`
   }
 `;
 
-const HomeMinimal = () => {
+const HomeComponent = () => {
   return (
     <SkeletonWrapper>
       <Header />
@@ -41,4 +41,4 @@ const HomeMinimal = () => {
     </SkeletonWrapper>
   );
 };
-export default HomeMinimal;
+export default HomeComponent;

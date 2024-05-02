@@ -1,16 +1,16 @@
 import styled from "styled-components";
-import StartANewProjectLeft from "./StartANewProjectLeft";
-import MinimalHeader from "./MinimalHeader";
+import StartANewProjectLeft from "./HeroStartANew";
+import HeroStartANew from "./HeroHeader";
 import StartAProjectBG from "./StartaProjectBG";
+
 const SkeletonWrapper = styled.div`
   min-height: 100vh;
+  min-width: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  /* height: 100vh;
-  overflow: hidden; */
+  height: auto;
   scroll-snap-align: center;
 `;
 const SkeletonBGWrapper = styled.div`
@@ -19,7 +19,7 @@ const SkeletonBGWrapper = styled.div`
   align-items: center;
   justify-content: center;
   @media (max-width: 600px) {
-    flex-direction: column;
+    display: flex;
   }
 `;
 
@@ -36,15 +36,21 @@ const Skeletonleftblock = styled.div`
   padding: 0 144px 0 144px;
   left: 0;
   top: 260px;
+  @media (max-width: 600px) {
+    display: flex;
+    padding: 0 10px 0 10px;
+    left: 50%;
+    transform: translate(-210px, 0);
+  }
 `;
 
-const HeroSection = () => {
+const HeroComponent = () => {
   return (
     <SkeletonWrapper>
       <SkeletonBGWrapper>
         <StartAProjectBG />
         <SkeletonTopblock>
-          <MinimalHeader />
+          <HeroStartANew />
         </SkeletonTopblock>
         <Skeletonleftblock>
           <StartANewProjectLeft />
@@ -53,4 +59,4 @@ const HeroSection = () => {
     </SkeletonWrapper>
   );
 };
-export default HeroSection;
+export default HeroComponent;

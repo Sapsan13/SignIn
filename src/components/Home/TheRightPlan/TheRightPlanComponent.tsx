@@ -23,7 +23,7 @@ const SkeletonRightPlanWrapper = styled.div`
   background: rgba(145, 158, 171, 0.04);
 `;
 
-const TheRightPlan = ({ items }: TheRightPlanProps) => {
+const TheRightPlanComponent = ({ items }: TheRightPlanProps) => {
   const [stateIndex, setStateIndex] = useState(0);
   return (
     <SkeletonRightPlanWrapper>
@@ -37,4 +37,4 @@ const TheRightPlan = ({ items }: TheRightPlanProps) => {
     </SkeletonRightPlanWrapper>
   );
 };
-export default TheRightPlan;
+export default TheRightPlanComponent;
