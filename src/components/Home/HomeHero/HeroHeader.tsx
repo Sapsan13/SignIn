@@ -1,34 +1,29 @@
 import Image from "next/image";
 import styled from "styled-components";
+import { Logo, TripleBars } from "@/components/Images";
 
-const Logo = () => {
+const HeroStartANew = () => {
   return (
-    <Image
-      src="/illustrations/Login/Logo.png"
-      width={40}
-      height={40}
-      alt="Logo"
-    />
+    <SkeletonMinimalHeaderWrapper>
+      <SkeletonRow>
+        <Logo />
+      </SkeletonRow>
+      <SkeletonRow>
+        <SkeletonRowHomeDocs>
+          <SkeletonTextWrapper>Home</SkeletonTextWrapper>
+          <SkeletonTextWrapper>Components</SkeletonTextWrapper>
+          <SkeletonTextWrapper>Docs</SkeletonTextWrapper>
+        </SkeletonRowHomeDocs>
+        <SkeletonRo>
+          <SkeletonLogin>LogIn</SkeletonLogin>
+          <SkeletonPurchaseNow> Purchase Now</SkeletonPurchaseNow>
+          <TripleBars />{" "}
+        </SkeletonRo>
+      </SkeletonRow>
+    </SkeletonMinimalHeaderWrapper>
   );
 };
-const SkeletonDisplayNone = styled.div`
-  display: none;
-  @media (max-width: 600px) {
-    display: flex;
-  }
-`;
-const TripleBars = () => {
-  return (
-    <SkeletonDisplayNone>
-      <Image
-        src="/illustrations/StartAProject/TripleBars.png"
-        width={40}
-        height={40}
-        alt="Three horizontal bars"
-      />
-    </SkeletonDisplayNone>
-  );
-};
+export default HeroStartANew;
 
 const SkeletonMinimalHeaderWrapper = styled.div`
   display: flex;
@@ -127,26 +122,3 @@ const SkeletonRowHomeDocs = styled.div`
     display: none;
   }
 `;
-
-const HeroStartANew = () => {
-  return (
-    <SkeletonMinimalHeaderWrapper>
-      <SkeletonRow>
-        <Logo />
-      </SkeletonRow>
-      <SkeletonRow>
-        <SkeletonRowHomeDocs>
-          <SkeletonTextWrapper>Home</SkeletonTextWrapper>
-          <SkeletonTextWrapper>Components</SkeletonTextWrapper>
-          <SkeletonTextWrapper>Docs</SkeletonTextWrapper>
-        </SkeletonRowHomeDocs>
-        <SkeletonRo>
-          <SkeletonLogin>LogIn</SkeletonLogin>
-          <SkeletonPurchaseNow> Purchase Now</SkeletonPurchaseNow>
-          <TripleBars />{" "}
-        </SkeletonRo>
-      </SkeletonRow>
-    </SkeletonMinimalHeaderWrapper>
-  );
-};
-export default HeroStartANew;

@@ -1,27 +1,29 @@
-import Image from "next/image";
+import { Rocket, WhiteSquareOut } from "@/components/Images";
 import styled from "styled-components";
 
-const Rocket = () => {
+const GreenRocket = () => {
   return (
-    <Image
-      src="/illustrations/StartAProject/GreenRocket.png"
-      width={456}
-      height={456}
-      alt="RocketPic"
-    />
+    <SkeletonItemsRocketWrapper>
+      <SkeletonGreenBlock>
+        <SkeletonRocket>
+          <Rocket />
+        </SkeletonRocket>
+        <SkeletonGetGap>
+          <SkeletonGetStarted>
+            Get started with <br /> Minimal kit today
+          </SkeletonGetStarted>
+          <SkeletonPurchaseFree>
+            <SkeletonPurchaseNow>Purchase Now</SkeletonPurchaseNow>
+            <SkeletonGetFree>
+              Get Free Version <WhiteSquareOut />
+            </SkeletonGetFree>
+          </SkeletonPurchaseFree>
+        </SkeletonGetGap>
+      </SkeletonGreenBlock>
+    </SkeletonItemsRocketWrapper>
   );
 };
-
-const WhiteSquareOut = () => {
-  return (
-    <Image
-      src="/illustrations/StartAProject/WhiteSquareOut.png"
-      width={24}
-      height={24}
-      alt="RocketPic"
-    />
-  );
-};
+export default GreenRocket;
 
 const SkeletonItemsRocketWrapper = styled.div`
   display: flex;
@@ -140,27 +142,3 @@ const SkeletonPurchaseFree = styled.div`
     padding-bottom: 40px;
   }
 `;
-
-const GreenRocket = () => {
-  return (
-    <SkeletonItemsRocketWrapper>
-      <SkeletonGreenBlock>
-        <SkeletonRocket>
-          <Rocket />
-        </SkeletonRocket>
-        <SkeletonGetGap>
-          <SkeletonGetStarted>
-            Get started with <br /> Minimal kit today
-          </SkeletonGetStarted>
-          <SkeletonPurchaseFree>
-            <SkeletonPurchaseNow>Purchase Now</SkeletonPurchaseNow>
-            <SkeletonGetFree>
-              Get Free Version <WhiteSquareOut />
-            </SkeletonGetFree>
-          </SkeletonPurchaseFree>
-        </SkeletonGetGap>
-      </SkeletonGreenBlock>
-    </SkeletonItemsRocketWrapper>
-  );
-};
-export default GreenRocket;

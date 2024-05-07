@@ -1,8 +1,41 @@
 "use client";
-import Button from "@/components/button";
-import Image from "next/image";
+import { Avatar, Status } from "@/components/Images";
 import { ComponentProps, ReactComponentElement, useState } from "react";
 import styled, { CSSProperties } from "styled-components";
+
+const UserCard = ({
+  Click,
+  textVLabel,
+  firstName,
+  lastName,
+  email,
+  upgradeLabel,
+}: UserCardProps) => {
+  return (
+    <SkeletonUserCard>
+      <SkeletonAvatar>
+        <Avatar />
+        <SkeletonCurrentVLabel title={textVLabel}>
+          {textVLabel}
+        </SkeletonCurrentVLabel>
+        <SkeletonStatusCircle>
+          <Status />
+        </SkeletonStatusCircle>
+      </SkeletonAvatar>
+      <SkeletoNameMail>
+        <SkeletonName>
+          {firstName} {lastName}
+        </SkeletonName>
+        <SkeletoMail>{email}</SkeletoMail>
+      </SkeletoNameMail>
+      {textVLabel === "Free" ? (
+        <SkeletonBtn onClick={Click}>{upgradeLabel}</SkeletonBtn>
+      ) : null}
+    </SkeletonUserCard>
+  );
+};
+
+export default UserCard;
 
 // busyColor: CSSProperties["color"];
 type UserCardProps = ComponentProps<"div"> & {
@@ -14,27 +47,6 @@ type UserCardProps = ComponentProps<"div"> & {
   email: string;
   icon?: React.ReactElement;
   upgradeLabel: string;
-};
-const Avatar = () => {
-  return (
-    <Image
-      src="/illustrations/userCard/Avatar.png"
-      width={48}
-      height={48}
-      alt="Picture user avatar"
-    />
-  );
-};
-
-const Status = () => {
-  return (
-    <Image
-      src="/illustrations/userCard/Status.png"
-      width={11}
-      height={11}
-      alt="Status circle"
-    />
-  );
 };
 
 export type TextVLabel = "Free" | "BRO" | "Enterprise";
@@ -119,37 +131,3 @@ const SkeletoMail = styled.div`
   letter-spacing: 0px;
   text-align: center;
 `;
-
-const UserCard = ({
-  Click,
-  textVLabel,
-  firstName,
-  lastName,
-  email,
-  upgradeLabel,
-}: UserCardProps) => {
-  return (
-    <SkeletonUserCard>
-      <SkeletonAvatar>
-        <Avatar />
-        <SkeletonCurrentVLabel title={textVLabel}>
-          {textVLabel}
-        </SkeletonCurrentVLabel>
-        <SkeletonStatusCircle>
-          <Status />
-        </SkeletonStatusCircle>
-      </SkeletonAvatar>
-      <SkeletoNameMail>
-        <SkeletonName>
-          {firstName} {lastName}
-        </SkeletonName>
-        <SkeletoMail>{email}</SkeletoMail>
-      </SkeletoNameMail>
-      {textVLabel === "Free" ? (
-        <SkeletonBtn onClick={Click}>{upgradeLabel}</SkeletonBtn>
-      ) : null}
-    </SkeletonUserCard>
-  );
-};
-
-export default UserCard;

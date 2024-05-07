@@ -1,36 +1,29 @@
-import Image from "next/image";
+import { LandingTempalte, ErrowRight16 } from "@/components/Images";
 import styled from "styled-components";
 
-const SkeletonLa = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 48px;
-`;
-const ArrowRight = () => {
+const LandingTextPicture = () => {
   return (
-    <SkeletonLa>
-      <Image
-        src={"/illustrations/StartAProject/ArrowRight.png"}
-        width={24}
-        height={24}
-        alt="Picture of an arrow"
-      />
-    </SkeletonLa>
+    <SkeletonLandingWrapper>
+      <SkeletonLookingZoneWrap>
+        <SkeletonLookingFor>Looking for A</SkeletonLookingFor>
+        <SkeletonLandingTemplate>
+          Landing Page?
+          <br /> Template
+        </SkeletonLandingTemplate>
+        <SkeletonVisitZone>
+          <div>Visit Zone Landing Page</div> <ErrowRight16 />
+        </SkeletonVisitZone>
+      </SkeletonLookingZoneWrap>
+      <SkeletonLooking>
+        <LandingTempalte />
+      </SkeletonLooking>
+      <SkeletonVisitZoneMinim>
+        <div>Visit Zone Landing Page</div> <ErrowRight16 />
+      </SkeletonVisitZoneMinim>
+    </SkeletonLandingWrapper>
   );
 };
-
-const LandingTempalte = () => {
-  return (
-    <Image
-      src="/illustrations/StartAProject/LandingTemplate.png"
-      width={660}
-      height={510}
-      alt="LandingComponentPic"
-    />
-  );
-};
+export default LandingTextPicture;
 
 const SkeletonLandingWrapper = styled.div`
   display: flex;
@@ -144,27 +137,3 @@ const SkeletonVisitZoneMinim = styled.div`
     gap: 6px;
   }
 `;
-
-const LandingTextPicture = () => {
-  return (
-    <SkeletonLandingWrapper>
-      <SkeletonLookingZoneWrap>
-        <SkeletonLookingFor>Looking for A</SkeletonLookingFor>
-        <SkeletonLandingTemplate>
-          Landing Page?
-          <br /> Template
-        </SkeletonLandingTemplate>
-        <SkeletonVisitZone>
-          <div>Visit Zone Landing Page</div> <ArrowRight />
-        </SkeletonVisitZone>
-      </SkeletonLookingZoneWrap>
-      <SkeletonLooking>
-        <LandingTempalte />
-      </SkeletonLooking>
-      <SkeletonVisitZoneMinim>
-        <div>Visit Zone Landing Page</div> <ArrowRight />
-      </SkeletonVisitZoneMinim>
-    </SkeletonLandingWrapper>
-  );
-};
-export default LandingTextPicture;

@@ -1,9 +1,33 @@
-import Image from "next/image";
+import { Arrow20 } from "@/components/Images";
 import styled from "styled-components";
 import NewestBookingCard from "./NewestBookingCard";
+
+const NewestBookingComponent = () => {
+  return (
+    <div>
+      <SkeletonBookingbarWrapper>
+        <SkeletonNewestBookingBar>
+          <SkeletonNewestBookingText>Newest Booking</SkeletonNewestBookingText>
+          <SkeletonBookingsAvailable>12 Bookings</SkeletonBookingsAvailable>
+        </SkeletonNewestBookingBar>
+        <SkeletonNavArrows>
+          <SkeletonArrowleft>
+            <Arrow20 />
+          </SkeletonArrowleft>
+          <Arrow20 />
+        </SkeletonNavArrows>
+      </SkeletonBookingbarWrapper>
+      <SkeletonBookingCardsWrapper>
+        <NewestBookingCard />
+      </SkeletonBookingCardsWrapper>
+    </div>
+  );
+};
+
+export default NewestBookingComponent;
+
 const SkeletonBookingbarWrapper = styled.div`
   display: flex;
-  max-width: 1080px;
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
@@ -33,17 +57,6 @@ const SkeletonNewestBookingText = styled.div`
   text-align: left;
 `;
 
-const SkeletonArrowRight = styled.div`
-  display: flex;
-  width: 36px;
-  height: 36px;
-  border-radius: 50px 0px 0px 0px;
-  opacity: 0.48px;
-  padding-right: 8px;
-  align-items: center;
-  justify-content: center;
-`;
-
 const SkeletonArrowleft = styled.div`
   display: flex;
   transform: scaleX(-1);
@@ -55,18 +68,6 @@ const SkeletonArrowleft = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const Arrow = () => {
-  return (
-    <SkeletonArrowRight>
-      <Image
-        src={"/illustrations/leftBar/ArrowRight.png"}
-        width={20}
-        height={20}
-        alt="Picture arrow right"
-      />
-    </SkeletonArrowRight>
-  );
-};
 
 const SkeletonNavArrows = styled.div`
   display: flex;
@@ -79,32 +80,8 @@ const SkeletonNavArrows = styled.div`
 
 const SkeletonBookingCardsWrapper = styled.div`
   width: 100%;
-  max-width: 1080px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   gap: 24px;
 `;
-
-const NewestBookingComponent = () => {
-  return (
-    <div>
-      <SkeletonBookingbarWrapper>
-        <SkeletonNewestBookingBar>
-          <SkeletonNewestBookingText>Newest Booking</SkeletonNewestBookingText>
-          <SkeletonBookingsAvailable>12 Bookings</SkeletonBookingsAvailable>
-        </SkeletonNewestBookingBar>
-        <SkeletonNavArrows>
-          <SkeletonArrowleft>
-            <Arrow />
-          </SkeletonArrowleft>
-          <Arrow />
-        </SkeletonNavArrows>
-      </SkeletonBookingbarWrapper>
-      <SkeletonBookingCardsWrapper>
-        <NewestBookingCard />
-      </SkeletonBookingCardsWrapper>
-    </div>
-  );
-};
-
-export default NewestBookingComponent;

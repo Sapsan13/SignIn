@@ -1,37 +1,6 @@
-import Image from "next/image";
+import { AccountPic, Alert, Bell } from "@/components/Images";
 import { usePathname } from "next/navigation";
 import styled from "styled-components";
-
-const AccountPic = () => {
-  return (
-    <Image
-      src="/illustrations/topRightIcons/AccountPic.png"
-      width={40}
-      height={40}
-      alt="AccountPic"
-    />
-  );
-};
-const Alert = () => {
-  return (
-    <Image
-      src="/illustrations/topRightIcons/Alert1.png"
-      width={20}
-      height={20}
-      alt="Alert sign"
-    />
-  );
-};
-const Bell = () => {
-  return (
-    <Image
-      src="/illustrations/topRightIcons/Bell.png"
-      width={40}
-      height={40}
-      alt="Bell icon"
-    />
-  );
-};
 
 const SkeletonTopBarWrapper = styled.div`
   display: flex;

@@ -1,87 +1,52 @@
-import Image from "next/image";
+import {
+  PersonGuestImg,
+  CalendarImg,
+  SevenTwoImg,
+  SevenTwoHotImg,
+  LandscapeImg,
+  AvatarImg,
+} from "@/components/Images";
 import styled from "styled-components";
 import { BookingDataArray as items } from "./BookingDataArray";
 
-const AvatarImg = ({ icon }: any) => {
-  return (
-    <Image src={icon} width={40} height={40} alt="Picture of the author" />
-  );
+const NewestBookingCard = ({}: BookingCard) => {
+  return items.map((item: any) => {
+    var JSXTag = item.isHot ? SevenTwoHotImg : SevenTwoImg;
+    return (
+      <SkeletonBookingCardWrapper key={item.key}>
+        <SkeletonFlexColWrap>
+          <SkeletonFlexRowAvatarNameDate>
+            <SkeletonCardAvatar>
+              <AvatarImg icon={item.avatar}></AvatarImg>
+            </SkeletonCardAvatar>
+            <SkeletonFlexColFirstLast>
+              <SkeletonFlexRow>
+                <SkeletonFirstLastName>{item.firstName}</SkeletonFirstLastName>
+                <SkeletonFirstLastName>{item.lastName}</SkeletonFirstLastName>
+              </SkeletonFlexRow>
+              <SkeletonDateTime>{item.date}</SkeletonDateTime>
+            </SkeletonFlexColFirstLast>
+          </SkeletonFlexRowAvatarNameDate>
+          <SkeletonFlexRowDurationPersons>
+            <SkeletonBookingDuration>
+              <CalendarImg />
+              {item.bookingDuration}
+            </SkeletonBookingDuration>
+            <SkeletonGuestsPersons>
+              <PersonGuestImg />
+              {item.guestsPersons}
+            </SkeletonGuestsPersons>
+          </SkeletonFlexRowDurationPersons>
+        </SkeletonFlexColWrap>
+        <SkeletonRelative>
+          <LandscapeImg icon={item.photo} />
+          {<JSXTag />}
+        </SkeletonRelative>
+      </SkeletonBookingCardWrapper>
+    );
+  });
 };
-
-const SkeletonLandscapeImg = styled.div`
-  display: flex;
-  width: 236px;
-  height: 236px;
-  margin: 8px;
-  border-radius: 12px;
-  overflow: hidden;
-`;
-
-const LandscapeImg = ({ icon }: any) => {
-  return (
-    <SkeletonLandscapeImg>
-      <Image src={icon} width={236} height={236} alt="Picture of the author" />
-    </SkeletonLandscapeImg>
-  );
-};
-
-const SkeletonSevenTwo = styled.div`
-  display: flex;
-  position: absolute;
-  bottom: 12px;
-  right: 8px;
-  padding: 2px 6px 2px 6px;
-  gap: 6px;
-  border-radius: 6px 0px 0px 0px;
-`;
-
-const SevenTwoHotImg = () => {
-  return (
-    <SkeletonSevenTwo>
-      <Image
-        src="/illustrations/NewestBookingCards/72Hot.png"
-        width={50}
-        height={24}
-        alt="Picture 72Hot"
-      />
-    </SkeletonSevenTwo>
-  );
-};
-
-const SevenTwoImg = () => {
-  return (
-    <SkeletonSevenTwo>
-      <Image
-        src="/illustrations/NewestBookingCards/72.png"
-        width={36}
-        height={24}
-        alt="Picture 72"
-      />
-    </SkeletonSevenTwo>
-  );
-};
-
-const CalendarImg = () => {
-  return (
-    <Image
-      src="/illustrations/NewestBookingCards/Calendar.png"
-      width={16}
-      height={16}
-      alt="Picture of a calendar"
-    />
-  );
-};
-
-const PersonGuestImg = () => {
-  return (
-    <Image
-      src="/illustrations/NewestBookingCards/PersonGuest.png"
-      width={16}
-      height={16}
-      alt="Picture person"
-    />
-  );
-};
+export default NewestBookingCard;
 
 const SkeletonRelative = styled.div`
   display: flex;
@@ -207,42 +172,3 @@ interface BookingCard {
   bookingCosts: number;
   photo: React.ReactElement;
 }
-
-const NewestBookingCard = ({}: BookingCard) => {
-  return items.map((item: any) => {
-    var JSXTag = item.isHot ? SevenTwoHotImg : SevenTwoImg;
-    return (
-      <SkeletonBookingCardWrapper key={item.key}>
-        <SkeletonFlexColWrap>
-          <SkeletonFlexRowAvatarNameDate>
-            <SkeletonCardAvatar>
-              <AvatarImg icon={item.avatar}></AvatarImg>
-            </SkeletonCardAvatar>
-            <SkeletonFlexColFirstLast>
-              <SkeletonFlexRow>
-                <SkeletonFirstLastName>{item.firstName}</SkeletonFirstLastName>
-                <SkeletonFirstLastName>{item.lastName}</SkeletonFirstLastName>
-              </SkeletonFlexRow>
-              <SkeletonDateTime>{item.date}</SkeletonDateTime>
-            </SkeletonFlexColFirstLast>
-          </SkeletonFlexRowAvatarNameDate>
-          <SkeletonFlexRowDurationPersons>
-            <SkeletonBookingDuration>
-              <CalendarImg />
-              {item.bookingDuration}
-            </SkeletonBookingDuration>
-            <SkeletonGuestsPersons>
-              <PersonGuestImg />
-              {item.guestsPersons}
-            </SkeletonGuestsPersons>
-          </SkeletonFlexRowDurationPersons>
-        </SkeletonFlexColWrap>
-        <SkeletonRelative>
-          <LandscapeImg icon={item.photo} />
-          {<JSXTag />}
-        </SkeletonRelative>
-      </SkeletonBookingCardWrapper>
-    );
-  });
-};
-export default NewestBookingCard;

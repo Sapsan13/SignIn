@@ -1,56 +1,66 @@
-import Button from "@/components/button";
-import Image from "next/image";
+import {
+  StarGrey,
+  StarGold,
+  AvatarSimon,
+  ArowRight,
+} from "@/components/Images";
 import styled from "styled-components";
 
-const ErrowRight = () => {
+const CustomerReviews = () => {
   return (
-    <>
-      <Image
-        src={"/illustrations/leftBar/ArrowRight.png"}
-        width={20}
-        height={20}
-        alt="Picture of the author"
-      />
-    </>
+    <SkeletonCustomerReviewsWrapper>
+      <SkeletonColumn>
+        <SkeletonColumn>
+          <SkeletonCustomer>Customer Reviews</SkeletonCustomer>
+          <SkeletonReviews12>
+            Reviews12
+            <SkeletonArrows>
+              <SkeletonArrowleft>
+                <ArowRight />
+              </SkeletonArrowleft>
+              <SkeletonArrowRight>
+                <ArowRight />
+              </SkeletonArrowRight>
+            </SkeletonArrows>
+          </SkeletonReviews12>
+        </SkeletonColumn>
+        <SkeletonJayvion>
+          <SkeletonFlexRowAvatarNameDate>
+            <SkeletonAvatar>
+              <AvatarSimon />
+            </SkeletonAvatar>
+            <SkeletonFlexColFirstLast>
+              <SkeletonRow>
+                <SkeletonFirstLastName>Jaiviyon Simon</SkeletonFirstLastName>
+              </SkeletonRow>
+              <SkeletonDateTime>12 Aug 2022 10:00 PM</SkeletonDateTime>
+            </SkeletonFlexColFirstLast>
+          </SkeletonFlexRowAvatarNameDate>
+          <SkeletonStarsBar>
+            <StarGold />
+            <StarGold />
+            <StarGold />
+            <StarGrey />
+            <StarGrey />
+          </SkeletonStarsBar>
+          <SkeletonTextBlock>
+            Assumenda nam repudiandae rerum fugiat vel maxime.
+          </SkeletonTextBlock>
+          <SkeletonBtnBar>
+            <SkeletonBtn>Great Sevice</SkeletonBtn>
+            <SkeletonBtn>Recommended</SkeletonBtn>
+            <SkeletonBtn>Best Price</SkeletonBtn>
+          </SkeletonBtnBar>
+        </SkeletonJayvion>
+        <SkeletonRejectAccept>
+          <SkeletonReject>Reject</SkeletonReject>
+          <SkeletonAccept>Accept</SkeletonAccept>
+        </SkeletonRejectAccept>
+      </SkeletonColumn>
+    </SkeletonCustomerReviewsWrapper>
   );
 };
-
-const AvatarSimon = () => {
-  return (
-    <Image
-      src={"/illustrations/customerReviews/SimonJayvion.png"}
-      width={40}
-      height={40}
-      alt="Picture of the author"
-    />
-  );
-};
-
-const StarGold = () => {
-  return (
-    <>
-      <Image
-        src={"/illustrations/customerReviews/star.png"}
-        width={20}
-        height={20}
-        alt="Picture of the author"
-      />
-    </>
-  );
-};
-
-const StarGrey = () => {
-  return (
-    <>
-      <Image
-        src={"/illustrations/customerReviews/greyStar.png"}
-        width={20}
-        height={20}
-        alt="Picture of the author"
-      />
-    </>
-  );
-};
+export default CustomerReviews;
 
 const SkeletonCustomerReviewsWrapper = styled.div`
   display: flex;
@@ -259,58 +269,3 @@ const SkeletonRow = styled.div`
   flex-direction: row;
   width: 100%;
 `;
-const CustomerReviews = () => {
-  return (
-    <SkeletonCustomerReviewsWrapper>
-      <SkeletonColumn>
-        <SkeletonColumn>
-          <SkeletonCustomer>Customer Reviews</SkeletonCustomer>
-          <SkeletonReviews12>
-            Reviews12
-            <SkeletonArrows>
-              <SkeletonArrowleft>
-                <ErrowRight />
-              </SkeletonArrowleft>
-              <SkeletonArrowRight>
-                <ErrowRight />
-              </SkeletonArrowRight>
-            </SkeletonArrows>
-          </SkeletonReviews12>
-        </SkeletonColumn>
-        <SkeletonJayvion>
-          <SkeletonFlexRowAvatarNameDate>
-            <SkeletonAvatar>
-              <AvatarSimon />
-            </SkeletonAvatar>
-            <SkeletonFlexColFirstLast>
-              <SkeletonRow>
-                <SkeletonFirstLastName>Jaiviyon Simon</SkeletonFirstLastName>
-              </SkeletonRow>
-              <SkeletonDateTime>12 Aug 2022 10:00 PM</SkeletonDateTime>
-            </SkeletonFlexColFirstLast>
-          </SkeletonFlexRowAvatarNameDate>
-          <SkeletonStarsBar>
-            <StarGold />
-            <StarGold />
-            <StarGold />
-            <StarGrey />
-            <StarGrey />
-          </SkeletonStarsBar>
-          <SkeletonTextBlock>
-            Assumenda nam repudiandae rerum fugiat vel maxime.
-          </SkeletonTextBlock>
-          <SkeletonBtnBar>
-            <SkeletonBtn>Great Sevice</SkeletonBtn>
-            <SkeletonBtn>Recommended</SkeletonBtn>
-            <SkeletonBtn>Best Price</SkeletonBtn>
-          </SkeletonBtnBar>
-        </SkeletonJayvion>
-        <SkeletonRejectAccept>
-          <SkeletonReject>Reject</SkeletonReject>
-          <SkeletonAccept>Accept</SkeletonAccept>
-        </SkeletonRejectAccept>
-      </SkeletonColumn>
-    </SkeletonCustomerReviewsWrapper>
-  );
-};
-export default CustomerReviews;

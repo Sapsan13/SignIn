@@ -1,6 +1,28 @@
 "use client";
 import styled from "styled-components";
-import Image from "next/image";
+import { Logo, Diagram } from "@/components/Images";
+
+const LoginPicBlock = ({}: PicProps) => {
+  return (
+    <SkeletonPicWrapper>
+      <SkeletonLogoPic>
+        <Logo />
+      </SkeletonLogoPic>
+      <SkeletonFlexCol>
+        <SkeletonContent>
+          <SkeletonPicText>
+            Manage the job <br /> more effectively with Minimal
+          </SkeletonPicText>
+          <SkeletonDiagramPic>
+            <Diagram />
+          </SkeletonDiagramPic>
+        </SkeletonContent>
+      </SkeletonFlexCol>
+    </SkeletonPicWrapper>
+  );
+};
+
+export default LoginPicBlock;
 
 interface PicProps {
   variant?: string;
@@ -10,28 +32,6 @@ interface PicProps {
   endIcon?: React.ReactElement;
   children?: React.ReactNode;
 }
-
-const Logo = () => {
-  return (
-    <Image
-      src="/illustrations/Login/Logo.png"
-      width={40}
-      height={40}
-      alt="Logo"
-    />
-  );
-};
-
-const Diagram = () => {
-  return (
-    <Image
-      src="/illustrations/Login/Diagram.png"
-      width={720}
-      height={540}
-      alt="Diagram"
-    />
-  );
-};
 
 const SkeletonPicWrapper = styled.div`
   min-height: 960;
@@ -90,25 +90,3 @@ const SkeletonFlexCol = styled.div`
   flex-direction: column;
   width: 100%;
 `;
-
-const LoginPicBlock = ({}: PicProps) => {
-  return (
-    <SkeletonPicWrapper>
-      <SkeletonLogoPic>
-        <Logo />
-      </SkeletonLogoPic>
-      <SkeletonFlexCol>
-        <SkeletonContent>
-          <SkeletonPicText>
-            Manage the job <br /> more effectively with Minimal
-          </SkeletonPicText>
-          <SkeletonDiagramPic>
-            <Diagram />
-          </SkeletonDiagramPic>
-        </SkeletonContent>
-      </SkeletonFlexCol>
-    </SkeletonPicWrapper>
-  );
-};
-
-export default LoginPicBlock;

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { ErrowRight16, NavIcon } from "@/components/Images";
 import EmailPlus from "./EmailPlus";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -8,33 +8,6 @@ export type NavbarItem = {
   id: number;
   title: string;
   children: LeftNavbarItem[];
-};
-
-const NavIcon = ({ icon }: any) => {
-  return (
-    <div>
-      <Image src={icon} width={24} height={24} alt="Picture of an icon" />
-    </div>
-  );
-};
-
-const SkeletonArrowRight = styled.div`
-  width: 24px;
-  height: 16px;
-  padding-right: 8px;
-`;
-
-const ErrowRight = () => {
-  return (
-    <SkeletonArrowRight>
-      <Image
-        src={"/illustrations/leftBar/ArrowRight.png"}
-        width={16}
-        height={16}
-        alt="Picture arrowright"
-      />
-    </SkeletonArrowRight>
-  );
 };
 
 export type NavbarArray = NavbarItem[];
@@ -130,7 +103,7 @@ export const items: NavbarArray = [
         alias: "banking",
         title: "Banking",
         icon: "/illustrations/leftBar/PillarsBankGrey.png",
-        endIcon: ErrowRight,
+        endIcon: ErrowRight16,
       },
       {
         id: 5,

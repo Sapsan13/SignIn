@@ -1,26 +1,32 @@
-import Image from "next/image";
+import { Arrow } from "@/components/Images";
 import styled from "styled-components";
-const SkeletonRotate90 = styled.div`
-  display: flex;
-  cursor: pointer;
-  background-color: rgba(99, 115, 129, 0.01);
-  height: 16px;
-  width: 16px;
 
-  transform: rotate(90deg);
-`;
-const Arrow = () => {
+const ChartsHeader = () => {
   return (
-    <SkeletonRotate90>
-      <Image
-        src={"/illustrations/leftBar/ArrowRight.png"}
-        width={16}
-        height={16}
-        alt="Picture arrowright"
-      />
-    </SkeletonRotate90>
+    <SkeletonStatisticsHeaderWrap>
+      <SkeletonStatisticsYear>
+        <SkeletonStatistics>Statistics</SkeletonStatistics>
+        <SkeletonYear>
+          <div> Year</div>
+          <div>
+            <Arrow />
+          </div>
+        </SkeletonYear>
+      </SkeletonStatisticsYear>
+      <SkeletonCheckIn>
+        (+43% Check In | +12% Check Out) than last year
+      </SkeletonCheckIn>
+      <SkeletonRowGap>
+        <SkeletonSoldDots />
+        <SkeletonCircleText>Sold</SkeletonCircleText>
+        <SkeletonCanceledDots />
+        <SkeletonCircleText>Canceled</SkeletonCircleText>
+      </SkeletonRowGap>
+    </SkeletonStatisticsHeaderWrap>
   );
 };
+
+export default ChartsHeader;
 
 const SkeletonStatisticsHeaderWrap = styled.div`
   display: flex;
@@ -118,30 +124,3 @@ const SkeletonColumn = styled.div`
   flex-direction: column;
   gap: 16px;
 `;
-
-const ChartsHeader = () => {
-  return (
-    <SkeletonStatisticsHeaderWrap>
-      <SkeletonStatisticsYear>
-        <SkeletonStatistics>Statistics</SkeletonStatistics>
-        <SkeletonYear>
-          <div> Year</div>
-          <div>
-            <Arrow />
-          </div>
-        </SkeletonYear>
-      </SkeletonStatisticsYear>
-      <SkeletonCheckIn>
-        (+43% Check In | +12% Check Out) than last year
-      </SkeletonCheckIn>
-      <SkeletonRowGap>
-        <SkeletonSoldDots />
-        <SkeletonCircleText>Sold</SkeletonCircleText>
-        <SkeletonCanceledDots />
-        <SkeletonCircleText>Canceled</SkeletonCircleText>
-      </SkeletonRowGap>
-    </SkeletonStatisticsHeaderWrap>
-  );
-};
-
-export default ChartsHeader;

@@ -5,6 +5,23 @@ import NewestBookingComponent from "@/components/mainContent/main/analitycs/Newe
 import TopBar from "@/components/topBar/TopBar";
 import MidItemCard from "@/components/mainContent/midbar/MidItemAnalitycs";
 
+const Analitycs = () => {
+  return (
+    <SkeletonRowItems>
+      <LeftNavbar />
+      <SkeletonColumnItems>
+        <SkeletonMidCards>
+          <TopBar />
+        </SkeletonMidCards>
+        <MidItemCard items={analitycsMidbarElements} />
+        <SkeletonMidCards>
+          <NewestBookingComponent />
+        </SkeletonMidCards>
+      </SkeletonColumnItems>
+    </SkeletonRowItems>
+  );
+};
+
 const SkeletonRowItems = styled.div`
   width: 100%;
   display: flex;
@@ -16,7 +33,7 @@ const SkeletonRowItems = styled.div`
 const SkeletonColumnItems = styled.div`
   display: grid;
   width: 100%;
-  max-width: 1120px;
+  max-width: 1440px;
   padding-left: 40px;
   grid-template-columns: repeat(12, 1fr);
   column-gap: 24px;
@@ -28,23 +45,5 @@ const SkeletonMidCards = styled.div`
   grid-column: span 12;
   gap: 24px;
 `;
-const Analitycs = () => {
-  return (
-    <>
-      <SkeletonRowItems>
-        <LeftNavbar />
-        <SkeletonColumnItems>
-          <SkeletonMidCards>
-            <TopBar />
-          </SkeletonMidCards>
-          <MidItemCard items={analitycsMidbarElements} />
 
-          <SkeletonMidCards>
-            <NewestBookingComponent />
-          </SkeletonMidCards>
-        </SkeletonColumnItems>
-      </SkeletonRowItems>
-    </>
-  );
-};
 export default Analitycs;

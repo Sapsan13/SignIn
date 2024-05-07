@@ -1,82 +1,59 @@
-import Image from "next/image";
+import {
+  Starz,
+  AvailableIcons,
+  Lightning,
+  SquareOut,
+} from "@/components/Images";
 import styled from "styled-components";
 
-const Starz = () => {
+const StartANewProjectLeft = () => {
   return (
-    <Image
-      src="/illustrations/customerReviews/star.png"
-      width={20}
-      height={20}
-      alt="Icon of a star"
-    />
+    <SkeletonBlockWrapper>
+      <SkeletonStartAMinimal>
+        <SkeletonStartA>
+          Start a <br />
+          New Project with
+        </SkeletonStartA>
+        <SkeletonMinimalWord>Minimal</SkeletonMinimalWord>
+        <SkeletonStartMUI>
+          The starting point for your next project is based on MUI.
+          <br /> Easy customization Helps you build apps faster and better.
+        </SkeletonStartMUI>
+        <SkeletonStarzRting>
+          <SkeletonStarz>
+            <Starz />
+            <Starz />
+            <Starz />
+            <Starz />
+            <Starz />
+          </SkeletonStarz>
+          <SkeletonRting>
+            <SkeletonRate>4.95/5</SkeletonRate>
+            <SkeletonReiews>(99+ reviews)</SkeletonReiews>
+          </SkeletonRting>
+        </SkeletonStarzRting>
+      </SkeletonStartAMinimal>
+      <SkeletonButtonsWrapper>
+        <SkeletonLightning>
+          <Lightning />
+          Live Preview
+        </SkeletonLightning>
+        <SkeletonSquareOut>
+          <SquareOut />
+          Design Preview
+        </SkeletonSquareOut>
+      </SkeletonButtonsWrapper>
+      <SkeletonAvailableIconsWrapper>
+        <SkeletonAvailableFor>Available For</SkeletonAvailableFor>
+        <SkeletonAva>
+          <AvailableIcons />
+        </SkeletonAva>
+      </SkeletonAvailableIconsWrapper>
+    </SkeletonBlockWrapper>
   );
 };
+export default StartANewProjectLeft;
 
-const SkeletonAvailableForIcons = styled.div`
-  display: flex;
-  width: 100%;
-  height: 24px;
-  gap: 16px;
-  opacity: 0.4px;
-  color: rgba(99, 115, 129, 1);
-`;
-
-const AvailableIcons = () => {
-  return (
-    <SkeletonAvailableForIcons>
-      <Image
-        style={{ opacity: 0.4 }}
-        src="/illustrations/StartAProject/FigmaGrey.png"
-        width={24}
-        height={24}
-        alt="FigmaIcon"
-      />
-      <Image
-        style={{ opacity: 0.4 }}
-        src="/illustrations/StartAProject/JSGrey.png"
-        width={24}
-        height={24}
-        alt="JSIcon"
-      />
-      <Image
-        style={{ opacity: 0.4 }}
-        src="/illustrations/StartAProject/TSGrey.png"
-        width={24}
-        height={24}
-        alt="TSIcon"
-      />
-      <Image
-        style={{ opacity: 0.4 }}
-        src="/illustrations/StartAProject/NextGrey.png"
-        width={24}
-        height={24}
-        alt="NextJSIcon"
-      />
-    </SkeletonAvailableForIcons>
-  );
-};
-
-const Lightning = () => {
-  return (
-    <Image
-      src="/illustrations/StartAProject/Lightning.png"
-      width={24}
-      height={24}
-      alt="LightningIcon"
-    />
-  );
-};
-
-const SquareOut = () => {
-  return (
-    <Image
-      src="/illustrations/StartAProject/SquareOut.svg"
-      width={24}
-      height={24}
-      alt="SquareOutIcon"
-    />
-  );
-};
 const SkeletonBlockWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -283,51 +260,3 @@ const SkeletonAvailableIconsWrapper = styled.div`
 const SkeletonAva = styled.div`
   display: flex;
 `;
-
-const StartANewProjectLeft = () => {
-  return (
-    <SkeletonBlockWrapper>
-      <SkeletonStartAMinimal>
-        <SkeletonStartA>
-          Start a <br />
-          New Project with
-        </SkeletonStartA>
-        <SkeletonMinimalWord>Minimal</SkeletonMinimalWord>
-        <SkeletonStartMUI>
-          The starting point for your next project is based on MUI.
-          <br /> Easy customization Helps you build apps faster and better.
-        </SkeletonStartMUI>
-        <SkeletonStarzRting>
-          <SkeletonStarz>
-            <Starz />
-            <Starz />
-            <Starz />
-            <Starz />
-            <Starz />
-          </SkeletonStarz>
-          <SkeletonRting>
-            <SkeletonRate>4.95/5</SkeletonRate>
-            <SkeletonReiews>(99+ reviews)</SkeletonReiews>
-          </SkeletonRting>
-        </SkeletonStarzRting>
-      </SkeletonStartAMinimal>
-      <SkeletonButtonsWrapper>
-        <SkeletonLightning>
-          <Lightning />
-          Live Preview
-        </SkeletonLightning>
-        <SkeletonSquareOut>
-          <SquareOut />
-          Design Preview
-        </SkeletonSquareOut>
-      </SkeletonButtonsWrapper>
-      <SkeletonAvailableIconsWrapper>
-        <SkeletonAvailableFor>Available For</SkeletonAvailableFor>
-        <SkeletonAva>
-          <AvailableIcons />
-        </SkeletonAva>
-      </SkeletonAvailableIconsWrapper>
-    </SkeletonBlockWrapper>
-  );
-};
-export default StartANewProjectLeft;

@@ -1,16 +1,22 @@
-import Image from "next/image";
+import { Logo } from "@/components/Images";
 import styled from "styled-components";
 
-const Logo = () => {
+const LandingFooter = () => {
   return (
-    <Image
-      src="/illustrations/Login/Logo.png"
-      width={24}
-      height={24}
-      alt="LogoPic"
-    />
+    <SkeletonItemsWrapper>
+      <Logo />
+      <SkeletonCopyright>
+        &copy;All rights reserved
+        <br />
+        <SkeletonRow>
+          made by<></>
+          <SkeletonMinimalCC> Minimal.cc</SkeletonMinimalCC>
+        </SkeletonRow>
+      </SkeletonCopyright>
+    </SkeletonItemsWrapper>
   );
 };
+export default LandingFooter;
 
 const SkeletonItemsWrapper = styled.div`
   display: flex;
@@ -56,19 +62,3 @@ const SkeletonRow = styled.div`
   flex-direction: row;
   gap: 3px;
 `;
-const LandingFooter = () => {
-  return (
-    <SkeletonItemsWrapper>
-      <Logo />
-      <SkeletonCopyright>
-        &copy;All rights reserved
-        <br />
-        <SkeletonRow>
-          made by<></>
-          <SkeletonMinimalCC> Minimal.cc</SkeletonMinimalCC>
-        </SkeletonRow>
-      </SkeletonCopyright>
-    </SkeletonItemsWrapper>
-  );
-};
-export default LandingFooter;

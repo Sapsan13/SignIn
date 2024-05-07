@@ -2,6 +2,26 @@ import { ComponentProps } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 
+const MidItemCard = ({ items }) => {
+  return (
+    <>
+      {items.map((item) => (
+        <SkeletonCardItemWrapper key={item.id}>
+          <SkeletonMidNumberTitleWrapper>
+            <SkeletonMidNumber>{item.number}</SkeletonMidNumber>
+            <SkeletonMidTitle> {item.title}</SkeletonMidTitle>
+          </SkeletonMidNumberTitleWrapper>
+          <SkeletonMidImage>
+            <Image src={item.image} width={120} height={120} alt="Picture " />
+          </SkeletonMidImage>
+        </SkeletonCardItemWrapper>
+      ))}
+    </>
+  );
+};
+
+export default MidItemCard;
+
 const SkeletonMidWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -60,23 +80,3 @@ type MidItemCardProps = ComponentProps<"div"> & {
   title: string;
   number: string;
 };
-
-const MidItemCard = ({ items }) => {
-  return (
-    <>
-      {items.map((item) => (
-        <SkeletonCardItemWrapper key={item.id}>
-          <SkeletonMidNumberTitleWrapper>
-            <SkeletonMidNumber>{item.number}</SkeletonMidNumber>
-            <SkeletonMidTitle> {item.title}</SkeletonMidTitle>
-          </SkeletonMidNumberTitleWrapper>
-          <SkeletonMidImage>
-            <Image src={item.image} width={120} height={120} alt="Picture " />
-          </SkeletonMidImage>
-        </SkeletonCardItemWrapper>
-      ))}
-    </>
-  );
-};
-
-export default MidItemCard;

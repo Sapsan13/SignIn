@@ -1,16 +1,23 @@
-import Image from "next/image";
+import { DevelopmentIcon } from "@/components/Images";
 import styled from "styled-components";
 
-const DevelopmentIcon = () => {
+const Development = () => {
   return (
-    <Image
-      src="/illustrations/StartAProject/Development.png"
-      width={48}
-      height={48}
-      alt="BrandingPencil"
-    />
+    <>
+      <SkeletonWrapper>
+        <DevelopmentIcon />
+        <SkeletonDevelopmentWrapper>
+          <SkeletonDevelopment>Development</SkeletonDevelopment>
+          <SkeletonTheKitText>
+            Easy to customize and extend,
+            <br /> saving you time and money.
+          </SkeletonTheKitText>
+        </SkeletonDevelopmentWrapper>
+      </SkeletonWrapper>
+    </>
   );
 };
+export default Development;
 
 const SkeletonWrapper = styled.div`
   display: flex;
@@ -56,21 +63,3 @@ const SkeletonDevelopmentWrapper = styled.div`
   flex-direction: column;
   gap: 16px;
 `;
-
-const Development = () => {
-  return (
-    <>
-      <SkeletonWrapper>
-        <DevelopmentIcon />
-        <SkeletonDevelopmentWrapper>
-          <SkeletonDevelopment>Development</SkeletonDevelopment>
-          <SkeletonTheKitText>
-            Easy to customize and extend,
-            <br /> saving you time and money.
-          </SkeletonTheKitText>
-        </SkeletonDevelopmentWrapper>
-      </SkeletonWrapper>
-    </>
-  );
-};
-export default Development;

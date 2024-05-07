@@ -2,6 +2,46 @@ import RadialChart from "@/components/mainContent/main/overview/RadialChart";
 import RadialBarChart from "@/components/mainContent/main/overview/RadialChart";
 import styled from "styled-components";
 
+const ToursAvailable = () => {
+  return (
+    <SkeletonToursWrapper>
+      <SkeletonToursAvailable>
+        <SkeletonToursText>Tours Available</SkeletonToursText>
+        <SkeletonRadialText>
+          <RadialChart
+            width={240}
+            height={240}
+            color1={"#5BE49B"}
+            color2={"#00A76F"}
+            gradient={"tours"}
+          />
+          <SkeletonInnerText>
+            <SkeletonTours>tours</SkeletonTours>
+            <SkeletonNumber>120</SkeletonNumber>
+          </SkeletonInnerText>
+        </SkeletonRadialText>
+        <SkeletonToursBottom>
+          <SkeletonSoldOut>
+            <SkeletonFlexRowGap>
+              <SkeletonGreenSquare />
+              Sold out
+            </SkeletonFlexRowGap>
+            <SkeletonBottomTours>120 Tours</SkeletonBottomTours>
+          </SkeletonSoldOut>
+          <SkeletonAvailable>
+            <SkeletonFlexRowGap>
+              <SkeletonGraySquare />
+              Available
+            </SkeletonFlexRowGap>
+            <SkeletonBottomTours>66 Tours</SkeletonBottomTours>
+          </SkeletonAvailable>
+        </SkeletonToursBottom>
+      </SkeletonToursAvailable>
+    </SkeletonToursWrapper>
+  );
+};
+export default ToursAvailable;
+
 const SkeletonGreenSquare = styled.div`
   width: 20px;
   height: 20px;
@@ -121,43 +161,3 @@ const SkeletonBottomTours = styled.div`
   text-align: left;
   color: rgba(33, 43, 54, 1);
 `;
-
-const ToursAvailable = () => {
-  return (
-    <SkeletonToursWrapper>
-      <SkeletonToursAvailable>
-        <SkeletonToursText>Tours Available</SkeletonToursText>
-        <SkeletonRadialText>
-          <RadialChart
-            width={240}
-            height={240}
-            color1={"#5BE49B"}
-            color2={"#00A76F"}
-            gradient={"tours"}
-          />
-          <SkeletonInnerText>
-            <SkeletonTours>tours</SkeletonTours>
-            <SkeletonNumber>120</SkeletonNumber>
-          </SkeletonInnerText>
-        </SkeletonRadialText>
-        <SkeletonToursBottom>
-          <SkeletonSoldOut>
-            <SkeletonFlexRowGap>
-              <SkeletonGreenSquare />
-              Sold out
-            </SkeletonFlexRowGap>
-            <SkeletonBottomTours>120 Tours</SkeletonBottomTours>
-          </SkeletonSoldOut>
-          <SkeletonAvailable>
-            <SkeletonFlexRowGap>
-              <SkeletonGraySquare />
-              Available
-            </SkeletonFlexRowGap>
-            <SkeletonBottomTours>66 TSours</SkeletonBottomTours>
-          </SkeletonAvailable>
-        </SkeletonToursBottom>
-      </SkeletonToursAvailable>
-    </SkeletonToursWrapper>
-  );
-};
-export default ToursAvailable;

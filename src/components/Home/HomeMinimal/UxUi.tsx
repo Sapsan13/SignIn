@@ -1,16 +1,5 @@
-import Image from "next/image";
+import { Uxui } from "@/components/Images";
 import styled from "styled-components";
-
-const Uxui = () => {
-  return (
-    <Image
-      src="/illustrations/StartAProject/UXUI.png"
-      width={48}
-      height={48}
-      alt="BrandingPencil"
-    />
-  );
-};
 
 const SkeletonWrapper = styled.div`
   display: flex;

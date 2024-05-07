@@ -1,4 +1,15 @@
+import {
+  ADD,
+  DELETE,
+  UPDATE,
+  addTodo,
+  deleteTodo,
+  updateTodo,
+} from "@/store/actions";
+import { store } from "@/store/store";
 import Link from "next/link";
+import { useEffect } from "react";
+import { Provider, useDispatch } from "react-redux";
 import styled from "styled-components";
 
 const SkeletonHome = styled.div`
@@ -14,15 +25,31 @@ const SkeletonHome = styled.div`
 `;
 
 export default function Home() {
+  // const newTodo = {
+  //   id: 2,
+  //   text: "Test todo",
+  //   completed: false,
+  //   color: "green",
+  // };
+  // const dispatch = useDispatch();
+
+  // dispatch(addTodo({}));
+  // dispatch(deleteTodo(id));
+  // dispatch(updateTodo());
+
+  // return null;
+
   return (
-    <SkeletonHome>
-      <div>
-        <div>HOMEPAGE</div>
+    <Provider store={store}>
+      <SkeletonHome>
         <div>
-          <Link href={"auth/login/loginPage"}>Auth</Link>
+          <div>HOMEPAGE</div>
+          <div>
+            <Link href={"auth/login/loginPage"}>Auth</Link>
+          </div>
+          <Link href={"overview"}>Overview</Link>
         </div>
-        <Link href={"overview"}>Overview</Link>
-      </div>
-    </SkeletonHome>
+      </SkeletonHome>
+    </Provider>
   );
 }

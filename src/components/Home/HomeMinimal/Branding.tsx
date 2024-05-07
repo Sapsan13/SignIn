@@ -1,16 +1,20 @@
-import Image from "next/image";
+import { BrandingPencil } from "@/components/Images";
 import styled from "styled-components";
 
-const BrandingPencil = () => {
+const Branding = () => {
   return (
-    <Image
-      src="/illustrations/StartAProject/BrandingPencil.png"
-      width={48}
-      height={48}
-      alt="BrandingPencil"
-    />
+    <SkeletonWrapper>
+      <BrandingPencil />
+      <SkeletonBrand>
+        <SkeletonBrandingText>Branding</SkeletonBrandingText>
+        <SkeletonConsistentText>
+          Consistent design makes it easy <br /> to brand your own.
+        </SkeletonConsistentText>
+      </SkeletonBrand>
+    </SkeletonWrapper>
   );
 };
+export default Branding;
 
 const SkeletonWrapper = styled.div`
   display: flex;
@@ -56,18 +60,3 @@ const SkeletonBrand = styled.div`
   flex-direction: column;
   gap: 16px;
 `;
-
-const Branding = () => {
-  return (
-    <SkeletonWrapper>
-      <BrandingPencil />
-      <SkeletonBrand>
-        <SkeletonBrandingText>Branding</SkeletonBrandingText>
-        <SkeletonConsistentText>
-          Consistent design makes it easy <br /> to brand your own.
-        </SkeletonConsistentText>
-      </SkeletonBrand>
-    </SkeletonWrapper>
-  );
-};
-export default Branding;

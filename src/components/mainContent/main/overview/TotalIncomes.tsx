@@ -1,17 +1,6 @@
 import styled from "styled-components";
 import TotalIncomesChart from "./TotalIncomesChart";
-import Image from "next/image";
-
-const Ascend = () => {
-  return (
-    <Image
-      src={"/illustrations/NewestBookingCards/AscendingGraph.png"}
-      width={20}
-      height={20}
-      alt="Picture ascend graph"
-    />
-  );
-};
+import { Ascend } from "@/components/Images";
 
 const SkeletonTotalIncomesWrapper = styled.div`
   display: flex;

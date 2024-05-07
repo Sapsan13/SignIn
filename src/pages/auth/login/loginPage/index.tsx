@@ -4,10 +4,85 @@ import styled from "styled-components";
 import Button from "@/components/button";
 import Inputfield from "@/components/inputField";
 import PasswordInput from "@/components/passwordInput";
-import { useState } from "react";
 import { getCsrfToken } from "next-auth/react";
 import { InferGetServerSidePropsType, GetServerSidePropsContext } from "next";
 import RootLayout from "../layout";
+import { useFormik } from "formik";
+
+export default function SignIn({
+  csrfToken,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2));
+    },
+  });
+  // You'll update this function later...
+  // console.log(login);
+  return (
+    <RootLayout>
+      <SkeletonRightSidebar>
+        <SkeletonRightBlock>
+          <SkeletonTopGap>
+            <SkeletonHeader>Welcome back!</SkeletonHeader>
+            <SkeletonDivRow>
+              <SkeletonHaveAnAccount>
+                Don't have an account?
+              </SkeletonHaveAnAccount>
+              <Link href={"/auth/login/signUp"}>
+                <SkeletonSignIn>Sign in here!</SkeletonSignIn>
+              </Link>
+            </SkeletonDivRow>
+          </SkeletonTopGap>
+          <SkeletonForm
+            method="post"
+            action="/api/auth/callback/credentials"
+            onSubmit={formik.handleSubmit}
+          >
+            <input
+              name="csrfToken"
+              type="hidden"
+              defaultValue={csrfToken ?? ""}
+            />
+            <Inputfield
+              type="email"
+              required
+              name="email"
+              placeholder="Email adress"
+              onChange={formik.handleChange}
+              value={formik.values.email}
+            />
+            <PasswordInput
+              name="password"
+              placeholder="Enter your password here"
+              type="password"
+              onChange={formik.handleChange}
+              value={formik.values.password}
+            />
+            <Button type="submit">Log In</Button>
+
+            <SkeletonBottomText>
+              By signing up, I agree to <a href="termsOfUse">Terms of Use </a>{" "}
+              and <a href="privacyPolicy">Privacy Policy</a>.
+            </SkeletonBottomText>
+          </SkeletonForm>
+        </SkeletonRightBlock>
+      </SkeletonRightSidebar>
+    </RootLayout>
+  );
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const csrfToken = await getCsrfToken(context);
+
+  return {
+    props: { csrfToken: csrfToken || null },
+  };
+}
 
 const SkeletonRightSidebar = styled.div`
   display: flex;
@@ -111,81 +186,3 @@ const SkeletonForm = styled.form`
 const SkeletonDivRow = styled.div`
   display: flex;
 `;
-
-export default function SignIn({
-  csrfToken,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const [login, setLogin] = useState({
-    email: "",
-    password: "",
-  });
-  // const [emailError, setEmailError] = useState("");
-  // const [passwordError, setPasswordError] = useState("");
-
-  const formSubmitHandler = () => {
-    () => console.log("SUBMITTED");
-  };
-  // You'll update this function later...
-  // console.log(login);
-  return (
-    <RootLayout>
-      <SkeletonRightSidebar>
-        <SkeletonRightBlock>
-          <SkeletonTopGap>
-            <SkeletonHeader>Welcome back!</SkeletonHeader>
-            <SkeletonDivRow>
-              <SkeletonHaveAnAccount>
-                Don't have an account?
-              </SkeletonHaveAnAccount>
-              <Link href={"/auth/login/signUp"}>
-                <SkeletonSignIn>Sign in here!</SkeletonSignIn>
-              </Link>
-            </SkeletonDivRow>
-          </SkeletonTopGap>
-          <SkeletonForm method="post" action="/api/auth/callback/credentials">
-            <input
-              name="csrfToken"
-              type="hidden"
-              defaultValue={csrfToken ?? ""}
-            />
-            <Inputfield
-              type="email"
-              required
-              name="email"
-              placeholder="Email adress"
-              defaultValue={login.email}
-              // onChange={(e) =>
-              //   setLogin((state) => ({ ...state, email: e.target.value }))
-              // }
-            />
-            <PasswordInput
-              defaultValue={login.password}
-              name="password"
-              placeholder="Enter your password here"
-              // onChange={(e) =>
-              //   setLogin((state) => ({
-              //     ...state,
-              //     password: e.target.value,
-              //   }))
-              // }
-            />
-            <Button type="submit">Log In</Button>
-
-            <SkeletonBottomText>
-              By signing up, I agree to <a href="termsOfUse">Terms of Use </a>{" "}
-              and <a href="privacyPolicy">Privacy Policy</a>.
-            </SkeletonBottomText>
-          </SkeletonForm>
-        </SkeletonRightBlock>
-      </SkeletonRightSidebar>
-    </RootLayout>
-  );
-}
-
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const csrfToken = await getCsrfToken(context);
-
-  return {
-    props: { csrfToken: csrfToken || null },
-  };
-}

@@ -1,83 +1,75 @@
-import Image from "next/image";
+import {
+  NextJS,
+  TS,
+  JS,
+  Figma,
+  ArrowRight24,
+  XPECTUK,
+  Galachka,
+} from "@/components/Images";
 import styled from "styled-components";
 import { Item } from "./RightPlanDataArray";
 import { RightPlanData } from "./RightPlanDataArray";
-import { useState } from "react";
 import StandartExtendedSwitch from "./StandartExtendedSwitch";
-const Galachka = () => {
-  return (
-    <Image
-      src={"/illustrations/StartAProject/Vsign.png"}
-      width={16}
-      height={16}
-      alt="Picture of an arrow"
-    />
-  );
-};
 
-const XPECTUK = () => {
+const RightPlanMain = ({ items, stateIndex }: RightPlanMainProps) => {
+  // const [inNdex, setIndex] = useState(0);
+  {
+    console.log(stateIndex);
+  }
   return (
-    <Image
-      src={"/illustrations/StartAProject/Xpectuk.png"}
-      width={16}
-      height={16}
-      alt="Picture of an arrow"
-    />
+    <SkeletonPlanWrapper>
+      {items.map((item, index) => (
+        <SkeletonPlanMainWrapper
+          key={item.id}
+          stateIndex={stateIndex}
+          index={index}
+        >
+          <SkeletonLicenseSubs>
+            <SkeletonLicense>{item.license}</SkeletonLicense>
+            <SkeletonSubs title={item.subscriptionType}>
+              {item.subscriptionType}
+            </SkeletonSubs>
+          </SkeletonLicenseSubs>
+          <SkeletonIconsBlock>
+            <SkeletonItem>{IconMapping[item.icons]}</SkeletonItem>
+          </SkeletonIconsBlock>
+          <SkeletonItemsBlock>
+            {item.elements.map((subItem) => {
+              if (subItem.type === "label") {
+                return (
+                  <SkeletonTextRow key={subItem.id}>
+                    <SkeletonTextVX>
+                      {subItem.done ? <Galachka /> : <XPECTUK />}
+                    </SkeletonTextVX>
+                    <SkeletonItemText key={subItem.id} isDone={subItem.done}>
+                      {subItem.label}
+                    </SkeletonItemText>
+                  </SkeletonTextRow>
+                );
+              }
+              if (subItem.type === "divider") {
+                return (
+                  <SkeletonItem key={subItem.id}>
+                    {subItem.content}
+                  </SkeletonItem>
+                );
+              }
+            })}
+          </SkeletonItemsBlock>
+          <SkeletonLearnWrapper>
+            <SkeletonLearnMore>
+              Learn More <ArrowRight24 />
+            </SkeletonLearnMore>
+          </SkeletonLearnWrapper>
+        </SkeletonPlanMainWrapper>
+      ))}
+    </SkeletonPlanWrapper>
   );
 };
+export default RightPlanMain;
 
-const ArrowRight = () => {
-  return (
-    <Image
-      src={"/illustrations/StartAProject/ArrowRight.png"}
-      width={18}
-      height={18}
-      alt="Picture of an arrow"
-    />
-  );
-};
-
-const Figma = () => {
-  return (
-    <Image
-      src="/illustrations/StartAProject/FigmaIcon.png"
-      width={24}
-      height={24}
-      alt="FigmaIcon"
-    />
-  );
-};
-const JS = () => {
-  return (
-    <Image
-      src="/illustrations/StartAProject/JSIcon.png"
-      width={24}
-      height={24}
-      alt="FigmaIcon"
-    />
-  );
-};
-const TS = () => {
-  return (
-    <Image
-      src="/illustrations/StartAProject/TSIcon.png"
-      width={24}
-      height={24}
-      alt="FigmaIcon"
-    />
-  );
-};
-
-const NextJS = () => {
-  return (
-    <Image
-      src="/illustrations/StartAProject/NextJSIcon.png"
-      width={24}
-      height={24}
-      alt="FigmaIcon"
-    />
-  );
-};
+// text-decoration: line-through;
 
 interface PlanItem {
   subscription?: SubItem;
@@ -274,62 +266,3 @@ export interface RightPlanMainProps {
   // icons: IconsItem;
   stateIndex: number;
 }
-
-const RightPlanMain = ({ items, stateIndex }: RightPlanMainProps) => {
-  // const [inNdex, setIndex] = useState(0);
-  {
-    console.log(stateIndex);
-  }
-  return (
-    <SkeletonPlanWrapper>
-      {items.map((item, index) => (
-        <SkeletonPlanMainWrapper
-          key={item.id}
-          stateIndex={stateIndex}
-          index={index}
-        >
-          <SkeletonLicenseSubs>
-            <SkeletonLicense>{item.license}</SkeletonLicense>
-            <SkeletonSubs title={item.subscriptionType}>
-              {item.subscriptionType}
-            </SkeletonSubs>
-          </SkeletonLicenseSubs>
-          <SkeletonIconsBlock>
-            <SkeletonItem>{IconMapping[item.icons]}</SkeletonItem>
-          </SkeletonIconsBlock>
-          <SkeletonItemsBlock>
-            {item.elements.map((subItem) => {
-              if (subItem.type === "label") {
-                return (
-                  <SkeletonTextRow key={subItem.id}>
-                    <SkeletonTextVX>
-                      {subItem.done ? <Galachka /> : <XPECTUK />}
-                    </SkeletonTextVX>
-                    <SkeletonItemText key={subItem.id} isDone={subItem.done}>
-                      {subItem.label}
-                    </SkeletonItemText>
-                  </SkeletonTextRow>
-                );
-              }
-              if (subItem.type === "divider") {
-                return (
-                  <SkeletonItem key={subItem.id}>
-                    {subItem.content}
-                  </SkeletonItem>
-                );
-              }
-            })}
-          </SkeletonItemsBlock>
-          <SkeletonLearnWrapper>
-            <SkeletonLearnMore>
-              Learn More <ArrowRight />
-            </SkeletonLearnMore>
-          </SkeletonLearnWrapper>
-        </SkeletonPlanMainWrapper>
-      ))}
-    </SkeletonPlanWrapper>
-  );
-};
-export default RightPlanMain;
-
-// text-decoration: line-through;
