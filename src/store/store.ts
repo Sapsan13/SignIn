@@ -1,10 +1,15 @@
-import { createStore } from "redux";
+import { applyMiddleware, createStore } from "redux";
 import { ADD, DELETE, UPDATE } from "./actions";
+import axiosMiddleware from "redux-axios-middleware";
+import axios from "axios";
+// export const store = createStore(rootReducer);
 
-export const store = createStore(rootReducer);
-
+const client = axios.create({
+  //all axios can be used, shown in axios documentation
+  baseURL: "http://localhost:8080/api",
+  responseType: "json",
+});
 const CREATE_TODO = "CREATE_TODO";
-
 interface Filters {
   status: string;
   colors: [];
@@ -35,12 +40,7 @@ const initialState: IInitialState = {
 };
 
 // Use the initialState as a default value
-export default function rootReducer(
-  state = {
-    todos: [],
-  },
-  action: any
-) {
+export const rootReducer = (state = initialState, action: any) => {
   // The reducer normally looks at the action type field to decide what happens
   switch (action.type) {
     case ADD: {
@@ -64,11 +64,17 @@ export default function rootReducer(
         ),
       };
     }
-
     // Do something here based on the different types of actions
     default:
       // If this reducer doesn't recognize the action type, or doesn't
       // care about this specific action, return the existing state unchanged
       return state;
   }
-}
+};
+export const store = createStore(
+  rootReducer, //custom reducers
+  applyMiddleware(
+    axiosMiddleware(client) //second parameter options can optionally contain onSuccess, onError, onComplete, successSuffix, errorSuffix
+  )
+  //EACH ENTITY NEW ACTION FILE redux-axios-middleware, (strapi CMS)
+);

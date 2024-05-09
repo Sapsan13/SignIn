@@ -13,6 +13,7 @@ import { useFormik } from "formik";
 export default function SignIn({
   csrfToken,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  // FORMIK YUP in a file
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -33,6 +34,7 @@ export default function SignIn({
       // });
     },
   });
+  // FORMIK YUP in a file
   // You'll update this function later...
   // console.log(login);
   return (
