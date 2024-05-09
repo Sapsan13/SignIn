@@ -1,7 +1,9 @@
 "use client";
+import * as yup from "yup";
 import Link from "next/link";
 import styled from "styled-components";
 import Button from "../../../../components/button";
+import { object, string, number, date, InferType } from "yup";
 // import Inputfield from "../../../components/inputField";
 import PasswordInput from "@/components/passwordInput";
 import Inputfield from "@/components/inputField";
@@ -20,10 +22,23 @@ export default function CreateAccount({
       email: "",
       password: "",
     },
+    validationSchema: yup.object({
+      firstName: yup
+        .string()
+        .max(15, "Must be 15 characters or less")
+        .required("Required"),
+      lastName: yup
+        .string()
+        .max(20, "Must be 20 characters or less")
+        .required("Required"),
+      email: yup.string().email("Invalid email address").required("Required"),
+      password: yup.string(),
+    }),
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
     },
   });
+  console.log(formik);
   // You'll update this function later...
   // const handleFieldChange = (key: keyof ReturnType<login>) => () => {
   //   setLogin({ ...login, [key]: e.target.value });
@@ -53,30 +68,45 @@ export default function CreateAccount({
                     type="hidden"
                     defaultValue={csrfToken ?? ""}
                   />
-                  <Inputfield
-                    required
-                    placeholder="First name"
-                    name="firstName"
-                    type="text"
-                    onChange={formik.handleChange}
-                    value={formik.values.firstName}
-                  />
-                  <Inputfield
-                    placeholder="Last name"
-                    name="lastName"
-                    type="text"
-                    onChange={formik.handleChange}
-                    value={formik.values.lastName}
-                  />
+                  <SkeletonDivColForm>
+                    <Inputfield
+                      required
+                      placeholder="First name"
+                      name="firstName"
+                      type="text"
+                      onChange={formik.handleChange}
+                      value={formik.values.firstName}
+                    />
+                    {formik.errors.firstName ? (
+                      <span>{formik.errors.firstName}</span>
+                    ) : null}
+                  </SkeletonDivColForm>
+                  <SkeletonDivColForm>
+                    <Inputfield
+                      placeholder="Last name"
+                      name="lastName"
+                      type="text"
+                      onChange={formik.handleChange}
+                      value={formik.values.lastName}
+                    />
+                    {formik.errors.firstName ? (
+                      <span>{formik.errors.lastName}</span>
+                    ) : null}
+                  </SkeletonDivColForm>
                 </SkeletonDivRow>
-                <Inputfield
-                  type="email"
-                  required
-                  placeholder="Email adress"
-                  name="email"
-                  onChange={formik.handleChange}
-                  value={formik.values.email}
-                />
+                <SkeletonDivColForm>
+                  <Inputfield
+                    type="email"
+                    required
+                    placeholder="Email adress"
+                    name="email"
+                    onChange={formik.handleChange}
+                    value={formik.values.email}
+                  />
+                  {formik.errors.firstName ? (
+                    <span>{formik.errors.password}</span>
+                  ) : null}
+                </SkeletonDivColForm>
                 <PasswordInput
                   placeholder="Enter your password here"
                   name="password"
@@ -196,6 +226,14 @@ const SkeletonDivCol = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+`;
+
+const SkeletonDivColForm = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+  color: red;
 `;
 
 const SkeletonForm = styled.form`

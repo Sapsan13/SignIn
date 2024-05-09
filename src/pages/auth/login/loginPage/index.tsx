@@ -1,10 +1,11 @@
 "use client";
 import Link from "next/link";
+import * as yup from "yup";
 import styled from "styled-components";
 import Button from "@/components/button";
 import Inputfield from "@/components/inputField";
 import PasswordInput from "@/components/passwordInput";
-import { getCsrfToken } from "next-auth/react";
+import { getCsrfToken, signIn } from "next-auth/react";
 import { InferGetServerSidePropsType, GetServerSidePropsContext } from "next";
 import RootLayout from "../layout";
 import { useFormik } from "formik";
@@ -17,10 +18,22 @@ export default function SignIn({
       email: "",
       password: "",
     },
+    validationSchema: yup.object({
+      email: yup.string().email("Invalid email address").required("Required"),
+      password: yup.string(),
+    }),
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      signIn("credentials", {
+        // redirect: false,
+        callbackUrl: "/",
+        csrfToken,
+        email: values.email,
+        password: values.password,
+      });
     },
   });
+  console.log(formik);
+
   // You'll update this function later...
   // console.log(login);
   return (
@@ -48,21 +61,29 @@ export default function SignIn({
               type="hidden"
               defaultValue={csrfToken ?? ""}
             />
-            <Inputfield
-              type="email"
-              required
-              name="email"
-              placeholder="Email adress"
-              onChange={formik.handleChange}
-              value={formik.values.email}
-            />
-            <PasswordInput
-              name="password"
-              placeholder="Enter your password here"
-              type="password"
-              onChange={formik.handleChange}
-              value={formik.values.password}
-            />
+            <SkeletonDivColForm>
+              <Inputfield
+                type="email"
+                required
+                name="email"
+                placeholder="Email adress"
+                onChange={formik.handleChange}
+                value={formik.values.email}
+              />
+              {formik.errors.email ? <span>{formik.errors.email}</span> : null}
+            </SkeletonDivColForm>
+            <SkeletonDivColForm>
+              <PasswordInput
+                name="password"
+                placeholder="Enter your password here"
+                type="password"
+                onChange={formik.handleChange}
+                value={formik.values.password}
+              />
+              {formik.errors.password ? (
+                <span>{formik.errors.password}</span>
+              ) : null}
+            </SkeletonDivColForm>
             <Button type="submit">Log In</Button>
 
             <SkeletonBottomText>
@@ -169,6 +190,14 @@ const SkeletonBottomText = styled.div`
 
 const SkeletonRow = styled.div`
   display: flex;
+`;
+
+const SkeletonDivColForm = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+  color: red;
 `;
 
 const SkeletonDivCol = styled.div`
