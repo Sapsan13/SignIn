@@ -35,6 +35,7 @@ const SkeletonLandingWrapper = styled.div`
   @media (max-width: 600px) {
     text-align: center;
     flex-direction: column;
+    gap: 40px;
   }
 `;
 
@@ -87,6 +88,7 @@ const SkeletonVisitZone = styled.div`
   color: rgba(33, 43, 54, 1);
   border: 1px solid rgba(145, 158, 171, 0.24);
   gap: 6px;
+  cursor: pointer;
   @media (max-width: 600px) {
     display: none;
   }
@@ -108,12 +110,16 @@ const SkeletonLookingZoneWrap = styled.div`
 
 const SkeletonLooking = styled.div`
   display: flex;
-  height: auto;
   @media (max-width: 600px) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 0 16px 0 16px;
+    & > img {
+      height: auto;
+      width: 100%;
+      padding: 0;
+    }
   }
 `;
 

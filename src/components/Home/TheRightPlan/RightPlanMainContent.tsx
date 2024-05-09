@@ -255,7 +255,8 @@ const SkeletonLearnMore = styled.div`
   font-weight: 700;
   line-height: 22px;
   text-align: left;
-  width: 104px;
+  width: fit-content;
+  white-space: nowrap;
   right: 0;
   gap: 8px;
   color: rgba(33, 43, 54, 1);

@@ -38,7 +38,6 @@ export default function CreateAccount({
       alert(JSON.stringify(values, null, 2));
     },
   });
-  console.log(formik);
   // You'll update this function later...
   // const handleFieldChange = (key: keyof ReturnType<login>) => () => {
   //   setLogin({ ...login, [key]: e.target.value });

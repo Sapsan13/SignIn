@@ -72,6 +72,7 @@ const SkeletonArrowleft = styled.div`
 const SkeletonNavArrows = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: center;
   height: 36px;
   gap: 4px;

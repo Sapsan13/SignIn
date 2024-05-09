@@ -404,11 +404,16 @@ export const AvatarImg = ({ icon }: any) => {
 
 const SkeletonLandscapeImg = styled.div`
   display: flex;
-  width: 236px;
-  height: 236px;
+  width: 100%;
+  max-height: 236px;
   margin: 8px;
   border-radius: 12px;
   overflow: hidden;
+
+  & > img {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 export const LandscapeImg = ({ icon }: any) => {

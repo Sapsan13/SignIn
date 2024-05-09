@@ -23,17 +23,16 @@ export default function SignIn({
       password: yup.string(),
     }),
     onSubmit: (values) => {
-      signIn("credentials", {
-        // redirect: false,
-        callbackUrl: "/",
-        csrfToken,
-        email: values.email,
-        password: values.password,
-      });
+      alert(JSON.stringify(values, null, 2));
+      // signIn("credentials", {
+      //   // redirect: false,
+      //   callbackUrl: "/",
+      //   csrfToken,
+      //   email: values.email,
+      //   password: values.password,
+      // });
     },
   });
-  console.log(formik);
-
   // You'll update this function later...
   // console.log(login);
   return (
