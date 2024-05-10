@@ -1,4 +1,4 @@
-import { Todo } from "./store";
+import { Todo } from "../reducers/todoReducer";
 
 export const DELETE = "DELETE";
 export const ADD = "ADD";

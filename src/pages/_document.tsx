@@ -1,5 +1,7 @@
 import { Html, Head, Main, NextScript } from "next/document";
 import StyledComponentsRegistry from "../../lib/registry";
+import { store } from "@/store/store";
+import { Provider } from "react-redux";
 
 export default function Document() {
   return (

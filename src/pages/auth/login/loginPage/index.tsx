@@ -8,10 +8,13 @@ import { InferGetServerSidePropsType, GetServerSidePropsContext } from "next";
 import RootLayout from "../layout";
 import { useFormik } from "formik";
 import { schema } from "./loginYup";
+import { useDispatch } from "react-redux";
+import { loginAction } from "@/store/actions/authActions";
 
 export default function SignIn({}: InferGetServerSidePropsType<
   typeof getServerSideProps
 >) {
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -19,7 +22,8 @@ export default function SignIn({}: InferGetServerSidePropsType<
     },
     validationSchema: schema,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      dispatch(loginAction(values));
+      // alert(JSON.stringify(values, null, 2));
     },
   });
   return (
