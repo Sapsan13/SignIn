@@ -1,35 +1,35 @@
 import { useState } from "react";
 import styled from "styled-components";
 
-const StandartExtendedSwitch = ({ setStateIndex, stateIndex }) => {
+const arrOfData = [
+  {
+    title: "Standart",
+  },
+  {
+    title: "Standart Plus",
+  },
+  {
+    title: "Extended",
+  },
+];
+const StandartExtendedSwitch = ({ setStateIndex, stateIndex }: any) => {
   return (
     <SkeletonStandartExtendedWrapper>
-      <SkeletonStandartExtended
-        onClick={(event) => setStateIndex(+event.target.dataset.index)}
-        data-index={0}
-        $isIndex={stateIndex === 0}
-      >
-        Standart
-      </SkeletonStandartExtended>
-      <SkeletonStandartExtended
-        onClick={(event) => setStateIndex(+event.target.dataset.index)}
-        data-index={1}
-        $isIndex={stateIndex === 1}
-      >
-        Standart Plus
-      </SkeletonStandartExtended>
-      <SkeletonStandartExtended
-        onClick={(event) => setStateIndex(+event.target.dataset.index)}
-        data-index={2}
-        $isIndex={stateIndex === 2}
-      >
-        Extended
-      </SkeletonStandartExtended>
+      {arrOfData.map((item, index) => {
+        return (
+          <SkeletonStandartExtended
+            onClick={(event) => setStateIndex(index)}
+            key={index}
+            $isIndex={stateIndex === index}
+          >
+            {item.title}
+          </SkeletonStandartExtended>
+        );
+      })}
     </SkeletonStandartExtendedWrapper>
   );
 };
 export default StandartExtendedSwitch;
-
 const SkeletonStandartExtendedWrapper = styled.div`
   display: flex;
   flex-direction: row;

@@ -1,42 +1,27 @@
 "use client";
 import Link from "next/link";
-import * as yup from "yup";
 import styled from "styled-components";
 import Button from "@/components/button";
 import Inputfield from "@/components/inputField";
 import PasswordInput from "@/components/passwordInput";
-import { getCsrfToken, signIn } from "next-auth/react";
 import { InferGetServerSidePropsType, GetServerSidePropsContext } from "next";
 import RootLayout from "../layout";
 import { useFormik } from "formik";
+import { schema } from "./loginYup";
 
-export default function SignIn({
-  csrfToken,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  // FORMIK YUP in a file
+export default function SignIn({}: InferGetServerSidePropsType<
+  typeof getServerSideProps
+>) {
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
-    validationSchema: yup.object({
-      email: yup.string().email("Invalid email address").required("Required"),
-      password: yup.string(),
-    }),
+    validationSchema: schema,
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
-      // signIn("credentials", {
-      //   // redirect: false,
-      //   callbackUrl: "/",
-      //   csrfToken,
-      //   email: values.email,
-      //   password: values.password,
-      // });
     },
   });
-  // FORMIK YUP in a file
-  // You'll update this function later...
-  // console.log(login);
   return (
     <RootLayout>
       <SkeletonRightSidebar>
@@ -45,7 +30,7 @@ export default function SignIn({
             <SkeletonHeader>Welcome back!</SkeletonHeader>
             <SkeletonDivRow>
               <SkeletonHaveAnAccount>
-                Don't have an account?
+                {"Don't have an account?"}
               </SkeletonHaveAnAccount>
               <Link href={"/auth/login/signUp"}>
                 <SkeletonSignIn>Sign in here!</SkeletonSignIn>
@@ -57,11 +42,6 @@ export default function SignIn({
             action="/api/auth/callback/credentials"
             onSubmit={formik.handleSubmit}
           >
-            <input
-              name="csrfToken"
-              type="hidden"
-              defaultValue={csrfToken ?? ""}
-            />
             <SkeletonDivColForm>
               <Inputfield
                 type="email"
@@ -99,10 +79,8 @@ export default function SignIn({
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const csrfToken = await getCsrfToken(context);
-
   return {
-    props: { csrfToken: csrfToken || null },
+    props: {},
   };
 }
 

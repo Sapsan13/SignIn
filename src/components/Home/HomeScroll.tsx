@@ -14,8 +14,8 @@ const SkeletonItemsWrapper = styled.div`
     gap: 20px;
   }
 `;
-
-const HomeScroll = ({ items }: RightPlanMainProps) => {
+//  interface props
+const HomeScroll = () => {
   return (
     <SkeletonItemsWrapper>
       <HeroComponent />

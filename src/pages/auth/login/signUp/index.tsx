@@ -1,20 +1,17 @@
 "use client";
-import * as yup from "yup";
 import Link from "next/link";
 import styled from "styled-components";
 import Button from "../../../../components/button";
-import { object, string, number, date, InferType } from "yup";
-// import Inputfield from "../../../components/inputField";
 import PasswordInput from "@/components/passwordInput";
 import Inputfield from "@/components/inputField";
-import { getCsrfToken } from "next-auth/react";
 import { InferGetServerSidePropsType, GetServerSidePropsContext } from "next";
 import RootLayout from "../layout";
 import { useFormik } from "formik";
+import { schema } from "./signupYup";
 
-export default function CreateAccount({
-  csrfToken,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function CreateAccount({}: InferGetServerSidePropsType<
+  typeof getServerSideProps
+>) {
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -22,29 +19,11 @@ export default function CreateAccount({
       email: "",
       password: "",
     },
-    // FORMIK YUP in a file
-    validationSchema: yup.object({
-      firstName: yup
-        .string()
-        .max(15, "Must be 15 characters or less")
-        .required("Required"),
-      lastName: yup
-        .string()
-        .max(20, "Must be 20 characters or less")
-        .required("Required"),
-      email: yup.string().email("Invalid email address").required("Required"),
-      password: yup.string(),
-    }),
+    validationSchema: schema,
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
     },
   });
-  // FORMIK YUP in a file
-  // You'll update this function later...
-  // const handleFieldChange = (key: keyof ReturnType<login>) => () => {
-  //   setLogin({ ...login, [key]: e.target.value });
-  // };
-
   return (
     <RootLayout>
       <SkeletonRightSidebar>
@@ -64,11 +43,6 @@ export default function CreateAccount({
             <SkeletonDivCol>
               <SkeletonForm method="post" onSubmit={formik.handleSubmit}>
                 <SkeletonDivRow>
-                  <input
-                    name="csrfToken"
-                    type="hidden"
-                    defaultValue={csrfToken ?? ""}
-                  />
                   <SkeletonDivColForm>
                     <Inputfield
                       required
@@ -130,10 +104,8 @@ export default function CreateAccount({
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const csrfToken = await getCsrfToken(context);
-
   return {
-    props: { csrfToken: csrfToken || null },
+    props: {},
   };
 }
 

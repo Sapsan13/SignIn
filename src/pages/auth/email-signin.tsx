@@ -2,14 +2,12 @@ import type {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
 } from "next";
-import { getCsrfToken } from "next-auth/react";
 
-export default function SignIn({
-  csrfToken,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function SignIn({}: InferGetServerSidePropsType<
+  typeof getServerSideProps
+>) {
   return (
     <form method="post" action="/api/auth/signin/email">
-      <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
       <label>
         Email address
         <input type="email" id="email" name="email" />
@@ -20,8 +18,7 @@ export default function SignIn({
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const csrfToken = await getCsrfToken(context);
   return {
-    props: { csrfToken: csrfToken || null },
+    props: {},
   };
 }

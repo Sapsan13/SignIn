@@ -8,7 +8,6 @@ import {
   Galachka,
 } from "@/components/Images";
 import styled from "styled-components";
-import { Item } from "./RightPlanDataArray";
 import { RightPlanData } from "./RightPlanDataArray";
 import StandartExtendedSwitch from "./StandartExtendedSwitch";
 
@@ -68,14 +67,6 @@ const RightPlanMain = ({ items, stateIndex }: RightPlanMainProps) => {
   );
 };
 export default RightPlanMain;
-
-// text-decoration: line-through;
-
-interface PlanItem {
-  subscription?: SubItem;
-  icons?: IconsItem;
-  items: Item;
-}
 
 const subItems = ["Standart", "Standart Plus", "Extended"] as const;
 export type SubItem = (typeof subItems)[number];
