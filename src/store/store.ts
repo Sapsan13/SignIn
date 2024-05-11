@@ -6,7 +6,7 @@ import { authReducer } from "./reducers/authReducer";
 
 const client = axios.create({
   //all axios can be used, shown in axios documentation
-  baseURL: "http://localhost:8080/api",
+  baseURL: "/api",
   responseType: "json",
 });
 

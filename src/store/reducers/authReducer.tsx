@@ -1,5 +1,6 @@
 import { AnyAction } from "redux";
 import { LOGIN_SUCCESS, LOGIN_FAIL } from "../actions/authActions";
+import { LOGOUT } from "../actions/authActions";
 
 export interface User {
   email: string;
@@ -21,13 +22,16 @@ export const authReducer = (state = initialState, action: AnyAction) => {
   // The reducer normally looks at the action type field to decide what happens
   switch (action.type) {
     case LOGIN_SUCCESS: {
-      const newUser = action.payload.user;
+      const newUser = action.payload.data.user;
       alert(`Hello user ${newUser.firstname}`);
 
       return { ...state, user: newUser, authenticated: true };
     }
     case LOGIN_FAIL: {
       return alert("LOGIN_FAIL");
+    }
+    case LOGOUT: {
+      return { ...state, user: null, authenticated: false };
     }
     // Do something here based on the different types of actions
     default:

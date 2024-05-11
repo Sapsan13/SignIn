@@ -1,11 +1,17 @@
 "use client";
 import styled from "styled-components";
 import { Logo, Diagram } from "@/components/Images";
+import { logoutAction } from "@/store/actions/authActions";
+import { useDispatch, useSelector } from "react-redux";
 
 const LoginPicBlock = ({}: PicProps) => {
+  const dispatch = useDispatch();
+  const store = useSelector((state) => {
+    console.log("auth => ", state.auth);
+  });
   return (
     <SkeletonPicWrapper>
-      <SkeletonLogoPic>
+      <SkeletonLogoPic onClick={() => dispatch(logoutAction())}>
         <Logo />
       </SkeletonLogoPic>
       <SkeletonFlexCol>
@@ -50,6 +56,7 @@ const SkeletonLogoPic = styled.div`
   position: absolute;
   width: 100%;
   height: auto;
+  cursor: pointer;
   top: 0;
   left: 0;
 `;
