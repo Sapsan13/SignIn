@@ -1,3 +1,5 @@
+"use client";
+
 import LeftNavbar from "@/components/leftNavbarItems/LeftNavbar";
 import { analitycsMidbarElements } from "@/components/mainContent/midbar/midbarElements";
 import styled from "styled-components";
@@ -5,7 +7,7 @@ import NewestBookingComponent from "@/components/mainContent/main/analitycs/Newe
 import TopBar from "@/components/topBar/TopBar";
 import MidItemCard from "@/components/mainContent/midbar/MidItemAnalitycs";
 
-const Analitycs = () => {
+export default function Analitycs() {
   return (
     <SkeletonRowItems>
       <LeftNavbar />
@@ -20,7 +22,7 @@ const Analitycs = () => {
       </SkeletonColumnItems>
     </SkeletonRowItems>
   );
-};
+}
 
 const SkeletonRowItems = styled.div`
   width: 100%;
@@ -45,5 +47,3 @@ const SkeletonMidCards = styled.div`
   grid-column: span 12;
   gap: 24px;
 `;
-
-export default Analitycs;

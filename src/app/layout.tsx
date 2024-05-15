@@ -1,12 +1,10 @@
-import { Html, Head, Main, NextScript } from "next/document";
 import StyledComponentsRegistry from "../../lib/registry";
-import { store } from "@/store/store";
-import { Provider } from "react-redux";
+import ClientLayout from "./ClientLayout";
 
-export default function Document() {
+export default function Document({ children }: { children: React.ReactNode }) {
   return (
-    <Html lang="en">
-      <Head>
+    <html lang="en">
+      <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -21,13 +19,12 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Barlow:wght@900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet"
         />
-      </Head>
+      </head>
       <body>
         <StyledComponentsRegistry>
-          <Main />
+          <ClientLayout>{children}</ClientLayout>
         </StyledComponentsRegistry>
-        <NextScript />
       </body>
-    </Html>
+    </html>
   );
 }

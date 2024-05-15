@@ -1,3 +1,4 @@
+"use client";
 import LeftNavbar from "@/components/leftNavbarItems/LeftNavbar";
 import ChartsHeader from "@/components/mainContent/main/booking/ChartHeader";
 import BarchartStatistics from "@/components/mainContent/main/booking/BarchartStatistics";

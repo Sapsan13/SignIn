@@ -5,13 +5,10 @@ import Button from "../../../../components/button";
 import PasswordInput from "@/components/passwordInput";
 import Inputfield from "@/components/inputField";
 import { InferGetServerSidePropsType, GetServerSidePropsContext } from "next";
-import RootLayout from "../layout";
 import { useFormik } from "formik";
 import { schema } from "./signupYup";
 
-export default function CreateAccount({}: InferGetServerSidePropsType<
-  typeof getServerSideProps
->) {
+export default function CreateAccount() {
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -25,88 +22,80 @@ export default function CreateAccount({}: InferGetServerSidePropsType<
     },
   });
   return (
-    <RootLayout>
-      <SkeletonRightSidebar>
-        <SkeletonRightBlock>
-          <SkeletonTopGap>
-            <SkeletonHeader>Get started absolutely free</SkeletonHeader>
-            <SkeletonRow>
-              <SkeletonHaveAnAccount>
-                Already have an account?
-              </SkeletonHaveAnAccount>
-              <Link href={"/auth/login/loginPage"}>
-                <SkeletonLogin>Login</SkeletonLogin>
-              </Link>
-            </SkeletonRow>
-          </SkeletonTopGap>
-          <SkeletonDivForm>
-            <SkeletonDivCol>
-              <SkeletonForm method="post" onSubmit={formik.handleSubmit}>
-                <SkeletonDivRow>
-                  <SkeletonDivColForm>
-                    <Inputfield
-                      required
-                      placeholder="First name"
-                      name="firstName"
-                      type="text"
-                      onChange={formik.handleChange}
-                      value={formik.values.firstName}
-                    />
-                    {formik.errors.firstName ? (
-                      <span>{formik.errors.firstName}</span>
-                    ) : null}
-                  </SkeletonDivColForm>
-                  <SkeletonDivColForm>
-                    <Inputfield
-                      placeholder="Last name"
-                      name="lastName"
-                      type="text"
-                      onChange={formik.handleChange}
-                      value={formik.values.lastName}
-                    />
-                    {formik.errors.firstName ? (
-                      <span>{formik.errors.lastName}</span>
-                    ) : null}
-                  </SkeletonDivColForm>
-                </SkeletonDivRow>
+    <SkeletonRightSidebar>
+      <SkeletonRightBlock>
+        <SkeletonTopGap>
+          <SkeletonHeader>Get started absolutely free</SkeletonHeader>
+          <SkeletonRow>
+            <SkeletonHaveAnAccount>
+              Already have an account?
+            </SkeletonHaveAnAccount>
+            <Link href={"/auth/login/loginPage"}>
+              <SkeletonLogin>Login</SkeletonLogin>
+            </Link>
+          </SkeletonRow>
+        </SkeletonTopGap>
+        <SkeletonDivForm>
+          <SkeletonDivCol>
+            <SkeletonForm method="post" onSubmit={formik.handleSubmit}>
+              <SkeletonDivRow>
                 <SkeletonDivColForm>
                   <Inputfield
-                    type="email"
                     required
-                    placeholder="Email adress"
-                    name="email"
+                    placeholder="First name"
+                    name="firstName"
+                    type="text"
                     onChange={formik.handleChange}
-                    value={formik.values.email}
+                    value={formik.values.firstName}
                   />
                   {formik.errors.firstName ? (
-                    <span>{formik.errors.password}</span>
+                    <span>{formik.errors.firstName}</span>
                   ) : null}
                 </SkeletonDivColForm>
-                <PasswordInput
-                  placeholder="Enter your password here"
-                  name="password"
-                  type="password"
+                <SkeletonDivColForm>
+                  <Inputfield
+                    placeholder="Last name"
+                    name="lastName"
+                    type="text"
+                    onChange={formik.handleChange}
+                    value={formik.values.lastName}
+                  />
+                  {formik.errors.firstName ? (
+                    <span>{formik.errors.lastName}</span>
+                  ) : null}
+                </SkeletonDivColForm>
+              </SkeletonDivRow>
+              <SkeletonDivColForm>
+                <Inputfield
+                  type="email"
+                  required
+                  placeholder="Email adress"
+                  name="email"
                   onChange={formik.handleChange}
-                  value={formik.values.password}
+                  value={formik.values.email}
                 />
-                <Button type="submit">Create Account</Button>
-              </SkeletonForm>
-            </SkeletonDivCol>
-            <SkeletonBottomText>
-              By signing up, I agree to <a href="termsOfUse">Terms of Use </a>{" "}
-              and <a href="privacyPolicy">Privacy Policy</a>.
-            </SkeletonBottomText>
-          </SkeletonDivForm>
-        </SkeletonRightBlock>
-      </SkeletonRightSidebar>
-    </RootLayout>
+                {formik.errors.firstName ? (
+                  <span>{formik.errors.password}</span>
+                ) : null}
+              </SkeletonDivColForm>
+              <PasswordInput
+                placeholder="Enter your password here"
+                name="password"
+                type="password"
+                onChange={formik.handleChange}
+                value={formik.values.password}
+              />
+              <Button type="submit">Create Account</Button>
+            </SkeletonForm>
+          </SkeletonDivCol>
+          <SkeletonBottomText>
+            By signing up, I agree to <a href="termsOfUse">Terms of Use </a> and{" "}
+            <a href="privacyPolicy">Privacy Policy</a>.
+          </SkeletonBottomText>
+        </SkeletonDivForm>
+      </SkeletonRightBlock>
+    </SkeletonRightSidebar>
   );
-}
-
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  return {
-    props: {},
-  };
 }
 
 const SkeletonRightSidebar = styled.div`

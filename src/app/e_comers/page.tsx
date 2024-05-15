@@ -1,3 +1,4 @@
+"use client";
 import HeroStartANew from "@/components/Home/HomeHero/HeroHeader";
 import HomeScroll from "@/components/Home/HomeScroll";
 import styled from "styled-components";

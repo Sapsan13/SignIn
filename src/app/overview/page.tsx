@@ -1,4 +1,5 @@
 // import Booked from "@/components/mainContent/main/Booked";
+"use client";
 import Booked from "@/components/mainContent/main/overview/Booked";
 import SoldPending from "@/components/mainContent/main/overview/SoldPending";
 import TotalIncomes from "@/components/mainContent/main/overview/TotalIncomes";

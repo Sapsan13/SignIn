@@ -1,3 +1,4 @@
+"use client";
 import { Logo } from "@/components/Images";
 import styled from "styled-components";
 import NavbarStackItem from "./NavbarStackItem";

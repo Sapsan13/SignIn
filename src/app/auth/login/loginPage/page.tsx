@@ -4,16 +4,13 @@ import styled from "styled-components";
 import Button from "@/components/button";
 import Inputfield from "@/components/inputField";
 import PasswordInput from "@/components/passwordInput";
-import { InferGetServerSidePropsType, GetServerSidePropsContext } from "next";
 import RootLayout from "../layout";
 import { useFormik } from "formik";
 import { schema } from "./loginYup";
 import { useDispatch } from "react-redux";
 import { loginAction } from "@/store/actions/authActions";
 
-export default function SignIn({}: InferGetServerSidePropsType<
-  typeof getServerSideProps
->) {
+export default function SignIn() {
   const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
@@ -27,65 +24,57 @@ export default function SignIn({}: InferGetServerSidePropsType<
     },
   });
   return (
-    <RootLayout>
-      <SkeletonRightSidebar>
-        <SkeletonRightBlock>
-          <SkeletonTopGap>
-            <SkeletonHeader>Welcome back!</SkeletonHeader>
-            <SkeletonDivRow>
-              <SkeletonHaveAnAccount>
-                {"Don't have an account?"}
-              </SkeletonHaveAnAccount>
-              <Link href={"/auth/login/signUp"}>
-                <SkeletonSignIn>Sign in here!</SkeletonSignIn>
-              </Link>
-            </SkeletonDivRow>
-          </SkeletonTopGap>
-          <SkeletonForm
-            method="post"
-            action="/api/auth/callback/credentials"
-            onSubmit={formik.handleSubmit}
-          >
-            <SkeletonDivColForm>
-              <Inputfield
-                type="email"
-                required
-                name="email"
-                placeholder="Email adress"
-                onChange={formik.handleChange}
-                value={formik.values.email}
-              />
-              {formik.errors.email ? <span>{formik.errors.email}</span> : null}
-            </SkeletonDivColForm>
-            <SkeletonDivColForm>
-              <PasswordInput
-                name="password"
-                placeholder="Enter your password here"
-                type="password"
-                onChange={formik.handleChange}
-                value={formik.values.password}
-              />
-              {formik.errors.password ? (
-                <span>{formik.errors.password}</span>
-              ) : null}
-            </SkeletonDivColForm>
-            <Button type="submit">Log In</Button>
+    <SkeletonRightSidebar>
+      <SkeletonRightBlock>
+        <SkeletonTopGap>
+          <SkeletonHeader>Welcome back!</SkeletonHeader>
+          <SkeletonDivRow>
+            <SkeletonHaveAnAccount>
+              {"Don't have an account?"}
+            </SkeletonHaveAnAccount>
+            <Link href={"/auth/login/signUp"}>
+              <SkeletonSignIn>Sign in here!</SkeletonSignIn>
+            </Link>
+          </SkeletonDivRow>
+        </SkeletonTopGap>
+        <SkeletonForm
+          method="post"
+          action="/api/auth/callback/credentials"
+          onSubmit={formik.handleSubmit}
+        >
+          <SkeletonDivColForm>
+            <Inputfield
+              type="email"
+              required
+              name="email"
+              placeholder="Email adress"
+              onChange={formik.handleChange}
+              value={formik.values.email}
+            />
+            {formik.errors.email ? <span>{formik.errors.email}</span> : null}
+          </SkeletonDivColForm>
+          <SkeletonDivColForm>
+            <PasswordInput
+              name="password"
+              placeholder="Enter your password here"
+              type="password"
+              onChange={formik.handleChange}
+              value={formik.values.password}
+            />
+            {formik.errors.password ? (
+              <span>{formik.errors.password}</span>
+            ) : null}
+          </SkeletonDivColForm>
+          <Button type="submit">Log In</Button>
 
-            <SkeletonBottomText>
-              By signing up, I agree to <a href="termsOfUse">Terms of Use </a>{" "}
-              and <a href="privacyPolicy">Privacy Policy</a>.
-            </SkeletonBottomText>
-          </SkeletonForm>
-        </SkeletonRightBlock>
-      </SkeletonRightSidebar>
-    </RootLayout>
+          <SkeletonBottomText>
+            By signing up, I agree to <a href="termsOfUse">Terms of Use </a> and{" "}
+            <a href="privacyPolicy">Privacy Policy</a>.
+          </SkeletonBottomText>
+        </SkeletonForm>
+      </SkeletonRightBlock>
+    </SkeletonRightSidebar>
   );
-}
-
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  return {
-    props: {},
-  };
 }
 
 const SkeletonRightSidebar = styled.div`
