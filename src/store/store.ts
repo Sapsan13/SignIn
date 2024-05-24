@@ -3,6 +3,7 @@ import axiosMiddleware from "redux-axios-middleware";
 import axios from "axios";
 import { todoReducer } from "./reducers/todoReducer";
 import { authReducer } from "./reducers/authReducer";
+import { swaggerReducer } from "./reducers/swaggerReducer";
 
 const client = axios.create({
   //all axios can be used, shown in axios documentation
@@ -14,6 +15,7 @@ const client = axios.create({
 export const rootReducer = combineReducers({
   todo: todoReducer,
   auth: authReducer,
+  swagger: swaggerReducer,
 });
 
 // axiosMiddleware catches any payload with request:{} sents all by the request fields;

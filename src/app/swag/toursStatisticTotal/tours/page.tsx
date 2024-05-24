@@ -1,5 +1,5 @@
 "use client";
-import { swagTours } from "@/store/actions/authActions";
+import { swagTours } from "@/store/actions/swaggerActions";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,11 +10,20 @@ const SwagTours = () => {
 
   useEffect(() => {
     if (!token) return router.push("/swag/login");
-
+    // console.log(`token => `, token);
     dispatch(swagTours(token));
   }, [dispatch, router, token]);
 
-  return null;
-};
+  const tours = useSelector((store: any) => {
+    // console.log(store.swagger.tours);
+    return store.swagger.tours;
+  });
 
+  if (!tours) return null;
+  return tours.map((item: any) => (
+    <div key={item.name}>
+      <p>{item.name}</p> <p>{item.value}</p>
+    </div>
+  ));
+};
 export default SwagTours;

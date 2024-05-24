@@ -1,15 +1,12 @@
 import { AnyAction } from "redux";
 import {
-  LOGOUT,
-  LOGIN_SUCCESS,
-  LOGIN_FAIL,
-  SWAG_LOGIN,
-  SWAG_LOGIN_SUCCESS,
-  SWAG_REGISTER,
-  SWAG_REGISTER_SUCCESS,
-  SWAG_REGISTER_FAIL,
-  SWAG_LOGIN_FAIL,
-} from "../actions/authActions";
+  SWAG_TOURS_SUCCESS,
+  SWAG_TOURS_FAIL,
+  SWAG_STATISTICS_SUCCESS,
+  SWAG_STATISTICS_FAIL,
+  SWAG_TOTALINCOME_SUCCESS,
+  SWAG_TOTALINCOME_FAIL,
+} from "../actions/swaggerActions";
 
 export interface User {
   email: string;
@@ -35,44 +32,47 @@ export interface Values {
   password: string;
   token: string;
   tours: [];
+  statistics: [];
+  totIncome: [];
 }
 
-export const authReducer = (
+export const swaggerReducer = (
   state = initialState,
   action: AnyAction,
   values: Values
 ) => {
   // The reducer normally looks at the action type field to decide what happens
   switch (action.type) {
-    case LOGIN_SUCCESS: {
-      const newUser = action.payload.data.user;
-      console.log(`Hello user ${newUser.firstname}`);
-      return { ...state, user: newUser, authenticated: true };
-    }
-    case LOGIN_FAIL: {
-      return console.log("LOGIN_FAIL");
-    }
-    case LOGOUT: {
-      return { ...state, user: null, authenticated: false };
-    }
-    case SWAG_REGISTER_SUCCESS: {
-      console.log("Successfully Registered!");
-      return { ...state, isRegistered: true };
-    }
-    case SWAG_REGISTER_FAIL: {
-      console.log(action.error.response.data.error);
-      return state;
-    }
-    case SWAG_LOGIN_SUCCESS: {
-      console.log("LOGIN");
+    case SWAG_TOURS_SUCCESS: {
+      console.log("TOURS");
       console.log(action.payload.data);
-      console.log("Welcome!");
-      return { ...state, token: action.payload.data.token };
+      return { ...state, tours: action.payload.data };
     }
-    case SWAG_LOGIN_FAIL: {
+    case SWAG_TOURS_FAIL: {
       console.log(action.error.response.data.error);
       return state;
     }
+    case SWAG_STATISTICS_SUCCESS: {
+      console.log("STATISTICS");
+      console.log(action.payload.data);
+      console.log("SWAG_STATISTICS_SUCCESS!");
+      return { ...state, statistics: action.payload.data };
+    }
+    case SWAG_STATISTICS_FAIL: {
+      console.log(action.error.response.data.error);
+      return state;
+    }
+    case SWAG_TOTALINCOME_SUCCESS: {
+      console.log("TOTALINCOME");
+      console.log(action.payload.data);
+      console.log("SWAG_TOTALINCOME_SUCCESS!");
+      return { ...state, totIncome: action.payload.data };
+    }
+    case SWAG_TOTALINCOME_FAIL: {
+      console.log(action.error.response.data.error);
+      return state;
+    }
+
     default:
       // If this reducer doesn't recognize the action type, or doesn't
       // care about this specific action, return the existing state unchanged

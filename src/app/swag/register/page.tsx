@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useFormik } from "formik";
 import { swagRegister } from "@/store/actions/authActions";
@@ -37,9 +37,10 @@ const SwagRegister = () => {
     }));
   };
 
-  if (registered) {
+  useEffect(() => {
+    if (!registered) return;
     router.push("/swag/login");
-  }
+  }, [router, registered]);
 
   return (
     <form onSubmit={formik.handleSubmit}>
