@@ -1,6 +1,24 @@
 "use client";
 import Link from "next/link";
 import styled from "styled-components";
+import SwagAuth from "./swag/page";
+
+export default function Home() {
+  return (
+    <SkeletonHome>
+      <div>
+        <div>HOMEPAGE</div>
+        <div>
+          <Link href={"auth/login/loginPage"}>Auth</Link>
+        </div>
+        <Link href={"overview"}>Overview</Link>
+        <div>
+          <Link href={"swag"}>Swag</Link>
+        </div>
+      </div>
+    </SkeletonHome>
+  );
+}
 
 const SkeletonHome = styled.div`
   display: flex;
@@ -13,17 +31,3 @@ const SkeletonHome = styled.div`
   justify-content: center;
   gap: 10px;
 `;
-
-export default function Home() {
-  return (
-    <SkeletonHome>
-      <div>
-        <div>HOMEPAGE</div>
-        <div>
-          <Link href={"auth/login/loginPage"}>Auth</Link>
-        </div>
-        <Link href={"overview"}>Overview</Link>
-      </div>
-    </SkeletonHome>
-  );
-}

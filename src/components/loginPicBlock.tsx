@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 const LoginPicBlock = ({}: PicProps) => {
   const dispatch = useDispatch();
   const store = useSelector((state) => {
-    console.log("auth => ", state.auth);
+    // console.log("auth => ", state.auth);
   });
   return (
     <SkeletonPicWrapper>

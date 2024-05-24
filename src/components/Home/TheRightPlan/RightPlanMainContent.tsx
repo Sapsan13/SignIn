@@ -14,7 +14,7 @@ import StandartExtendedSwitch from "./StandartExtendedSwitch";
 const RightPlanMain = ({ items, stateIndex }: RightPlanMainProps) => {
   // const [inNdex, setIndex] = useState(0);
   {
-    console.log(stateIndex);
+    // console.log(stateIndex);
   }
   return (
     <SkeletonPlanWrapper>
