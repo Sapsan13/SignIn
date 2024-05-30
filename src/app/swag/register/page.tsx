@@ -2,34 +2,54 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useFormik } from "formik";
-import { swagRegister } from "@/store/actions/authActions";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
+import { usePostApiAuthRegister } from "@/QueryStore";
+import { PostApiAuthRegisterBody } from "@/model";
+import { swagTokenSet } from "@/store/actions/swaggerActions";
 const SwagRegister = () => {
-  // Pass the useFormik() hook initial form values and a submit function that will
-  // be called when the form is submitted
   const router = useRouter();
-
   const dispatch = useDispatch();
+  const token = useSelector((store: any) => store.auth.token);
+
+  const { data, error, mutate, isSuccess } = usePostApiAuthRegister();
   const registered = useSelector((store: any) => store.auth.isRegistered);
-  const formik = useFormik({
+  useEffect(() => {
+    if (!isSuccess) return;
+    // alert("Successfully registered!");
+  }, [isSuccess]);
+
+  useEffect(() => {
+    if (!error) return;
+    alert(error);
+  }, [error]);
+
+  useEffect(() => {
+    if (isSuccess) {
+      router.push("/swag/login");
+    }
+  }, [router, registered, isSuccess]);
+
+  const formik = useFormik<PostApiAuthRegisterBody>({
     initialValues: {
       email: "",
       firstName: "",
       lastName: "",
       password: "",
     },
-    onSubmit: (values) => {
-      dispatch(swagRegister(values));
+    onSubmit: (data) => {
+      mutate({
+        data,
+      });
     },
   });
 
   const [values, setValues] = useState({});
 
   const handleSubmit = () => {
+    dispatch(swagTokenSet(token));
     setValues((prevValues) => ({
       ...prevValues,
-      // we use the name to tell Formik which key of `values` to update
       firstName: formik.values.firstName,
       lastName: formik.values.lastName,
       email: formik.values.email,
@@ -39,7 +59,7 @@ const SwagRegister = () => {
 
   useEffect(() => {
     if (!registered) return;
-    router.push("/swag/login");
+    router.push("/swag/register");
   }, [router, registered]);
 
   return (

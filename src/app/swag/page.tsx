@@ -6,7 +6,7 @@ const SwagInit = () => {
   return (
     <SkeletonSwagWrap>
       <Link href={"/swag/register"}>SwagRegister</Link>
-      <Link href={"/swag/login"}>SwagLogin</Link>
+      <Link href={"/swag/login"}>SwaggLogin</Link>
     </SkeletonSwagWrap>
   );
 };

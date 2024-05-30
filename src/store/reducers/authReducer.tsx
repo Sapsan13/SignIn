@@ -10,6 +10,7 @@ import {
   SWAG_REGISTER_FAIL,
   SWAG_LOGIN_FAIL,
 } from "../actions/authActions";
+import { SWAG_TOKEN_SET } from "../actions/swaggerActions";
 
 export interface User {
   email: string;
@@ -59,9 +60,12 @@ export const authReducer = (
       console.log("Successfully Registered!");
       return { ...state, isRegistered: true };
     }
-    case SWAG_REGISTER_FAIL: {
-      console.log(action.error.response.data.error);
-      return state;
+    // case SWAG_REGISTER_FAIL: {
+    //   console.log(action.error.response.data.error);
+    //   return state;
+    // }
+    case SWAG_TOKEN_SET: {
+      return { ...state, token: action.payload.token };
     }
     case SWAG_LOGIN_SUCCESS: {
       console.log("LOGIN");
@@ -69,10 +73,10 @@ export const authReducer = (
       console.log("Welcome!");
       return { ...state, token: action.payload.data.token };
     }
-    case SWAG_LOGIN_FAIL: {
-      console.log(action.error.response.data.error);
-      return state;
-    }
+    // case SWAG_LOGIN_FAIL: {
+    //   console.log(action.error.response.data.error);
+    //   return state;
+    // }
     default:
       // If this reducer doesn't recognize the action type, or doesn't
       // care about this specific action, return the existing state unchanged

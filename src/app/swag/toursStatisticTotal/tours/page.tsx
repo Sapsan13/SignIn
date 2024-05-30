@@ -1,26 +1,25 @@
 "use client";
-import { swagTours } from "@/store/actions/swaggerActions";
+import { useGetApiChartTours } from "@/QueryStore";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 const SwagTours = () => {
   const router = useRouter();
-  const dispatch = useDispatch();
+  const { data, error, isSuccess } = useGetApiChartTours();
   const token = useSelector((store: any) => store.auth.token);
 
   useEffect(() => {
     if (!token) return router.push("/swag/login");
-    // console.log(`token => `, token);
-    dispatch(swagTours(token));
-  }, [dispatch, router, token]);
+  }, [router, isSuccess, token]);
 
-  const tours = useSelector((store: any) => {
-    // console.log(store.swagger.tours);
-    return store.swagger.tours;
-  });
+  if (error) {
+    console.log(error);
+  }
 
-  if (!tours) return null;
-  return tours.map((item: any) => (
+  if (!data) return <p>loading....</p>;
+
+  // if (!data) return null;
+  return data.map((item) => (
     <div key={item.name}>
       <p>{item.name}</p> <p>{item.value}</p>
     </div>

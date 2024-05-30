@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import styled from "styled-components";
-import SwagAuth from "./swag/page";
 
 export default function Home() {
   return (

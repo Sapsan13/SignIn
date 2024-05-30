@@ -1,32 +1,49 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useFormik } from "formik";
 import { useRouter } from "next/navigation";
-import { swagLogin } from "@/store/actions/authActions";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-const SwagLogin = () => {
+import { usePostApiAuthLogin } from "@/QueryStore";
+import { swagTokenSet } from "@/store/actions/swaggerActions";
+const SwaggLogin = () => {
   const router = useRouter();
-  // Pass the useFormik() hook initial form values and a submit function that will
-  // be called when the form is submitted
   const dispatch = useDispatch();
+  const { data, error, mutate, isSuccess } = usePostApiAuthLogin();
+
+  const token = useSelector((store: any) => store.auth.token);
+
+  useEffect(() => {
+    if (isSuccess) return;
+    // console.log("Welcome back!");
+  }, [isSuccess]);
+
+  useEffect(() => {
+    if (!error) return;
+    alert(error);
+  }, [error]);
+
+  useEffect(() => {
+    if (!data) return;
+    console.log(data);
+    dispatch(swagTokenSet(data.token));
+  }, [data, dispatch]);
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
-    onSubmit: (values) => {
-      dispatch(swagLogin(values));
+    onSubmit: (data) => {
+      mutate({
+        data,
+      });
     },
   });
 
-  const token = useSelector((store: any) => store.auth.token);
-
   useEffect(() => {
-    if (!token) return;
-
-    router.push("/swag/toursStatisticTotal");
-  }, [router, token]);
+    if (!isSuccess) "/swag/login";
+    if (isSuccess) router.push("/swag/toursStatisticTotal");
+  }, [router, isSuccess]);
 
   return (
     <form onSubmit={formik.handleSubmit}>
@@ -56,7 +73,7 @@ const SwagLogin = () => {
     </form>
   );
 };
-export default SwagLogin;
+export default SwaggLogin;
 
 const SkeletonSwagWrap = styled.div`
   display: flex;

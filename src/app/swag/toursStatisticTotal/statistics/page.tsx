@@ -2,55 +2,26 @@
 import {
   BarChart,
   Bar,
-  Rectangle,
   XAxis,
   YAxis,
   CartesianGrid,
-  Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
 import styled from "styled-components";
-import { swagStatistics } from "@/store/actions/swaggerActions";
 import { useRouter } from "next/navigation";
+import { useGetApiChartStatistic } from "@/QueryStore";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 const SwagStatistics = () => {
   const router = useRouter();
-  const dispatch = useDispatch();
+  const { data, isSuccess } = useGetApiChartStatistic();
   const token = useSelector((store: any) => store.auth.token);
 
   useEffect(() => {
     if (!token) return router.push("/swag/login");
-    console.log(`token => `, token);
-    dispatch(swagStatistics(token));
-  }, [dispatch, router, token]);
+  }, [router, isSuccess]);
 
-  const stat = useSelector((store: any) => {
-    return store.swagger.statistics;
-  });
-
-  // console.log("STATS");
-  // console.log(stat);
-
-  const data: any = [];
-
-  if (!stat) return null;
-  stat.map((item: any) =>
-    data.push({
-      key: item.name,
-      name: item.name,
-      uv: item.uv,
-      pv: item.pv,
-      atm: item.amt,
-    })
-  );
-  const SkeletontWrapper = styled.div`
-    display: flex;
-    width: 100%;
-    height: 800px;
-  `;
-  console.log(data);
+  if (!data) return <p>loading....</p>;
   return (
     <SkeletontWrapper>
       <ResponsiveContainer width="100%" aspect={4.0 / 3.0}>
@@ -59,11 +30,16 @@ const SwagStatistics = () => {
           <XAxis dataKey="name" />
           <YAxis />
           <Bar dataKey="uv" fill="#009764" radius={[8, 8, 0, 0]} />
-          <Bar dataKey="pv" fill="#ffac82" radius={[8, 8, 0, 0]} />
+          <Bar dataKey="pv" fill="rgb(255, 238, 82)" radius={[8, 8, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
     </SkeletontWrapper>
   );
 };
+const SkeletontWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  height: 800px;
+`;
 
 export default SwagStatistics;

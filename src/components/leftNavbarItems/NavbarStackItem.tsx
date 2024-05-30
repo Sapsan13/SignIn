@@ -11,7 +11,7 @@ export type LeftNavbarItem = {
   alias: string;
   title: string;
   icon?: string;
-  endIcon?: React.ReactElement;
+  endIcon?: () => React.ReactNode;
   children?: LeftNavbarItem[];
 };
 

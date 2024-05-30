@@ -4,21 +4,24 @@ import styled from "styled-components";
 import Button from "@/components/button";
 import Inputfield from "@/components/inputField";
 import PasswordInput from "@/components/passwordInput";
-import RootLayout from "../layout";
 import { useFormik } from "formik";
 import { schema } from "./loginYup";
+import { PostApiAuthLoginBody } from "@/model";
 import { useDispatch } from "react-redux";
 import { loginAction } from "@/store/actions/authActions";
 
 export default function SignIn() {
   const dispatch = useDispatch();
-  const formik = useFormik({
+
+  const formik = useFormik<PostApiAuthLoginBody>({
     initialValues: {
       email: "",
       password: "",
     },
     validationSchema: schema,
     onSubmit: (values) => {
+      // loginMutation
+      // postApiAuthLogin(values);
       dispatch(loginAction(values));
       // alert(JSON.stringify(values, null, 2));
     },
