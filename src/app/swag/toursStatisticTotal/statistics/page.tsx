@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 import { useGetApiChartStatistic } from "@/QueryStore";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+
 const SwagStatistics = () => {
   const router = useRouter();
   const { data, isSuccess } = useGetApiChartStatistic();
@@ -22,6 +23,7 @@ const SwagStatistics = () => {
   }, [router, isSuccess]);
 
   if (!data) return <p>loading....</p>;
+
   return (
     <SkeletontWrapper>
       <ResponsiveContainer width="100%" aspect={4.0 / 3.0}>
@@ -36,6 +38,7 @@ const SwagStatistics = () => {
     </SkeletontWrapper>
   );
 };
+
 const SkeletontWrapper = styled.div`
   display: flex;
   width: 100%;

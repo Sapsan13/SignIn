@@ -11,10 +11,12 @@ import { swagTokenSet } from "@/store/actions/swaggerActions";
 const SwagRegister = () => {
   const router = useRouter();
   const dispatch = useDispatch();
+  // REFACOR получать токен через функцию getter (store: any) => store.auth.token => getAuthToken
   const token = useSelector((store: any) => store.auth.token);
 
   const { data, error, mutate, isSuccess } = usePostApiAuthRegister();
   const registered = useSelector((store: any) => store.auth.isRegistered);
+  // REFACTOR тоже самое что и на логине
   useEffect(() => {
     if (!isSuccess) return;
     // alert("Successfully registered!");
@@ -49,6 +51,7 @@ const SwagRegister = () => {
 
   const handleSubmit = () => {
     dispatch(swagTokenSet(token));
+    // REFACTOR убрать
     setValues((prevValues) => ({
       ...prevValues,
       firstName: formik.values.firstName,
@@ -63,6 +66,7 @@ const SwagRegister = () => {
     router.push("/swag/register");
   }, [router, registered]);
 
+  // REFACTOR выводить форму через map
   return (
     <form onSubmit={formik.handleSubmit}>
       <SkeletonSwagWrap>
