@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { usePostApiAuthLogin } from "@/QueryStore";
 import { swagTokenSet } from "@/store/actions/swaggerActions";
+import { onError } from "redux-axios-middleware";
 
 const SwaggLogin = () => {
   const router = useRouter();
@@ -15,21 +16,13 @@ const SwaggLogin = () => {
     mutation: {
       onSuccess() {
         router.push("/swag/toursStatisticTotal");
+        dispatch(swagTokenSet(data.token));
+      },
+      onError() {
+        alert(error);
       },
     },
   });
-
-  // REFACTOR передавать в хук onError и ловить там ошибки
-  useEffect(() => {
-    if (!error) return;
-    alert(error);
-  }, [error]);
-
-  // REFACTOR хендлить это в onSuccess
-  useEffect(() => {
-    if (!data) return;
-    dispatch(swagTokenSet(data.token));
-  }, [data, dispatch]);
 
   // REFACTOR резделять данные
   const formik = useFormik({

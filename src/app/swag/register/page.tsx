@@ -14,24 +14,24 @@ const SwagRegister = () => {
   // REFACOR получать токен через функцию getter (store: any) => store.auth.token => getAuthToken
   const token = useSelector((store: any) => store.auth.token);
 
-  const { data, error, mutate, isSuccess } = usePostApiAuthRegister();
+  const { data, error, mutate, isSuccess } = usePostApiAuthRegister({
+    mutation: {
+      onSuccess() {
+        alert("Successfully registered!");
+        router.push("/swag/login");
+      },
+      onError() {
+        alert(error);
+      },
+    },
+  });
+
   const registered = useSelector((store: any) => store.auth.isRegistered);
   // REFACTOR тоже самое что и на логине
-  useEffect(() => {
-    if (!isSuccess) return;
-    // alert("Successfully registered!");
-  }, [isSuccess]);
-
-  useEffect(() => {
-    if (!error) return;
-    alert(error);
-  }, [error]);
-
-  useEffect(() => {
-    if (isSuccess) {
-      router.push("/swag/login");
-    }
-  }, [router, registered, isSuccess]);
+  // useEffect(() => {
+  //   if (!isSuccess) return;
+  //   // alert("Successfully registered!");
+  // }, [isSuccess]);
 
   const formik = useFormik<PostApiAuthRegisterBody>({
     initialValues: {
@@ -67,54 +67,36 @@ const SwagRegister = () => {
   }, [router, registered]);
 
   // REFACTOR выводить форму через map
+  const formArr = [
+    { htmlFor: "firstName", id: "firstName", name: "firstNmame", type: "text" },
+    { htmlFor: "lastName", id: "lasttName", name: "lasttNmame", type: "text" },
+    { htmlFor: "email", id: "email", name: "email", type: "email" },
+    { htmlFor: "password", id: "password", name: "password", type: "password" },
+  ];
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <SkeletonSwagWrap>
-        <div>
-          <label htmlFor="firstName">First Name</label>
+    // <form onSubmit={formik.handleSubmit}>
+    //   return formArr.map((item) => (
+    // <div key={item.name}>
+    //   <p>{item.name}</p> <p>{item.value}</p>
+    // </div>
+
+    <SkeletonSwagWrap>
+      {formArr.map((item) => (
+        <div key={item.name}>
+          <label htmlFor={item.htmlFor}>First Name</label>
           <input
-            id="firstName"
-            name="firstName"
-            type="text"
+            id={item.id}
+            name={item.name}
+            type={item.type}
             onChange={formik.handleChange}
             value={formik.values.firstName}
           />
         </div>
-        <div>
-          <label htmlFor="lastName">Last Name</label>
-          <input
-            id="lastName"
-            name="lastName"
-            type="text"
-            onChange={formik.handleChange}
-            value={formik.values.lastName}
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email Address</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            onChange={formik.handleChange}
-            value={formik.values.email}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
-            id="password"
-            name="password"
-            type="password"
-            onChange={formik.handleChange}
-            value={formik.values.password}
-          />
-        </div>
-        <button type="submit" onSubmit={handleSubmit}>
-          Register
-        </button>
-      </SkeletonSwagWrap>
-    </form>
+      ))}
+      <button type="submit" onSubmit={handleSubmit}>
+        Register
+      </button>
+    </SkeletonSwagWrap>
   );
 };
 export default SwagRegister;
