@@ -6,28 +6,32 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { usePostApiAuthLogin } from "@/QueryStore";
 import { swagTokenSet } from "@/store/actions/swaggerActions";
+
 const SwaggLogin = () => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const { data, error, mutate, isSuccess } = usePostApiAuthLogin();
+  // REFACTOR переназывать переменные data => loginData
+  const { data, error, mutate } = usePostApiAuthLogin({
+    mutation: {
+      onSuccess() {
+        router.push("/swag/toursStatisticTotal");
+      },
+    },
+  });
 
-  const token = useSelector((store: any) => store.auth.token);
-
-  useEffect(() => {
-    if (isSuccess) return;
-    // console.log("Welcome back!");
-  }, [isSuccess]);
-
+  // REFACTOR передавать в хук onError и ловить там ошибки
   useEffect(() => {
     if (!error) return;
     alert(error);
   }, [error]);
 
+  // REFACTOR хендлить это в onSuccess
   useEffect(() => {
     if (!data) return;
-    console.log(data);
     dispatch(swagTokenSet(data.token));
   }, [data, dispatch]);
+
+  // REFACTOR резделять данные
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -39,11 +43,6 @@ const SwaggLogin = () => {
       });
     },
   });
-
-  useEffect(() => {
-    if (!isSuccess) "/swag/login";
-    if (isSuccess) router.push("/swag/toursStatisticTotal");
-  }, [router, isSuccess]);
 
   return (
     <form onSubmit={formik.handleSubmit}>
@@ -73,6 +72,7 @@ const SwaggLogin = () => {
     </form>
   );
 };
+
 export default SwaggLogin;
 
 const SkeletonSwagWrap = styled.div`

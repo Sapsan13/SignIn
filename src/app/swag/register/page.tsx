@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { usePostApiAuthRegister } from "@/QueryStore";
 import { PostApiAuthRegisterBody } from "@/model";
 import { swagTokenSet } from "@/store/actions/swaggerActions";
+
 const SwagRegister = () => {
   const router = useRouter();
   const dispatch = useDispatch();

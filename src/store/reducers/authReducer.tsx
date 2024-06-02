@@ -84,3 +84,5 @@ export const authReducer = (
       return state;
   }
 };
+
+export const getAuthReducer = (store: any) => store.auth;
