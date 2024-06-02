@@ -51,7 +51,8 @@ export const authReducer = (
       return { ...state, user: newUser, authenticated: true };
     }
     case LOGIN_FAIL: {
-      return console.log("LOGIN_FAIL");
+      console.log("LOGIN_FAIL");
+      return state;
     }
     case LOGOUT: {
       return { ...state, user: null, authenticated: false };

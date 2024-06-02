@@ -9,6 +9,7 @@ import { schema } from "./loginYup";
 import { PostApiAuthLoginBody } from "@/model";
 import { useDispatch } from "react-redux";
 import { loginAction } from "@/store/actions/authActions";
+import { usePostApiAuthLogin } from "@/QueryStore";
 
 export default function SignIn() {
   const dispatch = useDispatch();
@@ -21,8 +22,8 @@ export default function SignIn() {
     validationSchema: schema,
     onSubmit: (values) => {
       // loginMutation
-      // postApiAuthLogin(values);
-      dispatch(loginAction(values));
+      usePostApiAuthLogin(values);
+      // dispatch(loginAction(values));
       // alert(JSON.stringify(values, null, 2));
     },
   });
