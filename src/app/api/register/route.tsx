@@ -1,4 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiResponse } from "next";
+import type { NextRequest } from "next/server";
+import { dBase } from "../storage";
 
 type ResponseData = {
   dBase: Record<any, any>[];
@@ -6,7 +8,7 @@ type ResponseData = {
 
 //Standart Default
 export const POST = async (
-  req: NextApiRequest,
+  req: Request | NextRequest,
   res: NextApiResponse<ResponseData>
 ) => {
   const data = await req.json();
@@ -15,7 +17,3 @@ export const POST = async (
   return Response.json({ dBase });
   //
 };
-//Standart Default
-// .body.push(bBase);
-export const dBase: Record<any, any>[] = [];
-// console.log(dBase);

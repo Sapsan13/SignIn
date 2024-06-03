@@ -1,4 +1,5 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiResponse } from "next";
+import type { NextRequest } from "next/server";
 
 type ResponseData = {
   data: Record<any, any>[];
@@ -6,7 +7,7 @@ type ResponseData = {
 
 //Standart Default
 export default function handler(
-  req: NextApiRequest,
+  req: Request | NextRequest,
   res: NextApiResponse<ResponseData>
 ) {
   res.status(200).json({ data: dBase });

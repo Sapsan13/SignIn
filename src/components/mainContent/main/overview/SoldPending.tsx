@@ -71,7 +71,7 @@ const SoldPending = (props: any) => {
         <SkeletonRadialText>
           <RadialChart
             width={80}
-            height={80}
+            hight={80}
             color1={props.color1}
             color2={props.color2}
             gradient={props.gradient}

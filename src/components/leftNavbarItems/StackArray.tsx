@@ -3,6 +3,7 @@ import EmailPlus from "./EmailPlus";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styled from "styled-components";
+import { LeftNavbarItem } from "./NavbarStackItem";
 
 export type NavbarItem = {
   id: number;
@@ -139,7 +140,7 @@ export const MenuItem = ({ item }: { item: LeftNavbarItem }) => {
           <NavIcon icon={item.icon} />
         </SkeletonGrey>
         {item.title}
-        <SkeletonMailPlus>{item.endIcon ? <Icon /> : null}</SkeletonMailPlus>
+        <SkeletonMailPlus>{Icon ? <Icon /> : null}</SkeletonMailPlus>
       </SkeletonNavItem>
     </StyledLink>
   );

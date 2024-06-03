@@ -29,7 +29,7 @@ const RadialChart = (props: RadialChartProps) => {
   return (
     <RadialBarChart
       width={props.width}
-      height={props.height}
+      height={props.hight}
       innerRadius="85%"
       outerRadius="100%"
       data={data}

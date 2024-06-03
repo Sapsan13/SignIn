@@ -11,7 +11,7 @@ const ToursAvailable = () => {
         <SkeletonRadialText>
           <RadialChart
             width={240}
-            height={240}
+            hight={240}
             color1={"#5BE49B"}
             color2={"#00A76F"}
             gradient={"tours"}
@@ -87,7 +87,9 @@ const SkeletonToursAvailable = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 16px;
-  box-shadow: 0px 12px 24px -4px #919eab1f, 0px 0px 2px 0px #919eab33;
+  box-shadow:
+    0px 12px 24px -4px #919eab1f,
+    0px 0px 2px 0px #919eab33;
 `;
 
 const SkeletonRadialText = styled.div`

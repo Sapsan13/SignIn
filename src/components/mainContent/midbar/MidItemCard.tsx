@@ -18,7 +18,9 @@ const SkeletonCardItemWrapper = styled.div`
   border-radius: 16px;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 12px 24px -4px #919eab1f, 0px 0px 2px 0px #919eab33;
+  box-shadow:
+    0px 12px 24px -4px #919eab1f,
+    0px 0px 2px 0px #919eab33;
 `;
 
 const SkeletonMidNumberTitleWrapper = styled.div`
@@ -60,10 +62,10 @@ type MidItemCardProps = ComponentProps<"div"> & {
   number: string;
 };
 
-const MidItemCard = ({ items }) => {
+const MidItemCard = ({ items }: any) => {
   return (
     <>
-      {items.map((item) => (
+      {items.map((item: any) => (
         <SkeletonCardItemWrapper key={item.id}>
           <SkeletonMidNumberTitleWrapper>
             <SkeletonMidNumber>{item.number}</SkeletonMidNumber>

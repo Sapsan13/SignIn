@@ -1,5 +1,5 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import { useRouter } from "next/router";
+import type { NextApiResponse } from "next";
+import type { NextRequest } from "next/server";
 
 type ResponseData = {
   dBase: Record<any, any>[];
@@ -7,7 +7,7 @@ type ResponseData = {
 
 //Standart Default
 export const GET = (
-  req: NextApiRequest,
+  req: Request | NextRequest,
   res: NextApiResponse<ResponseData>
 ) => {
   return Response.json({ dBase });
