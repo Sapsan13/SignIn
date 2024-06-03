@@ -1,12 +1,11 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import { useFormik } from "formik";
 import { useRouter } from "next/navigation";
 import styled from "styled-components";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { usePostApiAuthLogin } from "@/QueryStore";
 import { swagTokenSet } from "@/store/actions/swaggerActions";
-import { onError } from "redux-axios-middleware";
 
 const SwaggLogin = () => {
   const router = useRouter();
@@ -15,8 +14,8 @@ const SwaggLogin = () => {
   const { data, error, mutate } = usePostApiAuthLogin({
     mutation: {
       onSuccess() {
-        router.push("/swag/toursStatisticTotal");
         dispatch(swagTokenSet(data.token));
+        router.push("/swag/toursStatisticTotal");
       },
       onError() {
         alert(error);
