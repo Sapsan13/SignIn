@@ -1,88 +1,60 @@
 import { AnyAction } from "redux";
-import {
-  LOGOUT,
-  LOGIN_SUCCESS,
-  LOGIN_FAIL,
-  SWAG_LOGIN,
-  SWAG_LOGIN_SUCCESS,
-  SWAG_REGISTER,
-  SWAG_REGISTER_SUCCESS,
-  SWAG_REGISTER_FAIL,
-  SWAG_LOGIN_FAIL,
-} from "../actions/authActions";
-import { SWAG_TOKEN_SET } from "../actions/swaggerActions";
+import { LOGIN_SUCCESS, LOGIN_FAIL } from "../actions/authActions";
+import { LOGOUT_SUCCESS } from "../actions/authActions";
+import { LOGOUT_FAIL } from "../actions/authActions";
+import { REGISTER_SUCCESS } from "../actions/authActions";
+import { REGISTER_FAIL } from "../actions/authActions";
 
 export interface User {
   email: string;
   firstname: string;
   lastname: string;
+  password: string;
 }
+
 interface IInitialState {
   authenticated: boolean;
   user: User | null;
-  isRegistered: boolean;
 }
 
 const initialState: IInitialState = {
   authenticated: false,
-  isRegistered: false,
   user: null,
 };
 
-export interface Values {
-  firstName?: string;
-  lastName?: string;
-  email: string;
-  password: string;
-  token: string;
-  tours: [];
-}
-
-export const authReducer = (
-  state = initialState,
-  action: AnyAction,
-  values: Values
-) => {
+export const authReducer = (state = initialState, action: AnyAction) => {
   // The reducer normally looks at the action type field to decide what happens
   switch (action.type) {
-    case LOGIN_SUCCESS: {
+    case REGISTER_SUCCESS: {
       const newUser = action.payload.data.user;
-      console.log(`Hello user ${newUser.firstname}`);
-      return { ...state, user: newUser, authenticated: true };
+      alert(`Registered`);
+
+      return { ...state, user: newUser };
+    }
+    case REGISTER_FAIL: {
+      alert("REGISTER_FAIL");
+    }
+    case LOGIN_SUCCESS: {
+      const loginUser = action.payload.data.user;
+      alert(`Hello user ${loginUser}`);
+      return { ...state, user: loginUser, authenticated: true };
     }
     case LOGIN_FAIL: {
-      console.log("LOGIN_FAIL");
+      alert("LOGIN_FAIL");
       return state;
     }
-    case LOGOUT: {
+    case LOGOUT_SUCCESS: {
+      console.log("LOGOUT_Success");
       return { ...state, user: null, authenticated: false };
     }
-    case SWAG_REGISTER_SUCCESS: {
-      console.log("Successfully Registered!");
-      return { ...state, isRegistered: true };
+    case LOGOUT_FAIL: {
+      console.log("LOGOUT_FAIL");
+      return state;
     }
-    // case SWAG_REGISTER_FAIL: {
-    //   console.log(action.error.response.data.error);
-    //   return state;
-    // }
-    case SWAG_TOKEN_SET: {
-      return { ...state, token: action.payload.token };
-    }
-    case SWAG_LOGIN_SUCCESS: {
-      console.log("LOGIN");
-      console.log(action.payload.data);
-      console.log("Welcome!");
-      return { ...state, token: action.payload.data.token };
-    }
-    // case SWAG_LOGIN_FAIL: {
-    //   console.log(action.error.response.data.error);
-    //   return state;
-    // }
+    // Do something here based on the different types of actions
     default:
       // If this reducer doesn't recognize the action type, or doesn't
       // care about this specific action, return the existing state unchanged
       return state;
   }
 };
-
-export const getAuthReducer = (store: any) => store.auth;

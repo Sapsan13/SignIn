@@ -3,9 +3,17 @@ import styled from "styled-components";
 import { Logo, Diagram } from "@/components/Images";
 import { logoutAction } from "@/store/actions/authActions";
 import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const LoginPicBlock = ({}: PicProps) => {
   const dispatch = useDispatch();
+  const router = useRouter();
+  const auth = useSelector((store: any) => store.auth.authenticated);
+  useEffect(() => {
+    if (auth) return;
+    router.push("/auth/login/register");
+  }, [router, auth]);
   const store = useSelector((state) => {
     // console.log("auth => ", state.auth);
   });

@@ -9,7 +9,7 @@ import {
 
 interface RadialChartProps {
   width: number;
-  height: number;
+  hight: number;
   color1: string;
   color2: string;
   gradient: string;

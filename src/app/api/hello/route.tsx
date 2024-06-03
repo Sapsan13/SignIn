@@ -1,17 +1,17 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type ResponseData = {
-  data: Record<any, any>[];
+  dBase: Record<any, any>[];
 };
 
 //Standart Default
-export default function handler(
+export const GET = (
   req: NextApiRequest,
   res: NextApiResponse<ResponseData>
-) {
-  res.status(200).json({ data: dBase });
+) => {
+  return Response.json({ dBase });
   //
-}
+};
 //Standart Default
 
 const dBase = [

@@ -25,18 +25,18 @@ const SkeletonBookedBarBlock = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
-  /* padding: 24px; */
+  height: 100%x;
+  padding: 24px;
   gap: 24px;
 `;
 
 const SkeletonBookedBarItem = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
   height: 40px;
   gap: 8px;
   border-radius: 50%;
-  padding: 24px;
 `;
 
 const SkeletonFlexRow = styled.div`

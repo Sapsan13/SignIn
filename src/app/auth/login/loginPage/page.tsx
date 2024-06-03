@@ -1,29 +1,32 @@
 "use client";
-import Link from "next/link";
+import { useState } from "react";
 import styled from "styled-components";
+import { useRouter } from "next/navigation";
+// import RootLayout from "../layout";
+import Link from "next/link";
 import Button from "@/components/button";
 import Inputfield from "@/components/inputField";
 import PasswordInput from "@/components/passwordInput";
+import RootLayout from "../layout";
 import { useFormik } from "formik";
 import { schema } from "./loginYup";
-import { PostApiAuthLoginBody } from "@/model";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginAction } from "@/store/actions/authActions";
-import { usePostApiAuthLogin } from "@/QueryStore";
 
 export default function SignIn() {
   const dispatch = useDispatch();
+  const router = useRouter();
+  const auth = useSelector((store: any) => store.auth.authenticated);
+  // console.log("AUTH", auth);
 
-  const formik = useFormik<PostApiAuthLoginBody>({
+  const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
     validationSchema: schema,
     onSubmit: (values) => {
-      // loginMutation
-      usePostApiAuthLogin(values);
-      // dispatch(loginAction(values));
+      dispatch(loginAction(values));
       // alert(JSON.stringify(values, null, 2));
     },
   });
@@ -36,7 +39,7 @@ export default function SignIn() {
             <SkeletonHaveAnAccount>
               {"Don't have an account?"}
             </SkeletonHaveAnAccount>
-            <Link href={"/auth/login/signUp"}>
+            <Link href={"/auth/login/register"}>
               <SkeletonSignIn>Sign in here!</SkeletonSignIn>
             </Link>
           </SkeletonDivRow>

@@ -1,15 +1,5 @@
-"use client";
-
 import StyledComponentsRegistry from "../../lib/registry";
 import ClientLayout from "./ClientLayout";
-
-import {
-  QueryClient,
-  QueryClientProvider,
-  useQuery,
-} from "@tanstack/react-query";
-
-const queryClient = new QueryClient();
 
 export default function Document({ children }: { children: React.ReactNode }) {
   return (
@@ -32,9 +22,7 @@ export default function Document({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <StyledComponentsRegistry>
-          <QueryClientProvider client={queryClient}>
-            <ClientLayout>{children}</ClientLayout>
-          </QueryClientProvider>
+          <ClientLayout>{children}</ClientLayout>
         </StyledComponentsRegistry>
       </body>
     </html>

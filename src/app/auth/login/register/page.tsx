@@ -4,11 +4,13 @@ import styled from "styled-components";
 import Button from "../../../../components/button";
 import PasswordInput from "@/components/passwordInput";
 import Inputfield from "@/components/inputField";
-import { InferGetServerSidePropsType, GetServerSidePropsContext } from "next";
 import { useFormik } from "formik";
 import { schema } from "./signupYup";
+import { useDispatch } from "react-redux";
+import { registerAction } from "@/store/actions/authActions";
 
 export default function CreateAccount() {
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -18,7 +20,8 @@ export default function CreateAccount() {
     },
     validationSchema: schema,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      dispatch(registerAction(values));
+      // alert(JSON.stringify(values, null, 2));
     },
   });
   return (
