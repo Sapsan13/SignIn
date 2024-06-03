@@ -3,7 +3,7 @@ module.exports = {
     output: {
       client: "react-query",
       schemas: "src/model",
-      target: "src/QueryStore.ts",
+      target: "",
       prettier: true,
       override: {
         mutator: {
