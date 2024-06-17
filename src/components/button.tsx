@@ -10,7 +10,7 @@ type ButtonProps = ComponentProps<"button"> & {
   endIcon?: React.ReactElement;
   children?: React.ReactNode;
 };
-
+//  comment
 const SkeletonBtn = styled.button`
   border: none;
   width: 352px;
