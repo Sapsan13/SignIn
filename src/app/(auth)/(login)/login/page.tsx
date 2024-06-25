@@ -36,7 +36,7 @@ export default function SignIn() {
             <SkeletonHaveAnAccount>
               {"Don't have an account?"}
             </SkeletonHaveAnAccount>
-            <Link href={"/auth/login/signUp"}>
+            <Link href={"/signin"}>
               <SkeletonSignIn>Sign in here!</SkeletonSignIn>
             </Link>
           </SkeletonDivRow>

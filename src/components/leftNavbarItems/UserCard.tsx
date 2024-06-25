@@ -80,10 +80,8 @@ const SkeletonUserCard = styled.div`
   align-items: center;
   text-align: center;
   border: none;
-  width: 248px;
-  height: 162px;
   border-radius: 16px;
-  background-color: #fff;
+  padding-bottom: 60px;
 `;
 
 const SkeletonStatusCircle = styled.image`

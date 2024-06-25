@@ -2,6 +2,30 @@ import { AccountPic, Alert, Bell } from "@/components/Images";
 import { usePathname } from "next/navigation";
 import styled from "styled-components";
 
+const TopBar = () => {
+  const pathname =
+    usePathname().substring(1).charAt(0).toUpperCase() +
+    usePathname().substring(1).slice(1);
+  return (
+    <SkeletonTopBarWrapper>
+      <SkeletonTitleWrapper>
+        {pathname === "Overview" ? " " : pathname}
+      </SkeletonTitleWrapper>
+      <SkeletonBellAccountWrap>
+        <SkeletonBellWrapper>
+          <Bell />
+        </SkeletonBellWrapper>
+        <SkeletonAlertPosition>
+          <Alert />
+        </SkeletonAlertPosition>
+        <AccountPic />
+      </SkeletonBellAccountWrap>
+    </SkeletonTopBarWrapper>
+  );
+};
+
+export default TopBar;
+
 const SkeletonTopBarWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -44,27 +68,3 @@ const SkeletonAlertPosition = styled.div`
 `;
 
 const SkeletonAccountPicWrapper = styled.div``;
-
-const TopBar = () => {
-  const pathname =
-    usePathname().substring(1).charAt(0).toUpperCase() +
-    usePathname().substring(1).slice(1);
-  return (
-    <SkeletonTopBarWrapper>
-      <SkeletonTitleWrapper>
-        {pathname === "Overview" ? " " : pathname}
-      </SkeletonTitleWrapper>
-      <SkeletonBellAccountWrap>
-        <SkeletonBellWrapper>
-          <Bell />
-        </SkeletonBellWrapper>
-        <SkeletonAlertPosition>
-          <Alert />
-        </SkeletonAlertPosition>
-        <AccountPic />
-      </SkeletonBellAccountWrap>
-    </SkeletonTopBarWrapper>
-  );
-};
-
-export default TopBar;

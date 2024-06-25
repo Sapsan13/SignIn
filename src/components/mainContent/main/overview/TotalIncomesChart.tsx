@@ -30,7 +30,7 @@ const data = [
 const TotalIncomesChart = () => {
   return (
     <SkeletonFlex>
-      <LineChart width={1000} height={330} data={data}>
+      <LineChart width={360} height={118} data={data}>
         <Line
           type="monotone"
           dataKey="uv"

@@ -30,7 +30,7 @@ export default function CreateAccount() {
             <SkeletonHaveAnAccount>
               Already have an account?
             </SkeletonHaveAnAccount>
-            <Link href={"/auth/login/loginPage"}>
+            <Link href={"/login"}>
               <SkeletonLogin>Login</SkeletonLogin>
             </Link>
           </SkeletonRow>

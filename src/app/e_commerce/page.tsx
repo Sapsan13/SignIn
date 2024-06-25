@@ -12,7 +12,7 @@ const SkeletonItemsWrapper = styled.div`
   gap: 80px;
 `;
 
-const E_Comerse = () => {
+const Ecommerce = () => {
   return <HeroStartANew />;
 };
-export default E_Comerse;
+export default Ecommerce;

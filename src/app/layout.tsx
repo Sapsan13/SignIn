@@ -2,6 +2,7 @@
 
 import StyledComponentsRegistry from "../../lib/registry";
 import ClientLayout from "./ClientLayout";
+import "./global.css";
 
 import {
   QueryClient,

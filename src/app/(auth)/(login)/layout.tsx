@@ -7,26 +7,6 @@ import LeftNavbar from "@/components/leftNavbarItems/LeftNavbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const SkeletonFlexRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  min-width: 1024px;
-  min-height: 720px;
-  width: 100%;
-  align-items: center;
-`;
-
-const SkeletonLoginPicBlock = styled.div`
-  display: flex;
-  flex: 2;
-  width: 100%;
-`;
-
-const SkeletonCildWrapper = styled.div`
-  display: flex;
-  flex: 1;
-`;
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -41,3 +21,24 @@ export default function RootLayout({
     </SkeletonFlexRow>
   );
 }
+
+const SkeletonFlexRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  min-width: 1024px;
+  min-height: 720px;
+  width: 100%;
+
+  align-items: center;
+`;
+
+const SkeletonLoginPicBlock = styled.div`
+  display: flex;
+  flex: 2;
+  width: 100%;
+`;
+
+const SkeletonCildWrapper = styled.div`
+  display: flex;
+  flex: 1;
+`;

@@ -26,8 +26,8 @@ const SkeletonColumn = styled.div`
 const SkeletonRowItemsTwelve = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  column-gap: 24px;
-  row-gap: 24px;
+
+  gap: 24px;
 `;
 
 const SkeletonMidCards = styled.div`
@@ -42,7 +42,9 @@ const SkeletonRowItemsEight = styled.div`
   max-height: 765px;
   gap: 24px;
   border-radius: 16px;
-  box-shadow: 0px 12px 24px -4px #919eab1f, 0px 0px 2px 0px #919eab33;
+  box-shadow:
+    0px 12px 24px -4px #919eab1f,
+    0px 0px 2px 0px #919eab33;
 `;
 
 const SkeletonMidCardsFour = styled.div`

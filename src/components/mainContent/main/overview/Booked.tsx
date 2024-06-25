@@ -1,12 +1,56 @@
 import styled from "styled-components";
 
+const Booked = () => {
+  return (
+    <SkeletonBookedBarsWrapper>
+      <SkeletonBookedBarTitle>Booked</SkeletonBookedBarTitle>
+      <SkeletonBookedBarBlock>
+        <SkeletonBookedBarItem>
+          <SkeletonFlexRow>
+            <SkeletonBarTitleWrapper>PENDING</SkeletonBarTitleWrapper>
+            <SkeletonNumberWrapper>56,000</SkeletonNumberWrapper>
+          </SkeletonFlexRow>
+          <SkeletonBookedFirstItem
+            value="75"
+            max="100"
+          ></SkeletonBookedFirstItem>
+        </SkeletonBookedBarItem>
+        <SkeletonBookedBarItem>
+          <SkeletonFlexRow>
+            <SkeletonBarTitleWrapper>CANCELED</SkeletonBarTitleWrapper>
+            <SkeletonNumberWrapper>50,456</SkeletonNumberWrapper>
+          </SkeletonFlexRow>
+          <SkeletonBookedSecondItem
+            value="47"
+            max="100"
+          ></SkeletonBookedSecondItem>
+        </SkeletonBookedBarItem>
+        <SkeletonBookedBarItem>
+          <SkeletonFlexRow>
+            <SkeletonBarTitleWrapper>SOLD</SkeletonBarTitleWrapper>
+            <SkeletonNumberWrapper>155,670</SkeletonNumberWrapper>
+          </SkeletonFlexRow>
+          <SkeletonBookedThirdItem
+            value="47"
+            max="100"
+          ></SkeletonBookedThirdItem>
+        </SkeletonBookedBarItem>
+      </SkeletonBookedBarBlock>
+    </SkeletonBookedBarsWrapper>
+  );
+};
+
+export default Booked;
+
 const SkeletonBookedBarsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
   border-radius: 16px;
-  box-shadow: 0px 12px 24px -4px #919eab1f, 0px 0px 2px 0px #919eab33;
+  box-shadow:
+    0px 12px 24px -4px #919eab1f,
+    0px 0px 2px 0px #919eab33;
 `;
 const SkeletonBookedBarTitle = styled.div`
   width: 100%;
@@ -28,6 +72,7 @@ const SkeletonBookedBarBlock = styled.div`
   height: 100%;
   /* padding: 24px; */
   gap: 24px;
+  justify-content: center;
 `;
 
 const SkeletonBookedBarItem = styled.div`
@@ -36,7 +81,7 @@ const SkeletonBookedBarItem = styled.div`
   height: 40px;
   gap: 8px;
   border-radius: 50%;
-  padding: 24px;
+  padding: 0 24px 0 24px;
 `;
 
 const SkeletonFlexRow = styled.div`
@@ -108,44 +153,3 @@ const SkeletonBookedThirdItem = styled.progress`
     border-radius: 8px;
   }
 `;
-const Booked = () => {
-  return (
-    <SkeletonBookedBarsWrapper>
-      <SkeletonBookedBarTitle>Booked</SkeletonBookedBarTitle>
-      <SkeletonBookedBarBlock>
-        <SkeletonBookedBarItem>
-          <SkeletonFlexRow>
-            <SkeletonBarTitleWrapper>PENDING</SkeletonBarTitleWrapper>
-            <SkeletonNumberWrapper>56,000</SkeletonNumberWrapper>
-          </SkeletonFlexRow>
-          <SkeletonBookedFirstItem
-            value="75"
-            max="100"
-          ></SkeletonBookedFirstItem>
-        </SkeletonBookedBarItem>
-        <SkeletonBookedBarItem>
-          <SkeletonFlexRow>
-            <SkeletonBarTitleWrapper>CANCELED</SkeletonBarTitleWrapper>
-            <SkeletonNumberWrapper>50,456</SkeletonNumberWrapper>
-          </SkeletonFlexRow>
-          <SkeletonBookedSecondItem
-            value="47"
-            max="100"
-          ></SkeletonBookedSecondItem>
-        </SkeletonBookedBarItem>
-        <SkeletonBookedBarItem>
-          <SkeletonFlexRow>
-            <SkeletonBarTitleWrapper>SOLD</SkeletonBarTitleWrapper>
-            <SkeletonNumberWrapper>155,670</SkeletonNumberWrapper>
-          </SkeletonFlexRow>
-          <SkeletonBookedThirdItem
-            value="47"
-            max="100"
-          ></SkeletonBookedThirdItem>
-        </SkeletonBookedBarItem>
-      </SkeletonBookedBarBlock>
-    </SkeletonBookedBarsWrapper>
-  );
-};
-
-export default Booked;

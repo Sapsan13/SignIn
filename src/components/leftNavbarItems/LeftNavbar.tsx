@@ -23,17 +23,15 @@ const LeftNavbar = () => {
               <NavbarStackItem />
             </SkeletonNavbar>
           </div>
-          <div>
-            <UserCard
-              statusCircle={true}
-              textVLabel={textVLabel}
-              Click={onClickHandler}
-              firstName={"Hudson"}
-              lastName={"Alvarez"}
-              email={"hudson.alvarez@gmail.com"}
-              upgradeLabel={"Upgrade to BRO"}
-            />
-          </div>
+          <UserCard
+            statusCircle={true}
+            textVLabel={textVLabel}
+            Click={onClickHandler}
+            firstName={"Hudson"}
+            lastName={"Alvarez"}
+            email={"hudson.alvarez@gmail.com"}
+            upgradeLabel={"Upgrade to BRO"}
+          />
         </SkeletonLeftNavbarWrapper>
       </SkeletonNavbarTopblockWrapper>
     </>
@@ -48,8 +46,10 @@ const SkeletonLeftNavbarWrapper = styled.div`
   width: 280px;
   height: 100%;
   justify-content: space-between;
-  padding: 0px 16px 40px 16px;
-  box-shadow: 0px 12px 24px -4px #919eab1f, 0px 0px 2px 0px #919eab33;
+  padding: 0px 16px 0px 16px;
+  box-shadow:
+    0px 12px 24px -4px #919eab1f,
+    0px 0px 2px 0px #919eab33;
 `;
 
 const SkeletonNavbarTopblockWrapper = styled.div`
@@ -60,8 +60,6 @@ const SkeletonNavbarTopblockWrapper = styled.div`
 const SkeletonNavbar = styled.div`
   display: flex;
   flex-direction: column;
-  width: 248px;
-  height: 491px;
 `;
 
 const SkeletonLogoWrapper = styled.div`

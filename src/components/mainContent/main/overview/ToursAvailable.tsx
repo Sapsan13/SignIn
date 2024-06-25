@@ -69,7 +69,6 @@ const SkeletonToursWrapper = styled.div`
 const SkeletonToursText = styled.div`
   width: 100%;
   height: 52px;
-  padding: 24px 16px 0px 24px;
   gap: 16px;
   display: flex;
   font-family: Public Sans;
@@ -83,11 +82,16 @@ const SkeletonToursAvailable = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   gap: 16px;
+  padding: 24px;
   width: 100%;
   height: 100%;
   border-radius: 16px;
-  box-shadow: 0px 12px 24px -4px #919eab1f, 0px 0px 2px 0px #919eab33;
+  box-sizing: border-box;
+  box-shadow:
+    0px 12px 24px -4px #919eab1f,
+    0px 0px 2px 0px #919eab33;
 `;
 
 const SkeletonRadialText = styled.div`
@@ -124,9 +128,8 @@ const SkeletonNumber = styled.div`
 const SkeletonToursBottom = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
-  height: 100px;
-  padding: 0px 40px 40px 40px;
   gap: 16px;
 `;
 

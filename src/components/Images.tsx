@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const Logo = () => {
   return (
     <Image
-      src="/illustrations/Login/Logo.png"
+      src="/illustrations/Login/logo.svg"
       width={40}
       height={40}
       alt="Logo"
@@ -15,7 +15,7 @@ export const Logo = () => {
 export const Diagram = () => {
   return (
     <Image
-      src="/illustrations/Login/Diagram.png"
+      src="/illustrations/Login/diagram.svg"
       width={720}
       height={540}
       alt="Diagram"
@@ -45,7 +45,7 @@ export const TripleBars = () => {
 export const Starz = () => {
   return (
     <Image
-      src="/illustrations/customerReviews/star.png"
+      src="/illustrations/Customer/star.png"
       width={20}
       height={20}
       alt="Icon of a star"
@@ -231,7 +231,7 @@ export const ArrowRight24 = () => {
   return (
     <SkeletonLa>
       <Image
-        src={"/illustrations/StartAProject/ArrowRight.png"}
+        src={"/illustrations/StartAProject/arrowright.png"}
         width={24}
         height={24}
         alt="Picture of an arrow"
@@ -276,7 +276,7 @@ export const XPECTUK = () => {
 export const ArrowRight18 = () => {
   return (
     <Image
-      src={"/illustrations/StartAProject/ArrowRight.png"}
+      src={"/illustrations/StartAProject/arrowright.png"}
       width={18}
       height={18}
       alt="Picture of an arrow"
@@ -344,7 +344,7 @@ export const ErrowRight16 = () => {
   return (
     <SkeletonArrowRight>
       <Image
-        src={"/illustrations/leftBar/ArrowRight.png"}
+        src={"/illustrations/Leftbar/arrowright.png"}
         width={16}
         height={16}
         alt="Picture arrowright"
@@ -365,7 +365,7 @@ export const Arrow = () => {
   return (
     <SkeletonRotate90>
       <Image
-        src={"/illustrations/leftBar/ArrowRight.png"}
+        src={"/illustrations/Leftbar/arrowright.png"}
         width={16}
         height={16}
         alt="Picture arrowright"
@@ -377,7 +377,7 @@ export const Arrow = () => {
 export const Avatar = () => {
   return (
     <Image
-      src="/illustrations/userCard/Avatar.png"
+      src="/illustrations/Leftbar/Usercard/avatar.png"
       width={48}
       height={48}
       alt="Picture user avatar"
@@ -388,7 +388,7 @@ export const Avatar = () => {
 export const Status = () => {
   return (
     <Image
-      src="/illustrations/userCard/Status.png"
+      src="/illustrations/Leftbar/Usercard/status.png"
       width={11}
       height={11}
       alt="Status circle"
@@ -497,7 +497,7 @@ export const Arrow20 = () => {
   return (
     <SkeletonArrowRight>
       <Image
-        src={"/illustrations/leftBar/ArrowRight.png"}
+        src={"/illustrations/Leftbar/arrowright.png"}
         width={20}
         height={20}
         alt="Picture arrow right"
@@ -509,7 +509,7 @@ export const Arrow20 = () => {
 export const ArowRight = () => {
   return (
     <Image
-      src={"/illustrations/leftBar/ArrowRight.png"}
+      src={"/illustrations/Leftbar/arrowright.png"}
       width={20}
       height={20}
       alt="Picture of the author"
@@ -520,7 +520,7 @@ export const ArowRight = () => {
 export const AvatarSimon = () => {
   return (
     <Image
-      src={"/illustrations/customerReviews/SimonJayvion.png"}
+      src={"/illustrations/Customer/simon.png"}
       width={40}
       height={40}
       alt="Picture of the author"
@@ -532,7 +532,7 @@ export const StarGold = () => {
   return (
     <>
       <Image
-        src={"/illustrations/customerReviews/star.png"}
+        src={"/illustrations/Customer/star.png"}
         width={20}
         height={20}
         alt="Picture of the author"
@@ -545,7 +545,7 @@ export const StarGrey = () => {
   return (
     <>
       <Image
-        src={"/illustrations/customerReviews/greyStar.png"}
+        src={"/illustrations/Customer/greyStar.png"}
         width={20}
         height={20}
         alt="Picture of the author"

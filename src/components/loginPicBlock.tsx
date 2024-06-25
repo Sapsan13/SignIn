@@ -54,7 +54,6 @@ const SkeletonLogoPic = styled.div`
   padding: 40px;
   max-height: 120px;
   position: absolute;
-  width: 100%;
   height: auto;
   cursor: pointer;
   top: 0;
@@ -74,8 +73,8 @@ const SkeletonContent = styled.div`
   flex-direction: column;
   margin: 0 auto;
   top: 154px;
-  width: 100%;
   height: auto;
+  overflow: hidden;
   left: 120px;
   gap: 80px;
 `;

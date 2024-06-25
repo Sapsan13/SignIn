@@ -2,6 +2,29 @@ import styled from "styled-components";
 import TotalIncomesChart from "./TotalIncomesChart";
 import { Ascend } from "@/components/Images";
 
+const TotalIncomes = () => {
+  return (
+    <SkeletonTotalIncomesWrapper>
+      <SkeletonTotal9900>
+        <SkeletonFlexCol>
+          <SkeletonTotalIncomes>TotalIncomes </SkeletonTotalIncomes>
+          <Skeleton9900>9,900</Skeleton9900>
+        </SkeletonFlexCol>
+        <SkeletonThanLastWeek>
+          <SkeletonFlexCol>
+            <SkeletonAscend82>
+              <Ascend /> <Skeleton82>+8,2%</Skeleton82>
+            </SkeletonAscend82>
+            <SkeletonThanLastWeekText>than last week</SkeletonThanLastWeekText>
+          </SkeletonFlexCol>
+        </SkeletonThanLastWeek>
+      </SkeletonTotal9900>
+      <TotalIncomesChart />
+    </SkeletonTotalIncomesWrapper>
+  );
+};
+export default TotalIncomes;
+
 const SkeletonTotalIncomesWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -10,7 +33,6 @@ const SkeletonTotalIncomesWrapper = styled.div`
   width: 100%;
   height: 100%;
   padding: 24px;
-  gap: 24px;
   border-radius: 16px;
 `;
 
@@ -77,26 +99,3 @@ const SkeletonFlexCol = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
-const TotalIncomes = () => {
-  return (
-    <SkeletonTotalIncomesWrapper>
-      <SkeletonTotal9900>
-        <SkeletonFlexCol>
-          <SkeletonTotalIncomes>TotalIncomes </SkeletonTotalIncomes>
-          <Skeleton9900>9,900</Skeleton9900>
-        </SkeletonFlexCol>
-        <SkeletonThanLastWeek>
-          <SkeletonFlexCol>
-            <SkeletonAscend82>
-              <Ascend /> <Skeleton82>+8,2%</Skeleton82>
-            </SkeletonAscend82>
-            <SkeletonThanLastWeekText>than last week</SkeletonThanLastWeekText>
-          </SkeletonFlexCol>
-        </SkeletonThanLastWeek>
-      </SkeletonTotal9900>
-      <TotalIncomesChart />
-    </SkeletonTotalIncomesWrapper>
-  );
-};
-export default TotalIncomes;

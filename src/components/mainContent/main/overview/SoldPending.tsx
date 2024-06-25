@@ -1,5 +1,30 @@
 import styled from "styled-components";
 import RadialChart from "./RadialChart";
+
+const SoldPending = (props: any) => {
+  return (
+    <SkeletonToursWrapper>
+      <SkeletonSPending>
+        <SkeletonRadialText>
+          <RadialChart
+            width={80}
+            height={80}
+            color1={props.color1}
+            color2={props.color2}
+            gradient={props.gradient}
+          />
+          <SkeletonInnerText>{props.innerNumber}</SkeletonInnerText>
+        </SkeletonRadialText>
+        <SkeletonPendingPayment>
+          <SkeletonPendingNumber>{props.number}</SkeletonPendingNumber>
+          <SkeletonPendingText>{props.text}</SkeletonPendingText>
+        </SkeletonPendingPayment>
+      </SkeletonSPending>
+    </SkeletonToursWrapper>
+  );
+};
+export default SoldPending;
+
 const SkeletonToursWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -63,27 +88,3 @@ const SkeletonSoldPending = styled.div`
   gap: 16px;
   border: 20px solid;
 `;
-
-const SoldPending = (props: any) => {
-  return (
-    <SkeletonToursWrapper>
-      <SkeletonSPending>
-        <SkeletonRadialText>
-          <RadialChart
-            width={80}
-            height={80}
-            color1={props.color1}
-            color2={props.color2}
-            gradient={props.gradient}
-          />
-          <SkeletonInnerText>{props.innerNumber}</SkeletonInnerText>
-        </SkeletonRadialText>
-        <SkeletonPendingPayment>
-          <SkeletonPendingNumber>{props.number}</SkeletonPendingNumber>
-          <SkeletonPendingText>{props.text}</SkeletonPendingText>
-        </SkeletonPendingPayment>
-      </SkeletonSPending>
-    </SkeletonToursWrapper>
-  );
-};
-export default SoldPending;

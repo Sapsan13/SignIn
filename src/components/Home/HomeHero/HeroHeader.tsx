@@ -33,6 +33,7 @@ const SkeletonMinimalHeaderWrapper = styled.div`
   padding: 0px 144px 0px 144px;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
   @media (max-width: 600px) {
     display: flex;
     flex-direction: row;

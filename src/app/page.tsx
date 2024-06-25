@@ -8,12 +8,9 @@ export default function Home() {
       <div>
         <div>HOMEPAGE</div>
         <div>
-          <Link href={"auth/login/loginPage"}>Auth</Link>
+          <Link href={"/login"}>Auth</Link>
         </div>
         <Link href={"overview"}>Overview</Link>
-        <div>
-          <Link href={"swag"}>Swag</Link>
-        </div>
       </div>
     </SkeletonHome>
   );
