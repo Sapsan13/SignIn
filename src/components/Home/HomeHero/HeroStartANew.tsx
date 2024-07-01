@@ -5,56 +5,58 @@ import {
   SquareOut,
 } from "@/components/Images";
 import styled from "styled-components";
+import { GoldStar } from "@/../../public/illustrations/Customer/GoldStar";
 
 const StartANewProjectLeft = () => {
   return (
-    <SkeletonBlockWrapper>
-      <SkeletonStartAMinimal>
-        <SkeletonStartA>
+    <BlockWrapper>
+      <StartAMinimal>
+        <StartA>
           Start a <br />
           New Project with
-        </SkeletonStartA>
-        <SkeletonMinimalWord>Minimal</SkeletonMinimalWord>
-        <SkeletonStartMUI>
+        </StartA>
+        <MinimalWord>Minimal</MinimalWord>
+        <StartMUI>
           The starting point for your next project is based on MUI.
           <br /> Easy customization Helps you build apps faster and better.
-        </SkeletonStartMUI>
-        <SkeletonStarzRting>
-          <SkeletonStarz>
+        </StartMUI>
+        <StarsRting>
+          <Stars>
+            <GoldStar />
+            {/* <Starz /> */}
             <Starz />
             <Starz />
             <Starz />
             <Starz />
-            <Starz />
-          </SkeletonStarz>
-          <SkeletonRting>
-            <SkeletonRate>4.95/5</SkeletonRate>
-            <SkeletonReiews>(99+ reviews)</SkeletonReiews>
-          </SkeletonRting>
-        </SkeletonStarzRting>
-      </SkeletonStartAMinimal>
-      <SkeletonButtonsWrapper>
-        <SkeletonLightning>
+          </Stars>
+          <Rting>
+            <Rate>4.95/5</Rate>
+            <Reiews>(99+ reviews)</Reiews>
+          </Rting>
+        </StarsRting>
+      </StartAMinimal>
+      <ButtonsWrapper>
+        <Light>
           <Lightning />
           Live Preview
-        </SkeletonLightning>
-        <SkeletonSquareOut>
+        </Light>
+        <SquareOu>
           <SquareOut />
           Design Preview
-        </SkeletonSquareOut>
-      </SkeletonButtonsWrapper>
-      <SkeletonAvailableIconsWrapper>
-        <SkeletonAvailableFor>Available For</SkeletonAvailableFor>
-        <SkeletonAva>
+        </SquareOu>
+      </ButtonsWrapper>
+      <AvailableIconsWrapper>
+        <AvailableFor>Available For</AvailableFor>
+        <Ava>
           <AvailableIcons />
-        </SkeletonAva>
-      </SkeletonAvailableIconsWrapper>
-    </SkeletonBlockWrapper>
+        </Ava>
+      </AvailableIconsWrapper>
+    </BlockWrapper>
   );
 };
 export default StartANewProjectLeft;
 
-const SkeletonBlockWrapper = styled.div`
+const BlockWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,7 +71,7 @@ const SkeletonBlockWrapper = styled.div`
   }
 `;
 
-const SkeletonStartA = styled.div`
+const StartA = styled.div`
   display: flex;
   width: 100%;
   height: 128px;
@@ -90,7 +92,7 @@ const SkeletonStartA = styled.div`
   }
 `;
 
-const SkeletonMinimalWord = styled.div`
+const MinimalWord = styled.div`
   display: flex;
   font-family: Barlow;
   font-size: 96px;
@@ -112,7 +114,7 @@ const SkeletonMinimalWord = styled.div`
     text-align: center;
   }
 `;
-const SkeletonStartAMinimal = styled.div`
+const StartAMinimal = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -129,7 +131,7 @@ const SkeletonStartAMinimal = styled.div`
   }
 `;
 
-const SkeletonStartMUI = styled.div`
+const StartMUI = styled.div`
   display: flex;
   font-family: Public Sans;
   font-size: 14px;
@@ -139,7 +141,7 @@ const SkeletonStartMUI = styled.div`
   color: rgba(33, 43, 54, 1);
 `;
 
-const SkeletonStarzRting = styled.div`
+const StarsRting = styled.div`
   display: flex;
   max-width: fit-content;
   align-items: center;
@@ -149,14 +151,14 @@ const SkeletonStarzRting = styled.div`
   gap: 4px;
 `;
 
-const SkeletonStarz = styled.div`
+const Stars = styled.div`
   display: flex;
 `;
-const SkeletonRting = styled.div`
+const Rting = styled.div`
   display: flex;
   flex-direction: row;
 `;
-const SkeletonRate = styled.div`
+const Rate = styled.div`
   display: flex;
   font-family: Public Sans;
   font-size: 12px;
@@ -165,7 +167,7 @@ const SkeletonRate = styled.div`
   text-align: center;
   color: rgba(33, 43, 54, 1);
 `;
-const SkeletonReiews = styled.div`
+const Reiews = styled.div`
   display: flex;
   font-family: Public Sans;
   font-size: 12px;
@@ -175,7 +177,7 @@ const SkeletonReiews = styled.div`
   color: rgba(99, 115, 129, 1);
 `;
 
-const SkeletonButtonsWrapper = styled.div`
+const ButtonsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -194,7 +196,7 @@ const SkeletonButtonsWrapper = styled.div`
     gap: 20px;
   }
 `;
-const SkeletonLightning = styled.button`
+const Light = styled.button`
   display: flex;
   border: none;
   overflow: hidden;
@@ -214,7 +216,7 @@ const SkeletonLightning = styled.button`
   line-height: 26px;
 `;
 
-const SkeletonSquareOut = styled.button`
+const SquareOu = styled.button`
   display: flex;
   border: 1px, solid, black;
   overflow: hidden;
@@ -233,7 +235,7 @@ const SkeletonSquareOut = styled.button`
   line-height: 26px;
 `;
 
-const SkeletonAvailableFor = styled.div`
+const AvailableFor = styled.div`
   display: flex;
   font-family: Public Sans;
   font-size: 12px;
@@ -247,7 +249,7 @@ const SkeletonAvailableFor = styled.div`
   text-transform: uppercase;
 `;
 
-const SkeletonAvailableIconsWrapper = styled.div`
+const AvailableIconsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -257,6 +259,6 @@ const SkeletonAvailableIconsWrapper = styled.div`
   gap: 24px;
   opacity: 0.4px;
 `;
-const SkeletonAva = styled.div`
+const Ava = styled.div`
   display: flex;
 `;

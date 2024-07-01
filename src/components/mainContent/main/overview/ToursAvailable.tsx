@@ -5,10 +5,10 @@ import styled from "styled-components";
 //
 const ToursAvailable = () => {
   return (
-    <SkeletonToursWrapper>
-      <SkeletonToursAvailable>
-        <SkeletonToursText>Tours Available</SkeletonToursText>
-        <SkeletonRadialText>
+    <ToursWrapper>
+      <ToursAvail>
+        <ToursText>Tours Available</ToursText>
+        <RadialText>
           <RadialChart
             width={240}
             height={240}
@@ -16,48 +16,48 @@ const ToursAvailable = () => {
             color2={"#00A76F"}
             gradient={"tours"}
           />
-          <SkeletonInnerText>
-            <SkeletonTours>tours</SkeletonTours>
-            <SkeletonNumber>120</SkeletonNumber>
-          </SkeletonInnerText>
-        </SkeletonRadialText>
-        <SkeletonToursBottom>
-          <SkeletonSoldOut>
-            <SkeletonFlexRowGap>
-              <SkeletonGreenSquare />
+          <InnerText>
+            <Tours>tours</Tours>
+            <Number>120</Number>
+          </InnerText>
+        </RadialText>
+        <ToursBottom>
+          <SoldOut>
+            <FlexRowGap>
+              <GreenSquare />
               Sold out
-            </SkeletonFlexRowGap>
-            <SkeletonBottomTours>120 Tours</SkeletonBottomTours>
-          </SkeletonSoldOut>
-          <SkeletonAvailable>
-            <SkeletonFlexRowGap>
-              <SkeletonGraySquare />
+            </FlexRowGap>
+            <BottomTours>120 Tours</BottomTours>
+          </SoldOut>
+          <Available>
+            <FlexRowGap>
+              <GraySquare />
               Available
-            </SkeletonFlexRowGap>
-            <SkeletonBottomTours>66 Tours</SkeletonBottomTours>
-          </SkeletonAvailable>
-        </SkeletonToursBottom>
-      </SkeletonToursAvailable>
-    </SkeletonToursWrapper>
+            </FlexRowGap>
+            <BottomTours>66 Tours</BottomTours>
+          </Available>
+        </ToursBottom>
+      </ToursAvail>
+    </ToursWrapper>
   );
 };
 export default ToursAvailable;
 
-const SkeletonGreenSquare = styled.div`
+const GreenSquare = styled.div`
   width: 20px;
   height: 20px;
   border-radius: 6px;
   background: rgba(0, 167, 111, 1);
 `;
 
-const SkeletonGraySquare = styled.div`
+const GraySquare = styled.div`
   width: 20px;
   height: 20px;
   border-radius: 6px;
   background: rgba(145, 158, 171, 0.16);
 `;
 
-const SkeletonToursWrapper = styled.div`
+const ToursWrapper = styled.div`
   display: flex;
   height: 100%;
   flex-direction: column;
@@ -66,7 +66,7 @@ const SkeletonToursWrapper = styled.div`
   gap: 24px;
 `;
 
-const SkeletonToursText = styled.div`
+const ToursText = styled.div`
   width: 100%;
   height: 52px;
   gap: 16px;
@@ -78,7 +78,7 @@ const SkeletonToursText = styled.div`
   text-align: left;
 `;
 
-const SkeletonToursAvailable = styled.div`
+const ToursAvail = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,21 +94,21 @@ const SkeletonToursAvailable = styled.div`
     0px 0px 2px 0px #919eab33;
 `;
 
-const SkeletonRadialText = styled.div`
+const RadialText = styled.div`
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
 `;
 
-const SkeletonInnerText = styled.div`
+const InnerText = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
   gap: 8px;
 `;
 
-const SkeletonTours = styled.div`
+const Tours = styled.div`
   font-family: Public Sans;
   font-size: 14px;
   font-weight: 600;
@@ -117,7 +117,7 @@ const SkeletonTours = styled.div`
   color: rgba(99, 115, 129, 1);
 `;
 
-const SkeletonNumber = styled.div`
+const Number = styled.div`
   font-family: Public Sans;
   font-size: 32px;
   font-weight: 700;
@@ -125,7 +125,7 @@ const SkeletonNumber = styled.div`
   text-align: center;
 `;
 
-const SkeletonToursBottom = styled.div`
+const ToursBottom = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -133,19 +133,19 @@ const SkeletonToursBottom = styled.div`
   gap: 16px;
 `;
 
-const SkeletonSoldOut = styled.div`
+const SoldOut = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 `;
 
-const SkeletonAvailable = styled.div`
+const Available = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 `;
 
-const SkeletonFlexRowGap = styled.div`
+const FlexRowGap = styled.div`
   display: flex;
   flex-direction: row;
   gap: 8px;
@@ -157,7 +157,7 @@ const SkeletonFlexRowGap = styled.div`
   color: rgba(99, 115, 129, 1);
 `;
 
-const SkeletonBottomTours = styled.div`
+const BottomTours = styled.div`
   font-family: Public Sans;
   font-size: 14px;
   font-weight: 600;

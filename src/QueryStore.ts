@@ -43,7 +43,7 @@ export const usePostApiAuthLoginHook = () => {
         data: postApiAuthLoginBody,
       });
     },
-    [postApiAuthLogin],
+    [postApiAuthLogin]
   );
 };
 
@@ -124,7 +124,7 @@ export const usePostApiAuthRegisterHook = () => {
         data: postApiAuthRegisterBody,
       });
     },
-    [postApiAuthRegister],
+    [postApiAuthRegister]
   );
 };
 
@@ -204,7 +204,7 @@ export const useGetApiChartToursHook = () => {
         signal,
       });
     },
-    [getApiChartTours],
+    [getApiChartTours]
   );
 };
 
@@ -287,7 +287,7 @@ export const useGetApiChartStatisticHook = () => {
         signal,
       });
     },
-    [getApiChartStatistic],
+    [getApiChartStatistic]
   );
 };
 
@@ -370,7 +370,7 @@ export const useGetApiChartTotalIncomeHook = () => {
         signal,
       });
     },
-    [getApiChartTotalIncome],
+    [getApiChartTotalIncome]
   );
 };
 

@@ -2,47 +2,38 @@ import styled from "styled-components";
 
 const Booked = () => {
   return (
-    <SkeletonBookedBarsWrapper>
-      <SkeletonBookedBarTitle>Booked</SkeletonBookedBarTitle>
-      <SkeletonBookedBarBlock>
-        <SkeletonBookedBarItem>
-          <SkeletonFlexRow>
-            <SkeletonBarTitleWrapper>PENDING</SkeletonBarTitleWrapper>
-            <SkeletonNumberWrapper>56,000</SkeletonNumberWrapper>
-          </SkeletonFlexRow>
-          <SkeletonBookedFirstItem
-            value="75"
-            max="100"
-          ></SkeletonBookedFirstItem>
-        </SkeletonBookedBarItem>
-        <SkeletonBookedBarItem>
-          <SkeletonFlexRow>
-            <SkeletonBarTitleWrapper>CANCELED</SkeletonBarTitleWrapper>
-            <SkeletonNumberWrapper>50,456</SkeletonNumberWrapper>
-          </SkeletonFlexRow>
-          <SkeletonBookedSecondItem
-            value="47"
-            max="100"
-          ></SkeletonBookedSecondItem>
-        </SkeletonBookedBarItem>
-        <SkeletonBookedBarItem>
-          <SkeletonFlexRow>
-            <SkeletonBarTitleWrapper>SOLD</SkeletonBarTitleWrapper>
-            <SkeletonNumberWrapper>155,670</SkeletonNumberWrapper>
-          </SkeletonFlexRow>
-          <SkeletonBookedThirdItem
-            value="47"
-            max="100"
-          ></SkeletonBookedThirdItem>
-        </SkeletonBookedBarItem>
-      </SkeletonBookedBarBlock>
-    </SkeletonBookedBarsWrapper>
+    <BookedBarsWrapper>
+      <BookedBarTitle>Booked</BookedBarTitle>
+      <BookedBarBlock>
+        <BookedBarItem>
+          <FlexRow>
+            <BarTitleWrapper>PENDING</BarTitleWrapper>
+            <NumberWrapper>56,000</NumberWrapper>
+          </FlexRow>
+          <BookedFirstItem value="75" max="100"></BookedFirstItem>
+        </BookedBarItem>
+        <BookedBarItem>
+          <FlexRow>
+            <BarTitleWrapper>CANCELED</BarTitleWrapper>
+            <NumberWrapper>50,456</NumberWrapper>
+          </FlexRow>
+          <BookedSecondItem value="47" max="100"></BookedSecondItem>
+        </BookedBarItem>
+        <BookedBarItem>
+          <FlexRow>
+            <BarTitleWrapper>SOLD</BarTitleWrapper>
+            <NumberWrapper>155,670</NumberWrapper>
+          </FlexRow>
+          <BookedThirdItem value="47" max="100"></BookedThirdItem>
+        </BookedBarItem>
+      </BookedBarBlock>
+    </BookedBarsWrapper>
   );
 };
 
 export default Booked;
 
-const SkeletonBookedBarsWrapper = styled.div`
+const BookedBarsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -52,7 +43,7 @@ const SkeletonBookedBarsWrapper = styled.div`
     0px 12px 24px -4px #919eab1f,
     0px 0px 2px 0px #919eab33;
 `;
-const SkeletonBookedBarTitle = styled.div`
+const BookedBarTitle = styled.div`
   width: 100%;
   height: 52px;
   padding: 24px 16px 0 24px;
@@ -65,7 +56,7 @@ const SkeletonBookedBarTitle = styled.div`
   text-align: left;
 `;
 
-const SkeletonBookedBarBlock = styled.div`
+const BookedBarBlock = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -75,7 +66,7 @@ const SkeletonBookedBarBlock = styled.div`
   justify-content: center;
 `;
 
-const SkeletonBookedBarItem = styled.div`
+const BookedBarItem = styled.div`
   display: flex;
   flex-direction: column;
   height: 40px;
@@ -84,14 +75,14 @@ const SkeletonBookedBarItem = styled.div`
   padding: 0 24px 0 24px;
 `;
 
-const SkeletonFlexRow = styled.div`
+const FlexRow = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 `;
 
-const SkeletonBarTitleWrapper = styled.div`
+const BarTitleWrapper = styled.div`
   font-family: Public Sans;
   font-size: 12px;
   font-weight: 700;
@@ -100,7 +91,7 @@ const SkeletonBarTitleWrapper = styled.div`
   text-align: left;
 `;
 
-const SkeletonNumberWrapper = styled.div`
+const NumberWrapper = styled.div`
   font-family: Public Sans;
   font-size: 16px;
   font-weight: 600;
@@ -109,7 +100,7 @@ const SkeletonNumberWrapper = styled.div`
   text-align: left;
 `;
 
-const SkeletonBookedFirstItem = styled.progress`
+const BookedFirstItem = styled.progress`
   border: 1px solid transparent;
   height: 8px;
   border-radius: 8px;
@@ -123,7 +114,7 @@ const SkeletonBookedFirstItem = styled.progress`
     background: #edeff1;
   }
 `;
-const SkeletonBookedSecondItem = styled.progress`
+const BookedSecondItem = styled.progress`
   border: 1px solid transparent;
   height: 8px;
   border-radius: 8px;
@@ -138,7 +129,7 @@ const SkeletonBookedSecondItem = styled.progress`
   }
 `;
 
-const SkeletonBookedThirdItem = styled.progress`
+const BookedThirdItem = styled.progress`
   border: 1px solid transparent;
   height: 8px;
   border-radius: 8px;

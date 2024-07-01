@@ -11,7 +11,7 @@ type ButtonProps = ComponentProps<"button"> & {
   children?: React.ReactNode;
 };
 
-const SkeletonBtn = styled.button`
+const Btn = styled.button`
   border: none;
   width: 352px;
   height: 48px;
@@ -39,7 +39,7 @@ const Button = ({
   children,
   ...other
 }: ButtonProps) => {
-  return <SkeletonBtn {...other}>{children}</SkeletonBtn>;
+  return <Btn {...other}>{children}</Btn>;
 };
 
 export default Button;

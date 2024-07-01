@@ -6,9 +6,7 @@ const api = axios.create({ baseURL: `http://localhost:3000/api/hello/` });
 
 const Mail = () => {
   useEffect(() => {
-    api.get("/").then((res) => {
-      // console.log(res.data);
-    });
+    api.get("/").then((res) => {});
   }, []);
   return <div>Mail</div>;
 };

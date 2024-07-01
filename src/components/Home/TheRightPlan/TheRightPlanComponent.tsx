@@ -11,14 +11,13 @@ export interface TheRightPlanProps {
   items: RightPlanData[];
 }
 
-const SkeletonRightPlanWrapper = styled.div`
+const RightPlanWrapper = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 80px;
-  /* min-height: 100vh; */
   scroll-snap-align: center;
   background: rgba(145, 158, 171, 0.04);
 `;
@@ -26,7 +25,7 @@ const SkeletonRightPlanWrapper = styled.div`
 const TheRightPlanComponent = ({ items }: TheRightPlanProps) => {
   const [stateIndex, setStateIndex] = useState(0);
   return (
-    <SkeletonRightPlanWrapper>
+    <RightPlanWrapper>
       <RightPlanHeader />
       <StandartExtendedSwitch
         setStateIndex={setStateIndex}
@@ -34,7 +33,7 @@ const TheRightPlanComponent = ({ items }: TheRightPlanProps) => {
       />
       <RightPlanMain items={RightPlanDataArray} stateIndex={stateIndex} />
       <RightPlanFooter />
-    </SkeletonRightPlanWrapper>
+    </RightPlanWrapper>
   );
 };
 export default TheRightPlanComponent;

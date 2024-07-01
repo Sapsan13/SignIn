@@ -5,6 +5,36 @@ import { usePathname } from "next/navigation";
 import styled from "styled-components";
 import { LeftNavbarItem } from "./NavbarStackItem";
 
+export const MenuItem = ({ item }: { item: LeftNavbarItem }) => {
+  const Icon = item.endIcon;
+  const pathname = usePathname();
+
+  return (
+    <StyledLink href={item.alias}>
+      <NavItem $item={item.alias} $pathname={pathname}>
+        <Grey $item={item.alias} $pathname={pathname}>
+          <NavIcon icon={item.icon} />
+        </Grey>
+        {item.title}
+        <MailPlus>{Icon ? <Icon /> : null}</MailPlus>
+      </NavItem>
+    </StyledLink>
+  );
+};
+
+export const Category = ({ item }: any) => {
+  return (
+    <StyledCategoryName>
+      <div key={item.id}>
+        <Title>{item.title.toUpperCase()}</Title>
+        {item.children.map((children: any) => (
+          <MenuItem item={children} key={children.id} />
+        ))}
+      </div>
+    </StyledCategoryName>
+  );
+};
+
 export type NavbarItem = {
   id: number;
   title: string;
@@ -13,7 +43,7 @@ export type NavbarItem = {
 
 export type NavbarArray = NavbarItem[];
 
-const SkeletonTitle = styled.div`
+const Title = styled.div`
   font-family: Public Sans;
   font-size: 11px;
   font-weight: 700;
@@ -24,7 +54,7 @@ const SkeletonTitle = styled.div`
   color: #919eab;
 `;
 
-const SkeletonNavItem = styled.div<{ $item: string; $pathname: string }>`
+const NavItem = styled.div<{ $item: string; $pathname: string }>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -48,11 +78,11 @@ const SkeletonNavItem = styled.div<{ $item: string; $pathname: string }>`
   }
 `;
 
-const SkeletonMailPlus = styled.div`
+const MailPlus = styled.div`
   margin-left: auto;
 `;
 
-const SkeletonGrey = styled.div<{ $item: string; $pathname: string }>`
+const Grey = styled.div<{ $item: string; $pathname: string }>`
   filter: ${(props) =>
     props.$item === props.$pathname.substring(1)
       ? "grayscale(0)"
@@ -68,12 +98,10 @@ const StyledCategoryName = styled.div`
   text-align: left;
 `;
 
-// TEXT DECORATION NONE
 const StyledLink = styled(Link)`
   text-decoration: none;
   background-color: #ebf8f4;
 `;
-///////////////////////////////////////////
 
 export const items: NavbarArray = [
   {
@@ -84,33 +112,33 @@ export const items: NavbarArray = [
         id: 1,
         alias: "overview",
         title: "Overview",
-        icon: "/illustrations/Leftbar/dashboardgreen.png",
+        icon: "/illustrations/Leftbar/dashboardgreen.svg",
       },
       {
         id: 2,
         alias: "ecommerce",
-        title: "Ecommerce",
-        icon: "/illustrations/Leftbar/bagicongrey.png",
+        title: "E-commerce",
+        icon: "/illustrations/Leftbar/bagicongrey.svg",
       },
       {
         id: 3,
         alias: "analitycs",
         title: "Analitycs",
-        icon: "/illustrations/Leftbar/chartgreen.png",
+        icon: "/illustrations/Leftbar/chartgreen.svg",
       },
 
       {
         id: 4,
         alias: "banking",
         title: "Banking",
-        icon: "/illustrations/Leftbar/pillarsbankgrey.png",
+        icon: "/illustrations/Leftbar/pillarsbankgrey.svg",
         endIcon: ErrowRight16,
       },
       {
         id: 5,
         alias: "booking",
         title: "Booking",
-        icon: "/illustrations/Leftbar/planebookinggreen.png",
+        icon: "/illustrations/Leftbar/planebookinggreen.svg",
       },
     ],
   },
@@ -122,39 +150,9 @@ export const items: NavbarArray = [
         id: 101,
         alias: "mail",
         title: "Mail",
-        icon: "/illustrations/Leftbar/mailicongrey.png",
+        icon: "/illustrations/Leftbar/mailicongrey.svg",
         endIcon: EmailPlus,
       },
     ],
   },
 ];
-
-export const MenuItem = ({ item }: { item: LeftNavbarItem }) => {
-  const Icon = item.endIcon;
-  const pathname = usePathname();
-
-  return (
-    <StyledLink href={item.alias}>
-      <SkeletonNavItem $item={item.alias} $pathname={pathname}>
-        <SkeletonGrey $item={item.alias} $pathname={pathname}>
-          <NavIcon icon={item.icon} />
-        </SkeletonGrey>
-        {item.title}
-        <SkeletonMailPlus>{Icon ? <Icon /> : null}</SkeletonMailPlus>
-      </SkeletonNavItem>
-    </StyledLink>
-  );
-};
-
-export const Category = ({ item }: any) => {
-  return (
-    <StyledCategoryName>
-      <div key={item.id}>
-        <SkeletonTitle>{item.title.toUpperCase()}</SkeletonTitle>
-        {item.children.map((children: any) => (
-          <MenuItem item={children} key={children.id} />
-        ))}
-      </div>
-    </StyledCategoryName>
-  );
-};

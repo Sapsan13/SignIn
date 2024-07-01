@@ -23,7 +23,7 @@ export type ItemDivider = {
   content: JSX.Element;
 };
 
-const SkeletonDashLine = styled.div`
+const DashLine = styled.div`
   align-items: center;
   justify-content: center;
   height: 2px;
@@ -42,7 +42,7 @@ export const RightPlanDataArray: RightPlanData[] = [
       { id: "01", type: "label", label: "One end products", done: true },
       { id: "02", type: "label", label: "12 months updates", done: true },
       { id: "03", type: "label", label: "6 months of support", done: true },
-      { id: "04", type: "divider", content: <SkeletonDashLine /> },
+      { id: "04", type: "divider", content: <DashLine /> },
       { id: "05", type: "label", label: "JavaScript version", done: false },
       { id: "06", type: "label", label: "TypeScript version", done: false },
       { id: "07", type: "label", label: "Design Resources", done: false },
@@ -58,7 +58,7 @@ export const RightPlanDataArray: RightPlanData[] = [
       { id: "11", type: "label", label: "One end products", done: true },
       { id: "12", type: "label", label: "12 months updates", done: true },
       { id: "13", type: "label", label: "6 months of support", done: true },
-      { id: "14", type: "divider", content: <SkeletonDashLine /> },
+      { id: "14", type: "divider", content: <DashLine /> },
       { id: "15", type: "label", label: "JavaScript version", done: true },
       { id: "16", type: "label", label: "TypeScript version", done: true },
       { id: "17", type: "label", label: "Design Resources", done: false },
@@ -74,7 +74,7 @@ export const RightPlanDataArray: RightPlanData[] = [
       { id: "21", type: "label", label: "One end products", done: true },
       { id: "23", type: "label", label: "12 months updates", done: true },
       { id: "24", type: "label", label: "6 months of support", done: true },
-      { id: "25", type: "divider", content: <SkeletonDashLine /> },
+      { id: "25", type: "divider", content: <DashLine /> },
       { id: "26", type: "label", label: "JavaScript version", done: true },
       { id: "27", type: "label", label: "TypeScript version", done: true },
       { id: "28", type: "label", label: "Design Resources", done: true },

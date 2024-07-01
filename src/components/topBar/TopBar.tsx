@@ -7,26 +7,24 @@ const TopBar = () => {
     usePathname().substring(1).charAt(0).toUpperCase() +
     usePathname().substring(1).slice(1);
   return (
-    <SkeletonTopBarWrapper>
-      <SkeletonTitleWrapper>
-        {pathname === "Overview" ? " " : pathname}
-      </SkeletonTitleWrapper>
-      <SkeletonBellAccountWrap>
-        <SkeletonBellWrapper>
+    <TopBarWrapper>
+      <TitleWrapper>{pathname === "Overview" ? " " : pathname}</TitleWrapper>
+      <BellAccountWrap>
+        <BellWrapper>
           <Bell />
-        </SkeletonBellWrapper>
-        <SkeletonAlertPosition>
+        </BellWrapper>
+        <AlertPosition>
           <Alert />
-        </SkeletonAlertPosition>
+        </AlertPosition>
         <AccountPic />
-      </SkeletonBellAccountWrap>
-    </SkeletonTopBarWrapper>
+      </BellAccountWrap>
+    </TopBarWrapper>
   );
 };
 
 export default TopBar;
 
-const SkeletonTopBarWrapper = styled.div`
+const TopBarWrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -36,7 +34,7 @@ const SkeletonTopBarWrapper = styled.div`
   align-items: center;
 `;
 
-const SkeletonTitleWrapper = styled.div`
+const TitleWrapper = styled.div`
   width: 146px;
   height: 48px;
   top: 22px;
@@ -49,7 +47,7 @@ const SkeletonTitleWrapper = styled.div`
   text-align: left;
 `;
 
-const SkeletonBellAccountWrap = styled.div`
+const BellAccountWrap = styled.div`
   position: relative;
   display: flex;
   flex-direction: row;
@@ -59,12 +57,12 @@ const SkeletonBellAccountWrap = styled.div`
   gap: 23px;
 `;
 
-const SkeletonBellWrapper = styled.div``;
+const BellWrapper = styled.div``;
 
-const SkeletonAlertPosition = styled.div`
+const AlertPosition = styled.div`
   position: absolute;
   right: 60px;
   top: -5px;
 `;
 
-const SkeletonAccountPicWrapper = styled.div``;
+const AccountPicWrapper = styled.div``;

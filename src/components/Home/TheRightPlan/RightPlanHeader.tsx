@@ -1,7 +1,23 @@
 import Image from "next/image";
 import styled from "styled-components";
 
-const SkeletonPlanHeaderWrapper = styled.div`
+const RightPlanHeader = () => {
+  return (
+    <PlanHeaderWrapper>
+      <PricingPlans>Pricing Plans</PricingPlans>
+      <TheRight>
+        The right plan
+        <br /> for your business
+      </TheRight>
+      <PlanChoose>
+        Choose the perfect plan for your needs. Always flexible to grow
+      </PlanChoose>
+    </PlanHeaderWrapper>
+  );
+};
+export default RightPlanHeader;
+
+const PlanHeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,7 +27,7 @@ const SkeletonPlanHeaderWrapper = styled.div`
   padding-top: 80px;
 `;
 
-const SkeletonPricingPlans = styled.div`
+const PricingPlans = styled.div`
   font-family: Public Sans;
   text-transform: uppercase;
   font-size: 12px;
@@ -21,7 +37,7 @@ const SkeletonPricingPlans = styled.div`
   color: rgba(145, 158, 171, 1);
 `;
 
-const SkeletonTheRight = styled.div`
+const TheRight = styled.div`
   font-family: Public Sans;
   font-size: 48px;
   font-weight: 800;
@@ -37,7 +53,7 @@ const SkeletonTheRight = styled.div`
   }
 `;
 
-const SkeletonPlanChoose = styled.div`
+const PlanChoose = styled.div`
   display: flex;
   white-space: nowrap;
   font-family: Public Sans;
@@ -53,19 +69,3 @@ const SkeletonPlanChoose = styled.div`
     align-items: center;
   }
 `;
-
-const RightPlanHeader = () => {
-  return (
-    <SkeletonPlanHeaderWrapper>
-      <SkeletonPricingPlans>Pricing Plans</SkeletonPricingPlans>
-      <SkeletonTheRight>
-        The right plan
-        <br /> for your business
-      </SkeletonTheRight>
-      <SkeletonPlanChoose>
-        Choose the perfect plan for your needs. Always flexible to grow
-      </SkeletonPlanChoose>
-    </SkeletonPlanHeaderWrapper>
-  );
-};
-export default RightPlanHeader;

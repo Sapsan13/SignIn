@@ -3,42 +3,39 @@ import styled from "styled-components";
 
 const ChartsHeader = () => {
   return (
-    <SkeletonStatisticsHeaderWrap>
-      <SkeletonStatisticsYear>
-        <SkeletonStatistics>Statistics</SkeletonStatistics>
-        <SkeletonYear>
+    <StatisticsHeaderWrap>
+      <StatisticsYear>
+        <Statistics>Statistics</Statistics>
+        <Year>
           <div> Year</div>
           <div>
             <Arrow />
           </div>
-        </SkeletonYear>
-      </SkeletonStatisticsYear>
-      <SkeletonCheckIn>
-        (+43% Check In | +12% Check Out) than last year
-      </SkeletonCheckIn>
-      <SkeletonRowGap>
-        <SkeletonSoldDots />
-        <SkeletonCircleText>Sold</SkeletonCircleText>
-        <SkeletonCanceledDots />
-        <SkeletonCircleText>Canceled</SkeletonCircleText>
-      </SkeletonRowGap>
-    </SkeletonStatisticsHeaderWrap>
+        </Year>
+      </StatisticsYear>
+      <CheckIn>(+43% Check In | +12% Check Out) than last year</CheckIn>
+      <RowGap>
+        <SoldDots />
+        <CircleText>Sold</CircleText>
+        <CanceledDots />
+        <CircleText>Canceled</CircleText>
+      </RowGap>
+    </StatisticsHeaderWrap>
   );
 };
 
 export default ChartsHeader;
 
-const SkeletonStatisticsHeaderWrap = styled.div`
+const StatisticsHeaderWrap = styled.div`
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  width: 712px;
   height: 102px;
   padding: 24px;
   gap: 16px;
 `;
 
-const SkeletonStatistics = styled.div`
+const Statistics = styled.div`
   display: flex;
   flex-direction: column;
   font-family: Public Sans;
@@ -48,14 +45,14 @@ const SkeletonStatistics = styled.div`
   text-align: left;
 `;
 
-const SkeletonStatisticsYear = styled.div`
+const StatisticsYear = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 `;
 
-const SkeletonYear = styled.div`
+const Year = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -76,7 +73,7 @@ const SkeletonYear = styled.div`
   background-color: rgba(99, 115, 129, 0.1);
 `;
 
-const SkeletonCheckIn = styled.div`
+const CheckIn = styled.div`
   display: flex;
   font-family: Public Sans;
   font-size: 14px;
@@ -86,7 +83,7 @@ const SkeletonCheckIn = styled.div`
   color: rgba(99, 115, 129, 1);
 `;
 
-const SkeletonCanceledDots = styled.div`
+const CanceledDots = styled.div`
   display: flex;
   width: 12px;
   height: 12px;
@@ -94,7 +91,7 @@ const SkeletonCanceledDots = styled.div`
   color: #ffac82;
   background-color: #ffac82;
 `;
-const SkeletonSoldDots = styled.div`
+const SoldDots = styled.div`
   display: flex;
   width: 12px;
   height: 12px;
@@ -103,7 +100,7 @@ const SkeletonSoldDots = styled.div`
   background-color: #009764;
 `;
 
-const SkeletonCircleText = styled.div`
+const CircleText = styled.div`
   font-family: Public Sans;
   font-size: 13px;
   font-weight: 500;
@@ -111,7 +108,7 @@ const SkeletonCircleText = styled.div`
   text-align: left;
 `;
 
-const SkeletonRowGap = styled.div`
+const RowGap = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -119,7 +116,7 @@ const SkeletonRowGap = styled.div`
   gap: 8px;
 `;
 
-const SkeletonColumn = styled.div`
+const Column = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;

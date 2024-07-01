@@ -23,7 +23,7 @@ export const Diagram = () => {
   );
 };
 
-const SkeletonDisplayNone = styled.div`
+const DisplayNone = styled.div`
   display: none;
   @media (max-width: 600px) {
     display: flex;
@@ -31,21 +31,21 @@ const SkeletonDisplayNone = styled.div`
 `;
 export const TripleBars = () => {
   return (
-    <SkeletonDisplayNone>
+    <DisplayNone>
       <Image
-        src="/illustrations/StartAProject/TripleBars.png"
+        src="/illustrations/StartAProject/tripplebars.svg"
         width={40}
         height={40}
         alt="Three horizontal bars"
       />
-    </SkeletonDisplayNone>
+    </DisplayNone>
   );
 };
 
 export const Starz = () => {
   return (
     <Image
-      src="/illustrations/Customer/star.png"
+      src="/illustrations/Customer/goldstar.svg"
       width={20}
       height={20}
       alt="Icon of a star"
@@ -53,7 +53,7 @@ export const Starz = () => {
   );
 };
 
-const SkeletonAvailableForIcons = styled.div`
+const AvailableForIcons = styled.div`
   display: flex;
   width: 100%;
   height: 24px;
@@ -64,43 +64,43 @@ const SkeletonAvailableForIcons = styled.div`
 
 export const AvailableIcons = () => {
   return (
-    <SkeletonAvailableForIcons>
+    <AvailableForIcons>
       <Image
         style={{ opacity: 0.4 }}
-        src="/illustrations/StartAProject/FigmaGrey.png"
+        src="/illustrations/StartAProject/figmagrey.svg"
         width={24}
         height={24}
         alt="FigmaIcon"
       />
       <Image
         style={{ opacity: 0.4 }}
-        src="/illustrations/StartAProject/JSGrey.png"
+        src="/illustrations/StartAProject/jsgrey.svg"
         width={24}
         height={24}
         alt="JSIcon"
       />
       <Image
         style={{ opacity: 0.4 }}
-        src="/illustrations/StartAProject/TSGrey.png"
+        src="/illustrations/StartAProject/tsgrey.svg"
         width={24}
         height={24}
         alt="TSIcon"
       />
       <Image
         style={{ opacity: 0.4 }}
-        src="/illustrations/StartAProject/NextGrey.png"
+        src="/illustrations/StartAProject/nextgrey.svg"
         width={24}
         height={24}
         alt="NextJSIcon"
       />
-    </SkeletonAvailableForIcons>
+    </AvailableForIcons>
   );
 };
 
 export const Lightning = () => {
   return (
     <Image
-      src="/illustrations/StartAProject/Lightning.png"
+      src="/illustrations/StartAProject/lightninggrey.svg"
       width={24}
       height={24}
       alt="LightningIcon"
@@ -111,7 +111,7 @@ export const Lightning = () => {
 export const SquareOut = () => {
   return (
     <Image
-      src="/illustrations/StartAProject/SquareOut.svg"
+      src="/illustrations/StartAProject/squareout.svg"
       width={24}
       height={24}
       alt="SquareOutIcon"
@@ -119,14 +119,14 @@ export const SquareOut = () => {
   );
 };
 
-const SkeletonDispFlex = styled.div`
+const DispFlex = styled.div`
   display: flex;
   @media (max-width: 600px) {
     display: none;
   }
 `;
 
-const SkeletonDispNone = styled.div`
+const DispNone = styled.div`
   & > img {
     display: none;
     @media (max-width: 600px) {
@@ -141,34 +141,34 @@ const SkeletonDispNone = styled.div`
 
 export const LayoutBG = () => {
   return (
-    <SkeletonDispFlex>
+    <DispFlex>
       <Image
         src="/illustrations/StartAProject/LayoutBG.png"
         width={1440}
         height={1024}
         alt="Background"
       />
-    </SkeletonDispFlex>
+    </DispFlex>
   );
 };
 
 export const MobileBG = () => {
   return (
-    <SkeletonDispNone>
+    <DispNone>
       <Image
-        src="/illustrations/StartAProject/MobileHeroBG.png"
+        src="/illustrations/StartAProject/mobileherobg.svg"
         width={1440}
         height={1024}
         alt="Background"
       />
-    </SkeletonDispNone>
+    </DispNone>
   );
 };
 
 export const BrandingPencil = () => {
   return (
     <Image
-      src="/illustrations/StartAProject/BrandingPencil.png"
+      src="/illustrations/StartAProject/brandingpencil.svg"
       width={48}
       height={48}
       alt="BrandingPencil"
@@ -179,7 +179,7 @@ export const BrandingPencil = () => {
 export const DevelopmentIcon = () => {
   return (
     <Image
-      src="/illustrations/StartAProject/Development.png"
+      src="/illustrations/StartAProject/development.svg"
       width={48}
       height={48}
       alt="BrandingPencil"
@@ -190,7 +190,7 @@ export const DevelopmentIcon = () => {
 export const Uxui = () => {
   return (
     <Image
-      src="/illustrations/StartAProject/UXUI.png"
+      src="/illustrations/StartAProject/uxui.svg"
       width={48}
       height={48}
       alt="BrandingPencil"
@@ -201,7 +201,7 @@ export const Uxui = () => {
 export const Rocket = () => {
   return (
     <Image
-      src="/illustrations/StartAProject/GreenRocket.png"
+      src="/illustrations/StartAProject/greenrocket.svg"
       width={456}
       height={456}
       alt="RocketPic"
@@ -212,7 +212,7 @@ export const Rocket = () => {
 export const WhiteSquareOut = () => {
   return (
     <Image
-      src="/illustrations/StartAProject/WhiteSquareOut.png"
+      src="/illustrations/StartAProject/squareout.svg"
       width={24}
       height={24}
       alt="RocketPic"
@@ -220,7 +220,7 @@ export const WhiteSquareOut = () => {
   );
 };
 
-const SkeletonLa = styled.div`
+const La = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -229,21 +229,21 @@ const SkeletonLa = styled.div`
 `;
 export const ArrowRight24 = () => {
   return (
-    <SkeletonLa>
+    <La>
       <Image
-        src={"/illustrations/StartAProject/arrowright.png"}
+        src={"/illustrations/StartAProject/arrowright.svg"}
         width={24}
         height={24}
         alt="Picture of an arrow"
       />
-    </SkeletonLa>
+    </La>
   );
 };
 
 export const LandingTempalte = () => {
   return (
     <Image
-      src="/illustrations/StartAProject/LandingTemplate.png"
+      src="/illustrations/StartAProject/template.svg"
       width={660}
       height={510}
       alt="LandingComponentPic"
@@ -276,7 +276,7 @@ export const XPECTUK = () => {
 export const ArrowRight18 = () => {
   return (
     <Image
-      src={"/illustrations/StartAProject/arrowright.png"}
+      src={"/illustrations/StartAProject/arrowright.svg"}
       width={18}
       height={18}
       alt="Picture of an arrow"
@@ -287,7 +287,7 @@ export const ArrowRight18 = () => {
 export const Figma = () => {
   return (
     <Image
-      src="/illustrations/StartAProject/FigmaIcon.png"
+      src="/illustrations/StartAProject/figmagrey.svg"
       width={24}
       height={24}
       alt="FigmaIcon"
@@ -297,7 +297,7 @@ export const Figma = () => {
 export const JS = () => {
   return (
     <Image
-      src="/illustrations/StartAProject/JSIcon.png"
+      src="/illustrations/StartAProject/jsgrey.svg"
       width={24}
       height={24}
       alt="FigmaIcon"
@@ -307,7 +307,7 @@ export const JS = () => {
 export const TS = () => {
   return (
     <Image
-      src="/illustrations/StartAProject/TSIcon.png"
+      src="/illustrations/StartAProject/tsgrey.svg"
       width={24}
       height={24}
       alt="FigmaIcon"
@@ -318,7 +318,7 @@ export const TS = () => {
 export const NextJS = () => {
   return (
     <Image
-      src="/illustrations/StartAProject/NextJSIcon.png"
+      src="/illustrations/StartAProject/nextgrey.svg"
       width={24}
       height={24}
       alt="FigmaIcon"
@@ -334,7 +334,7 @@ export const NavIcon = ({ icon }: any) => {
   );
 };
 
-const SkeletonArrowRight = styled.div`
+const ArrowRight = styled.div`
   width: 24px;
   height: 16px;
   padding-right: 8px;
@@ -342,18 +342,18 @@ const SkeletonArrowRight = styled.div`
 
 export const ErrowRight16 = () => {
   return (
-    <SkeletonArrowRight>
+    <ArrowRight>
       <Image
-        src={"/illustrations/Leftbar/arrowright.png"}
+        src={"/illustrations/Leftbar/arrowright.svg"}
         width={16}
         height={16}
         alt="Picture arrowright"
       />
-    </SkeletonArrowRight>
+    </ArrowRight>
   );
 };
 
-const SkeletonRotate90 = styled.div`
+const Rotate90 = styled.div`
   display: flex;
   cursor: pointer;
   background-color: rgba(99, 115, 129, 0.01);
@@ -363,21 +363,22 @@ const SkeletonRotate90 = styled.div`
 `;
 export const Arrow = () => {
   return (
-    <SkeletonRotate90>
+    <Rotate90>
       <Image
-        src={"/illustrations/Leftbar/arrowright.png"}
+        src={"/illustrations/Leftbar/arrowright.svg"}
         width={16}
         height={16}
         alt="Picture arrowright"
       />
-    </SkeletonRotate90>
+    </Rotate90>
   );
 };
 
 export const Avatar = () => {
   return (
     <Image
-      src="/illustrations/Leftbar/Usercard/avatar.png"
+      src="/illustrations/Leftbar/Usercard/avatar.png
+      "
       width={48}
       height={48}
       alt="Picture user avatar"
@@ -402,7 +403,7 @@ export const AvatarImg = ({ icon }: any) => {
   );
 };
 
-const SkeletonLandscapeImg = styled.div`
+const Landscape = styled.div`
   display: flex;
   width: 100%;
   max-height: 236px;
@@ -418,13 +419,13 @@ const SkeletonLandscapeImg = styled.div`
 
 export const LandscapeImg = ({ icon }: any) => {
   return (
-    <SkeletonLandscapeImg>
+    <Landscape>
       <Image src={icon} width={236} height={236} alt="Picture of the author" />
-    </SkeletonLandscapeImg>
+    </Landscape>
   );
 };
 
-const SkeletonSevenTwo = styled.div`
+const SevenTwo = styled.div`
   display: flex;
   position: absolute;
   bottom: 12px;
@@ -436,34 +437,34 @@ const SkeletonSevenTwo = styled.div`
 
 export const SevenTwoHotImg = () => {
   return (
-    <SkeletonSevenTwo>
+    <SevenTwo>
       <Image
-        src="/illustrations/NewestBookingCards/72Hot.png"
+        src="/illustrations/NewestBookingCards/hotseventwo.png"
         width={50}
         height={24}
         alt="Picture 72Hot"
       />
-    </SkeletonSevenTwo>
+    </SevenTwo>
   );
 };
 
 export const SevenTwoImg = () => {
   return (
-    <SkeletonSevenTwo>
+    <SevenTwo>
       <Image
-        src="/illustrations/NewestBookingCards/72.png"
+        src="/illustrations/NewestBookingCards/seventwo.svg"
         width={36}
         height={24}
         alt="Picture 72"
       />
-    </SkeletonSevenTwo>
+    </SevenTwo>
   );
 };
 
 export const CalendarImg = () => {
   return (
     <Image
-      src="/illustrations/NewestBookingCards/Calendar.png"
+      src="/illustrations/NewestBookingCards/calendar.svg"
       width={16}
       height={16}
       alt="Picture of a calendar"
@@ -474,7 +475,7 @@ export const CalendarImg = () => {
 export const PersonGuestImg = () => {
   return (
     <Image
-      src="/illustrations/NewestBookingCards/PersonGuest.png"
+      src="/illustrations/NewestBookingCards/personguest.svg"
       width={16}
       height={16}
       alt="Picture person"
@@ -482,7 +483,7 @@ export const PersonGuestImg = () => {
   );
 };
 
-const SkeletonArrow20Right = styled.div`
+const Arrow20Right = styled.div`
   display: flex;
   width: 36px;
   height: 36px;
@@ -495,21 +496,21 @@ const SkeletonArrow20Right = styled.div`
 
 export const Arrow20 = () => {
   return (
-    <SkeletonArrowRight>
+    <ArrowRight>
       <Image
-        src={"/illustrations/Leftbar/arrowright.png"}
+        src={"/illustrations/Leftbar/arrowright.svg"}
         width={20}
         height={20}
         alt="Picture arrow right"
       />
-    </SkeletonArrowRight>
+    </ArrowRight>
   );
 };
 
 export const ArowRight = () => {
   return (
     <Image
-      src={"/illustrations/Leftbar/arrowright.png"}
+      src={"/illustrations/Leftbar/arrowright.svg"}
       width={20}
       height={20}
       alt="Picture of the author"
@@ -520,7 +521,7 @@ export const ArowRight = () => {
 export const AvatarSimon = () => {
   return (
     <Image
-      src={"/illustrations/Customer/simon.png"}
+      src={"/illustrations/Customer/simon.svg"}
       width={40}
       height={40}
       alt="Picture of the author"
@@ -532,7 +533,7 @@ export const StarGold = () => {
   return (
     <>
       <Image
-        src={"/illustrations/Customer/star.png"}
+        src={"/illustrations/Customer/goldstar.svg"}
         width={20}
         height={20}
         alt="Picture of the author"
@@ -543,14 +544,12 @@ export const StarGold = () => {
 
 export const StarGrey = () => {
   return (
-    <>
-      <Image
-        src={"/illustrations/Customer/greyStar.png"}
-        width={20}
-        height={20}
-        alt="Picture of the author"
-      />
-    </>
+    <Image
+      src={"/illustrations/Customer/greystar.svg"}
+      width={20}
+      height={20}
+      alt="Picture of the author"
+    />
   );
 };
 

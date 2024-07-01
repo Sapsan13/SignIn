@@ -6,15 +6,13 @@ const MidItemCard = ({ items }: any) => {
   return (
     <>
       {items.map((item: any) => (
-        <SkeletonCardItemWrapper key={item.id}>
-          <SkeletonMidNumberTitleWrapper>
-            <SkeletonMidNumber>{item.number}</SkeletonMidNumber>
-            <SkeletonMidTitle> {item.title}</SkeletonMidTitle>
-          </SkeletonMidNumberTitleWrapper>
-          <SkeletonMidImage>
-            <Image src={item.image} width={120} height={120} alt="Picture " />
-          </SkeletonMidImage>
-        </SkeletonCardItemWrapper>
+        <CardItemWrapper key={item.id}>
+          <MidNumberTitleWrapper>
+            <MidNumber>{item.number}</MidNumber>
+            <MidTitle> {item.title}</MidTitle>
+          </MidNumberTitleWrapper>
+          <Image src={item.image} width={120} height={120} alt="Picture " />
+        </CardItemWrapper>
       ))}
     </>
   );
@@ -22,7 +20,7 @@ const MidItemCard = ({ items }: any) => {
 
 export default MidItemCard;
 
-const SkeletonMidWrapper = styled.div`
+const MidWrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -30,11 +28,11 @@ const SkeletonMidWrapper = styled.div`
   justify-content: center;
 `;
 
-const SkeletonCardItemWrapper = styled.div`
+const CardItemWrapper = styled.div`
   display: flex;
   flex-direction: row;
   grid-column: span 4;
-  height: 152px;
+  max-height: 152px;
   padding: 16px 16px 16px 24px;
   border-radius: 16px;
   justify-content: space-between;
@@ -44,12 +42,12 @@ const SkeletonCardItemWrapper = styled.div`
     0px 0px 2px 0px #919eab33;
 `;
 
-const SkeletonMidNumberTitleWrapper = styled.div`
+const MidNumberTitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const SkeletonMidNumber = styled.div`
+const MidNumber = styled.div`
   width: max-content;
   height: 48px;
   font-family: Public Sans;
@@ -60,7 +58,7 @@ const SkeletonMidNumber = styled.div`
   text-align: left;
 `;
 
-const SkeletonMidTitle = styled.div`
+const MidTitle = styled.div`
   width: 91px;
   height: 22px;
   font-family: Public Sans;
@@ -70,11 +68,6 @@ const SkeletonMidTitle = styled.div`
   line-height: 22px;
   letter-spacing: 0px;
   text-align: left;
-`;
-
-const SkeletonMidImage = styled.div`
-  width: 120px;
-  height: 120px;
 `;
 
 type MidItemCardProps = ComponentProps<"div"> & {

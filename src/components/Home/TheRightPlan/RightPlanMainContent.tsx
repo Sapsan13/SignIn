@@ -11,59 +11,48 @@ import styled from "styled-components";
 import { RightPlanData } from "./RightPlanDataArray";
 import StandartExtendedSwitch from "./StandartExtendedSwitch";
 
+export interface RightPlanMainProps {
+  items: RightPlanData[];
+  stateIndex: number;
+}
+
 const RightPlanMain = ({ items, stateIndex }: RightPlanMainProps) => {
-  // const [inNdex, setIndex] = useState(0);
-  {
-    // console.log(stateIndex);
-  }
   return (
-    <SkeletonPlanWrapper>
+    <PlanWrapper>
       {items.map((item, index) => (
-        <SkeletonPlanMainWrapper
-          key={item.id}
-          stateIndex={stateIndex}
-          index={index}
-        >
-          <SkeletonLicenseSubs>
-            <SkeletonLicense>{item.license}</SkeletonLicense>
-            <SkeletonSubs title={item.subscriptionType}>
-              {item.subscriptionType}
-            </SkeletonSubs>
-          </SkeletonLicenseSubs>
-          <SkeletonIconsBlock>
-            <SkeletonItem>{IconMapping[item.icons]}</SkeletonItem>
-          </SkeletonIconsBlock>
-          <SkeletonItemsBlock>
+        <PlanMainWrapper key={item.id} $stateIndex={stateIndex} $index={index}>
+          <LicenseSubs>
+            <License>{item.license}</License>
+            <Subs title={item.subscriptionType}>{item.subscriptionType}</Subs>
+          </LicenseSubs>
+          <IconsBlock>
+            <Item>{IconMapping[item.icons]}</Item>
+          </IconsBlock>
+          <ItemsBlock>
             {item.elements.map((subItem) => {
               if (subItem.type === "label") {
                 return (
-                  <SkeletonTextRow key={subItem.id}>
-                    <SkeletonTextVX>
-                      {subItem.done ? <Galachka /> : <XPECTUK />}
-                    </SkeletonTextVX>
-                    <SkeletonItemText key={subItem.id} isDone={subItem.done}>
+                  <TextRow key={subItem.id}>
+                    <TextVX>{subItem.done ? <Galachka /> : <XPECTUK />}</TextVX>
+                    <ItemText key={subItem.id} $isDone={subItem.done}>
                       {subItem.label}
-                    </SkeletonItemText>
-                  </SkeletonTextRow>
+                    </ItemText>
+                  </TextRow>
                 );
               }
               if (subItem.type === "divider") {
-                return (
-                  <SkeletonItem key={subItem.id}>
-                    {subItem.content}
-                  </SkeletonItem>
-                );
+                return <Item key={subItem.id}>{subItem.content}</Item>;
               }
             })}
-          </SkeletonItemsBlock>
-          <SkeletonLearnWrapper>
-            <SkeletonLearnMore>
+          </ItemsBlock>
+          <LearnWrapper>
+            <LearnMore>
               Learn More <ArrowRight24 />
-            </SkeletonLearnMore>
-          </SkeletonLearnWrapper>
-        </SkeletonPlanMainWrapper>
+            </LearnMore>
+          </LearnWrapper>
+        </PlanMainWrapper>
       ))}
-    </SkeletonPlanWrapper>
+    </PlanWrapper>
   );
 };
 export default RightPlanMain;
@@ -97,7 +86,7 @@ const IconMapping: Record<IconsItem, JSX.Element> = {
   ),
 };
 
-const SkeletonPlanWrapper = styled.div`
+const PlanWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -105,9 +94,9 @@ const SkeletonPlanWrapper = styled.div`
   padding: 0 120px 0 120px;
 `;
 
-const SkeletonPlanMainWrapper = styled.div<{
-  stateIndex: number;
-  index: number;
+const PlanMainWrapper = styled.div<{
+  $stateIndex: number;
+  $index: number;
 }>`
   width: 100%;
   max-width: 400px;
@@ -120,19 +109,19 @@ const SkeletonPlanMainWrapper = styled.div<{
   border-left: none;
   border-left: 1px dashed rgba(145, 158, 171, 0.2);
   @media (max-width: 600px) {
-    display: ${(props) => (props.stateIndex === props.index ? "flex" : "none")};
+    display: ${(props) =>
+      props.$stateIndex === props.$index ? "flex" : "none"};
   }
 `;
 
-const SkeletonLicenseSubs = styled.div`
+const LicenseSubs = styled.div`
   display: flex;
   flex-direction: column;
-  /* max-width: 304px; */
   width: 100%;
   gap: 40px;
 `;
 
-const SkeletonLicense = styled.div`
+const License = styled.div`
   display: flex;
   font-family: Public Sans;
   text-transform: uppercase;
@@ -144,11 +133,10 @@ const SkeletonLicense = styled.div`
   color: rgba(145, 158, 171, 1);
 `;
 
-const SkeletonSubs = styled.div<{ title: SubItem }>`
+const Subs = styled.div<{ title: SubItem }>`
   display: flex;
   flex-direction: row;
   position: relative;
-  /* max-width: 304px; */
   width: 100%;
   font-family: Public Sans;
   font-size: 24px;
@@ -169,21 +157,19 @@ const SkeletonSubs = styled.div<{ title: SubItem }>`
   }
 `;
 
-const SkeletonIconsBlock = styled.div`
+const IconsBlock = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* max-width: 304px; */
   width: 100%;
   gap: 20px;
 `;
 
-const SkeletonItem = styled.div`
+const Item = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  /* max-width: 304px; */
   font-family: Public Sans;
   font-size: 14px;
   font-weight: 400;
@@ -192,7 +178,7 @@ const SkeletonItem = styled.div`
   text-align: left;
 `;
 
-const SkeletonItemText = styled.div<{ isDone: boolean }>`
+const ItemText = styled.div<{ $isDone: boolean }>`
   display: flex;
   align-items: center;
   font-family: Public Sans;
@@ -201,13 +187,13 @@ const SkeletonItemText = styled.div<{ isDone: boolean }>`
   gap: 16px;
   text-align: left;
   text-decoration: ${(props) =>
-    props.isDone === true ? "none" : "line-through"};
+    props.$isDone === true ? "none" : "line-through"};
   text-decoration-color: rgba(145, 158, 171, 1);
   color: ${(props) =>
-    props.isDone === true ? "#000" : " rgba(145, 158, 171, 1)"};
+    props.$isDone === true ? "#000" : " rgba(145, 158, 171, 1)"};
 `;
 
-const SkeletonTextRow = styled.div`
+const TextRow = styled.div`
   display: flex;
   flex-direction: row;
   position: relative;
@@ -215,27 +201,27 @@ const SkeletonTextRow = styled.div`
   padding-left: 18px;
 `;
 
-const SkeletonTextVX = styled.div`
+const TextVX = styled.div`
   display: flex;
   position: absolute;
   bottom: 4px;
   left: -2px;
 `;
 
-const SkeletonItemsBlock = styled.div`
+const ItemsBlock = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
   gap: 20px;
 `;
 
-const SkeletonLearnWrapper = styled.div`
+const LearnWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   position: relative;
 `;
 
-const SkeletonLearnMore = styled.div`
+const LearnMore = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -252,9 +238,3 @@ const SkeletonLearnMore = styled.div`
   gap: 8px;
   color: rgba(33, 43, 54, 1);
 `;
-
-export interface RightPlanMainProps {
-  items: RightPlanData[];
-  // icons: IconsItem;
-  stateIndex: number;
-}

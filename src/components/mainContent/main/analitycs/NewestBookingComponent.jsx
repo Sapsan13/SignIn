@@ -5,28 +5,28 @@ import NewestBookingCard from "./NewestBookingCard";
 const NewestBookingComponent = () => {
   return (
     <div>
-      <SkeletonBookingbarWrapper>
-        <SkeletonNewestBookingBar>
-          <SkeletonNewestBookingText>Newest Booking</SkeletonNewestBookingText>
-          <SkeletonBookingsAvailable>12 Bookings</SkeletonBookingsAvailable>
-        </SkeletonNewestBookingBar>
-        <SkeletonNavArrows>
-          <SkeletonArrowleft>
+      <BookingbarWrapper>
+        <NewestBookingBar>
+          <NewestBookingText>Newest Booking</NewestBookingText>
+          <BookingsAvailable>12 Bookings</BookingsAvailable>
+        </NewestBookingBar>
+        <NavArrows>
+          <Arrowleft>
             <Arrow20 />
-          </SkeletonArrowleft>
+          </Arrowleft>
           <Arrow20 />
-        </SkeletonNavArrows>
-      </SkeletonBookingbarWrapper>
-      <SkeletonBookingCardsWrapper>
+        </NavArrows>
+      </BookingbarWrapper>
+      <BookingCardsWrapper>
         <NewestBookingCard />
-      </SkeletonBookingCardsWrapper>
+      </BookingCardsWrapper>
     </div>
   );
 };
 
 export default NewestBookingComponent;
 
-const SkeletonBookingbarWrapper = styled.div`
+const BookingbarWrapper = styled.div`
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -35,12 +35,12 @@ const SkeletonBookingbarWrapper = styled.div`
   padding-bottom: 24px;
 `;
 
-const SkeletonNewestBookingBar = styled.div`
+const NewestBookingBar = styled.div`
   width: 100%;
   height: 54px;
   gap: 4px;
 `;
-const SkeletonBookingsAvailable = styled.div`
+const BookingsAvailable = styled.div`
   font-family: Public Sans;
   font-size: 14px;
   font-weight: 400;
@@ -48,7 +48,7 @@ const SkeletonBookingsAvailable = styled.div`
   text-align: left;
   color: rgba(99, 115, 129, 1);
 `;
-const SkeletonNewestBookingText = styled.div`
+const NewestBookingText = styled.div`
   display: flex;
   font-family: Public Sans;
   font-size: 18px;
@@ -57,7 +57,7 @@ const SkeletonNewestBookingText = styled.div`
   text-align: left;
 `;
 
-const SkeletonArrowleft = styled.div`
+const Arrowleft = styled.div`
   display: flex;
   transform: scaleX(-1);
   width: 36px;
@@ -69,7 +69,7 @@ const SkeletonArrowleft = styled.div`
   justify-content: center;
 `;
 
-const SkeletonNavArrows = styled.div`
+const NavArrows = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -79,7 +79,7 @@ const SkeletonNavArrows = styled.div`
   opacity: 0px;
 `;
 
-const SkeletonBookingCardsWrapper = styled.div`
+const BookingCardsWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;

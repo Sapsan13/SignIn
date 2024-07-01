@@ -4,28 +4,28 @@ import { Logo, TripleBars } from "@/components/Images";
 
 const HeroStartANew = () => {
   return (
-    <SkeletonMinimalHeaderWrapper>
-      <SkeletonRow>
+    <MinimalHeaderWrapper>
+      <Row>
         <Logo />
-      </SkeletonRow>
-      <SkeletonRow>
-        <SkeletonRowHomeDocs>
-          <SkeletonTextWrapper>Home</SkeletonTextWrapper>
-          <SkeletonTextWrapper>Components</SkeletonTextWrapper>
-          <SkeletonTextWrapper>Docs</SkeletonTextWrapper>
-        </SkeletonRowHomeDocs>
-        <SkeletonRo>
-          <SkeletonLogin>LogIn</SkeletonLogin>
-          <SkeletonPurchaseNow> Purchase Now</SkeletonPurchaseNow>
+      </Row>
+      <Row>
+        <RowHomeDocs>
+          <TextWrapper>Home</TextWrapper>
+          <TextWrapper>Components</TextWrapper>
+          <TextWrapper>Docs</TextWrapper>
+        </RowHomeDocs>
+        <Ro>
+          <Login>LogIn</Login>
+          <PurchaseNow> Purchase Now</PurchaseNow>
           <TripleBars />{" "}
-        </SkeletonRo>
-      </SkeletonRow>
-    </SkeletonMinimalHeaderWrapper>
+        </Ro>
+      </Row>
+    </MinimalHeaderWrapper>
   );
 };
 export default HeroStartANew;
 
-const SkeletonMinimalHeaderWrapper = styled.div`
+const MinimalHeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -43,7 +43,7 @@ const SkeletonMinimalHeaderWrapper = styled.div`
   }
 `;
 
-const SkeletonTextWrapper = styled.div`
+const TextWrapper = styled.div`
   cursor: pointer;
   font-family: Public Sans;
   font-size: 14px;
@@ -53,7 +53,7 @@ const SkeletonTextWrapper = styled.div`
   color: rgba(33, 43, 54, 1);
 `;
 
-const SkeletonLogin = styled.button`
+const Login = styled.button`
   border: none;
   overflow: hidden;
   display: flex;
@@ -75,7 +75,7 @@ const SkeletonLogin = styled.button`
   }
 `;
 
-const SkeletonPurchaseNow = styled.button`
+const PurchaseNow = styled.button`
   border: none;
   overflow: hidden;
   display: flex;
@@ -98,7 +98,7 @@ const SkeletonPurchaseNow = styled.button`
   }
 `;
 
-const SkeletonRo = styled.div`
+const Ro = styled.div`
   display: flex;
   flex-direction: row;
   gap: 8px;
@@ -107,14 +107,14 @@ const SkeletonRo = styled.div`
     gap: 8px;
   }
 `;
-const SkeletonRow = styled.div`
+const Row = styled.div`
   display: flex;
   flex-direction: row;
   gap: 40px;
   align-items: center;
 `;
 
-const SkeletonRowHomeDocs = styled.div`
+const RowHomeDocs = styled.div`
   display: flex;
   flex-direction: row;
   gap: 40px;

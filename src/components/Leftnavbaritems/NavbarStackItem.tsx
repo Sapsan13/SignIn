@@ -3,8 +3,11 @@ import styled from "styled-components";
 import { Category } from "./StackArray";
 import { items } from "./StackArray";
 
-// all div properties & added ones <"div"> &
-// type LeftNavbarItem = ComponentProps<"div"> & {
+const NavbarStackItem = () => {
+  return items.map((item) => <Category item={item} key={item.id} />);
+};
+
+export default NavbarStackItem;
 
 export type LeftNavbarItem = {
   id: number;
@@ -15,7 +18,7 @@ export type LeftNavbarItem = {
   children?: LeftNavbarItem[];
 };
 
-const SkeletonNavTitle = styled.div`
+const NavTitle = styled.div`
   color: #000000;
   font-family: Public Sans;
   text-decoration: none;
@@ -25,9 +28,3 @@ const SkeletonNavTitle = styled.div`
   letter-spacing: 0px;
   text-align: left;
 `;
-
-const NavbarStackItem = () => {
-  return items.map((item) => <Category item={item} key={item.id} />);
-};
-
-export default NavbarStackItem;

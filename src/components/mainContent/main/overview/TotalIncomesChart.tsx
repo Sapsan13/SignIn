@@ -1,35 +1,10 @@
 import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts";
 import styled from "styled-components";
-
-const SkeletonFlex = styled.div`
-  width: 100%;
-  display: flex;
-`;
-
-const data = [
-  {
-    uv: 1,
-  },
-  {
-    uv: 20,
-  },
-  {
-    uv: 67,
-  },
-  {
-    uv: 66,
-  },
-  {
-    uv: 100,
-  },
-  {
-    uv: 60,
-  },
-];
+import { data } from "./mock/data";
 
 const TotalIncomesChart = () => {
   return (
-    <SkeletonFlex>
+    <Flex>
       <LineChart width={360} height={118} data={data}>
         <Line
           type="monotone"
@@ -39,7 +14,12 @@ const TotalIncomesChart = () => {
           strokeWidth="5"
         />
       </LineChart>
-    </SkeletonFlex>
+    </Flex>
   );
 };
 export default TotalIncomesChart;
+
+const Flex = styled.div`
+  width: 100%;
+  display: flex;
+`;

@@ -1,36 +1,25 @@
 import { useState } from "react";
 import styled from "styled-components";
 
-const arrOfData = [
-  {
-    title: "Standart",
-  },
-  {
-    title: "Standart Plus",
-  },
-  {
-    title: "Extended",
-  },
-];
 const StandartExtendedSwitch = ({ setStateIndex, stateIndex }: any) => {
   return (
-    <SkeletonStandartExtendedWrapper>
+    <StandartExtendedWrapper>
       {arrOfData.map((item, index) => {
         return (
-          <SkeletonStandartExtended
+          <StandartExtended
             onClick={(event) => setStateIndex(index)}
             key={index}
             $isIndex={stateIndex === index}
           >
             {item.title}
-          </SkeletonStandartExtended>
+          </StandartExtended>
         );
       })}
-    </SkeletonStandartExtendedWrapper>
+    </StandartExtendedWrapper>
   );
 };
 export default StandartExtendedSwitch;
-const SkeletonStandartExtendedWrapper = styled.div`
+const StandartExtendedWrapper = styled.div`
   display: flex;
   flex-direction: row;
   gap: 24px;
@@ -39,7 +28,7 @@ const SkeletonStandartExtendedWrapper = styled.div`
   }
 `;
 
-const SkeletonStandartExtended = styled.div<{ $isIndex: boolean }>`
+const StandartExtended = styled.div<{ $isIndex: boolean }>`
   font-family: Public Sans;
   font-size: 14px;
   font-weight: 600;
@@ -57,7 +46,14 @@ const SkeletonStandartExtended = styled.div<{ $isIndex: boolean }>`
     props.$isIndex === true ? "2px solid rgba(33, 43, 54, 1)" : "none"};
 `;
 
-// props destruct
-// const StandartExtendedSwitch = ({setStateIndex}) =>
-//   const StandartExtendedSwitch = (props) => {
-//     cosnt setStateIndex = props.setStateIndex
+const arrOfData = [
+  {
+    title: "Standart",
+  },
+  {
+    title: "Standart Plus",
+  },
+  {
+    title: "Extended",
+  },
+];

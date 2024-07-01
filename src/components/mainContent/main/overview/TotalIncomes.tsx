@@ -4,28 +4,28 @@ import { Ascend } from "@/components/Images";
 
 const TotalIncomes = () => {
   return (
-    <SkeletonTotalIncomesWrapper>
-      <SkeletonTotal9900>
-        <SkeletonFlexCol>
-          <SkeletonTotalIncomes>TotalIncomes </SkeletonTotalIncomes>
-          <Skeleton9900>9,900</Skeleton9900>
-        </SkeletonFlexCol>
-        <SkeletonThanLastWeek>
-          <SkeletonFlexCol>
-            <SkeletonAscend82>
-              <Ascend /> <Skeleton82>+8,2%</Skeleton82>
-            </SkeletonAscend82>
-            <SkeletonThanLastWeekText>than last week</SkeletonThanLastWeekText>
-          </SkeletonFlexCol>
-        </SkeletonThanLastWeek>
-      </SkeletonTotal9900>
+    <TotalIncomesWrapper>
+      <Total9900>
+        <FlexCol>
+          <TotalIncome>TotalIncomes </TotalIncome>
+          <N9900>9,900</N9900>
+        </FlexCol>
+        <ThanLastWeek>
+          <FlexCol>
+            <Ascend82>
+              <Ascend /> <N82>+8,2%</N82>
+            </Ascend82>
+            <ThanLastWeekText>than last week</ThanLastWeekText>
+          </FlexCol>
+        </ThanLastWeek>
+      </Total9900>
       <TotalIncomesChart />
-    </SkeletonTotalIncomesWrapper>
+    </TotalIncomesWrapper>
   );
 };
 export default TotalIncomes;
 
-const SkeletonTotalIncomesWrapper = styled.div`
+const TotalIncomesWrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #d5f4e7;
@@ -36,7 +36,7 @@ const SkeletonTotalIncomesWrapper = styled.div`
   border-radius: 16px;
 `;
 
-const SkeletonTotalIncomes = styled.div`
+const TotalIncome = styled.div`
   font-family: Public Sans;
   font-size: 14px;
   font-weight: 600;
@@ -45,7 +45,7 @@ const SkeletonTotalIncomes = styled.div`
   text-align: left;
 `;
 
-const SkeletonTotal9900 = styled.div`
+const Total9900 = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -54,7 +54,7 @@ const SkeletonTotal9900 = styled.div`
   gap: 8px;
 `;
 
-const Skeleton9900 = styled.div`
+const N9900 = styled.div`
   font-family: Public Sans;
   font-size: 32px;
   font-weight: 700;
@@ -63,13 +63,13 @@ const Skeleton9900 = styled.div`
   text-align: left;
 `;
 
-const SkeletonThanLastWeek = styled.div`
+const ThanLastWeek = styled.div`
   width: 99px;
   height: 48px;
   gap: 4px;
 `;
 
-const SkeletonThanLastWeekText = styled.div`
+const ThanLastWeekText = styled.div`
   font-family: Public Sans;
   white-space: nowrap;
   opacity: 80%;
@@ -80,7 +80,7 @@ const SkeletonThanLastWeekText = styled.div`
   text-align: left;
 `;
 
-const Skeleton82 = styled.div`
+const N82 = styled.div`
   font-family: Public Sans;
   font-size: 14px;
   font-weight: 600;
@@ -89,13 +89,13 @@ const Skeleton82 = styled.div`
   text-align: left;
 `;
 
-const SkeletonAscend82 = styled.div`
+const Ascend82 = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: right;
 `;
 
-const SkeletonFlexCol = styled.div`
+const FlexCol = styled.div`
   display: flex;
   flex-direction: column;
 `;

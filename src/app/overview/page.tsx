@@ -1,34 +1,33 @@
-// import Booked from "@/components/mainContent/main/Booked";
 "use client";
 import Booked from "@/components/mainContent/main/overview/Booked";
 import SoldPending from "@/components/mainContent/main/overview/SoldPending";
 import TotalIncomes from "@/components/mainContent/main/overview/TotalIncomes";
 import ToursAvailable from "@/components/mainContent/main/overview/ToursAvailable";
 import TopBar from "@/components/topBar/TopBar";
-import LeftNavbar from "@/components/leftNavbarItems/LeftNavbar";
+import LeftNavbar from "@/components/Leftnavbaritems/LeftNavbar";
 import styled from "styled-components";
-import { overviewMidbarElements } from "@/components/midbar/midbarElements";
+import { overviewMidbarElements } from "@/components/midbar/mock/midbarElements";
 import MidItemCard from "@/components/midbar/MidItemAnalitycs";
 
 const Overview = () => {
   return (
-    <SkeletonRowItems>
+    <RowItems>
       <LeftNavbar />
-      <SkeletonColumnItems>
+      <ColumnItems>
         <TopBar />
-        <SkeletonWrapper>
+        <Wrapper>
           <MidItemCard items={overviewMidbarElements} />
-          <SkeletonTotalIncomes>
+          <TotalIncome>
             <TotalIncomes />
-          </SkeletonTotalIncomes>
-          <SkeletonBooked>
+          </TotalIncome>
+          <Book>
             <Booked />
-          </SkeletonBooked>
-          <SkeletonMidEl>
+          </Book>
+          <MidEl>
             <ToursAvailable />
-          </SkeletonMidEl>
-          <SkeletonSoldPending>
-            <SkeletonPending>
+          </MidEl>
+          <SoldPend>
+            <Pending>
               <SoldPending
                 color1={"#5BE49B"}
                 color2={"#00A76F"}
@@ -45,55 +44,54 @@ const Overview = () => {
                 text={"Pending for payment"}
                 gradient={"pending"}
               />
-            </SkeletonPending>
-          </SkeletonSoldPending>
-        </SkeletonWrapper>
-      </SkeletonColumnItems>
-    </SkeletonRowItems>
+            </Pending>
+          </SoldPend>
+        </Wrapper>
+      </ColumnItems>
+    </RowItems>
   );
 };
 export default Overview;
 
-const SkeletonRowItems = styled.div`
+const RowItems = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 0 20px 0 20px;
+  padding: 0 10px 0 10px;
   flex: 1;
 `;
 
-const SkeletonWrapper = styled.div`
+const Wrapper = styled.div`
   display: grid;
   padding-left: 60px;
   grid-template-columns: repeat(12, 1fr);
   gap: 24px;
 `;
 
-const SkeletonMidEl = styled.div`
+const MidEl = styled.div`
   grid-column: 9 / span 4;
-  grid-row: span 2;
+  grid-row: span 8;
   height: 100%;
 `;
 
-const SkeletonTotalIncomes = styled.div`
+const TotalIncome = styled.div`
   grid-column: span 4;
   height: 100%;
 `;
 
-const SkeletonBooked = styled.div`
+const Book = styled.div`
   grid-column: span 4;
   height: 100%;
 `;
 
-const SkeletonSoldPending = styled.div`
+const SoldPend = styled.div`
   grid-column: span 8;
-  /* height: 100%; */
 `;
 
-const SkeletonIncome = styled.div`
+const Income = styled.div`
   grid-column: span 4;
 `;
 
-const SkeletonPending = styled.div`
+const Pending = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: left;
@@ -104,6 +102,6 @@ const SkeletonPending = styled.div`
     0px 0px 2px 0px #919eab33;
 `;
 
-const SkeletonColumnItems = styled.div`
+const ColumnItems = styled.div`
   width: 100%;
 `;

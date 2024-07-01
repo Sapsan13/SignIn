@@ -10,21 +10,21 @@ const LoginPicBlock = ({}: PicProps) => {
     // console.log("auth => ", state.auth);
   });
   return (
-    <SkeletonPicWrapper>
-      <SkeletonLogoPic onClick={() => dispatch(logoutAction())}>
+    <PicWrapper>
+      <LogoPic onClick={() => dispatch(logoutAction())}>
         <Logo />
-      </SkeletonLogoPic>
-      <SkeletonFlexCol>
-        <SkeletonContent>
-          <SkeletonPicText>
+      </LogoPic>
+      <FlexCol>
+        <Content>
+          <PicText>
             Manage the job <br /> more effectively with Minimal
-          </SkeletonPicText>
-          <SkeletonDiagramPic>
+          </PicText>
+          <DiagramPic>
             <Diagram />
-          </SkeletonDiagramPic>
-        </SkeletonContent>
-      </SkeletonFlexCol>
-    </SkeletonPicWrapper>
+          </DiagramPic>
+        </Content>
+      </FlexCol>
+    </PicWrapper>
   );
 };
 
@@ -39,7 +39,7 @@ interface PicProps {
   children?: React.ReactNode;
 }
 
-const SkeletonPicWrapper = styled.div`
+const PicWrapper = styled.div`
   min-height: 960;
   min-width: 1024;
   background-color: #fbfcfb;
@@ -49,7 +49,7 @@ const SkeletonPicWrapper = styled.div`
   align-items: center;
 `;
 
-const SkeletonLogoPic = styled.div`
+const LogoPic = styled.div`
   display: flex;
   padding: 40px;
   max-height: 120px;
@@ -59,7 +59,7 @@ const SkeletonLogoPic = styled.div`
   top: 0;
   left: 0;
 `;
-const SkeletonDiagramPic = styled.div`
+const DiagramPic = styled.div`
   display: flex;
   justify-content: center;
   min-width: 720px;
@@ -68,7 +68,7 @@ const SkeletonDiagramPic = styled.div`
   height: auto;
 `;
 
-const SkeletonContent = styled.div`
+const Content = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -79,7 +79,7 @@ const SkeletonContent = styled.div`
   gap: 80px;
 `;
 
-const SkeletonPicText = styled.div`
+const PicText = styled.div`
   //styleName: H3;
   font-family: Public Sans;
   font-size: 32px;
@@ -91,7 +91,7 @@ const SkeletonPicText = styled.div`
   margin: 0 auto;
 `;
 
-const SkeletonFlexCol = styled.div`
+const FlexCol = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;

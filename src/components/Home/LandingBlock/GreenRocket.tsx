@@ -3,29 +3,29 @@ import styled from "styled-components";
 
 const GreenRocket = () => {
   return (
-    <SkeletonItemsRocketWrapper>
-      <SkeletonGreenBlock>
-        <SkeletonRocket>
+    <ItemsRocketWrapper>
+      <GreenBlock>
+        <Rock>
           <Rocket />
-        </SkeletonRocket>
-        <SkeletonGetGap>
-          <SkeletonGetStarted>
+        </Rock>
+        <GetGap>
+          <GetStarted>
             Get started with <br /> Minimal kit today
-          </SkeletonGetStarted>
-          <SkeletonPurchaseFree>
-            <SkeletonPurchaseNow>Purchase Now</SkeletonPurchaseNow>
-            <SkeletonGetFree>
+          </GetStarted>
+          <PurchaseFree>
+            <PurchaseNow>Purchase Now</PurchaseNow>
+            <GetFree>
               Get Free Version <WhiteSquareOut />
-            </SkeletonGetFree>
-          </SkeletonPurchaseFree>
-        </SkeletonGetGap>
-      </SkeletonGreenBlock>
-    </SkeletonItemsRocketWrapper>
+            </GetFree>
+          </PurchaseFree>
+        </GetGap>
+      </GreenBlock>
+    </ItemsRocketWrapper>
   );
 };
 export default GreenRocket;
 
-const SkeletonItemsRocketWrapper = styled.div`
+const ItemsRocketWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -39,7 +39,7 @@ const SkeletonItemsRocketWrapper = styled.div`
   }
 `;
 
-const SkeletonRocket = styled.div`
+const Rock = styled.div`
   display: flex;
   max-width: 456px;
   max-height: 456px;
@@ -54,7 +54,7 @@ const SkeletonRocket = styled.div`
   }
 `;
 
-const SkeletonGreenBlock = styled.div`
+const GreenBlock = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -71,7 +71,7 @@ const SkeletonGreenBlock = styled.div`
   }
 `;
 
-const SkeletonGetStarted = styled.div`
+const GetStarted = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 402px;
@@ -93,7 +93,7 @@ const SkeletonGetStarted = styled.div`
   }
 `;
 
-const SkeletonPurchaseNow = styled.button`
+const PurchaseNow = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,7 +109,7 @@ const SkeletonPurchaseNow = styled.button`
   background: rgba(255, 255, 255, 1);
 `;
 
-const SkeletonGetFree = styled.button`
+const GetFree = styled.button`
   display: flex;
   cursor: pointer;
   align-items: center;
@@ -124,7 +124,7 @@ const SkeletonGetFree = styled.button`
   color: rgba(255, 255, 255, 1);
 `;
 
-const SkeletonGetGap = styled.div`
+const GetGap = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -132,7 +132,7 @@ const SkeletonGetGap = styled.div`
   justify-content: left;
 `;
 
-const SkeletonPurchaseFree = styled.div`
+const PurchaseFree = styled.div`
   display: flex;
   flex-direction: row;
   gap: 16px;

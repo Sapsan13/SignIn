@@ -1,6 +1,17 @@
 import styled from "styled-components";
+const Header = () => {
+  return (
+    <HeaderWrpper>
+      <WhatMin>
+        <MinimalUI>Minimal UI</MinimalUI>
+        What Minimal <br /> helps you?
+      </WhatMin>
+    </HeaderWrpper>
+  );
+};
+export default Header;
 
-const SkeletonHeaderWrpper = styled.div`
+const HeaderWrpper = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -8,7 +19,7 @@ const SkeletonHeaderWrpper = styled.div`
   justify-content: center;
 `;
 
-const SkeletonMinimalUI = styled.div`
+const MinimalUI = styled.div`
   display: flex;
   justify-content: center;
   text-transform: uppercase;
@@ -21,7 +32,7 @@ const SkeletonMinimalUI = styled.div`
   color: rgba(145, 158, 171, 1);
 `;
 
-const SkeletonWhatMin = styled.div`
+const WhatMin = styled.div`
   display: flex;
   flex-direction: column;
   max-width: fit-content;
@@ -41,15 +52,3 @@ const SkeletonWhatMin = styled.div`
     text-align: center;
   }
 `;
-
-const Header = () => {
-  return (
-    <SkeletonHeaderWrpper>
-      <SkeletonWhatMin>
-        <SkeletonMinimalUI>Minimal UI</SkeletonMinimalUI>
-        What Minimal <br /> helps you?
-      </SkeletonWhatMin>
-    </SkeletonHeaderWrpper>
-  );
-};
-export default Header;

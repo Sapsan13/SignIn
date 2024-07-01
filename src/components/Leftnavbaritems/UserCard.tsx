@@ -4,7 +4,7 @@ import { ComponentProps, ReactComponentElement, useState } from "react";
 import styled, { CSSProperties } from "styled-components";
 
 const UserCard = ({
-  Click,
+  handleClick,
   textVLabel,
   firstName,
   lastName,
@@ -12,34 +12,31 @@ const UserCard = ({
   upgradeLabel,
 }: UserCardProps) => {
   return (
-    <SkeletonUserCard>
-      <SkeletonAvatar>
+    <UserCar>
+      <Ava>
         <Avatar />
-        <SkeletonCurrentVLabel title={textVLabel}>
-          {textVLabel}
-        </SkeletonCurrentVLabel>
-        <SkeletonStatusCircle>
+        <CurrentVLabel title={textVLabel}>{textVLabel}</CurrentVLabel>
+        <StatusCircle>
           <Status />
-        </SkeletonStatusCircle>
-      </SkeletonAvatar>
-      <SkeletoNameMail>
-        <SkeletonName>
+        </StatusCircle>
+      </Ava>
+      <Mail>
+        <Name>
           {firstName} {lastName}
-        </SkeletonName>
+        </Name>
         <SkeletoMail>{email}</SkeletoMail>
-      </SkeletoNameMail>
+      </Mail>
       {textVLabel === "Free" ? (
-        <SkeletonBtn onClick={Click}>{upgradeLabel}</SkeletonBtn>
+        <Btn onClick={handleClick}>{upgradeLabel}</Btn>
       ) : null}
-    </SkeletonUserCard>
+    </UserCar>
   );
 };
 
 export default UserCard;
 
-// busyColor: CSSProperties["color"];
 type UserCardProps = ComponentProps<"div"> & {
-  Click: () => void;
+  handleClick: () => void;
   textVLabel: TextVLabel;
   statusCircle: boolean;
   firstName: string;
@@ -55,7 +52,7 @@ const colorMapping: Record<TextVLabel, string> = {
   Enterprise: "#ffab00",
   Free: "#22c55e",
 };
-const SkeletonCurrentVLabel = styled.div<{ title: TextVLabel }>`
+const CurrentVLabel = styled.div<{ title: TextVLabel }>`
   width: max-content;
   height: 20px;
   padding: 0px 4px 0px 4px;
@@ -74,7 +71,7 @@ const SkeletonCurrentVLabel = styled.div<{ title: TextVLabel }>`
   right: -25px;
 `;
 
-const SkeletonUserCard = styled.div`
+const UserCar = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -84,13 +81,13 @@ const SkeletonUserCard = styled.div`
   padding-bottom: 60px;
 `;
 
-const SkeletonStatusCircle = styled.image`
+const StatusCircle = styled.div`
   position: absolute;
   bottom: 1px;
   right: 1px;
 `;
 
-const SkeletonBtn = styled.button`
+const Btn = styled.button`
   background-color: #212b36;
   color: white;
   width: 124px;
@@ -102,12 +99,12 @@ const SkeletonBtn = styled.button`
   border: none;
 `;
 
-const SkeletonAvatar = styled.image`
+const Ava = styled.div`
   border-radius: 50%;
   position: relative;
 `;
 
-const SkeletonName = styled.div`
+const Name = styled.div`
   font-family: Public Sans;
   font-size: 16px;
   font-weight: 600;
@@ -116,7 +113,7 @@ const SkeletonName = styled.div`
   text-align: center;
 `;
 
-const SkeletoNameMail = styled.div`
+const Mail = styled.div`
   gap: 4px;
   padding: 12px 0 16px 0;
 `;

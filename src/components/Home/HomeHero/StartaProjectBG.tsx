@@ -3,15 +3,15 @@ import styled from "styled-components";
 
 const StartAProjectBG = () => {
   return (
-    <SkeletonStartProjWrapper>
+    <StartProjWrapper>
       <LayoutBG />
       <MobileBG />
-    </SkeletonStartProjWrapper>
+    </StartProjWrapper>
   );
 };
 export default StartAProjectBG;
 
-const SkeletonStartProjWrapper = styled.div`
+const StartProjWrapper = styled.div`
   display: flex;
   width: 100%;
   height: 100%;

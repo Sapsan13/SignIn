@@ -3,22 +3,22 @@ import styled from "styled-components";
 
 const LandingFooter = () => {
   return (
-    <SkeletonItemsWrapper>
+    <ItemsWrapper>
       <Logo />
-      <SkeletonCopyright>
+      <Copyright>
         &copy;All rights reserved
         <br />
-        <SkeletonRow>
+        <Row>
           made by<></>
-          <SkeletonMinimalCC> Minimal.cc</SkeletonMinimalCC>
-        </SkeletonRow>
-      </SkeletonCopyright>
-    </SkeletonItemsWrapper>
+          <MinimalCC> Minimal.cc</MinimalCC>
+        </Row>
+      </Copyright>
+    </ItemsWrapper>
   );
 };
 export default LandingFooter;
 
-const SkeletonItemsWrapper = styled.div`
+const ItemsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,7 +30,7 @@ const SkeletonItemsWrapper = styled.div`
   overflow: hidden;
 `;
 
-const SkeletonCopyright = styled.div`
+const Copyright = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,7 +45,7 @@ const SkeletonCopyright = styled.div`
   text-align: center;
 `;
 
-const SkeletonMinimalCC = styled.div`
+const MinimalCC = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,7 +57,7 @@ const SkeletonMinimalCC = styled.div`
   color: rgba(0, 167, 111, 1);
 `;
 
-const SkeletonRow = styled.div`
+const Row = styled.div`
   display: flex;
   flex-direction: row;
   gap: 3px;

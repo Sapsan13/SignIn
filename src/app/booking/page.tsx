@@ -1,42 +1,62 @@
 "use client";
-import LeftNavbar from "@/components/leftNavbarItems/LeftNavbar";
+import LeftNavbar from "@/components/Leftnavbaritems/LeftNavbar";
 import ChartsHeader from "@/components/mainContent/main/booking/ChartHeader";
 import BarchartStatistics from "@/components/mainContent/main/booking/BarchartStatistics";
 import styled from "styled-components";
 import TopBar from "@/components/topBar/TopBar";
 import CustomerReviews from "@/components/mainContent/main/booking/CustomerReviews";
 
-const SkeletonRowItems = styled.div`
+const Booking = () => {
+  return (
+    <RowItems>
+      <LeftNavbar />
+      <Column>
+        <MidCards>
+          <TopBar />
+        </MidCards>
+        <RowItemsTwelve>
+          <RowItemsEight>
+            <ChartsHeader />
+            <BarchartStatistics />
+          </RowItemsEight>
+          <MidCardsFour>
+            <CustomerReviews />
+          </MidCardsFour>
+        </RowItemsTwelve>
+      </Column>
+    </RowItems>
+  );
+};
+export default Booking;
+
+const RowItems = styled.div`
   display: flex;
-  width: 100%;
   flex-direction: row;
-  gap: 24px;
-  padding: 0 20px 0 20px;
+  gap: 60px;
 `;
 
-const SkeletonColumn = styled.div`
+const Column = styled.div`
   display: flex;
   flex: 1;
-  height: 75%;
   flex-direction: column;
-  padding: 0 20px 0 40px;
+  margin-right: 40px;
   gap: 24px;
 `;
 
-const SkeletonRowItemsTwelve = styled.div`
+const RowItemsTwelve = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 
   gap: 24px;
 `;
 
-const SkeletonMidCards = styled.div`
+const MidCards = styled.div`
   width: 100%;
   grid-column: span 12;
   gap: 24px;
 `;
 
-const SkeletonRowItemsEight = styled.div`
+const RowItemsEight = styled.div`
   width: 100%;
   grid-column: span 8;
   max-height: 765px;
@@ -47,30 +67,7 @@ const SkeletonRowItemsEight = styled.div`
     0px 0px 2px 0px #919eab33;
 `;
 
-const SkeletonMidCardsFour = styled.div`
+const MidCardsFour = styled.div`
   width: 100%;
   grid-column: span 4;
 `;
-
-const Booking = () => {
-  return (
-    <SkeletonRowItems>
-      <LeftNavbar />
-      <SkeletonColumn>
-        <SkeletonMidCards>
-          <TopBar />
-        </SkeletonMidCards>
-        <SkeletonRowItemsTwelve>
-          <SkeletonRowItemsEight>
-            <ChartsHeader />
-            <BarchartStatistics />
-          </SkeletonRowItemsEight>
-          <SkeletonMidCardsFour>
-            <CustomerReviews />
-          </SkeletonMidCardsFour>
-        </SkeletonRowItemsTwelve>
-      </SkeletonColumn>
-    </SkeletonRowItems>
-  );
-};
-export default Booking;

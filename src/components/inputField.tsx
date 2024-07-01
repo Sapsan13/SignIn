@@ -7,7 +7,7 @@ export type InputFieldProps = ComponentProps<"input"> & {
   sise?: "s" | "m" | "l";
 };
 
-const SkeletonInput = styled.input`
+const Input = styled.input`
   height: 54px;
   border-radius: 8px;
   padding-left: 8px;
@@ -22,7 +22,7 @@ const Inputfield = ({
   sise = "m",
   ...other
 }: InputFieldProps) => {
-  return <SkeletonInput {...other} />;
+  return <Input {...other} />;
 };
 
 export default Inputfield;

@@ -7,53 +7,53 @@ import {
   AvatarImg,
 } from "@/components/Images";
 import styled from "styled-components";
-import { BookingDataArray as items } from "./BookingDataArray";
+import { BookingDataArray as items } from "./mock/BookingDataArray";
 
 const NewestBookingCard = ({}: BookingCard) => {
   return items.map((item: any) => {
     var JSXTag = item.isHot ? SevenTwoHotImg : SevenTwoImg;
     return (
-      <SkeletonBookingCardWrapper key={item.key}>
-        <SkeletonFlexColWrap>
-          <SkeletonFlexRowAvatarNameDate>
-            <SkeletonCardAvatar>
+      <BookingCardWrapper key={item.id}>
+        <FlexColWrap>
+          <FlexRowAvatarNameDate>
+            <CardAvatar>
               <AvatarImg icon={item.avatar}></AvatarImg>
-            </SkeletonCardAvatar>
-            <SkeletonFlexColFirstLast>
-              <SkeletonFlexRow>
-                <SkeletonFirstLastName>{item.firstName}</SkeletonFirstLastName>
-                <SkeletonFirstLastName>{item.lastName}</SkeletonFirstLastName>
-              </SkeletonFlexRow>
-              <SkeletonDateTime>{item.date}</SkeletonDateTime>
-            </SkeletonFlexColFirstLast>
-          </SkeletonFlexRowAvatarNameDate>
-          <SkeletonFlexRowDurationPersons>
-            <SkeletonBookingDuration>
+            </CardAvatar>
+            <FlexColFirstLast>
+              <FlexRow>
+                <FirstLastName>{item.firstName}</FirstLastName>
+                <FirstLastName>{item.lastName}</FirstLastName>
+              </FlexRow>
+              <DateTime>{item.date}</DateTime>
+            </FlexColFirstLast>
+          </FlexRowAvatarNameDate>
+          <FlexRowDurationPersons>
+            <BookingDuration>
               <CalendarImg />
               {item.bookingDuration}
-            </SkeletonBookingDuration>
-            <SkeletonGuestsPersons>
+            </BookingDuration>
+            <GuestsPersons>
               <PersonGuestImg />
               {item.guestsPersons}
-            </SkeletonGuestsPersons>
-          </SkeletonFlexRowDurationPersons>
-        </SkeletonFlexColWrap>
-        <SkeletonRelative>
+            </GuestsPersons>
+          </FlexRowDurationPersons>
+        </FlexColWrap>
+        <Relative>
           <LandscapeImg icon={item.photo} />
           {<JSXTag />}
-        </SkeletonRelative>
-      </SkeletonBookingCardWrapper>
+        </Relative>
+      </BookingCardWrapper>
     );
   });
 };
 export default NewestBookingCard;
 
-const SkeletonRelative = styled.div`
+const Relative = styled.div`
   display: flex;
   position: relative;
 `;
 
-const SkeletonBookingCardWrapper = styled.div`
+const BookingCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 252px;
@@ -65,14 +65,14 @@ const SkeletonBookingCardWrapper = styled.div`
   align-items: center;
 `;
 
-const SkeletonFlexColWrap = styled.div`
+const FlexColWrap = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px 16px 8px 0;
   gap: 16px;
 `;
 
-const SkeletonCardAvatar = styled.div`
+const CardAvatar = styled.div`
   width: 40px;
   min-width: 40px;
   height: 40px;
@@ -80,7 +80,7 @@ const SkeletonCardAvatar = styled.div`
   overflow: hidden;
 `;
 
-const SkeletonFirstLastName = styled.div`
+const FirstLastName = styled.div`
   display: flex;
   font-family: Public Sans;
   font-size: 14px;
@@ -89,7 +89,7 @@ const SkeletonFirstLastName = styled.div`
   text-align: left;
 `;
 
-const SkeletonDateTime = styled.div`
+const DateTime = styled.div`
   display: flex;
   font-family: Public Sans;
   font-size: 12px;
@@ -99,22 +99,11 @@ const SkeletonDateTime = styled.div`
   color: #919eab;
 `;
 
-const SkeletonDate = styled.div`
+const Date = styled.div`
   display: flex;
 `;
 
-const SkeletonBookingDuration = styled.div`
-  font-family: Public Sans;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 18px;
-  color: #919eab;
-  text-align: left;
-  display: flex;
-  gap: 4px;
-`;
-
-const SkeletonGuestsPersons = styled.div`
+const BookingDuration = styled.div`
   font-family: Public Sans;
   font-size: 12px;
   font-weight: 400;
@@ -125,37 +114,48 @@ const SkeletonGuestsPersons = styled.div`
   gap: 4px;
 `;
 
-const SkeletonBookingCosts = styled.div`
+const GuestsPersons = styled.div`
+  font-family: Public Sans;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #919eab;
+  text-align: left;
+  display: flex;
+  gap: 4px;
+`;
+
+const BookingCosts = styled.div`
   display: flex;
 `;
 
-const SkeletonPhoto = styled.div`
+const Photo = styled.div`
   display: flex;
 `;
 
-const SkeletonFlexColFirstLast = styled.div`
+const FlexColFirstLast = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
 `;
 
-const SkeletonFlexRowAvatarNameDate = styled.div`
+const FlexRowAvatarNameDate = styled.div`
   display: flex;
   flex-direction: row;
   gap: 16px;
 `;
 
-const SkeletonFlexRowDurationPersons = styled.div`
+const FlexRowDurationPersons = styled.div`
   display: flex;
   gap: 16px;
 `;
 
-const SkeletonFlexRow = styled.div`
+const FlexRow = styled.div`
   display: flex;
   flex-direction: row;
 `;
 
-const SkeletonFlexCol = styled.div`
+const FlexCol = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;

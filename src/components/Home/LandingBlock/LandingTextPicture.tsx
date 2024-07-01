@@ -3,29 +3,29 @@ import styled from "styled-components";
 
 const LandingTextPicture = () => {
   return (
-    <SkeletonLandingWrapper>
-      <SkeletonLookingZoneWrap>
-        <SkeletonLookingFor>Looking for A</SkeletonLookingFor>
-        <SkeletonLandingTemplate>
+    <LandingWrapper>
+      <LookingZoneWrap>
+        <LookingFor>Looking for A</LookingFor>
+        <LandingTemplate>
           Landing Page?
           <br /> Template
-        </SkeletonLandingTemplate>
-        <SkeletonVisitZone>
+        </LandingTemplate>
+        <VisitZone>
           <div>Visit Zone Landing Page</div> <ErrowRight16 />
-        </SkeletonVisitZone>
-      </SkeletonLookingZoneWrap>
-      <SkeletonLooking>
+        </VisitZone>
+      </LookingZoneWrap>
+      <Looking>
         <LandingTempalte />
-      </SkeletonLooking>
-      <SkeletonVisitZoneMinim>
+      </Looking>
+      <VisitZoneMinim>
         <div>Visit Zone Landing Page</div> <ErrowRight16 />
-      </SkeletonVisitZoneMinim>
-    </SkeletonLandingWrapper>
+      </VisitZoneMinim>
+    </LandingWrapper>
   );
 };
 export default LandingTextPicture;
 
-const SkeletonLandingWrapper = styled.div`
+const LandingWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -39,7 +39,7 @@ const SkeletonLandingWrapper = styled.div`
   }
 `;
 
-const SkeletonLookingFor = styled.div`
+const LookingFor = styled.div`
   display: flex;
   font-family: Public Sans;
   font-size: 12px;
@@ -55,7 +55,7 @@ const SkeletonLookingFor = styled.div`
     justify-content: center;
   }
 `;
-const SkeletonLandingTemplate = styled.div`
+const LandingTemplate = styled.div`
   display: flex;
   font-family: Public Sans;
   font-size: 48px;
@@ -72,7 +72,7 @@ const SkeletonLandingTemplate = styled.div`
   }
 `;
 
-const SkeletonVisitZone = styled.div`
+const VisitZone = styled.div`
   display: flex;
   align-items: center;
   width: fit-content;
@@ -94,7 +94,7 @@ const SkeletonVisitZone = styled.div`
   }
 `;
 
-const SkeletonLookingZoneWrap = styled.div`
+const LookingZoneWrap = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -108,7 +108,7 @@ const SkeletonLookingZoneWrap = styled.div`
   }
 `;
 
-const SkeletonLooking = styled.div`
+const Looking = styled.div`
   display: flex;
   @media (max-width: 600px) {
     flex-direction: column;
@@ -123,7 +123,7 @@ const SkeletonLooking = styled.div`
   }
 `;
 
-const SkeletonVisitZoneMinim = styled.div`
+const VisitZoneMinim = styled.div`
   display: none;
   @media (max-width: 600px) {
     display: flex;

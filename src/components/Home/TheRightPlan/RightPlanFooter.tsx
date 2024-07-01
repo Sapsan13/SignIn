@@ -1,6 +1,21 @@
 import styled from "styled-components";
 
-const SkeletonPlanHeaderWrapper = styled.div`
+const RightPlanFooter = () => {
+  return (
+    <PlanHeaderWrapper>
+      <StillPlease>
+        <StillHave>Still have questions?</StillHave>
+        <PleaseDescribe>
+          Please describe your case to receive the most accurate advice
+        </PleaseDescribe>
+      </StillPlease>
+      <ContactUs>Contact Us</ContactUs>
+    </PlanHeaderWrapper>
+  );
+};
+export default RightPlanFooter;
+
+const PlanHeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,7 +24,7 @@ const SkeletonPlanHeaderWrapper = styled.div`
   padding: 80px 0 80px 0;
 `;
 
-const SkeletonStillPlease = styled.div`
+const StillPlease = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,7 +32,7 @@ const SkeletonStillPlease = styled.div`
   gap: 16px;
 `;
 
-const SkeletonStillHave = styled.div`
+const StillHave = styled.div`
   display: flex;
   font-family: Public Sans;
   font-size: 24px;
@@ -27,7 +42,7 @@ const SkeletonStillHave = styled.div`
   color: rgba(33, 43, 54, 1);
 `;
 
-const SkeletonPleaseDescribe = styled.div`
+const PleaseDescribe = styled.div`
   display: flex;
   font-family: Public Sans;
   font-size: 16px;
@@ -37,7 +52,7 @@ const SkeletonPleaseDescribe = styled.div`
   color: rgba(99, 115, 129, 1);
 `;
 
-const SkeletonContactUs = styled.button`
+const ContactUs = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,18 +68,3 @@ const SkeletonContactUs = styled.button`
   color: #fff;
   cursor: pointer;
 `;
-
-const RightPlanFooter = () => {
-  return (
-    <SkeletonPlanHeaderWrapper>
-      <SkeletonStillPlease>
-        <SkeletonStillHave>Still have questions?</SkeletonStillHave>
-        <SkeletonPleaseDescribe>
-          Please describe your case to receive the most accurate advice
-        </SkeletonPleaseDescribe>
-      </SkeletonStillPlease>
-      <SkeletonContactUs>Contact Us</SkeletonContactUs>
-    </SkeletonPlanHeaderWrapper>
-  );
-};
-export default RightPlanFooter;

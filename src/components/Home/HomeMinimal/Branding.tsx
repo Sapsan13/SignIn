@@ -3,20 +3,20 @@ import styled from "styled-components";
 
 const Branding = () => {
   return (
-    <SkeletonWrapper>
+    <Wrapper>
       <BrandingPencil />
-      <SkeletonBrand>
-        <SkeletonBrandingText>Branding</SkeletonBrandingText>
-        <SkeletonConsistentText>
+      <Brand>
+        <BrandingText>Branding</BrandingText>
+        <ConsistentText>
           Consistent design makes it easy <br /> to brand your own.
-        </SkeletonConsistentText>
-      </SkeletonBrand>
-    </SkeletonWrapper>
+        </ConsistentText>
+      </Brand>
+    </Wrapper>
   );
 };
 export default Branding;
 
-const SkeletonWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,12 +28,13 @@ const SkeletonWrapper = styled.div`
   gap: 64px;
   @media (max-width: 600px) {
     flex-direction: column;
-    box-shadow: 0px 12px 24px -4px rgba(145, 158, 171, 0.12),
+    box-shadow:
+      0px 12px 24px -4px rgba(145, 158, 171, 0.12),
       0px 0px 2px 0px rgba(145, 158, 171, 0.2);
   }
 `;
 
-const SkeletonBrandingText = styled.div`
+const BrandingText = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,7 +44,7 @@ const SkeletonBrandingText = styled.div`
   line-height: 30px;
   text-align: center;
 `;
-const SkeletonConsistentText = styled.div`
+const ConsistentText = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,7 +56,7 @@ const SkeletonConsistentText = styled.div`
   color: rgba(99, 115, 129, 1);
 `;
 
-const SkeletonBrand = styled.div`
+const Brand = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;

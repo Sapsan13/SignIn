@@ -8,81 +8,82 @@ import styled from "styled-components";
 
 const CustomerReviews = () => {
   return (
-    <SkeletonCustomerReviewsWrapper>
-      <SkeletonColumn>
-        <SkeletonColumn>
-          <SkeletonCustomer>Customer Reviews</SkeletonCustomer>
-          <SkeletonReviews12>
+    <CustomerReviewsWrapper>
+      <Column>
+        <Column>
+          <Customer>Customer Reviews</Customer>
+          <Reviews12>
             Reviews12
-            <SkeletonArrows>
-              <SkeletonArrowleft>
+            <Arrows>
+              <Arrowleft>
                 <ArowRight />
-              </SkeletonArrowleft>
-              <SkeletonArrowRight>
+              </Arrowleft>
+              <ArrowRight>
                 <ArowRight />
-              </SkeletonArrowRight>
-            </SkeletonArrows>
-          </SkeletonReviews12>
-        </SkeletonColumn>
-        <SkeletonJayvion>
-          <SkeletonFlexRowAvatarNameDate>
-            <SkeletonAvatar>
+              </ArrowRight>
+            </Arrows>
+          </Reviews12>
+        </Column>
+        <Jayvion>
+          <FlexRowAvatarNameDate>
+            <Avatar>
               <AvatarSimon />
-            </SkeletonAvatar>
-            <SkeletonFlexColFirstLast>
-              <SkeletonRow>
-                <SkeletonFirstLastName>Jaiviyon Simon</SkeletonFirstLastName>
-              </SkeletonRow>
-              <SkeletonDateTime>12 Aug 2022 10:00 PM</SkeletonDateTime>
-            </SkeletonFlexColFirstLast>
-          </SkeletonFlexRowAvatarNameDate>
-          <SkeletonStarsBar>
+            </Avatar>
+            <FlexColFirstLast>
+              <Row>
+                <FirstLastName>Jaiviyon Simon</FirstLastName>
+              </Row>
+              <DateTime>12 Aug 2022 10:00 PM</DateTime>
+            </FlexColFirstLast>
+          </FlexRowAvatarNameDate>
+          <StarsBar>
             <StarGold />
             <StarGold />
             <StarGold />
             <StarGrey />
             <StarGrey />
-          </SkeletonStarsBar>
-          <SkeletonTextBlock>
+          </StarsBar>
+          <TextBlock>
             Assumenda nam repudiandae rerum fugiat vel maxime.
-          </SkeletonTextBlock>
-          <SkeletonBtnBar>
-            <SkeletonBtn>Great Sevice</SkeletonBtn>
-            <SkeletonBtn>Recommended</SkeletonBtn>
-            <SkeletonBtn>Best Price</SkeletonBtn>
-          </SkeletonBtnBar>
-        </SkeletonJayvion>
-        <SkeletonRejectAccept>
-          <SkeletonReject>Reject</SkeletonReject>
-          <SkeletonAccept>Accept</SkeletonAccept>
-        </SkeletonRejectAccept>
-      </SkeletonColumn>
-    </SkeletonCustomerReviewsWrapper>
+          </TextBlock>
+          <BtnBar>
+            <Btn>Great Sevice</Btn>
+            <Btn>Recommended</Btn>
+            <Btn>Best Price</Btn>
+          </BtnBar>
+        </Jayvion>
+        <RejectAccept>
+          <Reject>Reject</Reject>
+          <Accept>Accept</Accept>
+        </RejectAccept>
+      </Column>
+    </CustomerReviewsWrapper>
   );
 };
 export default CustomerReviews;
 
-const SkeletonCustomerReviewsWrapper = styled.div`
+const CustomerReviewsWrapper = styled.div`
   display: flex;
   justify-content: center;
   max-height: 765px;
   padding: 24px;
-  width: 100%;
   height: 100%;
   border-radius: 16px;
-  box-shadow: 0px 12px 24px -4px #919eab1f, 0px 0px 2px 0px #919eab33;
+  box-shadow:
+    0px 12px 24px -4px #919eab1f,
+    0px 0px 2px 0px #919eab33;
 `;
 
-const SkeletonCustomerReviews = styled.div`
-  display: flex;
-  width: 100%;
-  height: 54px;
-  padding: 24px 16px 0px 24px;
-  gap: 16px;
-  opacity: 0px;
-`;
+// const CustomerReviews = styled.div`
+//   display: flex;
+//   width: 100%;
+//   height: 54px;
+//   padding: 24px 16px 0px 24px;
+//   gap: 16px;
+//   opacity: 0px;
+// `;
 
-const SkeletonArrows = styled.div`
+const Arrows = styled.div`
   display: flex;
   flex-direction: row;
   align-items: right;
@@ -92,7 +93,7 @@ const SkeletonArrows = styled.div`
   gap: 10px;
 `;
 
-const SkeletonArrowRight = styled.div`
+const ArrowRight = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,7 +101,7 @@ const SkeletonArrowRight = styled.div`
   height: 36px;
 `;
 
-const SkeletonArrowleft = styled.div`
+const Arrowleft = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,7 +110,7 @@ const SkeletonArrowleft = styled.div`
   height: 36px;
 `;
 
-const SkeletonCustomer = styled.div`
+const Customer = styled.div`
   font-family: Public Sans;
   width: 100%;
   font-size: 18px;
@@ -118,7 +119,7 @@ const SkeletonCustomer = styled.div`
   text-align: left;
 `;
 
-const SkeletonReviews12 = styled.div`
+const Reviews12 = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -130,7 +131,7 @@ const SkeletonReviews12 = styled.div`
   color: #637381;
 `;
 
-const SkeletonJayvion = styled.div`
+const Jayvion = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -138,24 +139,24 @@ const SkeletonJayvion = styled.div`
   width: 100%;
 `;
 
-const SkeletonFlexRowAvatarNameDate = styled.div`
+const FlexRowAvatarNameDate = styled.div`
   display: flex;
   flex-direction: row;
   gap: 16px;
 `;
 
-const SkeletonAvatar = styled.div`
+const Avatar = styled.div`
   border-radius: 50%;
   overflow: hidden;
 `;
 
-const SkeletonFlexColFirstLast = styled.div`
+const FlexColFirstLast = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
 `;
 
-const SkeletonFirstLastName = styled.div`
+const FirstLastName = styled.div`
   display: flex;
   font-family: Public Sans;
   font-size: 14px;
@@ -164,7 +165,7 @@ const SkeletonFirstLastName = styled.div`
   text-align: left;
 `;
 
-const SkeletonDateTime = styled.div`
+const DateTime = styled.div`
   display: flex;
   font-family: Public Sans;
   font-size: 12px;
@@ -174,13 +175,13 @@ const SkeletonDateTime = styled.div`
   color: #919eab;
 `;
 
-const SkeletonStarsBar = styled.div`
+const StarsBar = styled.div`
   display: flex;
   flex-direction: row;
   gap: 8px;
 `;
 
-const SkeletonTextBlock = styled.div`
+const TextBlock = styled.div`
   font-family: Public Sans;
   font-size: 14px;
   font-weight: 400;
@@ -188,7 +189,7 @@ const SkeletonTextBlock = styled.div`
   text-align: left;
 `;
 
-const SkeletonBtnBar = styled.button`
+const BtnBar = styled.div`
   text-decoration: none;
   border: none;
   background-color: #fff;
@@ -199,7 +200,7 @@ const SkeletonBtnBar = styled.button`
   padding-bottom: 24px;
 `;
 
-const SkeletonBtn = styled.button`
+const Btn = styled.button`
   font-family: Public Sans;
   font-size: 13px;
   font-weight: 500;
@@ -212,7 +213,7 @@ const SkeletonBtn = styled.button`
   padding: 0 5px 0 5px;
   border-radius: 4px;
 `;
-const SkeletonRejectAccept = styled.div`
+const RejectAccept = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -224,7 +225,7 @@ const SkeletonRejectAccept = styled.div`
   border: 1px 0px 0px 0px;
 `;
 
-const SkeletonReject = styled.div`
+const Reject = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -241,7 +242,7 @@ const SkeletonReject = styled.div`
   background-color: rgba(255, 86, 48, 0.08);
 `;
 
-const SkeletonAccept = styled.div`
+const Accept = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -257,14 +258,14 @@ const SkeletonAccept = styled.div`
   color: #fff;
 `;
 
-const SkeletonColumn = styled.div`
+const Column = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
   width: 100%;
 `;
 
-const SkeletonRow = styled.div`
+const Row = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;

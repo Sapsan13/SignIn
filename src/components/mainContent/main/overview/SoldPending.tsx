@@ -3,9 +3,9 @@ import RadialChart from "./RadialChart";
 
 const SoldPending = (props: any) => {
   return (
-    <SkeletonToursWrapper>
-      <SkeletonSPending>
-        <SkeletonRadialText>
+    <ToursWrapper>
+      <SPending>
+        <RadialText>
           <RadialChart
             width={80}
             height={80}
@@ -13,19 +13,19 @@ const SoldPending = (props: any) => {
             color2={props.color2}
             gradient={props.gradient}
           />
-          <SkeletonInnerText>{props.innerNumber}</SkeletonInnerText>
-        </SkeletonRadialText>
-        <SkeletonPendingPayment>
-          <SkeletonPendingNumber>{props.number}</SkeletonPendingNumber>
-          <SkeletonPendingText>{props.text}</SkeletonPendingText>
-        </SkeletonPendingPayment>
-      </SkeletonSPending>
-    </SkeletonToursWrapper>
+          <InnerText>{props.innerNumber}</InnerText>
+        </RadialText>
+        <PendingPayment>
+          <PendingNumber>{props.number}</PendingNumber>
+          <PendingText>{props.text}</PendingText>
+        </PendingPayment>
+      </SPending>
+    </ToursWrapper>
   );
 };
 export default SoldPending;
 
-const SkeletonToursWrapper = styled.div`
+const ToursWrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 160px;
@@ -34,21 +34,21 @@ const SkeletonToursWrapper = styled.div`
   width: 50%;
 `;
 
-const SkeletonRadialText = styled.div`
+const RadialText = styled.div`
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
 `;
 
-const SkeletonInnerText = styled.div`
+const InnerText = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
   gap: 8px;
 `;
 
-const SkeletonSPending = styled.div`
+const SPending = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -58,14 +58,14 @@ const SkeletonSPending = styled.div`
   opacity: 0px;
 `;
 
-const SkeletonPendingPayment = styled.div`
+const PendingPayment = styled.div`
   width: 136px;
   height: 33%;
   gap: 4px;
   opacity: 0px;
 `;
 
-const SkeletonPendingText = styled.div`
+const PendingText = styled.div`
   font-family: Public Sans;
   font-size: 14px;
   font-weight: 400;
@@ -73,7 +73,7 @@ const SkeletonPendingText = styled.div`
   text-align: center;
 `;
 
-const SkeletonPendingNumber = styled.div`
+const PendingNumber = styled.div`
   font-family: Public Sans;
   font-size: 24px;
   font-weight: 700;
@@ -81,10 +81,10 @@ const SkeletonPendingNumber = styled.div`
   text-align: center;
 `;
 
-const SkeletonSoldPending = styled.div`
-  display: flex;
-  width: 50%;
-  flex-direction: column;
-  gap: 16px;
-  border: 20px solid;
-`;
+// const SoldPending = styled.div`
+//   display: flex;
+//   width: 50%;
+//   flex-direction: column;
+//   gap: 16px;
+//   border: 20px solid;
+// `;

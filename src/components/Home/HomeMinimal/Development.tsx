@@ -4,22 +4,22 @@ import styled from "styled-components";
 const Development = () => {
   return (
     <>
-      <SkeletonWrapper>
+      <Wrapper>
         <DevelopmentIcon />
-        <SkeletonDevelopmentWrapper>
-          <SkeletonDevelopment>Development</SkeletonDevelopment>
-          <SkeletonTheKitText>
+        <DevelopmentWrapper>
+          <Develop>Development</Develop>
+          <TheKitText>
             Easy to customize and extend,
             <br /> saving you time and money.
-          </SkeletonTheKitText>
-        </SkeletonDevelopmentWrapper>
-      </SkeletonWrapper>
+          </TheKitText>
+        </DevelopmentWrapper>
+      </Wrapper>
     </>
   );
 };
 export default Development;
 
-const SkeletonWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,12 +31,13 @@ const SkeletonWrapper = styled.div`
   gap: 64px;
   @media (max-width: 600px) {
     flex-direction: column;
-    box-shadow: 0px 12px 24px -4px rgba(145, 158, 171, 0.12),
+    box-shadow:
+      0px 12px 24px -4px rgba(145, 158, 171, 0.12),
       0px 0px 2px 0px rgba(145, 158, 171, 0.2);
   }
 `;
 
-const SkeletonDevelopment = styled.div`
+const Develop = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,7 +47,7 @@ const SkeletonDevelopment = styled.div`
   line-height: 30px;
   text-align: center;
 `;
-const SkeletonTheKitText = styled.div`
+const TheKitText = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,7 +59,7 @@ const SkeletonTheKitText = styled.div`
   color: rgba(99, 115, 129, 1);
 `;
 
-const SkeletonDevelopmentWrapper = styled.div`
+const DevelopmentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;

@@ -6,15 +6,15 @@ const MidItemCard = ({ items }: any) => {
   return (
     <>
       {items.map((item: any) => (
-        <SkeletonCardItemWrapper key={item.id}>
-          <SkeletonMidNumberTitleWrapper>
-            <SkeletonMidNumber>{item.number}</SkeletonMidNumber>
-            <SkeletonMidTitle> {item.title}</SkeletonMidTitle>
-          </SkeletonMidNumberTitleWrapper>
-          <SkeletonMidImage>
+        <CardItemWrapper key={item.id}>
+          <MidNumberTitleWrapper>
+            <MidNumber>{item.number}</MidNumber>
+            <MidTitle> {item.title}</MidTitle>
+          </MidNumberTitleWrapper>
+          <MidImage>
             <Image src={item.image} width={120} height={120} alt="Picture " />
-          </SkeletonMidImage>
-        </SkeletonCardItemWrapper>
+          </MidImage>
+        </CardItemWrapper>
       ))}
     </>
   );
@@ -22,14 +22,14 @@ const MidItemCard = ({ items }: any) => {
 
 export default MidItemCard;
 
-const SkeletonMidWrapper = styled.div`
+const MidWrapper = styled.div`
   display: flex;
   flex-direction: row;
   gap: 24px;
   justify-content: center;
 `;
 
-const SkeletonCardItemWrapper = styled.div`
+const CardItemWrapper = styled.div`
   display: flex;
   flex-direction: row;
   padding: 0 16px 0 24px;
@@ -41,12 +41,12 @@ const SkeletonCardItemWrapper = styled.div`
     0px 0px 2px 0px #919eab33;
 `;
 
-const SkeletonMidNumberTitleWrapper = styled.div`
+const MidNumberTitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const SkeletonMidNumber = styled.div`
+const MidNumber = styled.div`
   width: max-content;
   height: 48px;
   font-family: Public Sans;
@@ -57,7 +57,7 @@ const SkeletonMidNumber = styled.div`
   text-align: left;
 `;
 
-const SkeletonMidTitle = styled.div`
+const MidTitle = styled.div`
   width: 91px;
   height: 22px;
   font-family: Public Sans;
@@ -69,7 +69,7 @@ const SkeletonMidTitle = styled.div`
   text-align: left;
 `;
 
-const SkeletonMidImage = styled.div`
+const MidImage = styled.div`
   width: 120px;
   height: 120px;
 `;

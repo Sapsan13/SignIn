@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export default function Home() {
   return (
-    <SkeletonHome>
+    <Wrapper>
       <div>
         <div>HOMEPAGE</div>
         <div>
@@ -12,11 +12,11 @@ export default function Home() {
         </div>
         <Link href={"overview"}>Overview</Link>
       </div>
-    </SkeletonHome>
+    </Wrapper>
   );
 }
 
-const SkeletonHome = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   font-family: Public Sans;

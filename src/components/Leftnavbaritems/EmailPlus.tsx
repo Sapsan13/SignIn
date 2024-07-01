@@ -1,6 +1,16 @@
 import styled from "styled-components";
 
-const SkeletonPinkBulb = styled.div`
+const EmailPlus = () => {
+  return (
+    <PinkBulb>
+      <NumberPlus>32+</NumberPlus>
+    </PinkBulb>
+  );
+};
+
+export default EmailPlus;
+
+const PinkBulb = styled.div`
   display: flex;
   background-color: #ffe4de;
   width: 35px;
@@ -13,8 +23,7 @@ const SkeletonPinkBulb = styled.div`
   justify-content: center;
 `;
 
-const SkeletonNumberPlus = styled.div`
-  //styleName: Components/Label;
+const NumberPlus = styled.div`
   color: #b71d18;
   font-family: Public Sans;
   font-size: 12px;
@@ -22,12 +31,3 @@ const SkeletonNumberPlus = styled.div`
   line-height: 20px;
   letter-spacing: 0px;
 `;
-const EmailPlus = () => {
-  return (
-    <SkeletonPinkBulb>
-      <SkeletonNumberPlus>32+</SkeletonNumberPlus>
-    </SkeletonPinkBulb>
-  );
-};
-
-export default EmailPlus;

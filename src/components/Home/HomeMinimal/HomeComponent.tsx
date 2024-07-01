@@ -4,7 +4,21 @@ import Header from "@/components/Home/HomeMinimal/Header";
 import UxUi from "@/components/Home/HomeMinimal/UxUi";
 import styled from "styled-components";
 
-const SkeletonWrapper = styled.div`
+const HomeComponent = () => {
+  return (
+    <Wrapper>
+      <Header />
+      <ItemsWrapper>
+        <Branding />
+        <UxUi />
+        <Development />
+      </ItemsWrapper>
+    </Wrapper>
+  );
+};
+export default HomeComponent;
+
+const Wrapper = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,7 +31,7 @@ const SkeletonWrapper = styled.div`
   }
 `;
 
-const SkeletonItemsWrapper = styled.div`
+const ItemsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -28,17 +42,3 @@ const SkeletonItemsWrapper = styled.div`
     gap: 24px;
   }
 `;
-
-const HomeComponent = () => {
-  return (
-    <SkeletonWrapper>
-      <Header />
-      <SkeletonItemsWrapper>
-        <Branding />
-        <UxUi />
-        <Development />
-      </SkeletonItemsWrapper>
-    </SkeletonWrapper>
-  );
-};
-export default HomeComponent;

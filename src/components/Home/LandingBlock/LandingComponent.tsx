@@ -3,7 +3,18 @@ import LandingTextPicture from "./LandingTextPicture";
 import GreenRocket from "./GreenRocket";
 import LandingFooter from "./LandingFooter";
 
-const SkeletonLandingItemsWrapper = styled.div`
+const LandingComponent = () => {
+  return (
+    <LandingItemsWrapper>
+      <LandingTextPicture />
+      <GreenRocket />
+      <LandingFooter />
+    </LandingItemsWrapper>
+  );
+};
+export default LandingComponent;
+
+const LandingItemsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,14 +29,3 @@ const SkeletonLandingItemsWrapper = styled.div`
     padding: 0;
   }
 `;
-
-const LandingComponent = () => {
-  return (
-    <SkeletonLandingItemsWrapper>
-      <LandingTextPicture />
-      <GreenRocket />
-      <LandingFooter />
-    </SkeletonLandingItemsWrapper>
-  );
-};
-export default LandingComponent;
