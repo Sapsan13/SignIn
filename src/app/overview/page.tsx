@@ -87,10 +87,6 @@ const SoldPend = styled.div`
   grid-column: span 8;
 `;
 
-const Income = styled.div`
-  grid-column: span 4;
-`;
-
 const Pending = styled.div`
   display: flex;
   flex-direction: row;

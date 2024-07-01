@@ -1,7 +1,7 @@
 "use client";
 import { Avatar, Status } from "@/components/Images";
-import { ComponentProps, ReactComponentElement, useState } from "react";
-import styled, { CSSProperties } from "styled-components";
+import { ComponentProps } from "react";
+import styled from "styled-components";
 
 const UserCard = ({
   handleClick,

@@ -18,8 +18,3 @@ const dBase = [
     author: "abc6",
   },
 ];
-
-const chartsData = {
-  TotalIncomes: {},
-  Booked: {},
-};

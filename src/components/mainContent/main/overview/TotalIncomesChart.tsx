@@ -1,4 +1,4 @@
-import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts";
+import { Line, LineChart } from "recharts";
 import styled from "styled-components";
 import { data } from "./mock/data";
 

@@ -99,10 +99,6 @@ const DateTime = styled.div`
   color: #919eab;
 `;
 
-const Date = styled.div`
-  display: flex;
-`;
-
 const BookingDuration = styled.div`
   font-family: Public Sans;
   font-size: 12px;
@@ -123,14 +119,6 @@ const GuestsPersons = styled.div`
   text-align: left;
   display: flex;
   gap: 4px;
-`;
-
-const BookingCosts = styled.div`
-  display: flex;
-`;
-
-const Photo = styled.div`
-  display: flex;
 `;
 
 const FlexColFirstLast = styled.div`
@@ -154,13 +142,6 @@ const FlexRow = styled.div`
   display: flex;
   flex-direction: row;
 `;
-
-const FlexCol = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-`;
-
 interface BookingCard {
   firstName: string;
   lastName: string;

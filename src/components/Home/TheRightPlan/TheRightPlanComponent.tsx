@@ -1,8 +1,7 @@
-import Image from "next/image";
 import styled from "styled-components";
 import RightPlanHeader from "./RightPlanHeader";
 import RightPlanFooter from "./RightPlanFooter";
-import RightPlanMain, { RightPlanMainProps } from "./RightPlanMainContent";
+import RightPlanMain from "./RightPlanMainContent";
 import { RightPlanData, RightPlanDataArray } from "./RightPlanDataArray";
 import StandartExtendedSwitch from "./StandartExtendedSwitch";
 import { useState } from "react";
@@ -22,7 +21,7 @@ const RightPlanWrapper = styled.div`
   background: rgba(145, 158, 171, 0.04);
 `;
 
-const TheRightPlanComponent = ({ items }: TheRightPlanProps) => {
+const TheRightPlanComponent = ({}: TheRightPlanProps) => {
   const [stateIndex, setStateIndex] = useState(0);
   return (
     <RightPlanWrapper>

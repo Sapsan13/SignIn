@@ -17,11 +17,7 @@ const Input = styled.input`
   box-sizing: border-box;
 `;
 
-const Inputfield = ({
-  variant = "Contained",
-  sise = "m",
-  ...other
-}: InputFieldProps) => {
+const Inputfield = ({ ...other }: InputFieldProps) => {
   return <Input {...other} />;
 };
 

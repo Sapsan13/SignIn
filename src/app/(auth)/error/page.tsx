@@ -1,5 +1,5 @@
 "use client";
-export default function Errro(...params: any[]) {
+export default function Errro() {
   // console.log("error params => ", params);
 
   return <div>errro</div>;

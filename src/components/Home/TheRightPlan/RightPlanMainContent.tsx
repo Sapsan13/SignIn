@@ -9,7 +9,6 @@ import {
 } from "@/components/Images";
 import styled from "styled-components";
 import { RightPlanData } from "./RightPlanDataArray";
-import StandartExtendedSwitch from "./StandartExtendedSwitch";
 
 export interface RightPlanMainProps {
   items: RightPlanData[];

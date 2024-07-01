@@ -3,12 +3,8 @@ import {
   LOGOUT,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
-  SWAG_LOGIN,
   SWAG_LOGIN_SUCCESS,
-  SWAG_REGISTER,
   SWAG_REGISTER_SUCCESS,
-  SWAG_REGISTER_FAIL,
-  SWAG_LOGIN_FAIL,
 } from "../actions/authActions";
 import { SWAG_TOKEN_SET } from "../actions/swaggerActions";
 
@@ -38,11 +34,7 @@ export interface Values {
   tours: [];
 }
 
-export const authReducer = (
-  state = initialState,
-  action: AnyAction,
-  values: Values
-) => {
+export const authReducer = (state = initialState, action: AnyAction) => {
   // The reducer normally looks at the action type field to decide what happens
   switch (action.type) {
     case LOGIN_SUCCESS: {

@@ -4,7 +4,6 @@ import styled from "styled-components";
 import Button from "../../../../components/button";
 import PasswordInput from "@/components/passwordInput";
 import Inputfield from "@/components/inputField";
-import { InferGetServerSidePropsType, GetServerSidePropsContext } from "next";
 import { useFormik } from "formik";
 import { schema } from "./signupYup";
 

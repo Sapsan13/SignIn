@@ -483,17 +483,6 @@ export const PersonGuestImg = () => {
   );
 };
 
-const Arrow20Right = styled.div`
-  display: flex;
-  width: 36px;
-  height: 36px;
-  border-radius: 50px 0px 0px 0px;
-  opacity: 0.48px;
-  padding-right: 8px;
-  align-items: center;
-  justify-content: center;
-`;
-
 export const Arrow20 = () => {
   return (
     <ArrowRight>

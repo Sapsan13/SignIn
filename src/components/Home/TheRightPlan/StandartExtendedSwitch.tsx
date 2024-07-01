@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styled from "styled-components";
 
 const StandartExtendedSwitch = ({ setStateIndex, stateIndex }: any) => {
@@ -7,7 +6,7 @@ const StandartExtendedSwitch = ({ setStateIndex, stateIndex }: any) => {
       {arrOfData.map((item, index) => {
         return (
           <StandartExtended
-            onClick={(event) => setStateIndex(index)}
+            onClick={() => setStateIndex(index)}
             key={index}
             $isIndex={stateIndex === index}
           >

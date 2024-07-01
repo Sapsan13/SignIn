@@ -4,11 +4,7 @@ import StyledComponentsRegistry from "../../lib/registry";
 import ClientLayout from "./ClientLayout";
 import "./global.css";
 
-import {
-  QueryClient,
-  QueryClientProvider,
-  useQuery,
-} from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
 

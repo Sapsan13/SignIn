@@ -1,5 +1,5 @@
 "use client";
-import { ComponentProps, ReactComponentElement } from "react";
+import { ComponentProps } from "react";
 import styled from "styled-components";
 
 type ButtonProps = ComponentProps<"button"> & {
@@ -30,15 +30,7 @@ const Btn = styled.button`
   letter-spacing: 0px;
 `;
 
-const Button = ({
-  variant = "Contained",
-  color = "",
-  size = "l",
-  startIcon,
-  endIcon,
-  children,
-  ...other
-}: ButtonProps) => {
+const Button = ({ children, ...other }: ButtonProps) => {
   return <Btn {...other}>{children}</Btn>;
 };
 

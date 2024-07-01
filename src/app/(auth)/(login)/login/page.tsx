@@ -134,14 +134,6 @@ const TopGap = styled.div`
   margin-bottom: 40px;
 `;
 
-const DivForm = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-width: 352px;
-  gap: 20px;
-  align-items: center;
-`;
-
 const BottomText = styled.div`
   font-family: Public Sans;
   font-size: 12px;
@@ -157,22 +149,12 @@ const BottomText = styled.div`
   }
 `;
 
-const Row = styled.div`
-  display: flex;
-`;
-
 const DivColForm = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
   font-size: 12px;
   color: red;
-`;
-
-const DivCol = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
 `;
 
 const Form = styled.form`

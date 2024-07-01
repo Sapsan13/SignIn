@@ -64,5 +64,3 @@ const AlertPosition = styled.div`
   right: 60px;
   top: -5px;
 `;
-
-const AccountPicWrapper = styled.div``;

@@ -20,9 +20,7 @@ AXIOS_INSTANCE.interceptors.request.use(
   }
 );
 
-export const useCustomInstance = <T>(): ((
-  config: AxiosRequestConfig
-) => Promise<T>) => {
+export const useCustomInstance = () => {
   return (config: AxiosRequestConfig) => {
     const source = Axios.CancelToken.source();
     const promise = AXIOS_INSTANCE({

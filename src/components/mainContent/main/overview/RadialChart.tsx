@@ -1,11 +1,4 @@
-import {
-  Legend,
-  Line,
-  PolarAngleAxis,
-  RadialBar,
-  RadialBarChart,
-  Tooltip,
-} from "recharts";
+import { PolarAngleAxis, RadialBar, RadialBarChart, Tooltip } from "recharts";
 
 interface RadialChartProps {
   width: number;
@@ -16,7 +9,6 @@ interface RadialChartProps {
 }
 
 const RadialChart = (props: RadialChartProps) => {
-  var $grad = `${props.gradient}`;
   const data = [
     {
       name: "",

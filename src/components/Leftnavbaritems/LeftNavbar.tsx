@@ -65,11 +65,3 @@ const LogoWrapper = styled.div`
   height: 72px;
   padding: 24px 16px 8px 16px;
 `;
-
-const MainContent = styled.div`
-  width: 1, 080px;
-  height: 468px;
-  padding: 16px 0px 16px 0px;
-  gap: 24px;
-  opacity: 0px;
-`;

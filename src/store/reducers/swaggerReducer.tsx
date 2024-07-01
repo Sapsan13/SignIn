@@ -1,10 +1,4 @@
 import { AnyAction } from "redux";
-import {
-  SWAG_TOKEN_FAIL,
-  SWAG_TOKEN_SUCCESS,
-  SWAG_TOKEN_SET,
-} from "../actions/swaggerActions";
-
 export interface User {
   email: string;
   firstname: string;
@@ -33,11 +27,7 @@ export interface Values {
   totIncome: [];
 }
 
-export const swaggerReducer = (
-  state = initialState,
-  action: AnyAction,
-  values: Values
-) => {
+export const swaggerReducer = (state = initialState, action: AnyAction) => {
   // The reducer normally looks at the action type field to decide what happens
 
   switch (action.type) {

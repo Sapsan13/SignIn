@@ -115,9 +115,3 @@ const RowGap = styled.div`
   justify-content: right;
   gap: 8px;
 `;
-
-const Column = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-`;

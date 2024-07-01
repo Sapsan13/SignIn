@@ -1,4 +1,3 @@
-import { ComponentProps } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 
@@ -19,14 +18,6 @@ const MidItemCard = ({ items }: any) => {
 };
 
 export default MidItemCard;
-
-const MidWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  gap: 24px;
-  justify-content: center;
-`;
 
 const CardItemWrapper = styled.div`
   display: flex;
@@ -69,9 +60,3 @@ const MidTitle = styled.div`
   letter-spacing: 0px;
   text-align: left;
 `;
-
-type MidItemCardProps = ComponentProps<"div"> & {
-  image: string;
-  title: string;
-  number: string;
-};

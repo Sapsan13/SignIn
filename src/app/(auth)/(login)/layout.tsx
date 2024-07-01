@@ -1,9 +1,6 @@
 "use client";
-import { Inter } from "next/font/google";
 import LoginPicBlock from "@/components/loginPicBlock";
 import styled from "styled-components";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,

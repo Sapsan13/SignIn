@@ -2,13 +2,10 @@
 import styled from "styled-components";
 import { Logo, Diagram } from "@/components/Images";
 import { logoutAction } from "@/store/actions/authActions";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const LoginPicBlock = ({}: PicProps) => {
   const dispatch = useDispatch();
-  const store = useSelector((state) => {
-    // console.log("auth => ", state.auth);
-  });
   return (
     <PicWrapper>
       <LogoPic onClick={() => dispatch(logoutAction())}>
