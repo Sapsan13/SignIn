@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-// interface of responce data
 type ResponseData =
   | {
       status: true;
@@ -15,7 +14,6 @@ interface User {
   lastname: string;
 }
 
-// Current users login credentials
 const availableUsers: User[] = [
   {
     email: "admin@gmail.com",
@@ -31,8 +29,6 @@ const availableUsers: User[] = [
   },
 ];
 
-// Next JS interface types
-// ResponseData ->returned dataTypes
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseData>
@@ -41,11 +37,8 @@ export default function handler(
     (item) =>
       item.email === req.body.email && item.password === req.body.password
   )[0];
-  //
   if (user) {
-    // delete user passwd before srnding
     delete user.password;
-    // response to user
     res.status(200).json({ status: true, user });
   } else {
     res.status(200).json({

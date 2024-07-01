@@ -1,48 +1,49 @@
 "use client";
 
-import LeftNavbar from "@/components/leftNavbarItems/LeftNavbar";
+import LeftNavbar from "@/components/Leftnavbaritems/LeftNavbar";
 
 import styled from "styled-components";
 import NewestBookingComponent from "@/components/mainContent/main/analitycs/NewestBookingComponent";
 import TopBar from "@/components/topBar/TopBar";
 import MidItemCard from "@/components/midbar/MidItemAnalitycs";
-import { analitycsMidbarElements } from "@/components/midbar/midbarElements";
+import { analitycsMidbarElements } from "@/components/midbar/mock/midbarElements";
 
 export default function Analitycs() {
   return (
-    <SkeletonRowItems>
+    <RowItems>
       <LeftNavbar />
-      <SkeletonColumnItems>
-        <SkeletonMidCards>
+      <ColumnItems>
+        <MidCards>
           <TopBar />
-        </SkeletonMidCards>
+        </MidCards>
         <MidItemCard items={analitycsMidbarElements} />
-        <SkeletonMidCards>
+        <MidCards>
           <NewestBookingComponent />
-        </SkeletonMidCards>
-      </SkeletonColumnItems>
-    </SkeletonRowItems>
+        </MidCards>
+      </ColumnItems>
+    </RowItems>
   );
 }
 
-const SkeletonRowItems = styled.div`
-  width: 100%;
+const RowItems = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 24px;
-  padding: 0 20px 0 20px;
+  gap: 60px;
+  padding: 0 10px 0 10px;
+  overflow: hidden;
+  @media (min-width: 1280px) {
+    overflow: scroll;
+  }
 `;
 
-const SkeletonColumnItems = styled.div`
+const ColumnItems = styled.div`
   display: grid;
   width: 100%;
-  padding-left: 40px;
   grid-template-columns: repeat(12, 1fr);
   column-gap: 24px;
   row-gap: 24px;
 `;
 
-const SkeletonMidCards = styled.div`
-  width: 100%;
+const MidCards = styled.div`
   grid-column: span 12;
 `;

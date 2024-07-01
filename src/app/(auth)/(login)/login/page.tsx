@@ -7,12 +7,10 @@ import PasswordInput from "@/components/passwordInput";
 import { useFormik } from "formik";
 import { schema } from "./loginYup";
 import { PostApiAuthLoginBody } from "@/model";
-import { useDispatch } from "react-redux";
-import { loginAction } from "@/store/actions/authActions";
 import { usePostApiAuthLogin } from "@/QueryStore";
 
 export default function SignIn() {
-  const dispatch = useDispatch();
+  const { mutate } = usePostApiAuthLogin();
 
   const formik = useFormik<PostApiAuthLoginBody>({
     initialValues: {
@@ -21,32 +19,29 @@ export default function SignIn() {
     },
     validationSchema: schema,
     onSubmit: (values) => {
-      // loginMutation
-      usePostApiAuthLogin(values);
-      // dispatch(loginAction(values));
-      // alert(JSON.stringify(values, null, 2));
+      mutate({
+        data: values,
+      });
     },
   });
   return (
-    <SkeletonRightSidebar>
-      <SkeletonRightBlock>
-        <SkeletonTopGap>
-          <SkeletonHeader>Welcome back!</SkeletonHeader>
-          <SkeletonDivRow>
-            <SkeletonHaveAnAccount>
-              {"Don't have an account?"}
-            </SkeletonHaveAnAccount>
+    <RightSidebar>
+      <RightBlock>
+        <TopGap>
+          <Header>Welcome back!</Header>
+          <DivRow>
+            <HaveAnAccount>{"Don't have an account?"}</HaveAnAccount>
             <Link href={"/signin"}>
-              <SkeletonSignIn>Sign in here!</SkeletonSignIn>
+              <SignInText>Sign in here!</SignInText>
             </Link>
-          </SkeletonDivRow>
-        </SkeletonTopGap>
-        <SkeletonForm
+          </DivRow>
+        </TopGap>
+        <Form
           method="post"
           action="/api/auth/callback/credentials"
           onSubmit={formik.handleSubmit}
         >
-          <SkeletonDivColForm>
+          <DivColForm>
             <Inputfield
               type="email"
               required
@@ -56,32 +51,33 @@ export default function SignIn() {
               value={formik.values.email}
             />
             {formik.errors.email ? <span>{formik.errors.email}</span> : null}
-          </SkeletonDivColForm>
-          <SkeletonDivColForm>
+          </DivColForm>
+          <DivColForm>
             <PasswordInput
               name="password"
               placeholder="Enter your password here"
               type="password"
               onChange={formik.handleChange}
               value={formik.values.password}
+              required
             />
             {formik.errors.password ? (
               <span>{formik.errors.password}</span>
             ) : null}
-          </SkeletonDivColForm>
+          </DivColForm>
           <Button type="submit">Log In</Button>
 
-          <SkeletonBottomText>
+          <BottomText>
             By signing up, I agree to <a href="termsOfUse">Terms of Use </a> and{" "}
             <a href="privacyPolicy">Privacy Policy</a>.
-          </SkeletonBottomText>
-        </SkeletonForm>
-      </SkeletonRightBlock>
-    </SkeletonRightSidebar>
+          </BottomText>
+        </Form>
+      </RightBlock>
+    </RightSidebar>
   );
 }
 
-const SkeletonRightSidebar = styled.div`
+const RightSidebar = styled.div`
   display: flex;
   background-color: #fff;
   flex-direction: column;
@@ -90,14 +86,14 @@ const SkeletonRightSidebar = styled.div`
   height: 100%;
 `;
 
-const SkeletonRightBlock = styled.div`
+const RightBlock = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   min-width: 352px;
 `;
 
-const SkeletonHeader = styled.div`
+const Header = styled.div`
   font-family: Public Sans;
   font-size: 24px;
   font-weight: 700;
@@ -106,8 +102,7 @@ const SkeletonHeader = styled.div`
   text-align: left;
 `;
 
-const SkeletonHaveAnAccount = styled.div`
-  //styleName: Desktop/Body2;
+const HaveAnAccount = styled.div`
   padding: 0 2px;
   font-family: Public Sans;
   font-size: 14px;
@@ -117,8 +112,7 @@ const SkeletonHaveAnAccount = styled.div`
   text-align: left;
 `;
 
-const SkeletonSignIn = styled.button`
-  //styleName: Desktop/Subtitle2;
+const SignInText = styled.button`
   font-family: Public Sans;
   font-size: 14px;
   font-weight: 600;
@@ -133,14 +127,14 @@ const SkeletonSignIn = styled.button`
   color: #00a76f;
 `;
 
-const SkeletonTopGap = styled.div`
+const TopGap = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
   margin-bottom: 40px;
 `;
 
-const SkeletonDivForm = styled.div`
+const DivForm = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 352px;
@@ -148,8 +142,7 @@ const SkeletonDivForm = styled.div`
   align-items: center;
 `;
 
-const SkeletonBottomText = styled.div`
-  //styleName: Desktop/Caption;
+const BottomText = styled.div`
   font-family: Public Sans;
   font-size: 12px;
   font-weight: 400;
@@ -164,11 +157,11 @@ const SkeletonBottomText = styled.div`
   }
 `;
 
-const SkeletonRow = styled.div`
+const Row = styled.div`
   display: flex;
 `;
 
-const SkeletonDivColForm = styled.div`
+const DivColForm = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -176,18 +169,18 @@ const SkeletonDivColForm = styled.div`
   color: red;
 `;
 
-const SkeletonDivCol = styled.div`
+const DivCol = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
 `;
 
-const SkeletonForm = styled.form`
+const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 16px;
 `;
 
-const SkeletonDivRow = styled.div`
+const DivRow = styled.div`
   display: flex;
 `;

@@ -1,9 +1,7 @@
 "use client";
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import LoginPicBlock from "@/components/loginPicBlock";
 import styled from "styled-components";
-import LeftNavbar from "@/components/leftNavbarItems/LeftNavbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,16 +11,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <SkeletonFlexRow>
-      <SkeletonLoginPicBlock>
+    <FlexRow>
+      <LoginPicBlockWrapper>
         <LoginPicBlock />
-      </SkeletonLoginPicBlock>
-      <SkeletonCildWrapper>{children}</SkeletonCildWrapper>
-    </SkeletonFlexRow>
+      </LoginPicBlockWrapper>
+      <CildWrapper>{children}</CildWrapper>
+    </FlexRow>
   );
 }
 
-const SkeletonFlexRow = styled.div`
+const FlexRow = styled.div`
   display: flex;
   flex-direction: row;
   min-width: 1024px;
@@ -32,13 +30,13 @@ const SkeletonFlexRow = styled.div`
   align-items: center;
 `;
 
-const SkeletonLoginPicBlock = styled.div`
+const LoginPicBlockWrapper = styled.div`
   display: flex;
   flex: 2;
   width: 100%;
 `;
 
-const SkeletonCildWrapper = styled.div`
+const CildWrapper = styled.div`
   display: flex;
   flex: 1;
 `;

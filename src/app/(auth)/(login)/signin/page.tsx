@@ -22,24 +22,22 @@ export default function CreateAccount() {
     },
   });
   return (
-    <SkeletonRightSidebar>
-      <SkeletonRightBlock>
-        <SkeletonTopGap>
-          <SkeletonHeader>Get started absolutely free</SkeletonHeader>
-          <SkeletonRow>
-            <SkeletonHaveAnAccount>
-              Already have an account?
-            </SkeletonHaveAnAccount>
+    <RightSidebar>
+      <RightBlock>
+        <TopGap>
+          <Header>Get started absolutely free</Header>
+          <Row>
+            <HaveAnAccount>Already have an account?</HaveAnAccount>
             <Link href={"/login"}>
-              <SkeletonLogin>Login</SkeletonLogin>
+              <Login>Login</Login>
             </Link>
-          </SkeletonRow>
-        </SkeletonTopGap>
-        <SkeletonDivForm>
-          <SkeletonDivCol>
-            <SkeletonForm method="post" onSubmit={formik.handleSubmit}>
-              <SkeletonDivRow>
-                <SkeletonDivColForm>
+          </Row>
+        </TopGap>
+        <DivForm>
+          <DivCol>
+            <Form method="post" onSubmit={formik.handleSubmit}>
+              <DivRow>
+                <DivColForm>
                   <Inputfield
                     required
                     placeholder="First name"
@@ -51,9 +49,10 @@ export default function CreateAccount() {
                   {formik.errors.firstName ? (
                     <span>{formik.errors.firstName}</span>
                   ) : null}
-                </SkeletonDivColForm>
-                <SkeletonDivColForm>
+                </DivColForm>
+                <DivColForm>
                   <Inputfield
+                    required
                     placeholder="Last name"
                     name="lastName"
                     type="text"
@@ -63,9 +62,9 @@ export default function CreateAccount() {
                   {formik.errors.firstName ? (
                     <span>{formik.errors.lastName}</span>
                   ) : null}
-                </SkeletonDivColForm>
-              </SkeletonDivRow>
-              <SkeletonDivColForm>
+                </DivColForm>
+              </DivRow>
+              <DivColForm>
                 <Inputfield
                   type="email"
                   required
@@ -77,28 +76,29 @@ export default function CreateAccount() {
                 {formik.errors.firstName ? (
                   <span>{formik.errors.password}</span>
                 ) : null}
-              </SkeletonDivColForm>
+              </DivColForm>
               <PasswordInput
                 placeholder="Enter your password here"
                 name="password"
                 type="password"
                 onChange={formik.handleChange}
                 value={formik.values.password}
+                required
               />
               <Button type="submit">Create Account</Button>
-            </SkeletonForm>
-          </SkeletonDivCol>
-          <SkeletonBottomText>
+            </Form>
+          </DivCol>
+          <BottomText>
             By signing up, I agree to <a href="termsOfUse">Terms of Use </a> and{" "}
             <a href="privacyPolicy">Privacy Policy</a>.
-          </SkeletonBottomText>
-        </SkeletonDivForm>
-      </SkeletonRightBlock>
-    </SkeletonRightSidebar>
+          </BottomText>
+        </DivForm>
+      </RightBlock>
+    </RightSidebar>
   );
 }
 
-const SkeletonRightSidebar = styled.div`
+const RightSidebar = styled.div`
   display: flex;
   flex-direction: column;
   width: 480px;
@@ -106,7 +106,7 @@ const SkeletonRightSidebar = styled.div`
   width: 100%;
 `;
 
-const SkeletonRightBlock = styled.div`
+const RightBlock = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -114,7 +114,7 @@ const SkeletonRightBlock = styled.div`
   box-sizing: border-box;
 `;
 
-const SkeletonHeader = styled.div`
+const Header = styled.div`
   font-family: Public Sans;
   font-size: 24px;
   font-weight: 700;
@@ -123,8 +123,7 @@ const SkeletonHeader = styled.div`
   text-align: left;
 `;
 
-const SkeletonHaveAnAccount = styled.div`
-  //styleName: Desktop/Body2;
+const HaveAnAccount = styled.div`
   padding: 0 2px;
   font-family: Public Sans;
   font-size: 14px;
@@ -134,8 +133,7 @@ const SkeletonHaveAnAccount = styled.div`
   text-align: left;
 `;
 
-const SkeletonLogin = styled.button`
-  //styleName: Desktop/Subtitle2;
+const Login = styled.button`
   font-family: Public Sans;
   font-size: 14px;
   font-weight: 600;
@@ -150,22 +148,21 @@ const SkeletonLogin = styled.button`
   color: #00a76f;
 `;
 
-const SkeletonTopGap = styled.div`
+const TopGap = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
   margin-bottom: 40px;
 `;
 
-const SkeletonDivForm = styled.div`
+const DivForm = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
   align-items: center;
 `;
 
-const SkeletonBottomText = styled.div`
-  //styleName: Desktop/Caption;
+const BottomText = styled.div`
   font-family: Public Sans;
   font-size: 12px;
   font-weight: 400;
@@ -180,17 +177,17 @@ const SkeletonBottomText = styled.div`
   }
 `;
 
-const SkeletonRow = styled.div`
+const Row = styled.div`
   display: flex;
 `;
 
-const SkeletonDivCol = styled.div`
+const DivCol = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
 `;
 
-const SkeletonDivColForm = styled.div`
+const DivColForm = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -198,13 +195,13 @@ const SkeletonDivColForm = styled.div`
   color: red;
 `;
 
-const SkeletonForm = styled.form`
+const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 16px;
 `;
 
-const SkeletonDivRow = styled.div`
+const DivRow = styled.div`
   display: flex;
   gap: 16px;
 `;
