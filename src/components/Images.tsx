@@ -411,11 +411,3 @@ export const Bell = () => {
     />
   );
 };
-
-const La = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 48px;
-`;
