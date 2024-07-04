@@ -1,16 +1,10 @@
 import Image from "next/image";
 import styled from "styled-components";
-
-export const Logo = () => {
-  return (
-    <Image
-      src="/illustrations/Login/logo.svg"
-      width={40}
-      height={40}
-      alt="Logo"
-    />
-  );
-};
+import { FigmaGrey } from "../../public/illustrations/StartAProject/FigmaGrey";
+import { JSGrey } from "../../public/illustrations/StartAProject/JSGrey";
+import { TSGrey } from "../../public/illustrations/StartAProject/TSGrey";
+import { NextGrey } from "../../public/illustrations/StartAProject/NextGrey";
+import { TrippleBars } from "../../public/illustrations/StartAProject/TrippleBars";
 
 export const Diagram = () => {
   return (
@@ -32,12 +26,7 @@ const DisplayNone = styled.div`
 export const TripleBars = () => {
   return (
     <DisplayNone>
-      <Image
-        src="/illustrations/StartAProject/tripplebars.svg"
-        width={40}
-        height={40}
-        alt="Three horizontal bars"
-      />
+      <TrippleBars />
     </DisplayNone>
   );
 };
@@ -65,34 +54,10 @@ const AvailableForIcons = styled.div`
 export const AvailableIcons = () => {
   return (
     <AvailableForIcons>
-      <Image
-        style={{ opacity: 0.4 }}
-        src="/illustrations/StartAProject/figmagrey.svg"
-        width={24}
-        height={24}
-        alt="FigmaIcon"
-      />
-      <Image
-        style={{ opacity: 0.4 }}
-        src="/illustrations/StartAProject/jsgrey.svg"
-        width={24}
-        height={24}
-        alt="JSIcon"
-      />
-      <Image
-        style={{ opacity: 0.4 }}
-        src="/illustrations/StartAProject/tsgrey.svg"
-        width={24}
-        height={24}
-        alt="TSIcon"
-      />
-      <Image
-        style={{ opacity: 0.4 }}
-        src="/illustrations/StartAProject/nextgrey.svg"
-        width={24}
-        height={24}
-        alt="NextJSIcon"
-      />
+      <FigmaGrey fill="#63738166" />
+      <JSGrey fill="#63738166" />
+      <TSGrey fill="#63738166" />
+      <NextGrey fill="#63738166" />
     </AvailableForIcons>
   );
 };
@@ -219,27 +184,6 @@ export const WhiteSquareOut = () => {
     />
   );
 };
-
-const La = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 48px;
-`;
-export const ArrowRight24 = () => {
-  return (
-    <La>
-      <Image
-        src={"/illustrations/StartAProject/arrowright.svg"}
-        width={24}
-        height={24}
-        alt="Picture of an arrow"
-      />
-    </La>
-  );
-};
-
 export const LandingTempalte = () => {
   return (
     <Image
@@ -257,28 +201,6 @@ export const Galachka = () => {
       src={"/illustrations/StartAProject/Vsign.png"}
       width={16}
       height={16}
-      alt="Picture of an arrow"
-    />
-  );
-};
-
-export const XPECTUK = () => {
-  return (
-    <Image
-      src={"/illustrations/StartAProject/Xpectuk.png"}
-      width={16}
-      height={16}
-      alt="Picture of an arrow"
-    />
-  );
-};
-
-export const ArrowRight18 = () => {
-  return (
-    <Image
-      src={"/illustrations/StartAProject/arrowright.svg"}
-      width={18}
-      height={18}
       alt="Picture of an arrow"
     />
   );
@@ -326,32 +248,9 @@ export const NextJS = () => {
   );
 };
 
-export const NavIcon = ({ icon }: any) => {
-  return (
-    <div>
-      <Image src={icon} width={24} height={24} alt="Picture of an icon" />
-    </div>
-  );
-};
-
-const ArrowRight = styled.div`
-  width: 24px;
-  height: 16px;
-  padding-right: 8px;
-`;
-
-export const ErrowRight16 = () => {
-  return (
-    <ArrowRight>
-      <Image
-        src={"/illustrations/Leftbar/arrowright.svg"}
-        width={16}
-        height={16}
-        alt="Picture arrowright"
-      />
-    </ArrowRight>
-  );
-};
+// export const NavIcon = ({ icon }: any) => {
+//   return <div></div>;
+// };
 
 const Rotate90 = styled.div`
   display: flex;
@@ -425,84 +324,13 @@ export const LandscapeImg = ({ icon }: any) => {
   );
 };
 
-const SevenTwo = styled.div`
-  display: flex;
-  position: absolute;
-  bottom: 12px;
-  right: 8px;
-  padding: 2px 6px 2px 6px;
-  gap: 6px;
-  border-radius: 6px 0px 0px 0px;
-`;
-
 export const SevenTwoHotImg = () => {
   return (
-    <SevenTwo>
-      <Image
-        src="/illustrations/NewestBookingCards/hotseventwo.png"
-        width={50}
-        height={24}
-        alt="Picture 72Hot"
-      />
-    </SevenTwo>
-  );
-};
-
-export const SevenTwoImg = () => {
-  return (
-    <SevenTwo>
-      <Image
-        src="/illustrations/NewestBookingCards/seventwo.svg"
-        width={36}
-        height={24}
-        alt="Picture 72"
-      />
-    </SevenTwo>
-  );
-};
-
-export const CalendarImg = () => {
-  return (
     <Image
-      src="/illustrations/NewestBookingCards/calendar.svg"
-      width={16}
-      height={16}
-      alt="Picture of a calendar"
-    />
-  );
-};
-
-export const PersonGuestImg = () => {
-  return (
-    <Image
-      src="/illustrations/NewestBookingCards/personguest.svg"
-      width={16}
-      height={16}
-      alt="Picture person"
-    />
-  );
-};
-
-export const Arrow20 = () => {
-  return (
-    <ArrowRight>
-      <Image
-        src={"/illustrations/Leftbar/arrowright.svg"}
-        width={20}
-        height={20}
-        alt="Picture arrow right"
-      />
-    </ArrowRight>
-  );
-};
-
-export const ArowRight = () => {
-  return (
-    <Image
-      src={"/illustrations/Leftbar/arrowright.svg"}
-      width={20}
-      height={20}
-      alt="Picture of the author"
+      src="/illustrations/NewestBookingCards/hotseventwo.png"
+      width={50}
+      height={24}
+      alt="Picture 72Hot"
     />
   );
 };
@@ -583,3 +411,11 @@ export const Bell = () => {
     />
   );
 };
+
+const La = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 48px;
+`;

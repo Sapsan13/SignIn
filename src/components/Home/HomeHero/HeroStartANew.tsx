@@ -1,11 +1,8 @@
-import {
-  Starz,
-  AvailableIcons,
-  Lightning,
-  SquareOut,
-} from "@/components/Images";
+import { AvailableIcons } from "@/components/Images";
 import styled from "styled-components";
 import { GoldStar } from "@/../../public/illustrations/Customer/GoldStar";
+import { SquareOut } from "../../../../public/illustrations/StartAProject/SquareOut";
+import { LightningGrey } from "../../../../public/illustrations/StartAProject/LightningGrey";
 
 const StartANewProjectLeft = () => {
   return (
@@ -23,11 +20,10 @@ const StartANewProjectLeft = () => {
         <StarsRting>
           <Stars>
             <GoldStar />
-            {/* <Starz /> */}
-            <Starz />
-            <Starz />
-            <Starz />
-            <Starz />
+            <GoldStar />
+            <GoldStar />
+            <GoldStar />
+            <GoldStar />
           </Stars>
           <Rting>
             <Rate>4.95/5</Rate>
@@ -37,11 +33,11 @@ const StartANewProjectLeft = () => {
       </StartAMinimal>
       <ButtonsWrapper>
         <Light>
-          <Lightning />
+          <LightningGrey />
           Live Preview
         </Light>
         <SquareOu>
-          <SquareOut />
+          <SquareOut fill="rgb(33, 43, 54)" />
           Design Preview
         </SquareOu>
       </ButtonsWrapper>
@@ -245,7 +241,7 @@ const AvailableFor = styled.div`
   width: 100%;
   height: 66px;
   gap: 24px;
-  color: rgba(99, 115, 129, 1);
+  color: #63738166;
   text-transform: uppercase;
 `;
 

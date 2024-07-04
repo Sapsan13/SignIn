@@ -28,7 +28,7 @@ const TopBarWrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 80px;
+  height: 88px;
   left: 280px;
   justify-content: space-between;
   align-items: center;

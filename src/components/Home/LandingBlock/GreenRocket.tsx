@@ -1,5 +1,6 @@
-import { Rocket, WhiteSquareOut } from "@/components/Images";
+import { Rocket } from "@/components/Images";
 import styled from "styled-components";
+import { SquareOut } from "../../../../public/illustrations/StartAProject/SquareOut";
 
 const GreenRocket = () => {
   return (
@@ -15,7 +16,7 @@ const GreenRocket = () => {
           <PurchaseFree>
             <PurchaseNow>Purchase Now</PurchaseNow>
             <GetFree>
-              Get Free Version <WhiteSquareOut />
+              Get Free Version <SquareOut fill="#ffffff" />
             </GetFree>
           </PurchaseFree>
         </GetGap>

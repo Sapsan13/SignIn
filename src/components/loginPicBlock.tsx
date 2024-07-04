@@ -1,15 +1,16 @@
 "use client";
 import styled from "styled-components";
-import { Logo, Diagram } from "@/components/Images";
+import { Diagram } from "@/components/Images";
 import { logoutAction } from "@/store/actions/authActions";
 import { useDispatch } from "react-redux";
+import { MlogoPic } from "../../public/illustrations/Login/MlogoPic";
 
 const LoginPicBlock = ({}: PicProps) => {
   const dispatch = useDispatch();
   return (
     <PicWrapper>
       <LogoPic onClick={() => dispatch(logoutAction())}>
-        <Logo />
+        <MlogoPic />
       </LogoPic>
       <FlexCol>
         <Content>

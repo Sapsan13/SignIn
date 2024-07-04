@@ -1,10 +1,10 @@
-import { Logo } from "@/components/Images";
 import styled from "styled-components";
+import { MlogoPic } from "../../../../public/illustrations/Login/MlogoPic";
 
 const LandingFooter = () => {
   return (
     <ItemsWrapper>
-      <Logo />
+      <MlogoPic />
       <Copyright>
         &copy;All rights reserved
         <br />

@@ -12,7 +12,7 @@ export type LeftNavbarItem = {
   id: number;
   alias: string;
   title: string;
-  icon?: string;
-  endIcon?: () => React.ReactNode;
+  icon?: JSX.Element;
+  endIcon?: JSX.Element;
   children?: LeftNavbarItem[];
 };

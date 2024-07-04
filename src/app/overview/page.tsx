@@ -7,7 +7,7 @@ import TopBar from "@/components/topBar/TopBar";
 import LeftNavbar from "@/components/Leftnavbaritems/LeftNavbar";
 import styled from "styled-components";
 import { overviewMidbarElements } from "@/components/midbar/mock/midbarElements";
-import MidItemCard from "@/components/midbar/MidItemAnalitycs";
+import MidItemCard from "@/components/midbar/MidItemAnalytics";
 
 const Overview = () => {
   return (
@@ -56,7 +56,7 @@ export default Overview;
 const RowItems = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 0 10px 0 10px;
+  padding: 0 40px 0 0;
   flex: 1;
 `;
 
@@ -69,7 +69,7 @@ const Wrapper = styled.div`
 
 const MidEl = styled.div`
   grid-column: 9 / span 4;
-  grid-row: span 8;
+  grid-row: span 2;
   height: 100%;
 `;
 
@@ -85,6 +85,7 @@ const Book = styled.div`
 
 const SoldPend = styled.div`
   grid-column: span 8;
+  grid-row: span 1;
 `;
 
 const Pending = styled.div`

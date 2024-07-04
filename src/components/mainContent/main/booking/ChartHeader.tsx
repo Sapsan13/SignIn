@@ -1,5 +1,5 @@
-import { Arrow } from "@/components/Images";
 import styled from "styled-components";
+import { Arrowright } from "../../../../../public/illustrations/Leftbar/Usercard/Arrowright";
 
 const ChartsHeader = () => {
   return (
@@ -8,9 +8,7 @@ const ChartsHeader = () => {
         <Statistics>Statistics</Statistics>
         <Year>
           <div> Year</div>
-          <div>
-            <Arrow />
-          </div>
+          <Arrowright height={24} width={24} />
         </Year>
       </StatisticsYear>
       <CheckIn>(+43% Check In | +12% Check Out) than last year</CheckIn>
@@ -30,9 +28,7 @@ const StatisticsHeaderWrap = styled.div`
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  height: 102px;
-  padding: 24px;
-  gap: 16px;
+  padding: 20px 24px 0 20px;
 `;
 
 const Statistics = styled.div`
@@ -54,7 +50,6 @@ const StatisticsYear = styled.div`
 
 const Year = styled.div`
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   font-family: Public Sans;
@@ -79,6 +74,7 @@ const CheckIn = styled.div`
   font-size: 14px;
   font-weight: 400;
   line-height: 22px;
+  padding: 4px 0 24px 0;
   text-align: left;
   color: rgba(99, 115, 129, 1);
 `;
@@ -113,5 +109,6 @@ const RowGap = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: right;
+  padding-bottom: 10px;
   gap: 8px;
 `;

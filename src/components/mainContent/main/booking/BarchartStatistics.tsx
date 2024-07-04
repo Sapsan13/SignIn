@@ -12,8 +12,8 @@ import { data } from "./mock/data";
 const BarchartStatistics = () => {
   return (
     <ChartWrapper>
-      <ResponsiveContainer width="100%" aspect={4.0 / 3.0}>
-        <BarChart width={150} height={10} data={data} barSize={8}>
+      <ResponsiveContainer width="100%" aspect={2.1 / 1}>
+        <BarChart width={1} height={1} data={data} barSize={8}>
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
           <XAxis dataKey="name" />
           <YAxis />
@@ -31,6 +31,4 @@ const ChartWrapper = styled.div`
   display: flex;
   justify-content: left;
   margin-top: 24px;
-  width: 100%;
-  height: 70%;
 `;

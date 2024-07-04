@@ -1,22 +1,27 @@
-import { ErrowRight16, NavIcon } from "@/components/Images";
 import EmailPlus from "./EmailPlus";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styled from "styled-components";
 import { LeftNavbarItem } from "./NavbarStackItem";
+import { BagIconGrey } from "../../../public/illustrations/Leftbar/BagIconGrey";
+import { DashboerdGreen } from "../../../public/illustrations/Leftbar/DashboardGreen";
+import { ChartGreen } from "../../../public/illustrations/Leftbar/ChartGreen";
+import { PillarsBankGrey } from "../../../PillarsBankGrey";
+import { PlaneBookingGreen } from "../../../public/illustrations/Leftbar/PlaneBookingGreen";
+import { MailiconGrey } from "../../../public/illustrations/Leftbar/MailiconGrey";
+import { Arrowright } from "../../../public/illustrations/Leftbar/Usercard/Arrowright";
 
 export const MenuItem = ({ item }: { item: LeftNavbarItem }) => {
-  const Icon = item.endIcon;
   const pathname = usePathname();
 
   return (
     <StyledLink href={item.alias}>
       <NavItem $item={item.alias} $pathname={pathname}>
         <Grey $item={item.alias} $pathname={pathname}>
-          <NavIcon icon={item.icon} />
+          {item.icon}
         </Grey>
         {item.title}
-        <MailPlus>{Icon ? <Icon /> : null}</MailPlus>
+        <MailPlus>{item.endIcon ? item.endIcon : null}</MailPlus>
       </NavItem>
     </StyledLink>
   );
@@ -48,7 +53,7 @@ const Title = styled.div`
   font-size: 11px;
   font-weight: 700;
   line-height: 18px;
-  padding-left: 8px;
+  padding: 16px 177px 8px 12px;
   letter-spacing: 0px;
   text-align: left;
   color: #919eab;
@@ -112,33 +117,33 @@ export const items: NavbarArray = [
         id: 1,
         alias: "overview",
         title: "Overview",
-        icon: "/illustrations/Leftbar/dashboardgreen.svg",
+        icon: <DashboerdGreen />,
       },
       {
         id: 2,
         alias: "ecommerce",
         title: "E-commerce",
-        icon: "/illustrations/Leftbar/bagicongrey.svg",
+        icon: <BagIconGrey />,
       },
       {
         id: 3,
-        alias: "analitycs",
-        title: "Analitycs",
-        icon: "/illustrations/Leftbar/chartgreen.svg",
+        alias: "analytics",
+        title: "Analytics",
+        icon: <ChartGreen />,
       },
 
       {
         id: 4,
         alias: "banking",
         title: "Banking",
-        icon: "/illustrations/Leftbar/pillarsbankgrey.svg",
-        endIcon: ErrowRight16,
+        icon: <PillarsBankGrey />,
+        endIcon: <Arrowright height={16} width={16} />,
       },
       {
         id: 5,
         alias: "booking",
         title: "Booking",
-        icon: "/illustrations/Leftbar/planebookinggreen.svg",
+        icon: <PlaneBookingGreen />,
       },
     ],
   },
@@ -150,8 +155,8 @@ export const items: NavbarArray = [
         id: 101,
         alias: "mail",
         title: "Mail",
-        icon: "/illustrations/Leftbar/mailicongrey.svg",
-        endIcon: EmailPlus,
+        icon: <MailiconGrey />,
+        endIcon: <EmailPlus />,
       },
     ],
   },

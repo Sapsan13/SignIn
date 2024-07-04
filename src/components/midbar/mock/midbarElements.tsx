@@ -19,7 +19,7 @@ export const overviewMidbarElements = [
   },
 ];
 
-export const analitycsMidbarElements = [
+export const analyticsMidbarElements = [
   {
     id: 1,
     title: "Total Booking",

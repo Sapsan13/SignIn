@@ -1,14 +1,12 @@
-import {
-  NextJS,
-  TS,
-  JS,
-  Figma,
-  ArrowRight24,
-  XPECTUK,
-  Galachka,
-} from "@/components/Images";
 import styled from "styled-components";
 import { RightPlanData } from "./RightPlanDataArray";
+import { Arrowright } from "../../../../public/illustrations/Leftbar/Usercard/Arrowright";
+import { Xsign } from "../../../../public/illustrations/StartAProject/Xsign";
+import { FigmaGrey } from "../../../../public/illustrations/StartAProject/FigmaGrey";
+import { JSGrey } from "../../../../public/illustrations/StartAProject/JSGrey";
+import { TSGrey } from "../../../../public/illustrations/StartAProject/TSGrey";
+import { NextGrey } from "../../../../public/illustrations/StartAProject/NextGrey";
+import { Vsign } from "../../../../public/illustrations/StartAProject/Vsign";
 
 export interface RightPlanMainProps {
   items: RightPlanData[];
@@ -32,7 +30,7 @@ const RightPlanMain = ({ items, stateIndex }: RightPlanMainProps) => {
               if (subItem.type === "label") {
                 return (
                   <TextRow key={subItem.id}>
-                    <TextVX>{subItem.done ? <Galachka /> : <XPECTUK />}</TextVX>
+                    <TextVX>{subItem.done ? <Vsign /> : <Xsign />}</TextVX>
                     <ItemText key={subItem.id} $isDone={subItem.done}>
                       {subItem.label}
                     </ItemText>
@@ -46,7 +44,7 @@ const RightPlanMain = ({ items, stateIndex }: RightPlanMainProps) => {
           </ItemsBlock>
           <LearnWrapper>
             <LearnMore>
-              Learn More <ArrowRight24 />
+              Learn More <Arrowright width={24} height={24} />
             </LearnMore>
           </LearnWrapper>
         </PlanMainWrapper>
@@ -67,20 +65,26 @@ const colorMapping: Record<SubItem, string> = {
 const iconItems = ["One", "Two", "Three", "Four"] as const;
 export type IconsItem = (typeof iconItems)[number];
 const IconMapping: Record<IconsItem, JSX.Element> = {
-  One: <Figma />,
+  One: <FigmaGrey fill="rgba(33, 43, 54, 1)" />,
   Two: (
     <>
-      <Figma /> <JS />
+      <FigmaGrey fill="rgba(33, 43, 54, 1)" />
+      <JSGrey fill="rgba(33, 43, 54, 1)" />
     </>
   ),
   Three: (
     <>
-      <Figma /> <JS /> <TS />
+      <FigmaGrey fill="rgba(33, 43, 54, 1)" />
+      <JSGrey fill="rgba(33, 43, 54, 1)" />
+      <TSGrey fill="rgba(33, 43, 54, 1)" />
     </>
   ),
   Four: (
     <>
-      <Figma /> <JS /> <TS /> <NextJS />
+      <FigmaGrey fill="rgba(33, 43, 54, 1)" />
+      <JSGrey fill="rgba(33, 43, 54, 1)" />
+      <TSGrey fill="rgba(33, 43, 54, 1)" />
+      <NextGrey fill="rgba(33, 43, 54, 1)" />
     </>
   ),
 };

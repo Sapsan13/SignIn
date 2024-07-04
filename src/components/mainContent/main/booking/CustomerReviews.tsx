@@ -1,10 +1,8 @@
-import {
-  StarGrey,
-  StarGold,
-  AvatarSimon,
-  ArowRight,
-} from "@/components/Images";
+import { AvatarSimon } from "@/components/Images";
 import styled from "styled-components";
+import { GreyStar } from "../../../../../public/illustrations/Customer/GreyStar";
+import { Arrowright } from "../../../../../public/illustrations/Leftbar/Usercard/Arrowright";
+import { GoldStar } from "../../../../../public/illustrations/Customer/GoldStar";
 
 const CustomerReviews = () => {
   return (
@@ -16,10 +14,10 @@ const CustomerReviews = () => {
             Reviews12
             <Arrows>
               <Arrowleft>
-                <ArowRight />
+                <Arrowright />
               </Arrowleft>
               <ArrowRight>
-                <ArowRight />
+                <Arrowright />
               </ArrowRight>
             </Arrows>
           </Reviews12>
@@ -37,11 +35,11 @@ const CustomerReviews = () => {
             </FlexColFirstLast>
           </FlexRowAvatarNameDate>
           <StarsBar>
-            <StarGold />
-            <StarGold />
-            <StarGold />
-            <StarGrey />
-            <StarGrey />
+            <GoldStar />
+            <GoldStar />
+            <GoldStar />
+            <GreyStar />
+            <GreyStar />
           </StarsBar>
           <TextBlock>
             Assumenda nam repudiandae rerum fugiat vel maxime.
@@ -65,9 +63,8 @@ export default CustomerReviews;
 const CustomerReviewsWrapper = styled.div`
   display: flex;
   justify-content: center;
-  max-height: 765px;
   padding: 24px;
-  height: 100%;
+  height: 90%;
   border-radius: 16px;
   box-shadow:
     0px 12px 24px -4px #919eab1f,
@@ -89,8 +86,6 @@ const Arrows = styled.div`
   align-items: right;
   justify-content: right;
   width: 100%;
-  height: 36px;
-  gap: 10px;
 `;
 
 const ArrowRight = styled.div`
@@ -98,7 +93,6 @@ const ArrowRight = styled.div`
   align-items: center;
   justify-content: center;
   width: 36px;
-  height: 36px;
 `;
 
 const Arrowleft = styled.div`
@@ -107,7 +101,6 @@ const Arrowleft = styled.div`
   justify-content: center;
   transform: scaleX(-1);
   width: 36px;
-  height: 36px;
 `;
 
 const Customer = styled.div`
@@ -126,7 +119,6 @@ const Reviews12 = styled.div`
   font-family: Public Sans;
   font-size: 14px;
   font-weight: 400;
-  line-height: 22px;
   text-align: left;
   color: #637381;
 `;
@@ -197,7 +189,6 @@ const BtnBar = styled.div`
   flex-direction: row;
   justify-content: space-between;
   gap: 8px;
-  padding-bottom: 24px;
 `;
 
 const Btn = styled.button`
@@ -220,7 +211,6 @@ const RejectAccept = styled.div`
   align-items: left;
   width: 100%;
   height: 84px;
-  padding: 24px 0px 0px 0px;
   gap: 16px;
   border: 1px 0px 0px 0px;
 `;

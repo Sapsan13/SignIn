@@ -33,6 +33,7 @@ const TotalIncomesWrapper = styled.div`
   width: 100%;
   height: 100%;
   padding: 24px;
+  gap: 24px;
   border-radius: 16px;
 `;
 

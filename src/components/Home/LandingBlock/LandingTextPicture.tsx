@@ -1,5 +1,6 @@
-import { LandingTempalte, ErrowRight16 } from "@/components/Images";
+import { LandingTempalte } from "@/components/Images";
 import styled from "styled-components";
+import { Arrowright } from "../../../../public/illustrations/Leftbar/Usercard/Arrowright";
 
 const LandingTextPicture = () => {
   return (
@@ -11,14 +12,15 @@ const LandingTextPicture = () => {
           <br /> Template
         </LandingTemplate>
         <VisitZone>
-          <div>Visit Zone Landing Page</div> <ErrowRight16 />
+          <div>Visit Zone Landing Page</div>{" "}
+          <Arrowright width={16} height={16} />
         </VisitZone>
       </LookingZoneWrap>
       <Looking>
         <LandingTempalte />
       </Looking>
       <VisitZoneMinim>
-        <div>Visit Zone Landing Page</div> <ErrowRight16 />
+        <div>Visit Zone Landing Page</div> <Arrowright width={16} height={16} />
       </VisitZoneMinim>
     </LandingWrapper>
   );

@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const UserCard = ({
   handleClick,
-  textVLabel,
+  textLabel,
   firstName,
   lastName,
   email,
@@ -15,7 +15,7 @@ const UserCard = ({
     <UserCar>
       <Ava>
         <Avatar />
-        <CurrentVLabel title={textVLabel}>{textVLabel}</CurrentVLabel>
+        <CurrentVLabel title={textLabel}>{textLabel}</CurrentVLabel>
         <StatusCircle>
           <Status />
         </StatusCircle>
@@ -26,7 +26,7 @@ const UserCard = ({
         </Name>
         <SkeletoMail>{email}</SkeletoMail>
       </Mail>
-      {textVLabel === "Free" ? (
+      {textLabel === "Free" ? (
         <Btn onClick={handleClick}>{upgradeLabel}</Btn>
       ) : null}
     </UserCar>
@@ -37,7 +37,7 @@ export default UserCard;
 
 type UserCardProps = ComponentProps<"div"> & {
   handleClick: () => void;
-  textVLabel: TextVLabel;
+  textLabel: TextLabel;
   statusCircle: boolean;
   firstName: string;
   lastName: string;
@@ -46,13 +46,13 @@ type UserCardProps = ComponentProps<"div"> & {
   upgradeLabel: string;
 };
 
-export type TextVLabel = "Free" | "BRO" | "Enterprise";
-const colorMapping: Record<TextVLabel, string> = {
+export type TextLabel = "Free" | "BRO" | "Enterprise";
+const colorMapping: Record<TextLabel, string> = {
   BRO: "#ff5630",
   Enterprise: "#ffab00",
   Free: "#22c55e",
 };
-const CurrentVLabel = styled.div<{ title: TextVLabel }>`
+const CurrentVLabel = styled.div<{ title: TextLabel }>`
   width: max-content;
   height: 20px;
   padding: 0px 4px 0px 4px;

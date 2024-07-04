@@ -11,9 +11,8 @@ const Booking = () => {
     <RowItems>
       <LeftNavbar />
       <Column>
-        <MidCards>
-          <TopBar />
-        </MidCards>
+        <TopBar />
+        <MidCards></MidCards>
         <RowItemsTwelve>
           <RowItemsEight>
             <ChartsHeader />
@@ -32,7 +31,7 @@ export default Booking;
 const RowItems = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 60px;
+  gap: 40px;
 `;
 
 const Column = styled.div`
@@ -46,7 +45,6 @@ const Column = styled.div`
 const RowItemsTwelve = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-
   gap: 24px;
 `;
 
@@ -57,11 +55,10 @@ const MidCards = styled.div`
 `;
 
 const RowItemsEight = styled.div`
-  width: 100%;
   grid-column: span 8;
-  max-height: 765px;
   gap: 24px;
   border-radius: 16px;
+  width: 98.5%;
   box-shadow:
     0px 12px 24px -4px #919eab1f,
     0px 0px 2px 0px #919eab33;
