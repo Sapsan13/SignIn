@@ -12,15 +12,15 @@ export default function Analytics() {
   return (
     <RowItems>
       <LeftNavbar />
-      <ColumnItems>
-        <MidCardsTop>
-          <TopBar />
-        </MidCardsTop>
-        <MidItemCard items={analyticsMidbarElements} />
-        <MidCards>
-          <NewestBookingComponent />
-        </MidCards>
-      </ColumnItems>
+      <Column>
+        <TopBar />
+        <ColumnItems>
+          <MidItemCard items={analyticsMidbarElements} />
+          <MidCards>
+            <NewestBookingComponent />
+          </MidCards>
+        </ColumnItems>
+      </Column>
     </RowItems>
   );
 }
@@ -31,9 +31,11 @@ const RowItems = styled.div`
   gap: 60px;
   padding: 0 40px 0 0;
   overflow: hidden;
-  @media (min-width: 1280px) {
-    overflow: scroll;
-  }
+`;
+
+const Column = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 const ColumnItems = styled.div`
@@ -46,9 +48,4 @@ const ColumnItems = styled.div`
 
 const MidCards = styled.div`
   grid-column: span 12;
-`;
-
-const MidCardsTop = styled.div`
-  grid-column: span 12;
-  max-height: 30px;
 `;
