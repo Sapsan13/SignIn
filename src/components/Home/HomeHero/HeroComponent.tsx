@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import StartANewProjectLeft from "./HeroStartANew";
-import HeroStartANew from "./HeroHeader";
+
 import StartAProjectBG from "./StartaProjectBG";
 
 const HeroComponent = () => {
@@ -8,9 +8,6 @@ const HeroComponent = () => {
     <Wrapper>
       <BGWrapper>
         <StartAProjectBG />
-        <Topblock>
-          <HeroStartANew />
-        </Topblock>
         <Theleftblock>
           <StartANewProjectLeft />
         </Theleftblock>

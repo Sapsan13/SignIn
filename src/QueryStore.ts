@@ -16,11 +16,7 @@ import type {
   UseQueryResult,
 } from "@tanstack/react-query";
 import { useCallback } from "react";
-import type {
-  GetApiChartTotalIncome200Item,
-  PostApiAuthLoginBody,
-  PostApiAuthRegisterBody,
-} from "./model";
+import type { PostApiAuthLoginBody, PostApiAuthRegisterBody } from "./model";
 import { useCustomInstance } from "./custom-axios-instance";
 import type { ErrorType } from "./custom-axios-instance";
 
@@ -354,8 +350,7 @@ export const useGetApiChartStatistic = <
  * @summary Get total income chart data
  */
 export const useGetApiChartTotalIncomeHook = () => {
-  const getApiChartTotalIncome =
-    useCustomInstance<GetApiChartTotalIncome200Item[]>();
+  const getApiChartTotalIncome = useCustomInstance();
 
   return useCallback(
     (signal?: AbortSignal) => {

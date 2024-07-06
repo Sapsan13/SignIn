@@ -7,23 +7,12 @@ import { RightPlanDataArray } from "./TheRightPlan/RightPlanDataArray";
 
 const Home = () => {
   return (
-    <Wrapper>
+    <>
       <HeroComponent />
       <HomeComponent />
       <TheRightPlanComponent items={RightPlanDataArray} />
       <LandingComponent />
-    </Wrapper>
+    </>
   );
 };
 export default Home;
-
-const Wrapper = styled.div`
-  scroll-snap-type: y mandatory;
-  overflow: hidden auto;
-
-  @media (max-width: 600px) {
-    flex-direction: column;
-    scroll-snap-type: mandatory;
-    gap: 20px;
-  }
-`;

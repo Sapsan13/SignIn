@@ -31,7 +31,6 @@ export const logoutAction = () => ({
 });
 
 export const swagLogin = (values: any) => {
-  // console.log(`values => `, values);
   return {
     type: SWAG_LOGIN,
     payload: {

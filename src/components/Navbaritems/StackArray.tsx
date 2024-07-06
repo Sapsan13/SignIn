@@ -2,7 +2,6 @@ import EmailPlus from "./EmailPlus";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styled from "styled-components";
-import { NavbarItem } from "./NavbarStackItem";
 import { BagIconGrey } from "../../../public/illustrations/Leftbar/BagIconGrey";
 import { DashboerdGreen } from "../../../public/illustrations/Leftbar/DashboardGreen";
 import { ChartGreen } from "../../../public/illustrations/Leftbar/ChartGreen";
@@ -42,8 +41,11 @@ export const Category = ({ item }: any) => {
 
 export type NavbarItem = {
   id: number;
+  alias: string;
   title: string;
-  children: NavbarItem[];
+  icon?: JSX.Element;
+  children?: NavbarItem[];
+  endIcon?: JSX.Element;
 };
 
 export type NavbarArray = NavbarItem[];
@@ -111,7 +113,7 @@ const StyledLink = styled(Link)`
 export const items: NavbarArray = [
   {
     id: 1,
-    alias: "",
+    alias: "overview",
     title: "Overview",
     children: [
       {
@@ -150,8 +152,8 @@ export const items: NavbarArray = [
   },
   {
     id: 2,
-    alias: "",
     title: "Management",
+    alias: "management",
     children: [
       {
         id: 101,
