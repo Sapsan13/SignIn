@@ -12,7 +12,7 @@ const UserCard = ({
   upgradeLabel,
 }: UserCardProps) => {
   return (
-    <UserCar>
+    <Card>
       <Ava>
         <Avatar />
         <CurrentVLabel title={textLabel}>{textLabel}</CurrentVLabel>
@@ -20,6 +20,7 @@ const UserCard = ({
           <Status />
         </StatusCircle>
       </Ava>
+
       <Mail>
         <Name>
           {firstName} {lastName}
@@ -29,7 +30,7 @@ const UserCard = ({
       {textLabel === "Free" ? (
         <Btn onClick={handleClick}>{upgradeLabel}</Btn>
       ) : null}
-    </UserCar>
+    </Card>
   );
 };
 
@@ -71,7 +72,7 @@ const CurrentVLabel = styled.div<{ title: TextLabel }>`
   right: -25px;
 `;
 
-const UserCar = styled.div`
+const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -10,7 +10,7 @@ const CustomerReviews = () => {
       <Column>
         <Column>
           <Customer>Customer Reviews</Customer>
-          <Reviews12>
+          <Reviews>
             Reviews12
             <Arrows>
               <Arrowleft>
@@ -20,7 +20,7 @@ const CustomerReviews = () => {
                 <Arrowright />
               </ArrowRight>
             </Arrows>
-          </Reviews12>
+          </Reviews>
         </Column>
         <Jayvion>
           <FlexRowAvatarNameDate>
@@ -58,6 +58,7 @@ const CustomerReviews = () => {
     </CustomerReviewsWrapper>
   );
 };
+
 export default CustomerReviews;
 
 const CustomerReviewsWrapper = styled.div`
@@ -112,7 +113,7 @@ const Customer = styled.div`
   text-align: left;
 `;
 
-const Reviews12 = styled.div`
+const Reviews = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;

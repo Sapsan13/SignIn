@@ -5,39 +5,41 @@ import UserCard, { TextLabel } from "./UserCard";
 import { useState } from "react";
 import { MlogoPic } from "../../../public/illustrations/Login/MlogoPic";
 
-const LeftNavbar = () => {
+const Navbar = () => {
   const [textLabel, setTextLabel] = useState<TextLabel>("Free");
-  const onClickHandler = () => {
+
+  const handleUserCardClick = () => {
     setTextLabel("BRO");
   };
+
   return (
     <NavbarTopblockWrapper>
-      <LeftNavbarWrapper>
+      <NavbarWrapper>
         <div>
           <LogoWrapper>
             <MlogoPic />
           </LogoWrapper>
-          <Navbar>
+          <Nav>
             <NavbarStackItem />
-          </Navbar>
+          </Nav>
         </div>
         <UserCard
           statusCircle={true}
           textLabel={textLabel}
-          handleClick={onClickHandler}
+          handleClick={handleUserCardClick}
           firstName={"Hudson"}
           lastName={"Alvarez"}
           email={"hudson.alvarez@gmail.com"}
           upgradeLabel={"Upgrade to BRO"}
         />
-      </LeftNavbarWrapper>
+      </NavbarWrapper>
     </NavbarTopblockWrapper>
   );
 };
 
-export default LeftNavbar;
+export default Navbar;
 
-const LeftNavbarWrapper = styled.div`
+const NavbarWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 16vw;
@@ -54,7 +56,7 @@ const NavbarTopblockWrapper = styled.div`
   height: 100vh;
 `;
 
-const Navbar = styled.div`
+const Nav = styled.div`
   display: flex;
   flex-direction: column;
   padding-bottom: 115px;

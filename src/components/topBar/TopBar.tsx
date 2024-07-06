@@ -1,11 +1,13 @@
-import { AccountPic, Alert, Bell } from "@/components/Images";
+import { AccountPic, Alert } from "@/components/Images";
 import { usePathname } from "next/navigation";
 import styled from "styled-components";
+import { Bell } from "../../../public/illustrations/topRightIcons/Bell";
 
 const TopBar = () => {
   const pathname =
     usePathname().substring(1).charAt(0).toUpperCase() +
     usePathname().substring(1).slice(1);
+
   return (
     <TopBarWrapper>
       <TitleWrapper>{pathname === "Overview" ? " " : pathname}</TitleWrapper>
@@ -61,6 +63,6 @@ const BellWrapper = styled.div``;
 
 const AlertPosition = styled.div`
   position: absolute;
-  right: 60px;
+  right: 70px;
   top: -5px;
 `;

@@ -43,6 +43,7 @@ const BookedBarsWrapper = styled.div`
     0px 12px 24px -4px #919eab1f,
     0px 0px 2px 0px #919eab33;
 `;
+
 const BookedBarTitle = styled.div`
   width: 100%;
   height: 52px;

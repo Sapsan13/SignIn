@@ -7,6 +7,7 @@ import { MlogoPic } from "../../public/illustrations/Login/MlogoPic";
 
 const LoginPicBlock = ({}: PicProps) => {
   const dispatch = useDispatch();
+
   return (
     <PicWrapper>
       <LogoPic onClick={() => dispatch(logoutAction())}>

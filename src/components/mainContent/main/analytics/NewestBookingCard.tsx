@@ -7,7 +7,8 @@ import { SevenTwoImg } from "../../../../../public/illustrations/NewestBookingCa
 
 const NewestBookingCard = ({}: BookingCard) => {
   return items.map((item: any) => {
-    var JSXTag = item.isHot ? <SevenTwoHotImg /> : <SevenTwoImg />;
+    const JSXTag = item.isHot ? <SevenTwoHotImg /> : <SevenTwoImg />;
+
     return (
       <BookingCardWrapper key={item.id}>
         <FlexColWrap>
@@ -159,3 +160,5 @@ interface BookingCard {
   bookingCosts: number;
   photo: React.ReactElement;
 }
+
+export type BookingItem = BookingCard;

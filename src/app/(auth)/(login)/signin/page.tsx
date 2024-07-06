@@ -8,6 +8,7 @@ import { useFormik } from "formik";
 import { schema } from "./signupYup";
 
 export default function CreateAccount() {
+  // change form like in the login page example
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -20,6 +21,7 @@ export default function CreateAccount() {
       alert(JSON.stringify(values, null, 2));
     },
   });
+
   return (
     <RightSidebar>
       <RightBlock>
@@ -27,6 +29,7 @@ export default function CreateAccount() {
           <Header>Get started absolutely free</Header>
           <Row>
             <HaveAnAccount>Already have an account?</HaveAnAccount>
+            {/* move to file (enum) */}
             <Link href={"/login"}>
               <Login>Login</Login>
             </Link>

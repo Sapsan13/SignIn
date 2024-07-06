@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import Image from "next/image";
+import { Typo } from "./mock/midbarElements";
 
-const MidItemCard = ({ items }: any) => {
+const MidItemCard = ({ items }: { items: Typo }) => {
   return (
     <>
-      {items.map((item: any) => (
+      {items.map((item) => (
         <CardItemWrapper key={item.id}>
           <MidNumberTitleWrapper>
             <MidNumber>{item.number}</MidNumber>

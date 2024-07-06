@@ -1,5 +1,5 @@
 "use client";
-import LeftNavbar from "@/components/Leftnavbaritems/LeftNavbar";
+import Navbar from "@/components/Navbaritems/Navbar";
 import ChartsHeader from "@/components/mainContent/main/booking/ChartHeader";
 import BarchartStatistics from "@/components/mainContent/main/booking/BarchartStatistics";
 import styled from "styled-components";
@@ -9,7 +9,7 @@ import CustomerReviews from "@/components/mainContent/main/booking/CustomerRevie
 const Booking = () => {
   return (
     <RowItems>
-      <LeftNavbar />
+      <Navbar />
       <Column>
         <TopBar />
         <MidCards></MidCards>

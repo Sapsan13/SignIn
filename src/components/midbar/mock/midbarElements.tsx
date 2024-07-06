@@ -19,6 +19,14 @@ export const overviewMidbarElements = [
   },
 ];
 
+interface AnalyticsMidbarElements {
+  id: number;
+  title: string;
+  number: string;
+  image: string;
+}
+export type Typo = AnalyticsMidbarElements[];
+
 export const analyticsMidbarElements = [
   {
     id: 1,

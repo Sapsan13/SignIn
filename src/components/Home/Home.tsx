@@ -5,21 +5,22 @@ import LandingComponent from "./LandingBlock/LandingComponent";
 import TheRightPlanComponent from "./TheRightPlan/TheRightPlanComponent";
 import { RightPlanDataArray } from "./TheRightPlan/RightPlanDataArray";
 
-const HomeScroll = () => {
+const Home = () => {
   return (
-    <ItemsWrapper>
+    <Wrapper>
       <HeroComponent />
       <HomeComponent />
       <TheRightPlanComponent items={RightPlanDataArray} />
       <LandingComponent />
-    </ItemsWrapper>
+    </Wrapper>
   );
 };
-export default HomeScroll;
+export default Home;
 
-const ItemsWrapper = styled.div`
+const Wrapper = styled.div`
   scroll-snap-type: y mandatory;
   overflow: hidden auto;
+
   @media (max-width: 600px) {
     flex-direction: column;
     scroll-snap-type: mandatory;

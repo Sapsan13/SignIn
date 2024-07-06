@@ -9,21 +9,26 @@ import { schema } from "./loginYup";
 import { PostApiAuthLoginBody } from "@/model";
 import { usePostApiAuthLogin } from "@/QueryStore";
 
-export default function SignIn() {
+export default function Login() {
   const { mutate } = usePostApiAuthLogin();
 
+  const initialValues = {
+    email: "",
+    password: "",
+  };
+
+  const handleSubmit = (values: PostApiAuthLoginBody) => {
+    mutate({
+      data: values,
+    });
+  };
+
   const formik = useFormik<PostApiAuthLoginBody>({
-    initialValues: {
-      email: "",
-      password: "",
-    },
+    initialValues: initialValues,
     validationSchema: schema,
-    onSubmit: (values) => {
-      mutate({
-        data: values,
-      });
-    },
+    onSubmit: handleSubmit,
   });
+
   return (
     <RightSidebar>
       <RightBlock>
@@ -31,6 +36,7 @@ export default function SignIn() {
           <Header>Welcome back!</Header>
           <DivRow>
             <HaveAnAccount>{"Don't have an account?"}</HaveAnAccount>
+            {/* move to another file */}
             <Link href={"/signin"}>
               <SignInText>Sign in here!</SignInText>
             </Link>
@@ -50,7 +56,7 @@ export default function SignIn() {
               onChange={formik.handleChange}
               value={formik.values.email}
             />
-            {formik.errors.email ? <span>{formik.errors.email}</span> : null}
+            {formik.errors.email && <span>{formik.errors.email}</span>}
           </DivColForm>
           <DivColForm>
             <PasswordInput

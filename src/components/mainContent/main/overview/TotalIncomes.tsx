@@ -5,24 +5,25 @@ import { Ascend } from "@/components/Images";
 const TotalIncomes = () => {
   return (
     <TotalIncomesWrapper>
-      <Total9900>
+      <Total>
         <FlexCol>
           <TotalIncome>TotalIncomes </TotalIncome>
-          <N9900>9,900</N9900>
+          <NumberNine>9,900</NumberNine>
         </FlexCol>
         <ThanLastWeek>
           <FlexCol>
             <Ascend82>
-              <Ascend /> <N82>+8,2%</N82>
+              <Ascend /> <NumberEight>+8,2%</NumberEight>
             </Ascend82>
             <ThanLastWeekText>than last week</ThanLastWeekText>
           </FlexCol>
         </ThanLastWeek>
-      </Total9900>
+      </Total>
       <TotalIncomesChart />
     </TotalIncomesWrapper>
   );
 };
+
 export default TotalIncomes;
 
 const TotalIncomesWrapper = styled.div`
@@ -46,7 +47,7 @@ const TotalIncome = styled.div`
   text-align: left;
 `;
 
-const Total9900 = styled.div`
+const Total = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -55,7 +56,7 @@ const Total9900 = styled.div`
   gap: 8px;
 `;
 
-const N9900 = styled.div`
+const NumberNine = styled.div`
   font-family: Public Sans;
   font-size: 32px;
   font-weight: 700;
@@ -81,7 +82,7 @@ const ThanLastWeekText = styled.div`
   text-align: left;
 `;
 
-const N82 = styled.div`
+const NumberEight = styled.div`
   font-family: Public Sans;
   font-size: 14px;
   font-weight: 600;

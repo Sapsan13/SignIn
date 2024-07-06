@@ -1,17 +1,16 @@
 "use client";
 
-import LeftNavbar from "@/components/Leftnavbaritems/LeftNavbar";
-
 import styled from "styled-components";
 import NewestBookingComponent from "@/components/mainContent/main/analytics/NewestBookingComponent";
 import TopBar from "@/components/topBar/TopBar";
 import MidItemCard from "@/components/midbar/MidItemAnalytics";
 import { analyticsMidbarElements } from "@/components/midbar/mock/midbarElements";
+import Navbar from "@/components/Navbaritems/Navbar";
 
 export default function Analytics() {
   return (
     <RowItems>
-      <LeftNavbar />
+      <Navbar />
       <Column>
         <TopBar />
         <ColumnItems>

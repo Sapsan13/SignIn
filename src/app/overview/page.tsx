@@ -4,7 +4,7 @@ import SoldPending from "@/components/mainContent/main/overview/SoldPending";
 import TotalIncomes from "@/components/mainContent/main/overview/TotalIncomes";
 import ToursAvailable from "@/components/mainContent/main/overview/ToursAvailable";
 import TopBar from "@/components/topBar/TopBar";
-import LeftNavbar from "@/components/Leftnavbaritems/LeftNavbar";
+import Navbar from "@/components/Navbaritems/Navbar";
 import styled from "styled-components";
 import { overviewMidbarElements } from "@/components/midbar/mock/midbarElements";
 import MidItemCard from "@/components/midbar/MidItemAnalytics";
@@ -12,7 +12,7 @@ import MidItemCard from "@/components/midbar/MidItemAnalytics";
 const Overview = () => {
   return (
     <RowItems>
-      <LeftNavbar />
+      <Navbar />
       <ColumnItems>
         <TopBar />
         <Wrapper>

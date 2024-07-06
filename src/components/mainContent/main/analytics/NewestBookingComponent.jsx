@@ -4,7 +4,7 @@ import { Arrowright } from "../../../../../public/illustrations/Leftbar/Usercard
 
 const NewestBookingComponent = () => {
   return (
-    <div>
+    <>
       <BookingbarWrapper>
         <NewestBookingBar>
           <NewestBookingText>Newest Booking</NewestBookingText>
@@ -20,7 +20,7 @@ const NewestBookingComponent = () => {
       <BookingCardsWrapper>
         <NewestBookingCard />
       </BookingCardsWrapper>
-    </div>
+    </>
   );
 };
 

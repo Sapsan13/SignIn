@@ -1,7 +1,7 @@
 "use client";
-import HomeScroll from "@/components/Home/HomeScroll";
+import Home from "@/components/Home/Home";
 
 const Banking = () => {
-  return <HomeScroll />;
+  return <Home />;
 };
 export default Banking;

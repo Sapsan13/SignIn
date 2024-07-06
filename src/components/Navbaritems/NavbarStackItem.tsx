@@ -8,11 +8,11 @@ const NavbarStackItem = () => {
 
 export default NavbarStackItem;
 
-export type LeftNavbarItem = {
+export type NavbarItem = {
   id: number;
   alias: string;
   title: string;
   icon?: JSX.Element;
   endIcon?: JSX.Element;
-  children?: LeftNavbarItem[];
+  children?: NavbarItem[];
 };

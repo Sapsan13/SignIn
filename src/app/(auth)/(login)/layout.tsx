@@ -1,11 +1,12 @@
 "use client";
 import LoginPicBlock from "@/components/loginPicBlock";
+import { ReactNode } from "react";
 import styled from "styled-components";
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <FlexRow>

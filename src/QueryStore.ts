@@ -17,12 +17,8 @@ import type {
 } from "@tanstack/react-query";
 import { useCallback } from "react";
 import type {
-  GetApiChartStatistic200Item,
   GetApiChartTotalIncome200Item,
-  GetApiChartTours200Item,
-  PostApiAuthLogin200,
   PostApiAuthLoginBody,
-  PostApiAuthRegister200,
   PostApiAuthRegisterBody,
 } from "./model";
 import { useCustomInstance } from "./custom-axios-instance";
@@ -32,7 +28,7 @@ import type { ErrorType } from "./custom-axios-instance";
  * @summary User login
  */
 export const usePostApiAuthLoginHook = () => {
-  const postApiAuthLogin = useCustomInstance<PostApiAuthLogin200>();
+  const postApiAuthLogin = useCustomInstance();
 
   return useCallback(
     (postApiAuthLoginBody: PostApiAuthLoginBody) => {
@@ -113,7 +109,7 @@ export const usePostApiAuthLogin = <
  * @summary User registration
  */
 export const usePostApiAuthRegisterHook = () => {
-  const postApiAuthRegister = useCustomInstance<PostApiAuthRegister200>();
+  const postApiAuthRegister = useCustomInstance();
 
   return useCallback(
     (postApiAuthRegisterBody: PostApiAuthRegisterBody) => {
@@ -194,7 +190,7 @@ export const usePostApiAuthRegister = <
  * @summary Get tour chart data
  */
 export const useGetApiChartToursHook = () => {
-  const getApiChartTours = useCustomInstance<GetApiChartTours200Item[]>();
+  const getApiChartTours = useCustomInstance();
 
   return useCallback(
     (signal?: AbortSignal) => {
@@ -276,8 +272,7 @@ export const useGetApiChartTours = <
  * @summary Get statistic chart data
  */
 export const useGetApiChartStatisticHook = () => {
-  const getApiChartStatistic =
-    useCustomInstance<GetApiChartStatistic200Item[]>();
+  const getApiChartStatistic = useCustomInstance();
 
   return useCallback(
     (signal?: AbortSignal) => {

@@ -2,7 +2,7 @@ import EmailPlus from "./EmailPlus";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styled from "styled-components";
-import { LeftNavbarItem } from "./NavbarStackItem";
+import { NavbarItem } from "./NavbarStackItem";
 import { BagIconGrey } from "../../../public/illustrations/Leftbar/BagIconGrey";
 import { DashboerdGreen } from "../../../public/illustrations/Leftbar/DashboardGreen";
 import { ChartGreen } from "../../../public/illustrations/Leftbar/ChartGreen";
@@ -11,7 +11,7 @@ import { PlaneBookingGreen } from "../../../public/illustrations/Leftbar/PlaneBo
 import { MailiconGrey } from "../../../public/illustrations/Leftbar/MailiconGrey";
 import { Arrowright } from "../../../public/illustrations/Leftbar/Usercard/Arrowright";
 
-export const MenuItem = ({ item }: { item: LeftNavbarItem }) => {
+export const MenuItem = ({ item }: { item: NavbarItem }) => {
   const pathname = usePathname();
 
   return (
@@ -43,7 +43,7 @@ export const Category = ({ item }: any) => {
 export type NavbarItem = {
   id: number;
   title: string;
-  children: LeftNavbarItem[];
+  children: NavbarItem[];
 };
 
 export type NavbarArray = NavbarItem[];
@@ -111,6 +111,7 @@ const StyledLink = styled(Link)`
 export const items: NavbarArray = [
   {
     id: 1,
+    alias: "",
     title: "Overview",
     children: [
       {
@@ -149,6 +150,7 @@ export const items: NavbarArray = [
   },
   {
     id: 2,
+    alias: "",
     title: "Management",
     children: [
       {

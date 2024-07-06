@@ -1,7 +1,8 @@
 "use client";
-import SignIn from "./login/page";
+import Login from "./login/page";
 
-const Login = () => {
-  return <SignIn />;
+// change name of page
+const Log = () => {
+  return <Login />;
 };
-export default Login;
+export default Log;
